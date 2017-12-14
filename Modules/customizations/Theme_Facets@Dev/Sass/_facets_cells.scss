@@ -1,0 +1,75 @@
+// Item Cell Border
+.cells-border{
+	border:1px solid $theme-neutral-color;
+}
+
+// Item Name
+.cells-item-name {
+	text-transform: uppercase;
+	color: $theme-primary-ft-color;
+	height: auto;
+	overflow: hidden;
+	font-size: $sc-small-font-size;
+	letter-spacing:normal;
+	padding: $theme-base-size * 4 0 $theme-base-size * 2 0;
+	text-align: center;
+}
+
+//Item Price
+.cells-item-price {
+	font-weight: $theme-font-weight-semi-bold;
+	color: $theme-primary-color;
+	font-size:$theme-md-font-size;
+	.product-views-price .product-views-price-lead{
+		font-weight: $theme-font-weight-semi-bold;
+		font-size:$theme-md-font-size;
+		color: $theme-primary-color;
+	}
+}
+
+
+// Sku
+.item-details-sku-container{
+	margin: 0 0 $theme-base-size 0;
+	text-transform: uppercase;
+	text-align:left;
+	color: $theme-primary-ft-color;
+	font-size: $theme-sm-font-size;
+	span.item-details-sku { font-weight: $theme-font-weight-semi-bold; }
+}
+
+// Stock
+.cells-item-stock {
+	height: $theme-base-size * 8;
+	margin-bottom: 12px;
+	background-color: $theme-color-out;
+	color: $theme-tertiary-color;
+}
+
+// Stock
+.item-views-stock-msg-out {
+	color: $theme-tertiary-color;
+	background-color: $theme-color-out;
+	text-transform: uppercase;
+	border-radius: 0;
+}
+
+// Quick View btn.
+div[class$="quick-view-wrapper"] {
+	top: 50%;
+	margin-top: -16px;
+	padding: 0 $theme-base-size * 4;
+	> a {
+		display: inline-block;
+		background: $theme-secondary-color;
+		color: $theme-tertiary-color;
+		font-size: $theme-sm-font-size;
+		border-radius: 0;
+		text-transform: uppercase;
+		border: none;
+		&:hover {
+			background: $theme-secondary-color;
+			color: $theme-tertiary-color;
+		}
+	}
+}

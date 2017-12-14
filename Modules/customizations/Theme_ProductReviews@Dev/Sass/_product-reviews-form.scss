@@ -1,0 +1,83 @@
+div.product-reviews-form {
+  @media (max-width: $screen-md-min) { padding: $theme-base-size * 3; }
+  // Title
+  h1 {
+    text-transform: uppercase;
+    margin-top: $theme-base-size * 4;
+  }
+  .product-reviews-form-divider-desktop{
+    margin: 25px 0;
+    height: 1px;
+    background-color: $theme-neutral-color;
+    clear: both;
+  }
+  // Left section
+  div.product-reviews-form-item-cell {
+    // Rating
+    i[class^="global-views-star-rating"] {
+      //color: $theme-rating-stars-color;
+      opacity: 1;
+      &.global-views-star-rating-empty { opacity: 0.25; }
+    }
+    img.facets-item-cell-list-image{
+			width:auto; height:auto; max-width:200px; max-height:200px;
+		}
+  }
+  // Right section
+  div.product-reviews-form-content {
+    i[class^="global-views-star-rating"] { color: $theme-rating-stars-color; }
+    label, p { color: $theme-primary-ft-color; }
+    input[type="text"], textarea { 
+      //border-color: #CCC; 
+    }
+  }
+  // Buttons
+  div.product-reviews-form-content {
+    background: transparent;
+    div.product-reviews-form-actions {
+      background: transparent;
+      padding: 30px 15px;
+      button.product-reviews-form-actions-button-submit {
+        @include btn($theme-primary-color);
+      }
+      button.product-reviews-form-actions-button-preview {
+        @include lineal-btn($theme-secondary-color);
+      }
+      a.product-reviews-form-actions-button-back {
+        @include lineal-btn($theme-secondary-color);
+      }
+    }
+  }
+}
+
+.product-reviews-form-new .global-views-star-rating-area, .product-reviews-form-preview-new .global-views-star-rating-area{
+  i{
+    font-size:24px!important;
+  }
+  button{
+    width: 22px;
+    height: 23px;
+  }
+}
+
+// Required *
+div#product-review-form {
+  span.product-reviews-form-content-required { color: $theme-primary-color; }
+}
+
+// Username
+p.product-reviews-preview-review-content-username, p.product-reviews-form-confirmation-content-username {
+  span { color: $theme-primary-color; text-decoration: underline; }
+}
+
+// Confirmation
+div.product-reviews-form-confirmation-message {
+  h1{border-bottom:1px solid $theme-neutral-color;}
+  h2{ color: $theme-secondary-ft-color; }
+  p{color: $theme-primary-ft-color;}
+  a {
+    color: $theme-primary-color;
+    &:hover { text-decoration: underline; }
+  }
+
+}

@@ -1,0 +1,45 @@
+div.facets-items-collection-view-cell-span12 {
+	padding: 0 $theme-base-size * 2;
+	div.facets-item-cell-list {
+		padding: $theme-base-size * 3;
+		margin-left:0px; 
+		margin-right:0px;
+		@extend .cells-border;
+	}
+	// Image container Left
+	.facets-item-cell-list-left{
+		@media (max-width: $screen-md-min) { padding:0px }
+	}
+	// Item Image
+	div.facets-item-cell-list-image-wrapper {
+		//border: 1px solid $theme-neutral-color;
+		//padding: $theme-base-size * 2;
+		padding:0px;
+		a { display: block; }
+	}
+	// Item name
+	h2.facets-item-cell-list-title {
+		a { @extend .cells-item-name; }
+		@media (max-width: $screen-md-min) { padding-top: 0; }
+	}
+	// Item SKU
+	div.item-details-sku-container {
+		margin: 0 0 $theme-base-size 0;
+		text-transform: uppercase;
+		//color: $theme-secondary-color;
+		font-size: $theme-sm-font-size;
+		span.item-details-sku { font-weight: $theme-font-weight-semi-bold; }
+	}
+	// Item price
+	span.item-views-price-lead {
+		@extend .cells-item-price;
+	}
+	// Rating
+	div.facets-item-cell-list-rating {
+		float: left;
+		i {
+			color: $theme-rating-stars-color;
+			&.global-views-star-rating-empty { opacity: 0.25; }
+		}
+	}
+}

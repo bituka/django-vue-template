@@ -1,0 +1,21 @@
+div.layout.sec_cms_landing_page {
+	div.global-views-breadcrumb-container {
+		display: none;
+	}
+	div.cms-landing-page-row {
+		margin: 0;
+	}
+	div#cms-landing-page, div.cms-landing-page-row-full-col {
+		width: 100%;
+		padding: 0;
+		margin:0;
+	}
+	@media (min-width: $screen-md-min) {
+		div#main-container {
+	    //padding-top: 82px;
+		}
+	}
+	header#site-header {
+		margin-bottom: 0px;
+	}
+}

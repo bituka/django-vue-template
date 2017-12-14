@@ -1,0 +1,34 @@
+.sec_store_locator_main #main-container{
+  @media (min-width: $screen-md-min) {
+    padding-top:189px;
+  }
+}
+
+div.store-locator-main {
+  // Left
+  div.store-locator-main-left {
+    background: transparent;
+    label { font-weight: $theme-font-weight-light; }
+    input#autocomplete { border-color: $theme-neutral-color; }
+    // "Find Stores"
+    div.store-locator-location-buttons-container-find {
+      margin-bottom: $theme-base-size * 4;
+      button { @include btn($theme-primary-color);}
+    }
+    // Or
+    div.store-locator-location-buttons-container-or {
+      border-color: $theme-secondary-color;
+      span { display: none; }
+    }
+    // "Use Current Location"
+    button.store-locator-location-button-current { @include btn($theme-primary-color);}
+    div.store-locator-location-geolocation { margin-top: $theme-base-size * 2; }
+    // "See All Stores"
+    a.store-locator-location-see-all-stores {
+      color: $theme-primary-color;
+      &:hover { text-decoration: underline; }
+    }
+  }
+  // Right - Map
+  div.store-locator-main-right { background: transparent; }
+}

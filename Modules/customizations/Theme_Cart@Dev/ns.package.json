@@ -1,0 +1,14 @@
+{
+    "gulp": {
+        "templates": [
+            "Templates/*.*"
+        ],
+        "sass": [
+            "Sass/**/*.scss"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/Cart@4.3.0/Templates/cart_detailed.tpl": "Templates/cart_detailed.tpl",
+        "suitecommerce/Cart@4.3.0/Templates/cart_item_actions.tpl": "Templates/cart_item_actions.tpl"
+    }
+}

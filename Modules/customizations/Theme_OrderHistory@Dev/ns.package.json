@@ -1,0 +1,10 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*.js"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/OrderHistory@5.0.1/JavaScript/OrderHistory.Details.View.js": "JavaScript/OrderHistory.Details.View.js"
+    }
+}

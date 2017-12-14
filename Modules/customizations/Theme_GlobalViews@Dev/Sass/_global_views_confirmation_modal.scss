@@ -1,0 +1,39 @@
+
+//Item Information
+.cart-confirmation-modal{
+	button:focus, a:focus{
+		outline: none;
+    }
+	.cart-confirmation-modal-item-name{
+		text-transform:uppercase;
+		color:$item-name-color;
+		font-size: $theme-md-font-size;
+    	margin-bottom: 7px;
+    	height: auto;
+	}
+	.item-views-price-lead{
+		font-size: $theme-font-weight-semi-bold;
+		color: $theme-primary-color;
+	}
+	.cart-confirmation-modal-view-cart-button{
+		@include btn($sc-color-primary);
+		padding:18px 0;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	.cart-confirmation-modal-continue-shopping-button{
+		@include btn($sc-color-secondary);
+		background:$sc-color-secondary;
+		padding:18px 0;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	.cart-confirmation-modal-sku{
+		margin:10px 0;
+		> span{
+			text-transform:uppercase;
+			color:$sc-color-secondary-light;
+		    font-size: $sc-base-font-size;
+		}
+	}
+}

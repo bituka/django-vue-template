@@ -1,0 +1,26 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*"
+        ],
+        "images": [
+            "Images/*"
+        ],
+        "templates": [
+            "Templates/*"
+        ],
+        "sass": [
+            "Sass/**/*.scss"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/Header@1.3.1/Templates/header.tpl": "Templates/header.tpl",
+        "suitecommerce/Header@1.3.1/Templates/header_menu.tpl": "Templates/header_menu.tpl",
+        "suitecommerce/Header@1.3.1/Templates/header_profile.tpl": "Templates/header_profile.tpl",
+        "suitecommerce/Header@1.3.1/Templates/header_sidebar.tpl": "Templates/header_sidebar.tpl",
+        "suitecommerce/Header@1.3.1/Templates/header_simplified.tpl": "Templates/header_simplified.tpl",
+        "suitecommerce/Header@1.3.1/Templates/header_logo.tpl": "Templates/header_logo.tpl",
+        "suitecommerce/SiteSearch@2.2.2/Templates/site_search.tpl": "Templates/site_search.tpl",
+        "suitecommerce/GlobalImages@1.0.2/Images/favicon.ico": "Images/favicon.ico"
+    }
+}

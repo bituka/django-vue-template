@@ -1,0 +1,18 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*.js"
+        ],
+        "templates": [
+            "Templates/*.tpl"
+        ],
+        "sass": [
+            "Sass/**/*.scss"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/QuantityPricing@1.0.1/JavaScript/QuantityPricing.Utils.js": "JavaScript/QuantityPricing.Utils.js",
+        "suitecommerce/QuantityPricing@1.0.1/JavaScript/QuantityPricing.View.js": "JavaScript/QuantityPricing.View.js",
+        "suitecommerce/QuantityPricing@1.0.1/Templates/quantity_pricing.tpl" : "Templates/quantity_pricing.tpl"
+    }
+}

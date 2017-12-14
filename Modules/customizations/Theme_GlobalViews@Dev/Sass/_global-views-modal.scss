@@ -1,0 +1,105 @@
+//Modal:: General
+.global-views-modal-content-header-title {
+	//color:$theme-secondary-ft-color;
+	text-transform: uppercase;
+	border-bottom: 1px solid $theme-neutral-color;
+	padding-bottom: 7px;
+}
+
+.global-views-modal-content {
+	border-radius: 0px;
+}
+
+// Modal - Header
+div#modal-header {
+	button.global-views-modal-content-header-close {
+		color: $theme-primary-ft-color;
+	}
+	h2 {
+		//color: $theme-secondary-ft-color;
+		//font-weight: $theme-font-weight-normal;
+	}
+}
+
+// Quick View
+div.quick-view-confirmation-modal {
+	// Add to cart
+	div.quick-view-confirmation-modal-add-to-cart {
+		@media (max-width: $screen-md-min) {
+			width: 100%;
+		}
+		button {
+			@media (max-width: $screen-md-min) {
+				padding: $theme-base-size * 4 !important;
+			}
+		}
+	} // Add to Wishlist
+	div.quick-view-confirmation-modal-add-to-product-list {
+		button {
+			@include btn($sc-color-secondary);
+			background: $sc-color-secondary;
+			padding: $theme-base-size * 4;
+		}
+		@media (max-width: $screen-md-min) {
+			width: 100%;
+		}
+	}
+}
+
+// Added to cart
+div.cart-confirmation-modal {
+	div.cart-confirmation-modal-details {
+		// Item Name
+		a.cart-confirmation-modal-item-name {
+			color: $theme-primary-color;
+		} // SKU
+		div.cart-confirmation-modal-sku {
+			text-transform: uppercase;
+			color: $theme-secondary-color;
+			font-size: $theme-sm-font-size;
+			margin: $theme-base-size * 2 0;
+			span.cart-confirmation-modal-sku-label {
+				font-weight: $theme-font-weight-semi-bold;
+			}
+		}
+		@media (max-width: $screen-sm-min) {
+			text-align: center;
+		} // View cart
+		div.cart-confirmation-modal-view-cart {
+			a {
+				@include btn($theme-primary-color);
+			}
+			@media (max-width: $screen-md-min) {
+				width: 100%;
+			}
+		} // Continue shopping
+		div.cart-confirmation-modal-continue-shopping {
+			button {
+				@include lineal-btn($theme-secondary-color);
+			}
+			@media (max-width: $screen-md-min) {
+				width: 100%;
+			}
+		}
+		@media (max-width: $screen-sm-min) {
+			padding: $theme-base-size * 3;
+		}
+	}
+}
+
+// Checkout
+section.address-edit,
+section.creditcard-edit {
+	// Input
+	input[type="text"],
+	input[type="tel"],
+	select {
+		//border-color: #CCC; 
+	} // Buttons
+	button[class*="form-button-submit"] {
+		@include btn($theme-primary-color);
+	}
+	button[class*="form-button-cancel"] {
+		@include lineal-btn($theme-secondary-color);
+	}
+}
