@@ -34,10 +34,14 @@ define(
 	,	create: function (data)
 		{
 
-			var firstname, lastname, email, message;
+			var firstname, lastname, company, email, message;
 
 			if (data.firstname){
 				firstname = Utils.sanitizeString(data.firstname);
+			}
+
+			if (data.company){
+				company = Utils.sanitizeString(data.company);
 			}
 
 			if (data.email){
@@ -54,9 +58,9 @@ define(
 			}
 
 			var dataToSend   = "Contact Name  : " +  firstname + " " + lastname + "\n";
-			dataToSend      += "Contact Email : " + email + "\n";;
+			dataToSend      += "Company Name : " + company + "\n";
+			dataToSend      += "Contact Email : " + email + "\n";
 			dataToSend      += "Message       : " + message + "\n";
-
 
 			var sender 		= SC.Configuration.contactus.sender;
 			var recipient   = SC.Configuration.contactus.recipient;
@@ -68,6 +72,7 @@ define(
 			nlapiLogExecution("DEBUG", "SENDER", sender);
 			nlapiLogExecution("DEBUG", "recipient", recipient);
 			nlapiLogExecution("DEBUG", "subject", subject);
+			nlapiLogExecution("DEBUG", "DATA", dataToSend);
 
 			try{
 				var url = nlapiResolveURL("SUITELET", "customscript_tt_handle_contact_us", "customdeploy_tt_handle_contact_us", true);
@@ -77,17 +82,40 @@ define(
 					recipient: recipient,
 					subject : subject,
 					message : message,
-					email : email
+					email : email,
+					dataToSend : dataToSend
 				};
 
-				nlapiRequestURL(url, postdata, null, "POST");
-
+				var response = nlapiRequestURL(url, postdata, null, "POST");
 				nlapiLogExecution('DEBUG', 'URL', url);
+
+				var responseCode = parseInt(response.getCode(), 10);
+
+				// Just in case someday it accepts the redirect. 206 is netsuite error ('partial content')
+				if (responseCode === 200 || responseCode === 302 || responseCode === 201 || responseCode === 404) {
+					return {
+						successMessage: 'Your request has been submitted, we will get back to you within 24 hours.'
+					}
+				}
 				// nlapiSendEmail(sender, recipient, subject, dataToSend, null ,null ,null ,null ,false ,false , email);
 				out.code = 'OK';
 			} catch(e) {
 				nlapiLogExecution('DEBUG', 'EXCEPTION', e);
 				out.code = "ERROR";
+				// The 'successful' exception is a redirect error, so let's intercept that
+				if (e instanceof nlobjError && e.getCode().toString() === 'ILLEGAL_URL_REDIRECT')
+				{
+				return {
+					successMessage: 'Your request has been submitted, we will get back to you within 24 hours.'
+				}
+				}
+
+				// Finally, let's catch any other error that may come
+				return {
+				status: 500
+				, code: 'ERR_FORM'
+				, message: 'There was an error submitting the form, please try again later'
+				}
 			}
 
 			return out;

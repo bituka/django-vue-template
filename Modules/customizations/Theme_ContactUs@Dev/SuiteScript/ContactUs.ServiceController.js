@@ -24,6 +24,7 @@ define(
 			// @return {StatusObject}
 		,	post: function()
 			{
+				nlapiLogExecution('DEBUG', 'CONTACT US DATA', JSON.stringify(this.data));
 				// Do not return here as we need to output the status 201
 				this.sendContent(ContactUsModel.create(this.data), {'status': 201});
 			}

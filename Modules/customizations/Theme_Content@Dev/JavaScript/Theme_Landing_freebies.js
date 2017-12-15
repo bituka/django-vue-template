@@ -7,7 +7,7 @@ define('Theme_Landing_freebies', ['CMSadapter.Landing.View', 'jQuery', 'undersco
     
                 this.on('afterViewRender', function () {
                     this.listenToOnce(
-                        typeof CMS !== 'undefined' ? CMS : Backbone.Events, 'cms:rendered', this.initSliders
+                        typeof CMS !== 'undefined' ? CMS : Backbone.Events, 'page:content:set', this.initSliders
                     );
                 });
     

@@ -40,8 +40,7 @@ define('Contact.Model'
 				required: true
 			,	msg: _('Message is required').translate()
 			}
-		}
-
+		}	
 	,	parse: function (response)
 		{
 			return response;

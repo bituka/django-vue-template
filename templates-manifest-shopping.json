@@ -180,8 +180,5 @@
   "sc_cct_html.tpl.js",
   "header_simplified.tpl.js",
   "footer_simplified.tpl.js",
-  "automation_create_landings.tpl.js",
-  "automation_area.tpl.js",
-  "automation.tpl.js",
   "contact.tpl.js"
 ]

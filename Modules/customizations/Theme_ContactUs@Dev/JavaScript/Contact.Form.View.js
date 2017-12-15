@@ -6,7 +6,8 @@ define(
 	,	'Utilities.ResizeImage'
     ,   'Contact.Model'
 	,	'contact.tpl'
-
+	, 'GlobalViews.Message.View'
+	
 	,	'Backbone'
 	,	'Backbone.CompositeView'
 	,	'Backbone.CollectionView'
@@ -21,6 +22,7 @@ define(
 	,	resizeImage
     ,   ContactModel
 	,	contact_tpl
+	, MessageView	
 
 	,	Backbone
 	,	BackboneCompositeView
@@ -48,12 +50,13 @@ define(
 		}
 
 	,	events: {
-			'submit form': 'saveForm'
+			'submit form': 'customSaveForm'
 	}
 
 	,	bindings: {
 		'[name="firstname"]': 'firstname'
 	,	'[name="lastname"]': 'lastname'
+	,	'[name="company"]': 'company'
 	,	'[name="email"]': 'email'
 	,	'[name="message"]': 'message'
 	}
@@ -62,39 +65,72 @@ define(
 		{
 			BackboneCompositeView.add(this);
 			this.application = options.application;
-            this.model = new ContactModel();
+      this.model = new ContactModel();
 			BackboneFormView.add(this);
 		}
 
     ,	customSaveForm: function (e)
 		{
-			e && e.preventDefault();
 
-			// this.prepareData();
-
-            // set model data
-			// this.model.set('itemid', this.item.get('internalid'));
+			jQuery('form .global-views-message').parent().remove();
 
 			var promise = BackboneFormView.saveForm.apply(this, arguments)
 			,	self = this;
 
-			if(this.model.isValid(true)){
-				promise && promise.done(function ()
+			e && e.preventDefault();
+
+			return promise && promise.then
+			(
+			  function(success)
+			  {
+				if (success.successMessage)
 				{
-					// Once the review is submited, we show the Confirmation View
-					// var preview_review = new ProductReviewsFormConfirmationView({
-					// 	model: self.model
-					// ,	application: self.application
-					// });
-	
-					// preview_review.showContent();
+				  self.showMessage(success.successMessage, 'success');
+				}
+				else {
+				  self.showMessage('An error occured, please try again', 'error')
+				}
+			  }
+			, function(fail)
+			  {
+				fail.preventDefault = true;
+	  
+				_.each(fail.responseJSON.errorMessage, function(message, field)
+				{
+				  self.showMessage(message, 'error', field);
 				});
+			  }
+			);
+			
+			// if(this.model.isValid(true)){
+			// 	promise && promise.done(function ()
+			// 	{
+			// 		// preview_review.showContent();
+			// 	});
 	
-				return promise;
-			} else {
-				// alert('Not valid');
-			}
+			// 	return promise;
+			// } else {
+				
+			// }
 		}
+	// The function we use to actually generate the messages. It uses the global message view functionality, which is a simple of way of creating messages throughout the site, ensuring that they all look consistent. Depending on whether it is passed a field, it will generate the message either at that field's location, or simply at the bottom of the form.
+	, showMessage: function(message, type, field)
+    {
+      var messageView = new MessageView
+      ({
+        message: message
+      , type: type
+      });
+
+      if (typeof field !== 'undefined')
+      {
+        this.application.getLayout().$('[data-input="' + field + '"]').append(messageView.render().$el);
+      }
+      else
+      {
+        this.application.getLayout().$('form').append(messageView.render().$el);
+      }
+    }
 
 		// @method getContext @return Home.View.Context
 	,	getContext: function()

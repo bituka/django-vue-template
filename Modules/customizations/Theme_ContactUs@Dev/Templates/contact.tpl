@@ -39,6 +39,11 @@ govern your access and use. }}
                                                     <input type='text' placeholder='Last Name' id="lastname" name='lastname' value="{{lastname}}">
                                                 </div>
                                             </div>
+                                            <div data-validation="control-group" data-input="company">
+                                                <div class="contact-us-form-controls" data-validation="control">
+                                                    <input type='text' placeholder='Company Name' id="company" name='company' value="{{company}}">
+                                                </div>
+                                            </div>
                                             <div data-validation="control-group" data-input="email">
                                                 <div class="contact-us-form-controls" data-validation="control">
                                                     <input type='text' placeholder='Email' id="email" name='email' value="{{email}}"> 
