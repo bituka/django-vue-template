@@ -128,7 +128,7 @@ define(
       }
       else
       {
-        this.application.getLayout().$('form').append(messageView.render().$el);
+        this.application.getLayout().$('#contact-us-form').append(messageView.render().$el);
       }
     }
 
