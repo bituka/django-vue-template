@@ -17,7 +17,7 @@
 // .input-small			- Input Small
 //
 // Markup: <input class="{$modifiers}"/>
-// 
+//
 // Styleguide 3.2
 
 .input-base{
@@ -48,7 +48,7 @@
 // Input Type Textarea
 //
 // Markup: <textarea class="input-textarea">Textarea</textarea>
-// 
+//
 // Styleguide 3.6
 
 .input-textarea{
@@ -58,7 +58,7 @@
 // Input Type Checkbox
 //
 // Markup: <input class="input-checkbox" type="checkbox" />
-// 
+//
 // Styleguide 3.7
 
 .input-checkbox{
@@ -72,7 +72,7 @@
 //			<input class="input-large" type="text" />
 //			<button class="input-inside-button"><i class="fa fa-globe input_inside_icon"></i></button>
 //</div>
-// 
+//
 // Styleguide 3.10
 
 .input-inside-button{
@@ -85,4 +85,7 @@
 
 select[class]{
 	@extend .theme-border;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="search"], input[type="date"], input[type="number"] , select , textarea{
+	border-color:#cccccc !important;
 }

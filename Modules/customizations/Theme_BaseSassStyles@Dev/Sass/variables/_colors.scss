@@ -24,8 +24,8 @@
 // Start New Variables
 
     // Global Client Colors
-    $theme-primary-color:                   #ec7a5c; // Client identity Primary color (primary buttons - add to cart, price color)
-   
+    $theme-primary-color:                   #FD7A19; // Client identity Primary color (primary buttons - add to cart, price color)
+
 // Secondary Color
 //
 // $theme-secondary-color - The Secondary Color is used for secondary actions. Different shades of this color are used for theme backgrounds, borders and text.
@@ -34,8 +34,8 @@
 // <div class="styleguide-color-secondary">theme-secondary-color</div>
 //
 // Styleguide 2.1.3
-    $theme-secondary-color:                 #000; // Client identity Secondary color (secondary buttons - see more, add to wishlist, edit ..)
-    
+    $theme-secondary-color:                 #808080; // Client identity Secondary color (secondary buttons - see more, add to wishlist, edit ..)
+
     $theme-tertiary-color:                  #fff; // NS Backgrounds & texts over colored backgrounds - DO NOT EDIT
 
     // Header
@@ -43,7 +43,7 @@
     $theme-header-bck-color-top:            darken($theme-header-bck-color-gral, 20%); // Header top bar background
     $theme-header-bck-color-top-dark:       darken($theme-header-bck-color-gral, 20%); // Header darker color
 
-    $theme-header-ft-color-primary:         #000; // Main Header font color
+    $theme-header-ft-color-primary:          #6b6b6b; // Main Header font color
     $theme-header-ft-color-primary-active:  $theme-header-bck-color-top; // Main nav hover background
     $theme-header-ft-color-secondary:       #000; // Header Top Bar font color
     $theme-header-ft-color-tertiary:        #000; // Header Main nav sub-links color
@@ -64,27 +64,27 @@
         $theme-header-ft-color-mobile:          #fff; // Mobile menu font color
 
     // Footer
-    $theme-footer-bck-color-gral:           #383838; // Footer global background (client color)
+    $theme-footer-bck-color-gral:           #F8F8F8; // Footer global background (client color)
     $theme-footer-bck-color-bottom:         darken($theme-footer-bck-color-gral, 20%); // Footer bottom label copyright section background
 
-    $theme-footer-ft-color-primary:         #fff; // Footer global font color
-    $theme-footer-ft-color-secondary:       #fff; // Footer bottom label copyright section font color
+    $theme-footer-ft-color-primary:         #6b6b6b; // Footer global font color
+    $theme-footer-ft-color-secondary:       #6b6b6b; // Footer bottom label copyright section font color
 
     $theme-footer-bck-color-social:         $theme-footer-bck-color-bottom; // Footer social icons buttons color
-    
+
     $theme-footer-ft-color-btn:             #383838; // Footer - subscribe button font color
     $theme-footer-bck-color-btn:            #fff; // Footer - subscribe button background color
 
     // Body Font Colors
     $theme-primary-ft-color:                #000; // Regular body font color (client color from form)
-    $theme-secondary-ft-color:              #ec7a5c; // Font color for Titles, Subtitles
+    $theme-secondary-ft-color:              #2175b0; // Font color for Titles, Subtitles
     $theme-tertiary-ft-color:               #fff; // Font color for Slider & Banners: Title(h2) and Description(p)
     $theme-color-links:                     #000; // Font color for "a" link
     $theme-color-links-hover:               $theme-primary-color; // Font color for "a" hover
     $sc-color-link:$theme-color-links;
     $sc-color-link-hover:$theme-color-links-hover;
     $theme-color-out:                       #CB1B2C; // Font color for out of stock
-    
+
     $theme-fourth-color:                    $theme-primary-ft-color; // (secondary for ns standard)
 
     //Slider & Banners Buttons
@@ -97,12 +97,12 @@
     $theme-neutral-color-lightest:          lighten($theme-neutral-color, 6);
     $theme-input-color:                     #000;// Item Options & Forms: input, select, textareas
     $theme-input-color-dark:darken($theme-input-color, 20%); // Active -item options selected
-    
+
     $sc-color-theme-background:$theme-neutral-color;
     $sc-color-background-list:$theme-neutral-color;
 
     //Rating Stars
-    $theme-rating-stars-color:              #000; // Rating Stars color
+    $theme-rating-stars-color:              #6b6b6b; // Rating Stars color
     $sc-color-star-filled:                  $theme-rating-stars-color;
     $sc-color-star-empty:                   lighten($theme-rating-stars-color, 6);
 
@@ -329,5 +329,3 @@ $sc-color-link-hover: desaturate(lighten($sc-color-link, 15), 15);
 $sc-color-copy-dark: $sc-neutral-shade-base;
 $sc-color-copy: lighten($sc-neutral-shade-base, 18);
 $sc-color-copy-light: lighten($sc-neutral-shade-base, 35);
-
-

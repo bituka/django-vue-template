@@ -209,3 +209,9 @@ div.header-menu-images {
 .site-search-content:after {
 	display: none;
 }
+.links-no-mobile{
+	display: inline-block;
+	@media(max-width:$screen-md-min){
+		display: none;
+	}
+}

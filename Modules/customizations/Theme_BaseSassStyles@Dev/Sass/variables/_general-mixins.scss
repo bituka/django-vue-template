@@ -1,13 +1,13 @@
 // Header Top - Links
 @mixin header-top-links {
-  font-size: $theme-xs-font-size;
+  font-size: 11px;
   font-weight: $theme-font-weight-normal !important;
   color: $theme-header-ft-color-secondary;
-  line-height: normal;
-  height: auto;
+  line-height: 28px;
+  height: 28px;
   text-transform: uppercase;
-  padding: 4px $sc-padding-base * 2;
-  display: inline-block !important;
+  padding: 0 10px;
+  display: inline-block;
   font-family: $font-family-primary;
 }
 

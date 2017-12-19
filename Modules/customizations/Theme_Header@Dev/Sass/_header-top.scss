@@ -1,4 +1,5 @@
 // Top header
+
 div.header-main-wrapper {
 	background-color: $theme-header-bck-color-top;
 	.header-cms-top-message{
@@ -9,7 +10,7 @@ div.header-main-wrapper {
 		text-align: center;
 		p{
 			color:$theme-header-ft-color-promoline;
-			font-size:$theme-sm-font-size;	
+			font-size:$theme-sm-font-size;
 		}
 	}
 	div.header-main-nav {
@@ -34,7 +35,6 @@ div.header-left-section {
   color:$theme-header-ft-color-secondary;
   a {
 		@include header-top-links;
-		line-height:normal;
 		span {
 			color:$theme-header-ft-color-secondary;
 			@media (max-width: $screen-md-min) {display: none;}
@@ -63,9 +63,9 @@ div.header-right-menu {
 	margin: 0;
 	// Store Locator & Request A Quote
 	ul.header-menu-actions {
-		//line-height: 28px;
+		height: 28px;
 		li {
-			float: left;
+			display:inline-block;
 			a {
 				@include header-top-links;
 				i {
@@ -176,13 +176,18 @@ div.header-right-menu {
 			span { padding: 0; }
 		}
 	}
-	// Profile links
-	/*.header-profile-welcome-link,
-	a.header-profile-login-link,
-	a.header-profile-register-link,
-	.header-profile-loading-link,
-	.requestquote-accesspoints-headerlink-link,
-	.header-mini-cart-menu-cart-legend {
-		@include header-top-links;
-	} */
+
+	/*
+	@mixin header-top-links {
+	  font-size: 11px;
+	  font-weight: $theme-font-weight-normal !important;
+	  color: $theme-header-ft-color-secondary;
+	  line-height: 28px;
+	  height: 28px;
+	  text-transform: uppercase;
+	  padding: 0 10px;
+	  display: inline-block;
+	  font-family: $font-family-primary;
+	}
+	 */
 }

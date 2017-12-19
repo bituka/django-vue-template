@@ -7,7 +7,7 @@
 
 <div class="header-sidebar-wrapper">
 	<div data-view="Header.Profile"></div>
-	
+
 	<div class="header-sidebar-menu-wrapper" data-type="header-sidebar-menu">
 
 		<ul class="header-sidebar-menu">
@@ -67,9 +67,12 @@
 			</li>
                 {{/if}}
 			{{/each}}
-
+<li data-view="RequestQuoteWizardHeaderLink"></li>
+<li data-view="QuickOrderHeaderLink"></li>
+<li><a data-touchpoint="customercenter" data-hashtag="#reorderItems">EASY REORDER</a></li>
 			{{#if showExtendedMenu}}
 			<li class="header-sidebar-menu-separator"></li>
+
 			<li class="header-sidebar-menu-myaccount" data-view="Header.Menu.MyAccount"></li>
 			{{/if}}
 		</ul>
