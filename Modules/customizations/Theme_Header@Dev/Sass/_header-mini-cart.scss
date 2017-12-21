@@ -37,6 +37,7 @@ div.header-menu-cart {
 // Header mini cart items container
 div.header-mini-cart {
 	border: $theme-base-size solid $theme-header-bck-color-top-dark;
+	border-top: 0;
 	&:before, &:after { display: none; }
 	// Item
 	li.header-mini-cart-item-cell {
@@ -55,8 +56,17 @@ div.header-mini-cart {
 
 // Buttons
 div.header-mini-cart-buttons {
-	a.header-mini-cart-button-view-cart{ @include btn($theme-secondary-color); color:#fff; background: $theme-secondary-color; }
-	a.header-mini-cart-button-checkout{ @include btn($theme-primary-color); background: $theme-primary-color; }
+	a.header-mini-cart-button-view-cart{
+		@include btn($theme-secondary-color);
+		 color:#fff;
+		  background: $theme-secondary-color;
+			border-radius: 0;
+		}
+	a.header-mini-cart-button-checkout{
+		@include btn($theme-primary-color);
+		background: $theme-primary-color;
+		border-radius: 0;
+	}
 }
 
 .header-menu-cart-legend {

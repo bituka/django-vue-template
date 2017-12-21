@@ -25,15 +25,19 @@ div#footer-newsletter-container {
 		border:none;
 	}
 	// Subscribe Button
-	button {
+	button.newsletter-subscription-form-button-subscribe{
 		@include btn ($theme-footer-bck-color-btn);
     	@include transition-duration(.2s);
 		@include transition-timing-function(ease);
 		border-radius:0;
 		padding: $theme-base-size * 2 $theme-base-size * 4;
 		color: $theme-footer-ft-color-btn;
+		border-color: $theme-footer-ft-color-btn;
 		width: auto;
-		&:hover, &:focus, &:active { outline: none; }
+		&:hover, &:focus, &:active {
+			outline: none;
+			background: $theme-footer-ft-color-btn;
+		}
 		&:disabled{color:$theme-tertiary-color;}
 		@media (max-width: $screen-xs-min) { width: 100%; }
 	}

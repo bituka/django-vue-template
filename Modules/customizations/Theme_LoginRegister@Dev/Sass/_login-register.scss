@@ -33,3 +33,12 @@ div.login-register-wrapper-column-register {
 	}
 	@media (max-width: $screen-sm-min) { padding: 0 $theme-base-size * 3; }
 }
+.login-register-forgot-password-body{
+	background: none;
+	@media(min-width:$screen-sm-min ){
+		padding: 0;
+	}
+}
+button.login-register-forgot-password-submit{
+	@include btn($theme-primary-color);
+}

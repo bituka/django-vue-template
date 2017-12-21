@@ -38,7 +38,7 @@ form.cart-quickaddtocart{
 
 @media (max-width: $screen-lg-min) {
 	.facets-item-cell-grid{
-		form.cart-quickaddtocart{	
+		form.cart-quickaddtocart{
 			.cart-quickaddtocart-quantity{max-width:100%;width:100%;}
 			div[data-view="AddToCart"], .cart-add-to-cart-button-container, .cart-add-to-cart-button-button{width:100%;}
 		}
@@ -46,7 +46,7 @@ form.cart-quickaddtocart{
 }
 @media (max-width: $screen-sm-min) {
 	.facets-item-cell-grid{
-		form.cart-quickaddtocart{	
+		form.cart-quickaddtocart{
 			.cart-quickaddtocart-quantity{max-width:60px;width:60px;}
 			div[data-view="AddToCart"], .cart-add-to-cart-button-container, .cart-add-to-cart-button-button{width:auto;}
 		}
@@ -54,10 +54,16 @@ form.cart-quickaddtocart{
 }
 @media (max-width: $screen-xs-min) {
 	.facets-item-cell-grid, .facets-item-cell-table{
-		form.cart-quickaddtocart{	
+		form.cart-quickaddtocart{
 			.cart-quickaddtocart-quantity{max-width:100%;width:100%;}
 			div[data-view="AddToCart"], .cart-add-to-cart-button-container, .cart-add-to-cart-button-button{width:100%;}
 		}
 	}
 }
-
+.quick-order-expander-head-toggle,
+.quick-order-expander-body{
+  border: 1px solid #e4e4e4;
+}
+.quick-add-box {
+	background-color: transparent;
+}

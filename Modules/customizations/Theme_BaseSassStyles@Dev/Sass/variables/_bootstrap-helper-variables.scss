@@ -1,6 +1,19 @@
 /* ============= START BOOSTRAP HELPER VARIABLES ============== */
 
-
+button{
+  &[data-action="minus"],
+  &[data-action="plus"],
+  &[data-action="updateQuantity"]{
+    background: $theme-primary-color !important;
+    border: none;
+    &:hover{
+      background: darken($theme-primary-color , 15%)!important;
+    }
+  }
+}
+input[name="quantity"]{
+  background: $theme-neutral-color !important;
+}
 
 
 /* ============= END BOOSTRAP HELPER VARIABLES ============== */

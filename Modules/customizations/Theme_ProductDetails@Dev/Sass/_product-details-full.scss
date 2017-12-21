@@ -318,7 +318,7 @@
 
 .product-details-promo-ship-icons{
 	text-align:left;
-	vertical-align: top;	
+	vertical-align: top;
 	i{
 		@extend .fa;
 		display:inline-block;
@@ -339,7 +339,7 @@
 		}
 		p{width:90%;}
 	}
-	
+
 
 }
 
@@ -524,7 +524,18 @@ div.sc-pusher-header{
 		}
 	}
 }
-
+.product-reviews-center{
+	margin: 0;
+}
+div.cart-confirmation-modal div.cart-confirmation-modal-details a.cart-confirmation-modal-item-name{
+	color: $theme-primary-ft-color;
+}
+.transaction-line-views-price-lead{
+	color: $theme-primary-color;
+}
+div.cart-confirmation-modal div.cart-confirmation-modal-details div.cart-confirmation-modal-view-cart a{
+	border-radius: 0;
+}
 .product-details-full-banner-top {}
 
 .product-details-full-banner-top-details {}

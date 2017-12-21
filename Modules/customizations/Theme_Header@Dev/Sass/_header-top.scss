@@ -85,16 +85,15 @@ div.header-right-menu {
 		// Welcome Link
 		a.header-profile-welcome-link {
 			@include header-top-links;
-			line-height: normal;
 			strong {}
 			i { font-size: $theme-sm-font-size; }
 			&:before { display: none; }
 		}
 		// MyAccount Dropdown
 		ul.header-profile-menu-myaccount-container {
-			top: 26px;
+			top: 27px;
 			background: $theme-tertiary-color;
-			//border: 1px solid $theme-header-bck-color-top;
+			border: 1px solid $theme-header-bck-color-top;
 			padding: $theme-base-size * 5;
 			> li {
 				width: 100%;

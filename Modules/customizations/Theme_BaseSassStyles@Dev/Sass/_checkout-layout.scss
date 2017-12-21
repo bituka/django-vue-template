@@ -45,3 +45,8 @@ div.sec_login_register {
 .checkout-layout.simplify-layout .header-simplified-header{
 	height: auto;
 }
+// Reset Styles - Google buttons
+button, html input[type="button"], input[type="reset"], input[type="submit"]{border-radius:0px !important;}
+.checkout-layout-header{
+  border-bottom: 1px solid #cccccc;
+}
