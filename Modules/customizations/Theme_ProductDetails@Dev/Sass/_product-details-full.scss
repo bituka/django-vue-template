@@ -533,8 +533,12 @@ div.cart-confirmation-modal div.cart-confirmation-modal-details a.cart-confirmat
 .transaction-line-views-price-lead{
 	color: $theme-primary-color;
 }
-div.cart-confirmation-modal div.cart-confirmation-modal-details div.cart-confirmation-modal-view-cart a{
+div.cart-confirmation-modal div.cart-confirmation-modal-details div.cart-confirmation-modal-view-cart a,
+.product-reviews-center-container-button{
 	border-radius: 0;
+}
+.product-reviews-form-actions-button-back{
+	padding: 10px 15px;
 }
 .product-details-full-banner-top {}
 

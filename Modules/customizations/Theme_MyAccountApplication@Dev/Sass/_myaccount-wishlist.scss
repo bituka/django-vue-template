@@ -3,8 +3,8 @@ div.myaccount-layout-main {
 	// WISHLIST
 	div.ProductListListsView,
 	div.ProductListDetailsView {
-		h2 { 
-			//font-weight: $theme-font-weight-light; 
+		h2 {
+			//font-weight: $theme-font-weight-light;
 		}
 		// Create New List btn.
 		button.product-list-lists-button-add { @include btn($theme-primary-color); }
@@ -27,4 +27,7 @@ div.myaccount-layout-main {
 			}
 		}
 	}
+}
+.product-list-display-full-price .product-views-price-lead{
+	color: $theme-primary-color;
 }

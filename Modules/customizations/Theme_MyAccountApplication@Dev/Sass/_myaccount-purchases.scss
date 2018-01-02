@@ -5,8 +5,8 @@ div.myaccount-layout-main {
 	div.ReturnAuthorizationList,
 	div.OrderItemReorderListView,
 	div.QuoteListView {
-		h2 { 
-			//font-weight: $theme-font-weight-light; 
+		h2 {
+			//font-weight: $theme-font-weight-light;
 		}
 		tr.recordviews-actionable {
 			td.recordviews-actionable-title {
@@ -64,4 +64,18 @@ div.myaccount-layout-main {
 			i { color: $theme-secondary-color; }
 		}
 	}
+}
+a.overview-profile-card-button-edit,
+a.overview-shipping-card-button-edit,
+a.overview-payment-card-button-edit{
+	border-radius: 0;
+}
+.list-header-view-accordion-body-button-sort{
+	border: 1px solid #cccccc;
+}
+.reorder-items-list-hedaer{
+  border-top: 1px solid #e4e4e4;
+}
+.list-header-view{
+	border-bottom: 1px solid #e4e4e4;
 }

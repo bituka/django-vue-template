@@ -104,7 +104,7 @@ div.home-slide-caption {
 			font-size:20px;
 		}
 	}
-	
+
 	@media (max-width: $screen-xxs-min) {
 		>span {
 			display: none;
@@ -213,7 +213,6 @@ div.home-image-slider {
 	div.bx-viewport {
 		height: auto !important;
 		@media (min-width: $screen-sm-min) {
-			max-height: 530px;
 			height: auto !important;
 		}
 	}
@@ -241,7 +240,7 @@ div.home-cms-page-merchandising {
 		margin-bottom: 0;
 		&:first-of-type {
 			margin-left: 0;
-		} 
+		}
 		div.item-cell {
 			border:1px solid $theme-neutral-color;
 			padding:0 0 $theme-base-size * 3 0;
@@ -281,10 +280,10 @@ div.home-cms-page-merchandising {
 				color: $theme-rating-stars-color;
 				&.global-views-star-rating-empty { opacity: 0.25; }
 			}
-		} 
+		}
 		// "See More" btn.
 		a.btn {
-			@include lineal-btn($theme-secondary-color); 
+			@include lineal-btn($theme-secondary-color);
 			//background: $theme-primary-color;
 			display: inline-block;
 			width: auto;

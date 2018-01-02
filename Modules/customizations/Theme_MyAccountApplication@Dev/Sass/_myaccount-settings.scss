@@ -37,3 +37,11 @@ div.myaccount-layout-main {
 		}
 	}
 }
+.AddressListView .address-edit,
+.CreditCardDetailsView .creditcard-edit{
+		background-color: transparent;
+		padding-top: 0;
+}
+.profile-information{
+	border-top: none;
+}

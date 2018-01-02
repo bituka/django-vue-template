@@ -3,7 +3,9 @@
 button{
   &[data-action="minus"],
   &[data-action="plus"],
-  &[data-action="updateQuantity"]{
+  &[data-action="updateQuantity"],
+  &[data-ui-action="minus"],
+  &[data-ui-action="add"],{
     background: $theme-primary-color !important;
     border: none;
     &:hover{
@@ -15,5 +17,13 @@ input[name="quantity"]{
   background: $theme-neutral-color !important;
 }
 
+.btn-primary{
+  background: $theme-primary-color !important;
+  border: 1px solid $theme-primary-color !important;
+}
+.btn-secondary{
+  background: $theme-secondary-color !important;
+  border: 1px solid $theme-secondary-color !important;
+}
 
 /* ============= END BOOSTRAP HELPER VARIABLES ============== */
