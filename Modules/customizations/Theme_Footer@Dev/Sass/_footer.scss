@@ -15,20 +15,16 @@ div.footer-content-box {
 }
 
 div.footer-content-nav-column {
-	@extend .col-md-2;
+	@extend .col-md-3;
 	@extend .col-sm-6;
-	@extend .col-xs-6;
 	&:first-of-type {
-		@extend .col-md-3;
 		padding-left: 0;
 	}
 	&:last-of-type {
-		@extend .col-md-3;
-		@extend .col-sm-12;
-		@extend .col-xs-12;
 		padding-right: 0;
 		margin-bottom: 0;
 	} // Title
+
 	div>p {
 		font-size: $theme-md-font-size;
 		color: $theme-footer-ft-color-primary;
@@ -40,8 +36,8 @@ div.footer-content-nav-column {
 		width: 100%;
 		margin: $theme-base-size * 4 0;
 		font-family:$font-family-primary;
-		@media (max-width: $screen-md-min) { 
-			//font-size: $theme-sm-font-size; 
+		@media (max-width: $screen-md-min) {
+			//font-size: $theme-sm-font-size;
 		}
 	}
 	ul.footer-content-nav-list,
@@ -65,15 +61,13 @@ div.footer-content-nav-column {
 		}
 	}
 	@media (max-width: $screen-md-min) {
-		&:last-of-type,
-		&:nth-of-type(3) {
-			margin-left: 0;
-			padding-left: 0;
+		min-height: 200px;
+		padding: 0 10px;
+		&:last-of-type{
+			padding-right: 10px;
 		}
-		&:nth-of-type(2),
-		&:nth-of-type(4) {
-			margin-right: 0;
-			padding-right: 0;
+		&:first-of-type{
+			padding-left: 10px;
 		}
 	}
 }
@@ -82,6 +76,11 @@ div.footer-content-nav-column {
 li.footer-support-content {
 	@extend .this-full-width;
 	margin-bottom: 6px;
+	a{
+		&:hover{
+			text-decoration: underline;
+		}
+	}
 	p {
 		color: $theme-footer-ft-color-primary;
 		text-align: left;

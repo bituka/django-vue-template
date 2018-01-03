@@ -34,7 +34,7 @@ govern your access and use. }}
 					</div>
 					<!--Merchandising zone-->
 					<div class="home-cms-page-merchandising" data-cms-area="home_merchandising-top-list" data-cms-area-filters="path">
-						
+
 					</div>
 				</div>
 			</div>
@@ -57,9 +57,6 @@ govern your access and use. }}
 					</div>
 					<!--Merchandising zone-->
 					<div class="home-cms-page-merchandising" data-cms-area="home_merchandising-top-list-2" data-cms-area-filters="path">
-					</div>
-
-					<div class="view-button-section" data-cms-area="home_merchandising_view-more" data-cms-area-filters="path">
 					</div>
 
 				</div>

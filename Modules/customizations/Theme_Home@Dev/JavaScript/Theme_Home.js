@@ -45,42 +45,23 @@ define('Theme_Home', ['Home.View', 'jQuery', 'underscore'], function Theme_Home(
                 }
 
                 var existCondition = setInterval(function() { // We need to wait until element exist
-                    if (self.$('.home-cms-page-merchandising').find('ul.home-merch').length) {
-                        clearInterval(existCondition);
-                        var slider = _.initBxSlider(self.$('.home-cms-page-merchandising').find('ul.home-merch'), {
-                            nextText: '<a class="home-gallery-next-icon"></a>',
-                            prevText: '<a class="home-gallery-prev-icon"></a>',
-                            auto: true,
-                            infiniteLoop: true,
-                            forceStart: true,
-                            pause: 5000,
-                            minSlides:1,
-                            maxSlides:4,
-                            slideWidth:255,
-                            slideMargin:30,
-                            onSlideAfter: function() {
-                                slider.stopAuto();
-                                slider.startAuto();
-                            }
-                        });
-                    }
-                }, 100);
+                  if (self.$('.home-cms-page-merchandising').find('ul.home-merch').length) {
+                  clearInterval(existCondition);
+                    var slider = _.initBxSlider(self.$('.home-cms-page-merchandising').find('ul.home-merch'), {
+                      nextText: '<a class="home-gallery-next-icon"></a>',
+                      prevText: '<a class="home-gallery-prev-icon"></a>',
+                      auto: true,
+                      infiniteLoop: true,
+                      forceStart: true,
+                      pause: 5000,
+                      minSlides:2,
+                      maxSlides:5,
+                      slideWidth:255,
+                      slideMargin:30
+                    });
+                  }
+                },300);
 
-                // _.delay(function () {
-                //     if (self.$('.home-items-carousel-container').find('ul.home-merch').length) {
-                //         _.initBxSlider(self.$('.home-items-carousel-container').find('ul.home-merch'), {
-                //             nextText: '<a class="home-gallery-next-icon"></a>'
-                //             , prevText: '<a class="home-gallery-prev-icon"></a>'
-                //             , pause: 6000
-                //             , infiniteLoop: true
-                //             , minSlides: 4
-                //             , pager: false
-                //             , maxSlides: 4
-                //             , slideWidth: 1000
-                //             , slideMargin: 0
-                //         });
-                //     }
-                // },2000);
 
             }
 

@@ -20,10 +20,23 @@ input[name="quantity"]{
 .btn-primary{
   background: $theme-primary-color !important;
   border: 1px solid $theme-primary-color !important;
+  transition: all 0.2s;
+  &:hover{
+    background: none !important;
+    border: 1px solid $theme-primary-color !important;
+    color: $theme-primary-color !important;
+  }
 }
 .btn-secondary{
   background: $theme-secondary-color !important;
   border: 1px solid $theme-secondary-color !important;
+  transition: all 0.2s;
+  color: white;
+  &:hover{
+    background: none !important;
+    border: 1px solid $theme-secondary-color !important;
+    color: $theme-secondary-color !important;
+  }
 }
 
 /* ============= END BOOSTRAP HELPER VARIABLES ============== */
