@@ -33,25 +33,6 @@ nav.header-menu-secondary-nav {
 				text-transform: uppercase;
 				font-size:$theme-md-font-size;
 				color: $theme-header-ft-color-primary; // LEVEL 1 Dropdown Links
-				&.header-menu-level1-anchor {
-					// &:after {
-					// 	@extend .fa;
-					// 	content: "\f107";
-					// 	top: 0px;
-					// 	border: none;
-					// 	right: 0;
-					// 	left: auto;
-					// 	font-weight: 700;
-					// 	margin-left: 7px;
-					// 	font-size: 17px;
-					// 	margin-top: 17px;
-					// 	float: right;
-					// 	position: relative;
-					// }
-					&:hover {
-						color: $theme-header-bck-color-gral;
-					}
-				} // HOME Link
 				&.header-menu-home-anchor {
 					&:after {
 						display: none !important;

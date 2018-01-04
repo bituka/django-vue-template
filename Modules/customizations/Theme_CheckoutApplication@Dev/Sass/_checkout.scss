@@ -335,6 +335,7 @@ div.order-wizard-confirmation-module {
 	}
 	// Continue Shopping btn.
 	a.order-wizard-confirmation-module-continue {
+		border-radius: 0;
 		@media (max-width: $screen-md-min) {
 			margin-right: 0;
 			width: 100%;
@@ -342,6 +343,7 @@ div.order-wizard-confirmation-module {
 	}
 	// Download PDF btn.
 	a.order-wizard-confirmation-module-download-pdf {
+		border-radius: 0;
 		@media (max-width: $screen-md-min) { width: 100%; }
 	}
 	@media (max-width: $screen-md-min) { padding-top: 0; }
@@ -429,4 +431,8 @@ button.order-wizard-step-button-back {
 			@extend .btn-secondary;
 		}
 	}
+}
+section#wizard-step-content div.order-wizard-address-module-show-addresses-container div.address-details a, section#wizard-step-content div.order-wizard-shipmethod-module div.address-details a,
+a.order-wizard-address-module-new-button{
+	border-radius: 0;
 }
