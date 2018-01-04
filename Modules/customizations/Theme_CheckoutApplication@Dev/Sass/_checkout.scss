@@ -1,7 +1,7 @@
 div.layout.sec_wizard {
-	div#main-container { 
+	div#main-container {
 		@media (min-width: $screen-md-min) {
-		padding-top: 89px;
+		padding-top: 180px;
 		}
 	}
 }
@@ -111,12 +111,12 @@ div.checkout-layout-content {
 section#wizard-step-content-right {
 	// Order Summary
 	div.order-wizard-cart-summary-container {
-		//border-color: $theme-secondary-color;
+		border:1px solid $theme-neutral-color;
 		box-shadow: none;
 		// Title
 		h3.order-wizard-cart-summary-title {
-			background: $theme-neutral-color;
-			//color: $theme-tertiary-color;
+			background: none;
+			border-bottom:1px solid $theme-neutral-color;
 			//font-weight: $theme-font-weight-light;
 		}
 	}
@@ -137,7 +137,7 @@ section#wizard-step-content-right {
 	div.order-wizard-promocodeform {
 		a.order-wizard-promocodeform-expander-head-toggle {
 			border-color: $theme-neutral-color;
-			i { 
+			i {
 				color: $theme-secondary-color;
 			}
 		}
@@ -145,8 +145,8 @@ section#wizard-step-content-right {
 		div.order-wizard-promocodeform-expander-body {
 			background: transparent;
 			border-color: $theme-neutral-color;
-			input[type="text"] { 
-				//border-color: #CCC; 
+			input[type="text"] {
+				//border-color: #CCC;
 			}
 		}
 	}
@@ -219,16 +219,16 @@ div.order-wizard-paymentmethod-giftcertificates-module {
 	form#gift-certificate-form {
 		//border-color: $theme-secondary-color;
 		background: transparent;
-		input[type="text"] { 
-			//border-color: #CCC; 
+		input[type="text"] {
+			//border-color: #CCC;
 		}
 	}
 }
 
 div.order-wizard-paymentmethod-selector-module {
 	border: none !important;
-	> select { 
-		//border-color: $theme-secondary-color; 
+	> select {
+		//border-color: $theme-secondary-color;
 	}
 	div.order-wizard-paymentmethod-creditcard-module-selected-card {
 		border: none;
@@ -249,15 +249,15 @@ div.order-wizard-paymentmethod-selector-module {
 }
 
 // Biiling Adress
-h3.order-wizard-address-module-title { 
+h3.order-wizard-address-module-title {
 	//color: #454545;
 }
 
 // Review Your Order
 section.order-wizard-showshipments-module-shipping-details {
 	border: none !important;
-	h3.order-wizard-showshipments-module-shipping-title { 
-		//color: $theme-primary-color; 
+	h3.order-wizard-showshipments-module-shipping-title {
+		//color: $theme-primary-color;
 	}
 	div.address-details {
 		border: none;
@@ -267,8 +267,8 @@ section.order-wizard-showshipments-module-shipping-details {
 		color: $theme-primary-color;
 		&:hover { text-decoration: underline; }
 	}
-	select { 
-		//border-color: $theme-secondary-color; 
+	select {
+		//border-color: $theme-secondary-color;
 	}
 }
 
@@ -314,8 +314,8 @@ div.order-wizard-showpayments-module-billing-address {
 
 section.order-wizard-showpayments-module-details {
 	border: none !important;
-	h3 { 
-		//color: $theme-primary-color; 
+	h3 {
+		//color: $theme-primary-color;
 	}
 	div.address-details, div.order-wizard-showpayments-module-payment-methods-summary {
 		padding: 0;
@@ -365,9 +365,7 @@ button.order-wizard-step-button-continue {
 }
 // Back
 button.order-wizard-step-button-back {
-	background: $theme-secondary-color;
-	border-color: $theme-secondary-color;
-	&:hover { color: $theme-secondary-color; }
+	@extend .btn-secondary;
 }
 
 
@@ -378,3 +376,57 @@ button.order-wizard-step-button-back {
 }
 
 .global-views-format-payment-method-header-icon{max-width:39px;height:auto!important;}
+.order-wizard-cartitems-module-ship-accordion-head-toggle{
+	border: 1px solid $theme-neutral-color;
+	.order-wizard-cartitems-module-ship-accordion-toggle-icon{
+		color: #808080;
+	}
+}
+.order-wizard-cartitems-module-ship-accordion-body{
+	border: 1px solid $theme-neutral-color;
+	border-top: none;
+}
+.order-wizard-cartitems-module-ship-edit-cart-link{
+	@extend .btn-secondary;
+	border-radius: 0;
+}
+.order-wizard-address-module-show-addresses-container,
+.order-wizard-shipmethod-module,
+.order-wizard-paymentmethod-selector-module,
+.order-wizard-showshipments-module-shipping-details,
+.order-wizard-showpayments-module-details{
+	@media(min-width: 768px){
+		padding: 0;
+	}
+}
+.order-wizard-paymentmethod-giftcertificates-module-expander-head-toggle{
+	border: 1px solid #cccccc;
+}
+.order-wizard-paymentmethod-selector-module{
+	margin-top: 30px;
+	h2.order-wizard-paymentmethod-selector-module-header{
+		font-size: 18px !important;
+	}
+}
+.order-wizard-paymentmethod-giftcertificates-module-form{
+	border: 1px solid #cccccc;
+	border-top: none;
+}
+#wizard-step-content h3.order-wizard-address-module-title{
+	font-size: 18px !important;
+}
+.address-edit-fields{
+	margin-top: 0;
+}
+.address-details-phone{
+	a{
+		padding: 5px;
+	}
+}
+.order-wizard-showshipments-module-shipping-details-address-view{
+	.address-details-actions{
+		.address-details-edit-address{
+			@extend .btn-secondary;
+		}
+	}
+}

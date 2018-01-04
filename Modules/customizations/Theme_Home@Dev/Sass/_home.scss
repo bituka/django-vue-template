@@ -534,7 +534,7 @@ section.home-items-carousel {
 // Merchandising Zone Title
 h3.merchandising-title {
 	font-size: $home-merch-title-ft-size;
-	//font-weight: $theme-font-weight-light;
+	font-weight: 500;
 	text-align: center;
 	text-transform: uppercase;
 	padding: $theme-base-size * 10 0;
@@ -560,6 +560,7 @@ h3.merchandising-title {
 					a{
 						display: block;
 						margin-bottom: 10px;
+						font-weight: 400;
 					}
 					h5{
 						a{

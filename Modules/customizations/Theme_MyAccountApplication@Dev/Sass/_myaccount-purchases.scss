@@ -79,3 +79,15 @@ a.overview-payment-card-button-edit{
 .list-header-view{
 	border-bottom: 1px solid #e4e4e4;
 }
+.order-history-list-header-button-group{
+	.order-history-list-header-button-all-active,
+	.order-history-list-header-button-open-active{
+		background: $theme-secondary-ft-color;
+		border-radius: 0 !important;
+	}
+	.order-history-list-header-button-open,
+	.order-history-list-header-button-all{
+		border-radius: 0 !important;
+		border:1px solid $theme-secondary-ft-color;
+	}
+}

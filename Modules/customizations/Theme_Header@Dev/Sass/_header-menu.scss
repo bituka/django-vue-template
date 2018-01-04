@@ -61,10 +61,8 @@ nav.header-menu-secondary-nav {
 			&:hover,
 			&:focus,
 			&:visited {
-				background-color: $theme-header-ft-color-primary-active;
-				color: $theme-header-bck-color-gral;
 				>a {
-					color: $theme-header-bck-color-gral;
+					color: $theme-primary-color;
 				}
 			}
 		}

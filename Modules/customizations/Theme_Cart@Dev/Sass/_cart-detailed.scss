@@ -83,3 +83,19 @@ div.cart-detailed-body {
 		}
 	}
 }
+.item-relations-related-carousel-next,
+.item-relations-related-carousel-prev{
+	border: none;
+	color: $theme-secondary-ft-color;
+	font-size:50px;
+	padding: 0;
+	&:hover{
+		background: none;
+		color: $theme-secondary-ft-color;
+	}
+}
+.recently-viewed-items{
+	.bx-viewport{
+		min-height: 300px;
+	}
+}
