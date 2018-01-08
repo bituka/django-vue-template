@@ -242,19 +242,7 @@ div.home-image-slider {
 		}
 	}
 }
-// Merchandising Zone
-div.home-merchandizing-zone {
-	@extend .this-full-width;
-	padding: $theme-base-size * 2 0 $theme-base-size * 10 0;
 
-	div.row {
-		margin: 0;
-		width: 100%;
-	}
-	@media (max-width: $screen-md-min) {
-		padding: $theme-base-size * 6 0;
-	}
-}
 // Home Full Width Banner
 section.home-full-banner-section {
 	@extend .this-full-width;
@@ -427,126 +415,7 @@ section.home-mix-banner-container {
 section.home-items-carousel {
 	@extend .this-full-width;
 	padding: 30px 0; // Title
-
-	h3 {
-		text-align: left; //font-weight: $sc-font-weight-normal;
-		border-bottom: 1px solid $theme-neutral-color;
-		font-size: $home-merch-title-ft-size;
-		padding-bottom: 7px; //color:$theme-primary-ft-color;
-		margin-bottom: $theme-base-size * 10;
-		@media (max-width: $screen-xs-min) {
-			font-size: 20px;
-		}
-	}
-	// Item container
-
-	div.home-items-carousel-container {
-		@extend .this-full-width;
-		margin-top: 0;
-		text-align: center;
-		@media(max-width:$screen-xs-min) {
-			width: 260px;
-			float: none;
-			margin: 0 auto;
-			text-align: center;
-		}
-
-		div.bx-wrapper {
-			margin: 0 auto;
-		}
-
-		> li {
-			@extend .this-full-width;
-		}
-
-		div.bx-viewport {
-			//width: 90% !important;
-			height: 300px!important;
-			margin: 0 auto;
-
-			a.thumbnail {
-				width: 90%;
-				display: inline-block;
-				margin: 0 auto;
-			}
-
-			h5 {
-				@extend .this-full-width;
-
-				a {
-					font-size: $theme-normal-font-size;
-					text-align: center;
-					display: block;
-					text-decoration: none;
-					text-transform: uppercase;
-					color: $theme-primary-ft-color;
-					font-weight: $sc-font-weight-normal;
-					padding: $theme-base-size * 3 0;
-					min-height: 70px;
-					@media (max-width: $screen-md-min) {
-						min-height: 75px;
-					}
-					@media (max-width: $screen-xs-min) {
-						font-size: $theme-normal-font-size;
-					}
-				}
-			}
-		}
-		// Next & Prev arrow
-		.bx-controls {
-			margin: 0;
-
-			a.home-gallery-prev-icon {
-				left: 0;
-				color: $theme-color-links;
-			}
-
-			a.home-gallery-next-icon {
-				right: 0;
-				color: $theme-color-links;
-			}
-		}
-
-		.bx-controls.bx-has-controls-direction {
-			.bx-controls-direction {
-				@media(max-width:$screen-md-min) {
-					display: none;
-				}
-			}
-
-			.bx-pager.bx-default-pager {
-				@media(min-width:$screen-md-min) {
-					display: none;
-				}
-
-				.bx-pager-item {
-					a {
-						overflow: hidden;
-						color: transparent;
-						background-color: $theme-primary-ft-color;
-						margin: 5px;
-					}
-				}
-			}
-		}
-	}
-}
-// Merchandising Zone Title
-h3.merchandising-title {
-	font-size: $home-merch-title-ft-size;
-	font-weight: 500;
-	text-align: center;
-	text-transform: uppercase;
-	padding: $theme-base-size * 10 0;
-	@media (max-width: $screen-xs-min) {
-		font-size: 20px;
-	}
-}
-
-.home-merchandizing-zone {
-	padding: 0 0 50px 0 !important;
-
-	.home-cms-page-merchandising {
+	.home-items-carousel-container {
 		.bx-viewport {
 			height: auto !important;
 			@media(max-width: 768px){
@@ -610,6 +479,65 @@ h3.merchandising-title {
 			.home-gallery-next-icon {
 				right: 0;
 			}
+		}
+	}
+}
+
+// Merchandising Zone no carousel
+.home-merchandizing-zone {
+	@extend .this-full-width;
+	padding: 0 0 50px 0 !important;
+	div.row {
+		margin: 0;
+		width: 100%;
+	}
+	@media (max-width: $screen-md-min) {
+		padding: $theme-base-size * 6 0;
+	}
+
+	aside{
+		.col-sm-3{
+			.item-cell{
+				border: 1px solid $theme-neutral-color;
+				a.thumbnail{
+					display: block;
+				}
+				h5{
+					a{
+						display: block;
+						min-height: 50px;
+						font-weight: 400;
+						padding: 0 5px;
+					}
+				}
+				.center{
+					@extend .clearfix;
+					text-align: center;
+					margin-bottom: 15px;
+					.global-views-star-rating{
+						float: none;
+						display: inline-block;
+					}
+				}
+				a{
+					margin-bottom: 15px;
+					border-radius: 0;
+				}
+			}
+		}
+	}
+}
+.home-wrappper{
+	// Merchandising Zone Title
+	h3{
+		font-size: $home-merch-title-ft-size;
+		font-weight: 500;
+		text-align: center;
+		text-transform: uppercase;
+		padding: 50px 0;
+		@media (max-width: $screen-xs-min) {
+			font-size: 20px;
+			padding: 30px 0;
 		}
 	}
 }

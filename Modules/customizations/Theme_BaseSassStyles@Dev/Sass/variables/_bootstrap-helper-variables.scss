@@ -1,4 +1,12 @@
 /* ============= START BOOSTRAP HELPER VARIABLES ============== */
+i[class^="global-views-star-rating"] {
+  color: $theme-rating-stars-color !important;
+  opacity: 1;
+  &.global-views-star-rating-empty { opacity: 0.4 !important; }
+}
+
+
+
 
 button{
   &[data-action="minus"],

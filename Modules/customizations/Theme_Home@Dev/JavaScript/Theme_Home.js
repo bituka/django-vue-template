@@ -45,9 +45,9 @@ define('Theme_Home', ['Home.View', 'jQuery', 'underscore'], function Theme_Home(
                 }
 
                 var existCondition = setInterval(function() { // We need to wait until element exist
-                  if (self.$('.home-cms-page-merchandising').find('ul.home-merch').length) {
+                  if (self.$('.home-items-carousel-container').find('ul.home-merch').length) {
                   clearInterval(existCondition);
-                    var slider = _.initBxSlider(self.$('.home-cms-page-merchandising').find('ul.home-merch'), {
+                    var slider = _.initBxSlider(self.$('.home-items-carousel-container').find('ul.home-merch'), {
                       nextText: '<a class="home-gallery-next-icon"></a>',
                       prevText: '<a class="home-gallery-prev-icon"></a>',
                       auto: true,
