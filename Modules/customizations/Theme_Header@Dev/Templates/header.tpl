@@ -35,7 +35,7 @@ your access and use. }}
 			</div>
 
 			<div class="header-right-menu">
-				<ul class="header-menu-actions">
+				<!-- <ul class="header-menu-actions">
 					<li data-view="StoreLocatorHeaderLink"></li>
 					<div class="links-no-mobile clearfix">
 						<li class="separator"> | </li>
@@ -46,7 +46,7 @@ your access and use. }}
 						<li><a data-touchpoint="customercenter" data-hashtag="#reorderItems">EASY REORDER</a></li>
 						<li class="separator"> | </li>
 					</div>
-				</ul>
+				</ul>-->
 				<div class="header-menu-profile" data-view="Header.Profile">
 				</div>
 
