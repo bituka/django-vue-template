@@ -326,6 +326,7 @@ section.order-wizard-showpayments-module-details {
 // "Thank You For Shopping With Us!"
 div.order-wizard-confirmation-module {
 	background: transparent;
+	border: 1px solid $theme-neutral-color;
 	h2, p { color: $theme-primary-color; }
 	p.order-wizard-confirmation-module-body {
 		> a {
