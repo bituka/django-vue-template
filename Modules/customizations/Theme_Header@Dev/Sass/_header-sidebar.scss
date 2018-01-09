@@ -7,6 +7,20 @@
 			a{color:$theme-header-ft-color-mobile;}
 		}
 	}
+	.global-views-currency-selector{
+		width: calc(100% - 30px);
+		.global-views-currency-selector-addon{
+			width: 100%;
+			background: none;
+			border: none;
+			color: white;
+			font-size: 15px;
+			line-height: 44px;
+		}
+		.global-views-currency-selector-select{
+			width: 100%;
+		}
+	}
 }
 div.header-sidebar-menu-wrapper {
 	li {
@@ -31,4 +45,5 @@ div.header-sidebar-menu-wrapper {
 			}
 		}
 	}
+
 }

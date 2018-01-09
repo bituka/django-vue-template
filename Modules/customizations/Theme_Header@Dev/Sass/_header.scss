@@ -215,3 +215,32 @@ div.header-menu-images {
 		display: none;
 	}
 }
+.header-subheader-options{
+	padding: 0;
+	line-height: 28px;
+	margin-right: 15px;
+	@media(max-width: 992px){
+		display: none;
+	}
+	a.header-subheader-settings-link{
+		color: black;
+	}
+	.header-menu-settings-dropdown{
+    border: 1px solid #cccccc;
+		.global-views-currency-selector{
+			width: 100%;
+			span.global-views-currency-selector-addon{
+				border: none;
+				background: none;
+				font-size: 15px;
+				float: none;
+				display: inline-block;
+				width: 100%;
+			}
+			.global-views-currency-selector-select{
+				width: 100%;
+		    border: 1px solid #cccccc !important;
+			}
+		}
+	}
+}
