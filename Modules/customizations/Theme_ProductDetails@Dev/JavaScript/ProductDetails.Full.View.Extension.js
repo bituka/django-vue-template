@@ -12,6 +12,9 @@ define(
 
                 // START inclusion of Badges Logic
                 var getBadge = model.get('item').get('custitem_tt_itembadges');
+                var addInformation = model.get('item').get('custitem_addition_information');
+                var warranty = model.get('item').get('custitem_warranty');
+                var storeDescription = model.get('item').get('storedetaileddescription');
                 var badge = '';
                 if (getBadge === 'NEW') {
                     badge = '<div class="custombadge new">NEW</div>';
@@ -26,7 +29,10 @@ define(
 
 				_.extend(context, {
                     // @property {string} badge
-                    badge: badge
+                    badge: badge ,
+                    addInformation: addInformation ,
+                    storeDescription: storeDescription ,
+                    warranty: warranty
 				});
 			}
         });

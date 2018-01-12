@@ -213,5 +213,30 @@ div.footer-content-socials-column-5 {
 		i.footer-social-pinterest {
 			@extend %fa-pinterest;
 		}
+		i.footer-social-instagram {
+			@extend %fa-instagram;
+		}
+	}
+}
+.newsletter-link{
+	float:left;
+	margin: 10px 0;
+	a{
+		display: block;
+		padding: 10px 25px;
+		border: 1px solid $theme-secondary-ft-color;
+		border-radius: 0 15px;
+		text-align: center;
+		h3{
+			font-size: 22px;
+			text-transform: capitalize;
+			font-weight: 400;
+		}
+		&:hover{
+			background:lighten($theme-secondary-ft-color , 15%);
+			h3{
+				color: white;
+			}
+		}
 	}
 }

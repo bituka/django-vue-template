@@ -24,11 +24,8 @@
 				</div>
 			</div>
 			<div class="footer-content-nav-column clearfix" id="footer-newsletter-container">
-				<div class="footer-content-title-column-5" data-cms-area="footer_content-title-column-5" data-cms-area-filters="global">
-				</div>
-                <div data-view="FooterContent"></div>
-                <div class="footer-content-socials-column-5" data-cms-area="footer_content-socials-column-5" data-cms-area-filters="global">
-				</div>
+				<div class="footer-content-title-column-5" data-cms-area="footer_content-title-column-5" data-cms-area-filters="global"></div>
+          <div class="footer-content-socials-column-5" data-cms-area="footer_content-socials-column-5" data-cms-area-filters="global"></div>
 			</div>
 		</div>
 	</div>
@@ -36,7 +33,7 @@
 <div class="footer-bottom-content-box">
 	<div class="footer-bottom-section">
 		<div class="footer-content-copyright">
-			{{translate '&copy; TAVANO TEAM $(0). All right reserved.' actualYear}}
+			{{translate '© 1998 - $(0) thetubestore Inc. All rights reserved' actualYear}}
 		</div>
 		<div class="footer-content-payments">
 			<div class="footer-content-payment-img" data-cms-area="footer_content-payment-img" data-cms-area-filters="global">
