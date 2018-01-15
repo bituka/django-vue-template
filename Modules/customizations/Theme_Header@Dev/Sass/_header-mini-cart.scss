@@ -76,3 +76,9 @@ div.header-mini-cart-buttons {
 	color: #FFF;
 	background-color: transparent;
 }
+.header-mini-cart-item-cell-title-navigable{
+	color:$theme-secondary-ft-color;
+	&:hover{
+		color:lighten($theme-secondary-ft-color , 10%);
+	}
+}

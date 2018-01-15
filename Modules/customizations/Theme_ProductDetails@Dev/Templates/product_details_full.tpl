@@ -116,7 +116,7 @@ govern your access and use. }}
 		  <!-- Tab panes -->
 		  <div class="tab-content">
 		    <div role="tabpanel" class="tab-pane fade in active" id="tab-1">{{{storeDescription}}}</div>
-		    <div role="tabpanel" class="tab-pane fade" id="tab-2">{{{addInformation}}} <hr> {{{warranty}}}</div>
+		    <div role="tabpanel" class="tab-pane fade" id="tab-2">{{{addInformation}}} {{#if warranty}} <hr> {{/if}} {{{warranty}}}</div>
 		  </div>
 
 		</div>

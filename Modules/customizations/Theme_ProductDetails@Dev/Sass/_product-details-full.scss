@@ -248,6 +248,7 @@
 
 .product-details-full-actions {
 	margin-bottom: $sc-margin-base * 2;
+	clear: none;
 }
 
 .product-details-full-add-to-cart-help {
@@ -266,6 +267,9 @@
 	padding: 0 10px;
 	.cart-add-to-cart-button-button {
 		@include btn($theme-primary-color);
+		@media(max-width: 480px){
+			margin-bottom: 15px;
+		}
 	}
 }
 
@@ -580,5 +584,10 @@ div.cart-confirmation-modal div.cart-confirmation-modal-details div.cart-confirm
 				position: relative;
 			}
 		}
+	}
+}
+.product-details-quantity-container{
+	@media(max-width: 768px){
+		display: inline-block;
 	}
 }

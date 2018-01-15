@@ -102,3 +102,14 @@ div.cart-detailed-body {
 .item-relations-correlated h3{
 	font-size: 18px;
 }
+.cart-lines-name-link{
+	color:$theme-secondary-ft-color;
+	&:hover{
+		color:lighten($theme-secondary-ft-color , 10%);
+	}
+}
+.cart-lines-price .transaction-line-views-price-lead,
+.product-views-price-lead,
+.product-list-details-later-shopping-cart-title-details-count{
+	color: $theme-primary-color;
+}

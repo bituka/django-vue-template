@@ -6,11 +6,13 @@ div.facets-items-collection-view-cell-span6 {
 		margin-bottom: $theme-base-size * 5;
 		text-align: center;
 		@extend .cells-border;
+		@extend .clearfix;
 	}
 	// Item Image
 	div.facets-item-cell-table-image-wrapper {
 		//border: 1px solid $theme-neutral-color;
 		padding: $theme-base-size * 2;
+		width: 100%;
 		a { display: block; }
 	}
 	// Item name
@@ -19,7 +21,7 @@ div.facets-items-collection-view-cell-span6 {
 		min-height: 70px;
 		text-align: center;
 		a {
-			@extend .cells-item-name; 
+			@extend .cells-item-name;
 			padding: 0;
 			@media (max-width: $screen-lg-min) { min-height: 90px; }
 			@media (max-width: $screen-sm-min) { min-height: 75px; }
