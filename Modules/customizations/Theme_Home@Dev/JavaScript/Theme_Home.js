@@ -6,7 +6,7 @@ define('Theme_Home', ['Home.View', 'jQuery', 'underscore'], function Theme_Home(
                 this.windowWidth = jQuery(window).width();
 
                 this.on('afterViewRender', function () {
-                    this.listenToOnce(
+                    this.listenTo(
                         typeof CMS !== 'undefined' ? CMS : Backbone.Events, 'page:content:set', this.initSliders
                     );
                 });
@@ -32,21 +32,28 @@ define('Theme_Home', ['Home.View', 'jQuery', 'underscore'], function Theme_Home(
 
                 var self = this;
 
-                _.initBxSlider(self.$('[data-slider]'), {
-                    nextText: '<a class="home-gallery-next-icon"></a>'
-                    , prevText: '<a class="home-gallery-prev-icon"></a>'
-                    , auto: true
-                    , pause: 6000
-                    , pagerCustom: '.main-slider-pager'
-                });
-
                 if(SC.isPageGenerator()){
                     return;
                 }
 
+                var condition = setInterval(function() { // We need to wait until element exist
+                    if (self.$('[data-slider]')) {
+                        clearInterval(condition)
+                        self.$('[data-slider]').each(function(index, el){
+                            _.initBxSlider($(el), {
+                                nextText: '<a class="home-gallery-next-icon"></a>'
+                                , prevText: '<a class="home-gallery-prev-icon"></a>'
+                                , auto: true
+                                , pause: 6000
+                                , pagerCustom: '.main-slider-pager'
+                            });
+                        });
+                    }
+                }, 300);
+
                 var existCondition = setInterval(function() { // We need to wait until element exist
                   if (self.$('.home-items-carousel-container').find('ul.home-merch').length) {
-                  clearInterval(existCondition);
+                    clearInterval(existCondition);
                     var slider = _.initBxSlider(self.$('.home-items-carousel-container').find('ul.home-merch'), {
                       nextText: '<a class="home-gallery-next-icon"></a>',
                       prevText: '<a class="home-gallery-prev-icon"></a>',
