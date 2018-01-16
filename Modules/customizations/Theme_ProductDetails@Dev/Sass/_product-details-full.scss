@@ -603,3 +603,7 @@ div.product-reviews-center a.product-reviews-center-container-footer-button{
 .product-reviews-center-more-info-content-container{
 	background: white;
 }
+.product-list-control-new-item-button-create{
+	border-radius: 0;
+	@extend .btn-primary;
+}

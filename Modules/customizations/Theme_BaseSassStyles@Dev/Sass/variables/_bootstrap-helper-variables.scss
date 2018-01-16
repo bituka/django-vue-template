@@ -29,6 +29,7 @@ input[name="quantity"]{
   background: $theme-primary-color !important;
   border: 1px solid $theme-primary-color !important;
   transition: all 0.2s;
+  color: white !important;
   &:hover{
     background: none !important;
     border: 1px solid $theme-primary-color !important;
