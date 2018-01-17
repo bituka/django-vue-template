@@ -610,3 +610,19 @@ div.product-reviews-center a.product-reviews-center-container-footer-button{
 label.product-views-option-tile-label{
 	color: $theme-input-color;
 }
+.back-in-stock{
+	margin-top: 15px;
+	.modal-dialog{
+		.close{
+			float: right;
+			font-size: 20px;
+		}
+		h4.modal-title{
+			font-size: 18px;
+    text-transform: none;
+		}
+		.form-control{
+			max-width: 320px;
+		}
+	}
+}

@@ -16,6 +16,7 @@ govern your access and use. }}
 			<div class="product-details-full-content-header">
 				<h1 class="product-details-full-content-header-title" itemprop="name">{{pageHeader}}</h1>
 				<div class="product-details-full-rating" data-view="Global.StarRating"></div>
+
 				<!-- addition START BADGES -->
 				<div class="pdp-badge">
 				{{#if badge}}
@@ -48,6 +49,38 @@ govern your access and use. }}
               </p>
 						</div>
 						{{/if}}
+						<!-- BACK IN STOCK NOTIFICATION -->
+						<div class="back-in-stock">
+							<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
+								Email me when back in stock
+							</button>
+
+							<!-- Modal -->
+							<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<h4 class="modal-title" id="myModalLabel">Email me when back in stock</h4>
+										</div>
+										<div class="modal-body">
+											<form action="">
+												<label for="email">
+													Email address:
+												</label>
+												<input type="email" class="form-control" id="email" name="email">
+											</form>
+
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+											<button type="button" class="btn btn-primary">Send</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- END OF BACK IN STOCK NOTIFICATION -->
 
 						<section class="product-details-full-info">
 							<div id="banner-summary-bottom" class="product-details-full-banner-summary-bottom"></div>
