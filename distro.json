@@ -15,7 +15,7 @@
         "basic_modules/ApplicationConfigurations": "1.0.0",
         "basic_modules/Backbone.PluginInstaller": "1.0.0",
         "basic_modules/Backbone.View.PostContextHook": "1.0.0",
-        
+
         "extensions/MyExampleCartExtension1": "1.0.0",
         "extensions/MyExamplePDPExtension1": "1.0.0",
         "extensions/MyExamplePDPExtension2": "1.0.0",
@@ -115,7 +115,6 @@
         "suitecommerce/PromocodeSupport": "2.1.0",
         "suitecommerce/QuantityPricing": "1.0.1",
         "suitecommerce/QuickAdd": "2.0.1",
-        "suitecommerce/QuickOrder": "1.0.1",
         "suitecommerce/QuickOrderAccessPoints": "1.0.0",
         "suitecommerce/Quote": "4.0.1",
         "suitecommerce/QuoteToSalesOrder": "2.0.1",
@@ -194,7 +193,7 @@
         "customizations/Theme_Newsletter":"Dev",
         "customizations/Theme_Home":"Dev",
         "customizations/Theme_Content":"Dev",
-        "customizations/Theme_NavigationHelper": "Dev",        
+        "customizations/Theme_NavigationHelper": "Dev",
         "customizations/Theme_Facets":"Dev",
         "customizations/Theme_LoginRegister":"Dev",
         "customizations/Theme_CheckoutApplication":"Dev",
@@ -276,7 +275,6 @@
                     "BrontoIntegration",
                     "Sensors",
                     "QuantityPricing",
-                    "QuickOrder",
                     "StoreLocatorAccessPoints",
                     "Newsletter",
                     "ProductDetailToQuote",
@@ -411,7 +409,6 @@
                     "CMSadapterInstaller",
                     "Sensors",
                     "QuantityPricing",
-                    "QuickOrder",
                     "GoogleMap",
                     "GoogleMap.Configuration",
                     "StoreLocatorAccessPoints",
@@ -424,7 +421,7 @@
 
                     "Theme_Header",
                     "Theme_Footer",
-                    "NavigationHelper.Extension" 
+                    "NavigationHelper.Extension"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -547,7 +544,7 @@
 
                     "Theme_Header",
                     "Theme_Footer",
-                    "NavigationHelper.Extension" 
+                    "NavigationHelper.Extension"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -918,7 +915,6 @@
                         "CMSadapter",
                         "RequestQuoteAccessPoints",
                         "QuickOrderAccessPoints",
-                        "QuickOrder",
                         "QuickAdd",
                         "QuantityPricing",
                         "StoreLocatorAccessPoints",

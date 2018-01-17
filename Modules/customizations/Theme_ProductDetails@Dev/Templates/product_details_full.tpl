@@ -41,6 +41,14 @@ govern your access and use. }}
 					<form id="product-details-full-form" data-action="submit-form" method="POST">
 						<div data-view="Product.Sku"></div>
 
+						{{#if showAvailability}}
+						<div class="product-details-full-availabity">
+							<p class="availability">{{translate 'Availability:'}} <br>
+                  <span>{{translate 'Usually ships within 24 hours.'}}</span>
+              </p>
+						</div>
+						{{/if}}
+
 						<section class="product-details-full-info">
 							<div id="banner-summary-bottom" class="product-details-full-banner-summary-bottom"></div>
 						</section>
