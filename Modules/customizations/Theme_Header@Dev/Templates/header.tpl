@@ -15,6 +15,7 @@ your access and use. }}
 			</div>
 
 			<div class="header-right-menu">
+				<li class="blog-link"><a href="http://blog.thetubestore.com/" target="_blank">BLOG</a></li>
 				<!-- <ul class="header-menu-actions">
 					<li data-view="StoreLocatorHeaderLink"></li>
 					<div class="links-no-mobile clearfix">
