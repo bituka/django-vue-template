@@ -51,7 +51,13 @@
 			{{/if}}
 		</h2>
 
-		<!-- SKU 
+		{{#if showAvailability}}
+		<p class="facets-item-cell-list-availability">{{translate 'Availability:'}} <br>
+				<span>{{translate 'Usually ships within 24 hours.'}}</span>
+		</p>
+		{{/if}}
+
+		<!-- SKU
 		<div class="item-details-sku-container">
 			<span class="item-details-sku">
 				{{translate 'SKU:'}}
@@ -87,8 +93,8 @@
 
 
 {{!----
-Use the following context variables when customizing this template: 
-	
+Use the following context variables when customizing this template:
+
 	itemId (Number)
 	name (String)
 	url (String)

@@ -32,8 +32,13 @@
 			</span>
 		</a>
 	</h2>
+	{{#if showAvailability}}
+	<p class="facets-item-cell-table-availability">{{translate 'Availability:'}} <br>
+			<span>{{translate 'Usually ships within 24 hours.'}}</span>
+	</p>
+	{{/if}}
 
-	<!-- SKU 
+	<!-- SKU
 	<div class="item-details-sku-container">
 		<span class="item-details-sku">
 			{{translate 'SKU:'}}
@@ -56,7 +61,7 @@
 	<div class="facets-item-cell-table-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"  data-view="GlobalViews.StarRating">
 	</div>
 	{{/if}}
-	
+
 	<div class="facets-item-cell-table-stock">
 		<div data-view="ItemViews.Stock" class="facets-item-cell-table-stock-message"></div>
 	</div>
@@ -68,8 +73,8 @@
 
 
 {{!----
-Use the following context variables when customizing this template: 
-	
+Use the following context variables when customizing this template:
+
 	itemId (Number)
 	name (String)
 	url (String)

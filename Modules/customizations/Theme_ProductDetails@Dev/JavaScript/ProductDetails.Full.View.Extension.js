@@ -15,7 +15,8 @@ define(
                 var addInformation = model.get('item').get('custitem_addition_information');
                 var warranty = model.get('item').get('custitem_warranty');
                 var storeDescription = model.get('item').get('storedetaileddescription');
-                var badge = '';
+                var badge = '',
+                showAvailability = model.get('item').get('itemtype') === 'infoitem' ? false : true;
                 if (getBadge === 'NEW') {
                     badge = '<div class="custombadge new">NEW</div>';
                 } else if (getBadge === 'BEST SELLER') {
@@ -32,7 +33,8 @@ define(
                     badge: badge ,
                     addInformation: addInformation ,
                     storeDescription: storeDescription ,
-                    warranty: warranty
+                    warranty: warranty,
+                    showAvailability: showAvailability
 				});
 			}
         });
