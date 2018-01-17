@@ -35,8 +35,6 @@ govern your access and use. }}
 			</div>
 
 			<div class="product-details-full-main-content-right">
-				<div class="product-details-full-divider"></div>
-
 				<div class="product-details-full-main">
 					{{#if isItemProperlyConfigured}}
 					<form id="product-details-full-form" data-action="submit-form" method="POST">
