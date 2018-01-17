@@ -29,22 +29,8 @@ your access and use. }}
 				</ul>-->
 				{{#if showLanguagesOrCurrencies}}
 
-			
-						<ul class="header-subheader-options">
-							<li class="header-subheader-settings">
-								<a href="#" class="header-subheader-settings-link" data-toggle="dropdown" title="{{translate 'Settings'}}">
-									<i class="header-menu-settings-icon"></i>
-									<i class="header-menu-settings-carret"></i>
-								</a>
-								<div class="header-menu-settings-dropdown">
-									<h5 class="header-menu-settings-dropdown-title">{{translate 'Site Settings'}}</h5> {{#if showLanguages}}
-									<div data-view="Global.HostSelector"></div>
-									{{/if}} {{#if showCurrencies}}
-									<div data-view="Global.CurrencySelector"></div>
-									{{/if}}
-								</div>
-							</li>
-						</ul>
+
+			<div data-view="Global.CurrencySelector"></div>
 
 
 				{{/if}}
