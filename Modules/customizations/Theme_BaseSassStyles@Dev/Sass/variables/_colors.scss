@@ -46,7 +46,7 @@
     $theme-header-ft-color-primary:          #6b6b6b; // Main Header font color
     $theme-header-ft-color-primary-active:  $theme-header-bck-color-top; // Main nav hover background
     $theme-header-ft-color-secondary:       #000; // Header Top Bar font color
-    $theme-header-ft-color-tertiary:        #000; // Header Main nav sub-links color
+    $theme-header-ft-color-tertiary:        #6b6b6b; // Header Main nav sub-links color
 
     $theme-header-ft-color-primary-dark:    darken($theme-header-ft-color-primary, 55%);
 
@@ -95,7 +95,7 @@
     $theme-neutral-color:                   #e4e4e4;// Borders and neutral backgrounds (divider lines, fs borders ..)
     $theme-neutral-color-light:             lighten($theme-neutral-color, 6);
     $theme-neutral-color-lightest:          lighten($theme-neutral-color, 6);
-    $theme-input-color:                     #000;// Item Options & Forms: input, select, textareas
+    $theme-input-color:                     #6b6b6b;// Item Options & Forms: input, select, textareas
     $theme-input-color-dark:darken($theme-input-color, 20%); // Active -item options selected
 
     $sc-color-theme-background:$theme-neutral-color;
