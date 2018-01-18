@@ -36,7 +36,7 @@ div.header-menu-cart {
 
 // Header mini cart items container
 div.header-mini-cart {
-	border: $theme-base-size solid $theme-header-bck-color-top-dark;
+	border: 2px solid $theme-header-bck-color-top-dark;
 	border-top: 0;
 	&:before, &:after { display: none; }
 	// Item
