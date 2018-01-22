@@ -23,8 +23,8 @@
 
 
 {{!----
-Use the following context variables when customizing this template: 
-	
+Use the following context variables when customizing this template:
+
 	showCurrencySelector (Boolean)
 	availableCurrencies (Array)
 	currentCurrencyCode (String)

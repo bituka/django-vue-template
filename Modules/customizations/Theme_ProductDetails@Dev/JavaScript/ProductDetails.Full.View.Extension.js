@@ -16,7 +16,7 @@ define(
                 var warranty = model.get('item').get('custitem_warranty');
                 var storeDescription = model.get('item').get('storedetaileddescription');
                 var badge = '',
-                showAvailability = model.get('item').get('itemtype') === 'infoitem' ? false : true;
+                showAvailability = model.get('item').get('itemtype') === 'infoitem' ? true : false;
                 if (getBadge === 'NEW') {
                     badge = '<div class="custombadge new">NEW</div>';
                 } else if (getBadge === 'BEST SELLER') {

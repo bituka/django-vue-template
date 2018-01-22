@@ -266,8 +266,6 @@
   "custom_content_type_container.tpl.js",
   "quantity_pricing.tpl.js",
   "product_details_quickview.tpl.js",
-  "quick_order.tpl.js",
-  "quick_order_empty_cart.tpl.js",
   "store_locator_tooltip.tpl.js",
   "storelocator_accesspoints_headerlink.tpl.js",
   "sc_cct_html.tpl.js"
