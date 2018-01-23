@@ -15,6 +15,13 @@ your access and use. }}
 			</div>
 
 			<div class="header-right-menu">
+				{{#if showLanguagesOrCurrencies}}
+
+
+			<div data-view="Global.CurrencySelector"></div>
+
+
+				{{/if}}
 				<li class="blog-link"><a href="http://blog.thetubestore.com/" target="_blank">BLOG</a></li>
 				<!-- <ul class="header-menu-actions">
 					<li data-view="StoreLocatorHeaderLink"></li>
@@ -28,13 +35,7 @@ your access and use. }}
 						<li class="separator"> | </li>
 					</div>
 				</ul>-->
-				{{#if showLanguagesOrCurrencies}}
 
-
-			<div data-view="Global.CurrencySelector"></div>
-
-
-				{{/if}}
 				<div class="header-menu-profile" data-view="Header.Profile">
 				</div>
 
