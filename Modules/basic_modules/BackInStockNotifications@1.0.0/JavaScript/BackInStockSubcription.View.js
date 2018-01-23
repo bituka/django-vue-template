@@ -41,12 +41,6 @@ define( 'BackInStockSubscription.View',
 			{
 				this.model.set('item', this.item.get('internalid'));
 			}
-			
-			this.model.on('sync', jQuery.proxy(this, 'showSuccess'));
-
-			this.on('afterViewRender', function () {
-				this.$('[data-type="success-message"]').css({ display: 'none' });
-			});
 		},
 
 		showForm: function ()
@@ -62,6 +56,20 @@ define( 'BackInStockSubscription.View',
 		isEnabled: function ()
 		{
 			var itemBehavior = this.item.get('outofstockbehavior');
+
+			if( 
+				itemBehavior == 'DEFAULT' && 
+				( 
+					SC.Configuration.outofstockbehavior == 'Show message and ' ||
+					SC.Configuration.outofstockbehavior == 'Show...'
+				)
+			){
+				return true
+			}			
+			else
+			{
+				return false
+			}
 
 			return itemBehavior == 'DEFAULT';
 		},
