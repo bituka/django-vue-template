@@ -15,6 +15,7 @@
         "basic_modules/ApplicationConfigurations": "1.0.0",
         "basic_modules/Backbone.PluginInstaller": "1.0.0",
         "basic_modules/Backbone.View.PostContextHook": "1.0.0",
+        "basic_modules/BackInStockNotifications": "1.0.0",
 
         "extensions/MyExampleCartExtension1": "1.0.0",
         "extensions/MyExamplePDPExtension1": "1.0.0",
@@ -652,6 +653,7 @@
                 "ExternalPayment.Model",
                 "SC.BaseComponent",
                 "Cart.Component",
+                "BackInStockSubscription.Model",
 
                 "CMSOnSecure.Model",
                 "CMSOnSecure.ServiceController",

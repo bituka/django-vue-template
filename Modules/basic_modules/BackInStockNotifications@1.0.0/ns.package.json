@@ -9,8 +9,8 @@
         "services": [
           "SuiteScript/*.Service.ss"
         ],
-        "ssp-libraries": {
+        "ssp-libraries": [
           "SuiteScript/*.js"
-        }
+        ]
     }
 }
