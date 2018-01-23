@@ -27,11 +27,11 @@
 					</div>
 					<div class="product-reviews-center-container-wrapper">
 						<div data-view="Global.RatingByStar"></div>
-					</div>	
+					</div>
 					<div class="product-reviews-center-container-footer">
 						<a href="{{itemUrl}}/newReview" class="product-reviews-center-container-footer-button">{{translate 'Write a Review'}}</a>
 					</div>
-				</div>	
+				</div>
 
 				<section class='product-reviews-center-list'>
 					<div data-view="ListHeader.View"></div>
@@ -44,9 +44,9 @@
 
 				<div class="product-reviews-center-footer">
 					<div data-view="GlobalViews.Pagination"></div>
-				</div>	
+				</div>
 			{{else}}
-				<div class="product-reviews-center-container">
+				<div class="product-reviews-center-container no-reviews">
 					<div class="product-reviews-center-container-header">
 						<h3 class="product-reviews-center-container-header-title">{{translate 'Ratings &amp; Reviews'}}</h3>
 						<h4 class="product-reviews-center-container-header-title">{{translate 'No reviews available'}}</h4>
@@ -61,8 +61,8 @@
 
 
 {{!----
-Use the following context variables when customizing this template: 
-	
+Use the following context variables when customizing this template:
+
 	itemCount (Number)
 	hasOneReview (Boolean)
 	itemUrl (String)

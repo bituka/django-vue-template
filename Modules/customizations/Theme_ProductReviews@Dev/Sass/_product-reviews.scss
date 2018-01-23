@@ -43,7 +43,7 @@ button.item-details-product-review-pusher {
     }
   }
 }
-  
+
 // Ratings & Reviews filters
 section.product-reviews-center-list {
   margin: $theme-base-size * 7;
@@ -128,4 +128,7 @@ div.product-reviews-form-confirmation-message {
   background: transparent;
   padding: 0;
   @media (max-width: $screen-sm-min) { padding: $theme-base-size * 3; }
+}
+.product-reviews-center-container.no-reviews{
+  width: 100%;
 }
