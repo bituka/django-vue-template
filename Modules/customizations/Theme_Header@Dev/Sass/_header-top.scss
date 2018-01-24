@@ -61,6 +61,9 @@ div.header-left-section {
 div.header-right-menu {
 	float: right;
 	margin: 0;
+	li.separator{
+		line-height: 28px;
+	}
 	// Store Locator & Request A Quote
 	ul.header-menu-actions {
 		height: 28px;
@@ -154,6 +157,7 @@ div.header-right-menu {
 			ul.header-profile-menu-login {
 				//line-height: 29px;
 				li {
+					float: left;
 					color: $theme-header-ft-color-secondary;
 					a { @include header-top-links; }
 				}

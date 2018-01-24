@@ -22,7 +22,7 @@ your access and use. }}
 
 
 				{{/if}}
-				<li class="blog-link"><a href="http://blog.thetubestore.com/" target="_blank">BLOG</a></li>
+				<li class="separator"> | </li><li class="blog-link"><a href="http://blog.thetubestore.com/" target="_blank">BLOG</a></li><li class="separator"> | </li>
 				<!-- <ul class="header-menu-actions">
 					<li data-view="StoreLocatorHeaderLink"></li>
 					<div class="links-no-mobile clearfix">

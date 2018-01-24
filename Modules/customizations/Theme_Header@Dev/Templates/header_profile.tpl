@@ -30,7 +30,7 @@
 						</a>
 					</li>
 					{{#if showRegister}}
-						<li> | </li>
+						<li class="separator"> | </li>
 						<li>
 							<a class="header-profile-register-link" data-touchpoint="register" data-hashtag="login-register" href="#">
 								{{translate 'Register'}}

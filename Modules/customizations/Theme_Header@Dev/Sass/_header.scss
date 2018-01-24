@@ -217,7 +217,6 @@ div.header-menu-images {
 }
 .header-main-nav{
 	.blog-link{
-		margin-right: 30px;
 		a{
 			color: $theme-color-links;
 			line-height: 28px;
@@ -231,13 +230,12 @@ div.header-menu-images {
 		@media(max-width: 992px){
 			display: none;
 		}
-		margin-right:30px;
 		position: relative;
 		@extend .fa;
 		@extend %fa-angle-down;
 		&:before{
 			position: absolute;
-			right: 4px;
+			right: 10px;
 			line-height: 28px;
 			z-index: 9;
 		}
