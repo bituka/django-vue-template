@@ -297,7 +297,8 @@
                     "ProductDetails.Full.View.Extension",
                     "ProductDetails.ImageGallery.View.Extension",
                     "ProductDetails.QuickView.View.Extension",
-                    "Theme_Landing_freebies"
+                    "Theme_Landing_freebies",
+                    "FacetsBrowse.CategoryHeading.FixHTMLDescription"
                 ],
                 "amdclean": false,
                 "amdConfig": {

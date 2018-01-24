@@ -1,14 +1,14 @@
 define(
-	'BackInStockSubscription.Model', 
-	[ 
+	'BackInStockSubscription.Model',
+	[
 		'Application',
 		'SC.Model',
-		'underscore' 
-	], 
-	function ( 
+		'underscore'
+	],
+	function (
 		Application,
 		SCModel,
-		_ 
+		_
 	){
 
 		return SCModel.extend({
@@ -19,8 +19,7 @@ define(
 			{
 				var fields = _.extend( {}, {
 					email: '',
-					date: nlapiDateToString( (new Date()), 'date'),
-					item: null
+					date: ''
 				}, data);
 
 				if( !fields.item )
@@ -29,6 +28,7 @@ define(
 				}
 
 				var recordFields = {
+						name: "User: "+fields.email,
 						custrecord_tt_backinstock_item: fields.item,
 						custrecord_tt_backinstock_email: fields.email,
 						custrecord_tt_backinstock_sent: 'F',
@@ -37,14 +37,7 @@ define(
 					record = nlapiCreateRecord( 'customrecord_tt_backinstock_subscription' );
 
 				_.each( recordFields, function ( value, key ) {
-					if( isNaN(parseInt( value )) )
-					{
-						record.setFieldText( key, value );
-					}
-					else
-					{
-						record.setFieldValue( key, value );
-					}
+					record.setFieldValue( key, value );
 				});
 
 				nlapiSubmitRecord( record );

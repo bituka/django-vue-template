@@ -1,14 +1,14 @@
 define( 'BackInStockSubscriptionForm.View',
 	[
-		'backinstock_form.tpl'
+		'backinstock_form.tpl',
 
 		'Backbone.FormView',
 		'Backbone'
 	],
-	function ( 
+	function (
 		template,
 
-		BackboneFormView, 
+		BackboneFormView,
 		Backbone
 	)
 {
@@ -25,7 +25,9 @@ define( 'BackInStockSubscriptionForm.View',
 		initialize: function ( options )
 		{
 			this.model = options.model;
-			
+
+			console.log(this.model)
+
 			this.model.on('sync', jQuery.proxy(this, 'showSuccess'));
 
 			BackboneFormView.add(this);
@@ -40,14 +42,15 @@ define( 'BackInStockSubscriptionForm.View',
 			e && e.preventDefault();
 
 			var promise = BackboneFormView.saveForm.apply( this, arguments );
+			console.log('promise', promise)
 		},
-		
+
 		showSuccess: function ()
 		{
 			this.$('[data-type="success-message"]').css({ display: 'block' });
 			this.$('[data-type="backinstocksubscription-form"]').css({ display: 'none' });
 		}
-		
+
 	});
 
 });

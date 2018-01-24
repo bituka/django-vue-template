@@ -1,12 +1,13 @@
 function service(request, response) {
-    
+
     var Application = require('Application'),
         BackInStockSubscription = require( 'BackInStockSubscription.Model' );
 
-    var method = request.getMethod();
+    var method = request.getMethod(),
+    data = JSON.parse(request.getBody() || '{}');
 
-    response.setContentType('JSON');
-    
+  //  response.setContentType('JSON');
+
     switch( method )
     {
         case 'GET':
@@ -15,11 +16,13 @@ function service(request, response) {
             break;
 
         case 'POST':
-            var item = request.getParameter('item'),
-                email = request.getParameter('email'),
+            var item = data.item,
+                email = data.email,
+                date = data.custrecord_tt_backinstock_created_date
                 data = {
                     item: item,
-                    email: email
+                    email: email,
+                    date: date
                 };
 
             var record = BackInStockSubscription.create( data );

@@ -8,7 +8,7 @@
 <section class="facets-browse-category-heading-list-header">
 	<div class="facets-browse-category-heading-main-description">
 		<h1>{{pageheading}}</h1>
-		{{#if showDescription}}	
+		{{#if showDescription}}
 			<p>{{{description}}}</p>
 		{{/if}}
 	</div>
@@ -23,8 +23,8 @@
 
 
 {{!----
-Use the following context variables when customizing this template: 
-	
+Use the following context variables when customizing this template:
+
 	name (String)
 	banner (String)
 	description (String)

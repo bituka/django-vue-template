@@ -1,14 +1,36 @@
 // @module Facets
 // addition to include custom Fields at PDP
 define(
-    'ProductDetails.Full.View.Extension', ['ProductDetails.Full.View', 'Backbone', 'underscore'],
-    function(ProductDetailsViewFields, Backbone, _) {
+    'ProductDetails.Full.View.Extension',
+    [
+      'ProductDetails.Full.View',
+      'BackInStockSubscription.View',
+      'Backbone',
+      'underscore'
+    ],
+    function(
+      ProductDetailsFullView,
+      BackInStockSubscriptionView,
+      Backbone,
+      _
+    ) {
         'use strict';
 
-        ProductDetailsViewFields.prototype.installPlugin('postContext', {
+        _.extend(ProductDetailsFullView.prototype, {
+          childViews: _.extend(ProductDetailsFullView.prototype.childViews, {
+            'BackInStockSubscription.View': function(){
+              return new BackInStockSubscriptionView({
+      					item: this.model.get('item')
+      				,	application: this.application
+      				});
+            }
+          })
+        });
+
+        ProductDetailsFullView.prototype.installPlugin('postContext', {
             priority: 1,
             execute: function execute(context, view) {
-				var model = view.model;
+			          var model = view.model;
 
                 // START inclusion of Badges Logic
                 var getBadge = model.get('item').get('custitem_tt_itembadges');
@@ -38,4 +60,6 @@ define(
 				});
 			}
         });
+
+
     });

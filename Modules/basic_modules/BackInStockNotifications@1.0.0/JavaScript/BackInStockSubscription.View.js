@@ -2,19 +2,19 @@ define( 'BackInStockSubscription.View',
 	[
 		'backinstock_button.tpl',
 
-		'BackInStockSubscriptionForm.View'
+		'BackInStockSubscriptionForm.View',
 		'BackInStockSubscription.Model',
 
 		'Backbone.FormView',
 		'Backbone'
 	],
-	function ( 
-		template, 
+	function (
+		template,
 
-		BackInStockSubscriptionFormView
+		BackInStockSubscriptionFormView,
 		BackInStockSubscriptionModel,
 
-		BackboneFormView, 
+		BackboneFormView,
 		Backbone
 	)
 {
@@ -23,6 +23,7 @@ define( 'BackInStockSubscription.View',
 		template: template,
 
 		item: null,
+		custrecord_tt_backinstock_created_date: null,
 
 		events: {
 			'click [data-action="show-bis-form"]': 'showForm'
@@ -32,7 +33,7 @@ define( 'BackInStockSubscription.View',
 		{
 			this.model = new BackInStockSubscriptionModel();
 			this.item = options.item;
-
+			this.custrecord_tt_backinstock_created_date = new Date().toLocaleString('en-US').toLowerCase().split(',').join('');
 			if( !this.item )
 			{
 				console.error('Item not specified.');
@@ -40,6 +41,7 @@ define( 'BackInStockSubscription.View',
 			else
 			{
 				this.model.set('item', this.item.get('internalid'));
+				this.model.set('custrecord_tt_backinstock_created_date', this.custrecord_tt_backinstock_created_date)
 			}
 		},
 
@@ -51,21 +53,22 @@ define( 'BackInStockSubscription.View',
 				});
 
 			layout.showInModal( formView );
-		}
+		},
 
 		isEnabled: function ()
 		{
 			var itemBehavior = this.item.get('outofstockbehavior');
-
-			if( 
-				itemBehavior == 'DEFAULT' && 
-				( 
-					SC.Configuration.outofstockbehavior == 'Show message and ' ||
-					SC.Configuration.outofstockbehavior == 'Show...'
+			var showBackInstockButton = !!this.item.get('_isInStock');
+			if(
+				true ||
+				showBackInstockButton &&
+				itemBehavior == 'DEFAULT' &&
+				(
+					SC.CONFIGURATION.siteSettings.order.outofstockbehavior != 'DISABLE'
 				)
 			){
 				return true
-			}			
+			}
 			else
 			{
 				return false
@@ -80,7 +83,7 @@ define( 'BackInStockSubscription.View',
 				showButton: this.isEnabled()
 			};
 		}
-		
+
 	});
 
 });
