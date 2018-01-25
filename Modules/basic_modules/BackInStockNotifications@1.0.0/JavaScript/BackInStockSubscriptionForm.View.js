@@ -26,8 +26,6 @@ define( 'BackInStockSubscriptionForm.View',
 		{
 			this.model = options.model;
 
-			console.log(this.model)
-
 			this.model.on('sync', jQuery.proxy(this, 'showSuccess'));
 
 			BackboneFormView.add(this);
@@ -42,7 +40,6 @@ define( 'BackInStockSubscriptionForm.View',
 			e && e.preventDefault();
 
 			var promise = BackboneFormView.saveForm.apply( this, arguments );
-			console.log('promise', promise)
 		},
 
 		showSuccess: function ()

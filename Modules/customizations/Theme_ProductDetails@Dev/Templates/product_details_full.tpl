@@ -42,7 +42,7 @@ govern your access and use. }}
 
 						{{#if showAvailability}}
 						<div class="product-details-full-availabity">
-							<p class="availability">{{translate 'Availability:'}} <br>
+							<p class="availability"><strong>{{translate 'Availability:'}}</strong>
                   <span>{{translate 'Usually ships within 24 hours.'}}</span>
               </p>
 						</div>
@@ -64,11 +64,10 @@ govern your access and use. }}
 						<div data-view="Product.Stock.Info"></div>
 						<div data-view="StockDescription"></div>
 
-						{{#if isPriceEnabled}}
+						{{#if isPriceEnabled}} {{#if isOutOfStock}}						
 						<div data-view="Quantity"></div>
 
 						<section class="product-details-full-actions">
-
 							<div class="product-details-full-actions-container">
 								<div data-view="MainActionView"></div>
 
@@ -78,7 +77,7 @@ govern your access and use. }}
 							</div>
 
 						</section>
-						{{/if}}
+						{{/if}}{{/if}}
 
 						<div class="product-details-full-divider"></div>
 

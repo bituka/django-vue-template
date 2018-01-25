@@ -38,7 +38,7 @@ define(
                 var warranty = model.get('item').get('custitem_warranty');
                 var storeDescription = model.get('item').get('storedetaileddescription');
                 var badge = '',
-                showAvailability = model.get('item').get('itemtype') === 'infoitem' ? true : false;
+                showAvailability = model.get('item').get('_isInStock');
                 if (getBadge === 'NEW') {
                     badge = '<div class="custombadge new">NEW</div>';
                 } else if (getBadge === 'BEST SELLER') {
@@ -51,12 +51,13 @@ define(
                 // END  inclusion of Badges Logic
 
 				_.extend(context, {
-                    // @property {string} badge
-                    badge: badge ,
-                    addInformation: addInformation ,
-                    storeDescription: storeDescription ,
-                    warranty: warranty,
-                    showAvailability: showAvailability
+            // @property {string} badge
+            badge: badge ,
+            addInformation: addInformation ,
+            storeDescription: storeDescription ,
+            warranty: warranty,
+            showAvailability: showAvailability,
+            isOutOfStock: showAvailability
 				});
 			}
         });

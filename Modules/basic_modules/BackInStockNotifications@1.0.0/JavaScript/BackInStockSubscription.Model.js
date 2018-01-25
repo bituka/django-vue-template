@@ -18,15 +18,11 @@ define('BackInStockSubscription.Model'
 		urlRoot: _.getAbsoluteUrl('services/BackInStockSubscription.Service.ss')
 
 	,	validation: {
-			"in-modal-email": {
+			email: {
 				required: true
 			,	msg: _('Email is required').translate()
 			}
 		,	item: {
-				required: true
-			,	msg: _('Item is required').translate()
-			}
-		,	custrecord_tt_backinstock_created_date: {
 				required: true
 			,	msg: _('Item is required').translate()
 			}

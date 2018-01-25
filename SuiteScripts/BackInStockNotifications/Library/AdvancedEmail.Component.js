@@ -14,7 +14,7 @@ function AdvancedEmail ()
 
 _.extend( AdvancedEmail.prototype, {
 
-	_defaults: 
+	_defaults:
 	{
 		//Testing params
 		testing: true, //True wil debug every internal message
@@ -35,7 +35,7 @@ _.extend( AdvancedEmail.prototype, {
 		autoload: false, //If autoload is false internalid must be specified
 		autorun: false, //Executes run() right in the initialize
 		cco: null,
-		
+
 		//Only the specified templates will be processed
 		template: 0
 	},
@@ -47,7 +47,7 @@ _.extend( AdvancedEmail.prototype, {
 	templateData: null,
 	salesOrder: null,
 
-	initialize: function ( config ) 
+	initialize: function ( config )
 	{
 		this.prepare( config );
 
@@ -57,7 +57,7 @@ _.extend( AdvancedEmail.prototype, {
 		}
 	},
 
-	prepare: function ( config ) 
+	prepare: function ( config )
 	{
 		this.config = _.extend( {}, this._defaults, config );
 		this.templateData = {};
@@ -77,7 +77,7 @@ _.extend( AdvancedEmail.prototype, {
 		//Sending confirmation
 		var result = this.sendConfirmation( emailBody, subject, false ); //When passing true a communication line is created, TODO: Add customer id into configuration
 
-		Log('Sent: ', this.salesOrder.id);
+		Log('Sent: ', this.config.to);
 
 		this.finish( false, 'Done' );
 
@@ -93,7 +93,7 @@ _.extend( AdvancedEmail.prototype, {
 
 	sendConfirmation: function ( body, subject, save )
 	{
-		var recipient = this.customerRecord.getFieldValue('email');
+		var recipient = this.config.to;
 
 		if( this.config.testing )
 		{
@@ -102,7 +102,7 @@ _.extend( AdvancedEmail.prototype, {
 
 		Log( 'Confirmation for:', recipient );
 
-		try 
+		try
 		{
 			var sent = nlapiSendEmail( this.config.senderEmployee, recipient, subject, body, null );
 			Log('Confirmation Sent', sent );
@@ -113,18 +113,17 @@ _.extend( AdvancedEmail.prototype, {
 				if( this.config.cco )
 				{
 					nlapiSendEmail( this.config.senderEmployee, this.config.cco, subject, body, null );
-				}	
+				}
 			}
 			catch( e )
 			{
 				Log('CCO error', e);
 			}
-			
-		} 
-		catch (e) 
+
+		}
+		catch (e)
 		{
 			Log("ERROR SENDING MAIL!!",
-				"OrderInternalId: " + this.salesOrder.getFieldValue('internalid') +
 				"Error Catched: " + e
 			);
 		}
@@ -146,7 +145,7 @@ _.extend( AdvancedEmail.prototype, {
 			{
 				Log( 'Cant save message on custmer.', 'ID: ' + this.customerRecord.id + ' - SO: ' + this.salesOrder.id );
 			}
-			
+
 
 		}
 	},
@@ -173,7 +172,7 @@ _.extend( AdvancedEmail.prototype, {
 
 	},
 
-	getContext: function () 
+	getContext: function ()
 	{
 		var context = nlapiGetContext(),
 			exeContext = context.getExecutionContext();
@@ -207,53 +206,15 @@ _.extend( AdvancedEmail.prototype, {
 		return renderer.renderToString();
 	},
 
-	getItemInfo: function ( line, includes )
-	{
-		var itemId = this.salesOrder.getLineItemValue( 'item', 'item', line ),
-			itemRecord = this.getItem( itemId ),
-			childItem = null;
-
-		if( itemRecord.getFieldValue('parent') )
-		{
-			childItem = itemRecord;
-			itemRecord = this.getItem( itemRecord.getFieldValue('parent') );
-		}
-
-		var itemInfo = {
-			internalid: itemId,
-			storeDisplayName: itemRecord.getFieldValue('storedisplayname') || itemRecord.getFieldValue('itemid'),
-			displayName: itemRecord.getFieldValue('displayname'),
-			rate: this.salesOrder.getLineItemValue( 'item', 'rate', line ),
-			quantity: this.salesOrder.getLineItemValue( 'item', 'quantity', line ),
-			amount: this.salesOrder.getLineItemValue( 'item', 'amount', line ),
-			online: itemRecord.getFieldValue('isonline'),
-			stockUnit: itemRecord.getFieldValue('stockunit'),
-			sku: itemRecord.getFieldValue('custitem_sku')
-		};
-
-		//Include item image
-		if( includes.itemImage )
-		{
-			itemInfo.image = this.getItemImageUrl( itemRecord );
-		}
-
-		if( this.config.extraItemFields )
-		{
-			_.extend( itemInfo, this.config.extraItemFields( childItem || itemRecord ) );
-		}
-
-		return itemInfo;
-	},
-
 	getItem: function ( internalid )
 	{
 		var availableTypes = [
-				'inventoryitem', 
+				'inventoryitem',
 				'noninventoryitem',
-				'assemblyitem', 
-				'kititem', 
-				'serviceitem', 
-				'discountitem', 
+				'assemblyitem',
+				'kititem',
+				'serviceitem',
+				'discountitem',
 				'descriptionitem'
 			],
 			record = null,
@@ -294,9 +255,9 @@ _.extend( AdvancedEmail.prototype, {
 				item = this.getItem( item.getFieldValue('parent') );
 				Log('Parent1');
 			}
-			var imageCount = item.getLineItemCount('itemimages');  
+			var imageCount = item.getLineItemCount('itemimages');
 
-			if( imageCount > 0 ) 
+			if( imageCount > 0 )
 			{
 				if( this.config.fisrtImageCriteria )
 				{
@@ -335,7 +296,7 @@ _.extend( AdvancedEmail.prototype, {
 
 		try
 		{
-			var image = nlapiLoadFile( fileId );  
+			var image = nlapiLoadFile( fileId );
 		}
 		catch(e){
 			//Meh
