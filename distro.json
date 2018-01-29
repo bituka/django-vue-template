@@ -210,7 +210,8 @@
         "customizations/Theme_StoreLocator":"Dev",
         "customizations/Theme_ProductViews":"Dev",
         "customizations/Theme_OrderHistory":"Dev",
-        "customizations/Theme_Utils":"Dev"
+        "customizations/Theme_Utils":"Dev",
+        "customizations/Theme_ProductDetails.PackageItems": "Dev"
     },
     "tasksConfig": {
         "local": {
@@ -286,6 +287,7 @@
                     "LayoutClass",
                     "ResolveAssetUrlHandlebarsAddOn",
 
+                    "ProductDetailsFull.PackageItems.View",
                     "Theme_Header",
                     "Theme_Footer",
                     "Theme_Home",
@@ -659,7 +661,8 @@
                 "CMSOnSecure.Model",
                 "CMSOnSecure.ServiceController",
                 "ContactUs.Model",
-                "ContactUs.ServiceController"
+                "ContactUs.ServiceController",
+                "PackageItem.ServiceController"
             ],
             "exportFile": "ssp_libraries.js",
             "amdConfig": {
@@ -939,7 +942,8 @@
                         "Theme_Cart",
                         "Theme_ProductList",
                         "Theme_ProductDetails",
-                        "Theme_Content"
+                        "Theme_Content",
+                        "Theme_ProductDetails.PackageItems"
                     ]
                 },
                 {
