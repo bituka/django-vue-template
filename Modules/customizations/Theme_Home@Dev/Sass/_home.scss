@@ -23,8 +23,10 @@ section.home-full-width {
 }
 
 section.home-full-width.welcome-msg {
-	padding: $theme-base-size * 10 0;
-	background: $theme-neutral-color;
+	.home-h1{
+		padding: $theme-base-size * 10 $theme-base-size * 2;
+		background: $theme-neutral-color;
+	}
 }
 
 div.home-h1 {
@@ -178,7 +180,7 @@ div.main-slider-pager {
 }
 // Top slider
 section.home-slider-container {
-	margin: 0;
+	margin: 0 auto;
 
 	div.home-image-slider {
 		position: relative;
@@ -192,16 +194,28 @@ section.home-slider-container {
 
 				div.home-slide-main-container {
 					height: auto; // Slider img
-
-					img {
-						float: left;
-						margin-top: 0;
-						@media (min-width: $screen-sm-min) {
-							max-width: none !important;
-							margin: 0;
-							width: 100%;
+					a{
+						img {
+							float: left;
+							margin-top: 0;
+							@media (min-width: $screen-sm-min) {
+								max-width: none !important;
+								margin:0;
+								width: 100%;
+							}
+						}
+						&.mobile{
+							@media(min-width:680px){
+								display: none;
+							}
+						}
+						&.desktop{
+							@media(max-width:680px){
+								display: none;
+							}
 						}
 					}
+
 
 					.home-wrapper {
 						padding: 0;
@@ -245,8 +259,10 @@ div.home-image-slider {
 
 // Home Full Width Banner
 section.home-full-banner-section {
-	@extend .this-full-width;
 	min-height: 20px;
+	float: none;
+	padding: 0 15px;
+	margin: 0 auto;
 
 	div.home-full-banner-container {
 		@extend .this-full-width;
@@ -435,7 +451,7 @@ section.home-items-carousel {
 							color: $theme-header-ft-color-primary;
 							font-weight: 400;
 							font-size: 12px;
-							text-transform: uppercase; 
+							text-transform: uppercase;
 						}
 					}
 					.item-custom-button{

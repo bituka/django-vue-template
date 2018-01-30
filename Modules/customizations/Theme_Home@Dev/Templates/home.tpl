@@ -4,10 +4,10 @@ govern your access and use. }}
 
 <div class="home TavanoTeam">
 
-	<div class="home-container">
+	<div class="home-container clearfix">
 
 		<!-- Start Slider Section -->
-		<section class="home-slider-container">
+		<section class="home-slider-container container">
 			<div class="home-image-slider" data-cms-area="home_main-slider" data-cms-area-filters="path">
 
 			</div>
@@ -42,7 +42,7 @@ govern your access and use. }}
 		<!-- End First Merchandising Zone -->
 
 		<!-- Start First Banner -->
-		<section class="home-full-banner-section">
+		<section class="home-full-banner-section container">
 			<div class="home-full-banner-cms" data-cms-area="home_full-banner-1" data-cms-area-filters="path">
 
 			</div>
@@ -95,7 +95,7 @@ govern your access and use. }}
 		<!-- End Items Carousel  -->
 
 		<!-- Start Second Full Width Banner -->
-		<section class="home-full-banner-section">
+		<section class="home-full-banner-section container">
 			<div class="home-full-banner-cms" data-cms-area="home_full-banner-2" data-cms-area-filters="path">
 
 			</div>
