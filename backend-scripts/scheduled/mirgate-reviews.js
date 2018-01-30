@@ -34,7 +34,8 @@ function service(request, response){
            nlapiLogExecution('DEBUG', 'Information item', 'ITEM ID: '+oldReviewsInternalId);
            nlapiLogExecution('DEBUG', 'Information: customrecord_ns_pr_review', 'Name: '+oldReviews[i].getValue('custrecordreviewtitle')+' - Record id: '+oldReviews[i].getId());
            var myRec = nlapiCreateRecord('customrecord_ns_pr_review'),
-            reviews_rating = oldReviews[i].getValue('custrecordreviewrating') > 5 ? parseInt(oldReviews[i].getValue('custrecordreviewrating') / 2) : oldReviews[i].getValue('custrecordreviewrating');
+            reviews_rating = oldReviews[i].getValue('custrecordreviewrating') > 5 ? parseInt(oldReviews[i].getValue('custrecordreviewrating') / 2) : oldReviews[i].getValue('custrecordreviewrating'),
+            date = oldReviews[i].getValue('custrecordreviewdatecreated').split('/')[1] ;
            myRec.setFieldValue('custrecord_ns_prr_text', oldReviews[i].getValue('custrecordreviewmessage'));
            myRec.setFieldValue('custrecord_ns_prr_rating', reviews_rating);
            myRec.setFieldValue('custrecord_ns_prr_writer_name', oldReviews[i].getValue('custrecordreviewreviewer'));
@@ -42,7 +43,7 @@ function service(request, response){
            myRec.setFieldValue('custrecord_ns_prr_status', status);
            myRec.setFieldValue('custrecord_ns_prr_item', oldReviewsInternalId);
            myRec.setFieldValue('name', name);
-           //myRec.setFieldValue('custrecord_ns_prr_creation_date', oldReviews[i].getValue('custrecordreviewdatecreated'));
+           myRec.setFieldValue('custrecord_ns_prr_creation_date', nlapiDateToString( new Date(oldReviews[i].getValue('custrecordreviewdatecreated')), 'datetimetz'));
            nlapiSubmitRecord(myRec)
          }
 

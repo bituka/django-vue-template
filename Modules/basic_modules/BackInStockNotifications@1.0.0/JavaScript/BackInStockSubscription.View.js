@@ -58,10 +58,10 @@ define( 'BackInStockSubscription.View',
 		isEnabled: function ()
 		{
 			var itemBehavior = this.item.get('outofstockbehavior');
-			var showBackInstockButton = !!this.item.get('_isInStock');
+			var showBackInstockButton = !this.item.get('_isInStock');
 			if(
 				showBackInstockButton &&
-				itemBehavior == 'DEFAULT' &&
+				(itemBehavior == '- Default -' || itemBehavior == 'DEFAULT') &&
 				SC.CONFIGURATION.siteSettings.order.outofstockbehavior != 'DISABLE'
 			){
 				return true

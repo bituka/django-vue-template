@@ -174,7 +174,10 @@
   "store_locator_list_all_store.tpl.js",
   "store_locator_upgrade.tpl.js",
   "sc_cct_html.tpl.js",
+  "product_details_full_package_item.tpl.js",
   "header_simplified.tpl.js",
   "footer_simplified.tpl.js",
-  "contact.tpl.js"
+  "contact.tpl.js",
+  "backinstock_button.tpl.js",
+  "backinstock_form.tpl.js"
 ]
