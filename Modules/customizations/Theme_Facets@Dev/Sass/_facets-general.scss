@@ -46,3 +46,10 @@ div.facet-top-banner-image {
 }
 
 h1.facets-empty-title{font-family: $font-family-primary; font-size: 15px;  letter-spacing: normal;}
+button.facets-faceted-navigation-item-category-optionlist-extra-button{
+	&:hover{
+		span{
+			color: white;
+		}
+	}
+}
