@@ -3,6 +3,7 @@ define('ProductDetailsFull.PackageItems.View'
   'product_details_full_package_item.tpl',
 
   'Product.PackageItems.GroupItems.Model',
+  'Item.Model',
 
   'ProductDetails.Full.View',
   'ProductDetails.Base.View'
@@ -11,6 +12,7 @@ function(
   product_details_full_package_item_tpl,
 
   ProductPackageItemsModel,
+  ItemModel,
 
   ProductDetailsFullView,
   ProductDetailsBaseView
@@ -47,8 +49,15 @@ function(
       execute: function execute(context, view) {
           var model = view.model,
             groupItems = model.get("groupitems") ? model.get("groupitems") : null;
-            console.log(model)
-console.log(model.get("groupitems"))
+            var model = new ItemModel()
+            if(groupItems) _.each(groupItems, function(group, index){
+            //  console.log(group)
+              model.fetch({data: {'id': group.item}}).then(function(result){
+                console.log(result)
+                groupItems[index].itemOptions = groupItems[index].itemOptions != '' ? groupItems[index].itemOptions : '';
+              });
+            });
+            //console.log(model)
           _.extend(context, {
             packageItems: groupItems
           });
