@@ -1,5 +1,5 @@
 function service(request, response){
-  var col = new Array();
+  /*var col = new Array();
   col[0] = new nlobjSearchColumn('custrecordreviewstatus');
   col[1] = new nlobjSearchColumn('custrecordreviewdatecreated');
   col[2] = new nlobjSearchColumn('custrecordreviewnsitemid');
@@ -11,17 +11,22 @@ function service(request, response){
 
   var filters = new Array();
   filters[0] = new nlobjSearchFilter ('custrecordreviewnsitemid', null, 'noneof', '@NONE@');
+*/
 
   try{
-    var oldReviews = nlapiSearchRecord('customrecordreviewentry', null, filters, col),
-      i =0;
+    //var oldReviews = nlapiSearchRecord('customrecordreviewentry', null, filters, col),
+    var oldReviews = nlapiLoadSearch('customrecordreviewentry', 'customsearch_tt_product_reviews_entries'),
+      i = 0;
+    var result = oldReviews.runSearch();
+    // result = result.getResults(922, 1500);
+    result.forEachResult(function(searchResult){
+      //console.log(searchResult.getValue("custrecordreviewnsitemid"));
+      var oldReviewsInternalId = searchResult.getValue('custrecordreviewnsitemid');
 
-    for(i=0; i <= oldReviews.length; i++){
-      var oldReviewsInternalId = oldReviews[i].getValue('custrecordreviewnsitemid');
       if(oldReviewsInternalId){
-        var status = oldReviews[i].getValue('custrecordreviewstatus') === 'T' ? 2 : 1,
-          name = oldReviews[i].getValue('custrecordreviewtitle') != '' && oldReviews[i].getValue('custrecordreviewtitle') != null ? oldReviews[i].getValue('custrecordreviewtitle') : 'My Review';
-        var item = nlapiSearchRecord(
+        var status = searchResult.getValue('custrecordreviewstatus') === 'T' ? 2 : 1,
+          name = searchResult.getValue('custrecordreviewtitle') != '' && searchResult.getValue('custrecordreviewtitle') != null ? searchResult.getValue('custrecordreviewtitle') : 'My Review';
+        /*var item = nlapiSearchRecord(
         'item', null
          ,[
            new nlobjSearchFilter('isinactive', null, 'is', 'F'),
@@ -29,29 +34,31 @@ function service(request, response){
            new nlobjSearchFilter('internalid', null, 'is', oldReviewsInternalId)
           ]
          ,null
-         );
-         if(item){
+       );*/
+         //if(item){
            nlapiLogExecution('DEBUG', 'Information item', 'ITEM ID: '+oldReviewsInternalId);
-           nlapiLogExecution('DEBUG', 'Information: customrecord_ns_pr_review', 'Name: '+oldReviews[i].getValue('custrecordreviewtitle')+' - Record id: '+oldReviews[i].getId());
+           nlapiLogExecution('DEBUG', 'Information: customrecord_ns_pr_review', 'Name: '+searchResult.getValue('custrecordreviewtitle')+' - Record id: '+searchResult.getId());
            var myRec = nlapiCreateRecord('customrecord_ns_pr_review'),
-            reviews_rating = oldReviews[i].getValue('custrecordreviewrating') > 5 ? parseInt(oldReviews[i].getValue('custrecordreviewrating') / 2) : oldReviews[i].getValue('custrecordreviewrating'),
-            date = oldReviews[i].getValue('custrecordreviewdatecreated').split('/')[1] ;
-           myRec.setFieldValue('custrecord_ns_prr_text', oldReviews[i].getValue('custrecordreviewmessage'));
+            reviews_rating = searchResult.getValue('custrecordreviewrating') > 5 ? parseInt(searchResult.getValue('custrecordreviewrating') / 2) : searchResult.getValue('custrecordreviewrating'),
+            date = searchResult.getValue('custrecordreviewdatecreated').split('/')[1] ;
+        /*   myRec.setFieldValue('custrecord_ns_prr_text', searchResult.getValue('custrecordreviewmessage'));
            myRec.setFieldValue('custrecord_ns_prr_rating', reviews_rating);
-           myRec.setFieldValue('custrecord_ns_prr_writer_name', oldReviews[i].getValue('custrecordreviewreviewer'));
+           myRec.setFieldValue('custrecord_ns_prr_writer_name', searchResult.getValue('custrecordreviewreviewer'));
            myRec.setFieldValue('custrecord_ns_prr_item_id', oldReviewsInternalId);
            myRec.setFieldValue('custrecord_ns_prr_status', status);
            myRec.setFieldValue('custrecord_ns_prr_item', oldReviewsInternalId);
            myRec.setFieldValue('name', name);
-           myRec.setFieldValue('custrecord_ns_prr_creation_date', nlapiDateToString( new Date(oldReviews[i].getValue('custrecordreviewdatecreated')), 'datetimetz'));
-           nlapiSubmitRecord(myRec)
-         }
+           myRec.setFieldValue('custrecord_ns_prr_creation_date', nlapiDateToString( new Date(searchResult.getValue('custrecordreviewdatecreated')), 'datetimetz'));
+          // nlapiSubmitRecord(myRec)*/
+        // }
 
          //Set recovery point and check governance
          if(i % 10) setRecoveryPoint();
-         checkGovernance()
+         checkGovernance();
+        i++;
       }
-     }
+      return true;
+    });
     }
     catch(e){
         nlapiLogExecution('DEBUG', 'ERROR', e);

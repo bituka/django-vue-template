@@ -30,7 +30,6 @@ function service(request, response){
     }
     nlapiLogExecution( 'ERROR', 'item', JSON.stringify(result) );
 
-    result.additionalOptions = getAdditionalOptions();
     response.write(JSON.stringify(result));
     //response.write(JSON.stringify(searchresults));
   }
@@ -40,39 +39,7 @@ function service(request, response){
 }
 
 function getItemOption(internalid){
-  var filters = new Array(),
-      result = new Array();
-  filters[0] = new nlobjSearchFilter( 'internalid', null, 'is', internalid );
-
-  // return opportunity sales rep, customer custom field, and customer ID
-  var columns = [
-    new nlobjSearchColumn( 'internalid' ),
-  ];
-
-  // execute the Warrenty search, passing all filters and return columns
-  var item = nlapiSearchRecord( 'noninventoryitem', null, filters, columns );
+  var item = nlapiLoadRecord('inventoryitem', internalid),
+  itemOptions = item.getFieldValue('itemoptions');
   return itemOptions;
-}
-
-function getAdditionalOptions(){
-
-  var filters = [
-      new nlobjSearchFilter('isinactive', null, 'is', 'F')
-    ],
-
-    columns = [
-      new nlobjSearchColumn('custrecord_kit')
-    ],
-
-    records = nlapiSearchRecord('customrecord_additional_options', null, filters, columns);
-
-  if (records && records.length) {
-
-      var mappedRecord = {};
-
-      for (var i = 0, item; item = records[i]; i++) {
-        mappedRecord[item.getId()] = item.getValue('custrecord_kit');
-      }
-  }
-  return mappedRecord;
 }

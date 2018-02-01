@@ -18,21 +18,22 @@ function Schedule()
 			};
 
 			var advancedEmail = new AdvancedEmail({
-              testing: false,
-              autorun: false,
-              to: userData.email,
-              template: 64, //ID del Email Template en backend
-                      senderEmployee: 493,
-                      subject: item.getFieldValue('storedisplayname')+' is Back in Stock',
-              templateData: {
-                  name: userData.name,
-                  item: {
-                     name: item.getFieldValue('storedisplayname'),
-                    description: item.getFieldValue('storedetaileddescription'),
-                    url: item.getFieldValue('urlcomponent')
-                  }
+          testing: false,
+          autorun: false,
+          to: userData.email,
+          template: 2, //ID del Email Template en backend
+          senderEmployee: 67,
+          subject: item.getFieldValue('storedisplayname')+' is Back in Stock',
+          templateData: {
+              name: userData.name,
+              item: {
+                 name: item.getFieldValue('storedisplayname'),
+                description: item.getFieldValue('storedetaileddescription'),
+                url: item.getFieldValue('urlcomponent')
               }
-          });
+          }
+      });
+
 			advancedEmail.run();
 			nlapiLogExecution('DEBUG', 'Record', JSON.stringify(recs));
 			var record = nlapiLoadRecord("customrecord_tt_backinstock_subscription", recs.id);
