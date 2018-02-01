@@ -64,7 +64,7 @@ govern your access and use. }}
 						<div data-view="Product.Stock.Info"></div>
 						<div data-view="StockDescription"></div>
 
-						{{#if isPriceEnabled}} {{#if isOutOfStock}}						
+						{{#if isPriceEnabled}} {{#if isOutOfStock}}
 						<div data-view="Quantity"></div>
 
 						<section class="product-details-full-actions">
@@ -78,15 +78,6 @@ govern your access and use. }}
 
 						</section>
 						{{/if}}{{/if}}
-
-						<div class="product-details-full-divider"></div>
-
-						<div class="product-details-promo-ship-icons">
-							<div class="row">
-								<div class="col-md-4 free-ship-message"><i></i> <p>FREE SHIPPING</p></div>
-								<div class="col-md-8 promo-code-message"><i></i> <p>UP TO 50% OFF EVERYTHING - use code "FORYOU"</p></div>
-							</div>
-						</div>
 
 						<div class="product-details-full-divider"></div>
 
@@ -127,7 +118,7 @@ govern your access and use. }}
 
 		</div>
 
-		<!--<<section data-view="Product.Information"></section>
+		<!--<section data-view="Product.Information"></section>
 
 		div class="product-details-full-divider-desktop"></div>-->
 

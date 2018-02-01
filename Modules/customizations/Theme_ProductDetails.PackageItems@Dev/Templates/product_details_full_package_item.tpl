@@ -93,7 +93,12 @@
 
 						<div data-view="StockDescription"></div>
 
-						<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>
+						<div class="product-details-share-section">
+							<!-- Go to www.addthis.com/dashboard to customize your tools -->
+							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script>
+							<div class="addthis_inline_share_toolbox"></div>
+							<!--<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>-->
+						</div>
 
 						<div class="product-details-full-main-bottom-banner">
 							<div id="banner-summary-bottom" class="product-details-full-banner-summary-bottom"></div>
@@ -109,9 +114,22 @@
 
 		</section>
 
-		<section data-view="Product.Information"></section>
+		<div class='custom-pdp-tabs' id='myTabs'>
 
-		<div class="product-details-full-divider-desktop"></div>
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><button data-target="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab">Description</button></li>
+				<li role="presentation"><button data-target="#tab-2" aria-controls="profile" role="tab" data-toggle="tab">Aditional info</button></li>
+			</ul>
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane fade in active" id="tab-1">{{{storeDescription}}}</div>
+				<div role="tabpanel" class="tab-pane fade" id="tab-2">{{{addInformation}}} {{#if warranty}} <hr> {{/if}} {{{warranty}}}</div>
+			</div>
+
+		</div>
+
 
 		<div data-view="ProductReviews.Center"></div>
 
