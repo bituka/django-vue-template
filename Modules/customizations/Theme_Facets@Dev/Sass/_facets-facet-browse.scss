@@ -459,3 +459,17 @@ ul.facets-faceted-navigation-item-facet-optionlist-extra.collapse.in {
 	margin-top:0px;
 	}
 }
+.facets-faceted-navigation-item-optionlist-extra-wrapper{
+	padding-left: 10px;
+	a.facets-faceted-navigation-item-optionlist-extra-button{
+		padding: 10px 15px;
+		border: 1px solid #15607b;
+		&:hover{
+			color: white;    background: #156f90;
+    text-decoration: none;
+			span{
+				color: white;
+			}
+		}
+	}
+}
