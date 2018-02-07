@@ -72,6 +72,24 @@
 	}
 }
 .product-views-price{margin-bottom:15px;}
+.product-deatils-full-unit-of-measure{
+	> div{
+		float: left;
+	}
+	> span{
+		height: 30px;
+    display: inline-block;
+    line-height: 42px;
+    font-size: 18px;
+    margin-left: 10px;
+		@media(max-width: $screen-md-min){
+			line-height: 82px;
+		}
+	}
+}
+.product-details-full-quantity{
+	clear: left;
+}
 
 .product-details-full .product-views-price {
 	.product-views-price-lead {

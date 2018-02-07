@@ -6,7 +6,6 @@
 }}
 
 <div class="product-details-full">
-	this is a package item
 	<div data-cms-area="item_details_banner" data-cms-area-filters="page_type"></div>
 
 	<header class="product-details-full-header">
@@ -51,27 +50,7 @@
 
 						<div data-view="Product.Stock.Info"></div>
 
-						<div class="product-details-package-options">
-							<h2>Tube upgrade package includes...</h2>
-							<table>
-								{{#each packageItems}}
-								<tr>
-								<td>{{quantity}} {{translate 'Tubes'}}</td>
-								<td><a href="products/{{item}}" data-touchpoint="home" data-hashtag="products/{{item}}">{{item_display}}</a></td>
-								<td>
-									{{#if additionalOptions}}
-									{{#each additionalOptions}}
-									<div class="product-details-full-main-pack-options">
-										<label for="">{{label}}</label>
-										{{options}}
-									</div>
-									{{/each}}
-									{{/if}}
-								</td>
-								</tr>
-								{{/each}}
-							</table>
-						</div>
+						<div data-view="GroupItems.Items"></div>
 
 						{{#if isPriceEnabled}}
 							<div data-view="Quantity"></div>
