@@ -37,6 +37,7 @@
 				<link itemprop="availability" href="{{#if isInStock}}https://schema.org/InStock{{else}}https://schema.org/OutOfStock{{/if}}"/>
 			</span>
 		{{/if}}
+		<span class="item-views-price-unit-of-measure">{{unitOfMeasure}}</span> 
 	{{else}}
 
 		{{#if showHighlightedMessage}}

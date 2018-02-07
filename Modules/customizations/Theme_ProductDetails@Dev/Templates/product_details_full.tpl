@@ -57,14 +57,16 @@ govern your access and use. }}
 						<div class="product-details-full-divider"></div>
 
 						<section data-view="Product.Options"></section>
-
-						<div data-view="Product.Price"></div>
-						<div data-view="Quantity.Pricing"></div>
+						<div class="product-deatils-full-unit-of-measure">
+							<div data-view="Product.Price"></div>
+							<span>{{unitOfMeasure}}</span>
+						</div>
+						<div data-view="Quantity.Pricing" class="product-details-full-quantity"></div>
 
 						<div data-view="Product.Stock.Info"></div>
 						<div data-view="StockDescription"></div>
 
-						{{#if isPriceEnabled}} {{#if isOutOfStock}}						
+						{{#if isPriceEnabled}} {{#if isOutOfStock}}
 						<div data-view="Quantity"></div>
 
 						<section class="product-details-full-actions">

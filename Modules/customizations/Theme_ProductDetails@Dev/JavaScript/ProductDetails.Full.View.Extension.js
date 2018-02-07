@@ -31,7 +31,6 @@ define(
             priority: 1,
             execute: function execute(context, view) {
 			          var model = view.model;
-
                 // START inclusion of Badges Logic
                 var getBadge = model.get('item').get('custitem_tt_itembadges');
                 var addInformation = model.get('item').get('custitem_addition_information');
@@ -57,7 +56,8 @@ define(
             storeDescription: storeDescription ,
             warranty: warranty,
             showAvailability: showAvailability,
-            isOutOfStock: showAvailability
+            isOutOfStock: showAvailability,
+            unitOfMeasure: model.get('item').get('saleunit')
 				});
 			}
         });
