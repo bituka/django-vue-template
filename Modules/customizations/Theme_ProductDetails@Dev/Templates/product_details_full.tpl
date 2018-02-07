@@ -83,15 +83,6 @@ govern your access and use. }}
 
 						<div class="product-details-full-divider"></div>
 
-						<div class="product-details-promo-ship-icons">
-							<div class="row">
-								<div class="col-md-4 free-ship-message"><i></i> <p>FREE SHIPPING</p></div>
-								<div class="col-md-8 promo-code-message"><i></i> <p>UP TO 50% OFF EVERYTHING - use code "FORYOU"</p></div>
-							</div>
-						</div>
-
-						<div class="product-details-full-divider"></div>
-
 						<div class="product-details-share-section">
 							<!-- Go to www.addthis.com/dashboard to customize your tools -->
 							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script>
@@ -129,7 +120,7 @@ govern your access and use. }}
 
 		</div>
 
-		<!--<<section data-view="Product.Information"></section>
+		<!--<section data-view="Product.Information"></section>
 
 		div class="product-details-full-divider-desktop"></div>-->
 

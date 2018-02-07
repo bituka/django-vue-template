@@ -20,6 +20,7 @@
         "suitecommerce/Facets@3.2.0/Templates/facets_item_cell_table.tpl": "Templates/facets_item_cell_table.tpl",
         "suitecommerce/Facets@3.2.0/Templates/facets_facet_browse.tpl": "Templates/facets_facet_browse.tpl",
         "suitecommerce/Facets@3.2.0/Templates/facets_faceted_navigation.tpl": "Templates/facets_faceted_navigation.tpl",
+        "suitecommerce/Facets@3.2.0/Templates/facets_browse_category_heading.tpl": "Templates/facets_browse_category_heading.tpl",
         "suitecommerce/Facets@3.2.0/JavaScript/Facets.Helper.js" : "JavaScript/Facets.Helper.js",
         "suitecommerce/Facets@3.2.0/Configuration/Facets.json":"Configuration/Facets.json"
     }
