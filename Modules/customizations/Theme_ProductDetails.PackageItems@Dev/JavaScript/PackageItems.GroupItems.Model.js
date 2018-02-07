@@ -15,8 +15,5 @@ function(
       //@property {String} url
   	  urlRoot: _.getAbsoluteUrl('services/PackageItem.Service.ss')
 
-    , parse: function(response) {
-      return response;
-    }
   });
 });

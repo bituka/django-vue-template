@@ -300,7 +300,8 @@
                     "ProductDetails.ImageGallery.View.Extension",
                     "ProductDetails.QuickView.View.Extension",
                     "Theme_Landing_freebies",
-                    "FacetsBrowse.CategoryHeading.FixHTMLDescription"
+                    "FacetsBrowse.CategoryHeading.FixHTMLDescription",
+                    "Cart.AddToCart.Button.Multiple.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
