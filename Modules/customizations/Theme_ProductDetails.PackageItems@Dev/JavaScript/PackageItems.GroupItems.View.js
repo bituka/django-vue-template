@@ -1,19 +1,9 @@
 define('PackageItems.GroupItems.View',
 [
     'package_items_group_items.tpl'
-
-  , 'Item.Model',
-  , 'Product.Model'
-
-  , 'PackageItems.GroupItems.Model'
 ]
 , function(
     package_items_group_items_tpl
-
-  , ItemModel
-  , ProductModel
-
-  , PackageItemsModel
 )
 {
   'use strict';
@@ -24,13 +14,22 @@ define('PackageItems.GroupItems.View',
       template: package_items_group_items_tpl
     , initialize: function( options ){
         this.model = options.model;
-      //  this.model.on('change', this.render, this);
-
-      //  console.log('this.model', this.model)
+        this.totalPrice = options.totalPrice;
     }
     , render: function(){
-      console.log('this.model-', this.model)
+      var oldPrice = jQuery('.product-views-price-lead').text().split(' ');
+      if(this.totalPrice) jQuery('.product-views-price-lead').html(oldPrice[1] + ' '+ this.totalPrice.toFixed(2));
+      if(_.findWhere(this.isOutOfStock(), {isInStock: false})){
+        jQuery('.product-line-stock').html('<span>This item is out of stock</span>');
+        jQuery('[data-type="add-to-cart"]').attr('disabled', true);
+      }
+
       this._render();
+    }
+    , isOutOfStock: function(){
+      return _.map(this.model.get('items'), function(item){
+        return {'isInStock': item.get('isinstock')};
+      })
     }
     , getContext: function ()
     {

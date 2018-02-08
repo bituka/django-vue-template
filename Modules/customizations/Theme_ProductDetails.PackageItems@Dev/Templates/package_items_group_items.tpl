@@ -9,11 +9,15 @@
       {{#if itemOptions}}
       <div class="product-details-full-main-pack-options">
         <label for="">{{itemOptions.label}}</label>
+        {{#if itemOptions.values}}
         <select>
         {{#each itemOptions.values}}
             <option value="{{internalid}}">{{label}}</option>
         {{/each}}
         </select>
+        {{else}}
+          {{label}}
+        {{/if}}
       </div>
       {{/if}}
     </td>

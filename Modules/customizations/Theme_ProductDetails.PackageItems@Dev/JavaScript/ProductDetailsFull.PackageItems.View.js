@@ -29,7 +29,11 @@ function(
 
   _.extend(ProductDetailsFullView.prototype, {
     groupItems: null,
+    totalPrice: null,
 
+    //@method initialize Get Group Items and Item Options before rendering content.
+		//@param {ProductDetails.Full.View.Initialize.Options} options
+		//@return {Void}
     initialize: function initialize ()
 		{
       BackboneCompositeView.add(this);
@@ -48,10 +52,8 @@ function(
         groupItems.done(function(){
           if(self.groupItems){
             itemOptions = self.getItemOptions(self.groupItems);
-          //  console.log(itemOptions)
             if(itemOptions)
               itemOptions.done(function(){
-                console.log(self.groupItems)
                 self.model.set('groupItems', self.groupItems);
                 self.model.set('items', self.items);
                 setTimeout(function(){
@@ -63,6 +65,9 @@ function(
       }
 		}
     ,
+    //@method getGroupItems Get group items returned from the service
+		//@param {None}
+		//@return {Object}
     getGroupItems: function(){
       var packageItemsModel = new PackageItemsModel({ internalid: this.model.get('item').id }),
       self = this,
@@ -73,6 +78,9 @@ function(
       return groupItems;
     }
     ,
+    //@method getItemOptions Get item options from the item using ItemModel
+		//@param {Object: group items}
+		//@return {Promise}
     getItemOptions: function(groupItems){
       var promise = new $.Deferred(),
         model = new ItemModel(),
@@ -84,11 +92,14 @@ function(
         i++;
         var getItemOptions = model.fetch({data: {'id': group.item}});
         getItemOptions.then(function(result){
-          //console.log(result.items);
-          if(result.items[0] && result.items[0].itemoptions_detail && result.items[0].itemoptions_detail && result.items[0].itemoptions_detail.fields)
-            groupItems[index].itemOptions = result.items[0].itemoptions_detail.fields[0];
-          self.items.push(new ProductModel(result.items[0]));
-          console.log(i, groupItems.length)
+          var items = result.items[0];
+          if(items && items.itemoptions_detail && items.itemoptions_detail && items.itemoptions_detail.fields)
+            groupItems[index].itemOptions = items.itemoptions_detail.fields[0];
+          else groupItems[index].itemOptions = 'n/a';
+          self.items.push(new ProductModel(items));
+          //Get total price to update uninventory item
+          if(items && items.onlinecustomerprice_detail && items.onlinecustomerprice_detail.onlinecustomerprice)
+            self.totalPrice += items.onlinecustomerprice_detail.onlinecustomerprice * groupItems[index].quantity;
           if(i === groupItems.length) promise.resolve("Finished creating items");
         });
       });
@@ -100,7 +111,8 @@ function(
   			'GroupItems.Items': function()
   			{
   				return new PackageItemsGroupItemsView({
-            model: this.model
+            model: this.model,
+            totalPrice: this.totalPrice
           });
   			}
       })
