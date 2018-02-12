@@ -28,14 +28,14 @@
 				properly <div data-view="Facets.FacetedNavigation.Item" data-facet-id="custitem1"></div>
 				 -->
 
-				<div class="facets-facet-browse-results">
+			<div class="facets-facet-browse-results">
 
-                {{#if isCategory}}
-                    <div class="facets-facet-browse-category">
-                        <div data-view="Facets.Browse.CategoryHeading"></div>
-                        <div data-view="Facets.CategoryCells"></div>
-                    </div>
-                {{/if}}
+        {{#if isCategory}}
+            <div class="facets-facet-browse-category">
+                <div data-view="Facets.Browse.CategoryHeading"></div>
+                <div data-view="Facets.CategoryCells"></div>
+            </div>
+        {{/if}}
 
 				<header class="facets-facet-browse-header">
 					<div class="facet-header">
@@ -55,9 +55,9 @@
 							{{/if}}
 
 						</h1>
-						
+
 						<div class="facets-facet-browse-list-header-actions" data-view="Facets.ItemListDisplaySelector"></div>
-					</div>	
+					</div>
 					<nav class="facets-facet-browse-list-header">
 
 						<div class="facets-facet-browse-list-header-expander">
@@ -80,14 +80,14 @@
 										</button>
 									</div>
 									{{/if}}
-						        	<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListSortSelector"></div>	
+						        	<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListSortSelector"></div>
 									<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListShowSelector"></div>
-								</div>	
-							
-							</div>							
-						</div>					
+								</div>
+
+							</div>
+						</div>
 					</nav>
-					
+
 				</header>
 
 				<meta itemprop="name" content="{{title}}"/>
@@ -104,6 +104,13 @@
 				{{/if}}
 
 
+				<!-- Category Description Extra Field -->
+				<section class="facets-facet-browse-results facets-extra-description-field">
+					<div class="facets-extra-description-field">
+						<div data-cms-area="facets_extradescription" data-cms-area-filters="path"></div>
+					</div>
+				</section>
+
 		</div>
 
 		<div class="facets-facet-browse-pagination" data-view="GlobalViews.Pagination">
@@ -112,5 +119,8 @@
 		<div class="facets-facet-browse-empty-items" data-view="Facets.Items.Empty">
 		</div>
 	{{/if}}
+
+
+
 
 </section>
