@@ -35,8 +35,7 @@
                 <div data-view="Facets.Browse.CategoryHeading"></div>
                 <div data-view="Facets.CategoryCells"></div>
             </div>
-        {{/if}}
-
+        {{else}}
 				<header class="facets-facet-browse-header">
 					<div class="facet-header">
 						<h1 class="facets-facet-browse-title" data-quantity="{{total}}">
@@ -80,7 +79,7 @@
 										</button>
 									</div>
 									{{/if}}
-						        	<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListSortSelector"></div>
+											<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListSortSelector"></div>
 									<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListShowSelector"></div>
 								</div>
 
@@ -89,6 +88,9 @@
 					</nav>
 
 				</header>
+					{{/if}}
+
+
 
 				<meta itemprop="name" content="{{title}}"/>
 
@@ -96,8 +98,10 @@
 				</div>
 
 				{{#if isEmptyList}}
+					{{#unless isCategory}}
 					<div data-view="Facets.Items.Empty">
 					</div>
+					{{/unless}}
 				{{else}}
 					<div class="facets-facet-browse-items" data-view="Facets.Items">
 					</div>

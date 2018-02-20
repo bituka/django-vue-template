@@ -103,7 +103,8 @@
 		}
 	}
 	.product-views-price-old {
-		font-size: $sc-base-font-size;
+		font-size: 18px;
+margin-right: 10px;
 	}
 	.product-views-price-range{
 		color:$theme-primary-color;
@@ -646,8 +647,7 @@ label.product-views-option-tile-label{
 }
 #product-details-full-form{
 	small.product-views-price-old{
-		display: block;
-		font-size: 30px;
+
 	}
 	.product-details-full-divider{
 		margin: 20px 0;
