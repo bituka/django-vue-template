@@ -26,6 +26,14 @@ define('BackInStockSubscription.Model'
 				required: true
 			,	msg: _('Item is required').translate()
 			}
+		,	name: {
+				required: true
+			,	msg: _('Name is required').translate()
+			}
+		,	lastname: {
+				required: true
+			,	msg: _('Lastname is required').translate()
+			}
   	}
 
 	,	parse: function (response)

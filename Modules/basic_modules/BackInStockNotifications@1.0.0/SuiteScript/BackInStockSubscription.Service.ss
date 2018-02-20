@@ -17,12 +17,12 @@ function service(request, response) {
 
         case 'POST':
             var item = data.item,
-                email = data.email,
-                date = data.custrecord_tt_backinstock_created_date
+                email = data.email
+                // date = data.custrecord_tt_backinstock_created_date
                 data = {
                     item: item,
-                    email: email,
-                    date: date
+                    email: email
+                    // date: date
                 };
 
             var record = BackInStockSubscription.create( data );

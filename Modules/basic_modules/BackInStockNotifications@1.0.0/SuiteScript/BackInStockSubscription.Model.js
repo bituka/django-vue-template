@@ -19,6 +19,8 @@ define(
 			{
 				var fields = _.extend( {}, {
 					email: '',
+					name: '',
+					lastname: '',
 					date: ''
 				}, data);
 
@@ -28,13 +30,12 @@ define(
 				}
 
 				var recordFields = {
-						name: "User: "+fields.email,
-						custrecord_tt_backinstock_item: fields.item,
-						custrecord_tt_backinstock_email: fields.email,
-						custrecord_tt_backinstock_sent: 'F',
-						custrecord_tt_backinstock_created_date: fields.date
+						custrecorditem_back_in_stock: fields.item,
+						custrecordback_in_stock_customer_email: fields.email,
+						custrecord_backinstock_sent: 'F',
+						custrecordcustomer_name_backinstock: fields.name
 					},
-					record = nlapiCreateRecord( 'customrecord_tt_backinstock_subscription' );
+					record = nlapiCreateRecord('customrecordbackinstocksc');
 
 				_.each( recordFields, function ( value, key ) {
 					record.setFieldValue( key, value );
@@ -45,7 +46,5 @@ define(
 				return recordFields;
 
 			}
-
 		});
-
 });
