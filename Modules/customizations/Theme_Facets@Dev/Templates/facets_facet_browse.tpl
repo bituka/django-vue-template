@@ -35,7 +35,8 @@
                 <div data-view="Facets.Browse.CategoryHeading"></div>
                 <div data-view="Facets.CategoryCells"></div>
             </div>
-        {{else}}
+        {{/if}}
+
 				<header class="facets-facet-browse-header">
 					<div class="facet-header">
 						<h1 class="facets-facet-browse-title" data-quantity="{{total}}">
@@ -49,13 +50,17 @@
 								{{#if isTotalProductsOne}}
 									{{translate '1 Product'}}
 								{{else}}
+								{{#if hasItemsAndFacets}}
 									{{translate '<span class="facets-facet-number-products">$(0)</span> Products' total}}
+{{/if}}
 								{{/if}}
 							{{/if}}
 
 						</h1>
 
-						<div class="facets-facet-browse-list-header-actions" data-view="Facets.ItemListDisplaySelector"></div>
+							{{#if hasItemsAndFacets}}
+							<div class="facets-facet-browse-list-header-actions" data-view="Facets.ItemListDisplaySelector"></div>
+							{{/if}}
 					</div>
 					<nav class="facets-facet-browse-list-header">
 
@@ -78,9 +83,10 @@
 											<i class="facets-facet-browse-list-header-filter-facets-icon"></i>
 										</button>
 									</div>
+									<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListSortSelector"></div>
+							<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListShowSelector"></div>
+
 									{{/if}}
-											<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListSortSelector"></div>
-									<div class="facets-facet-browse-list-header-filter-column" data-view="Facets.ItemListShowSelector"></div>
 								</div>
 
 							</div>
@@ -88,9 +94,6 @@
 					</nav>
 
 				</header>
-					{{/if}}
-
-
 
 				<meta itemprop="name" content="{{title}}"/>
 
@@ -98,10 +101,8 @@
 				</div>
 
 				{{#if isEmptyList}}
-					{{#unless isCategory}}
 					<div data-view="Facets.Items.Empty">
 					</div>
-					{{/unless}}
 				{{else}}
 					<div class="facets-facet-browse-items" data-view="Facets.Items">
 					</div>
