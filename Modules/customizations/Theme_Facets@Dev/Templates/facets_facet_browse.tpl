@@ -100,9 +100,12 @@
 				<div class="facets-facet-browse-narrowedby" data-view="Facets.FacetsDisplay">
 				</div>
 
+
 				{{#if isEmptyList}}
+					{{#if hasItemsAndFacets}}
 					<div data-view="Facets.Items.Empty">
 					</div>
+					{{/if}}
 				{{else}}
 					<div class="facets-facet-browse-items" data-view="Facets.Items">
 					</div>
