@@ -32,7 +32,7 @@ define( 'BackInStockSubscriptionForm.View',
 			this.model.on('sync', jQuery.proxy(this, 'showSuccess'));
 
 			BackboneFormView.add(this);
-
+			// $('#modal-header').append('<p>Back in Stock Notifications<br></p>');
 			this.on('afterViewRender', function () {
 				this.$('[data-type="success-message"]').css({ display: 'none' });
 			});
@@ -44,15 +44,18 @@ define( 'BackInStockSubscriptionForm.View',
 			var email = $('#in-modal-email').val();
 			var name = $('#in-modal-name').val();
 			var lastname = $('#in-modal-lastname').val();
+			var msg = $('.required-field').html();
 
-			if(email == ''){
-				$('.required-field').append('<p>Email address is required.<br></p>');
-			}
-			if(name == ''){
-				$('.required-field').append('<p>Name is required.<br></p>');
-			}
-			if(lastname == ''){
-				$('.required-field').append('<p>Lastname is required.<br></p>');
+			if(msg == ''){
+				if(email == ''){
+					$('.required-field').append('<p>Email address is required.<br></p>');
+				}
+				if(name == ''){
+					$('.required-field').append('<p>Name is required.<br></p>');
+				}
+				if(lastname == ''){
+					$('.required-field').append('<p>Lastname is required.<br></p>');
+				}
 			}
 
 			var promise = BackboneFormView.saveForm.apply( this, arguments );
