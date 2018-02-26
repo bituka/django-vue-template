@@ -29,7 +29,7 @@ function Schedule()
 			var countOccurr = 0;
 			for(var i=0; i<emailSents.length; i++){
 				if(emailSents[i].email == recs.getValue('custrecordback_in_stock_customer_email'))
-					if(emailSents[i].item == recs.getValue('custrecorditem_back_in_stock')
+					if(emailSents[i].item == recs.getValue('custrecorditem_back_in_stock'))
 						countOccurr++;
 			}
 			if(countOccurr == 1){

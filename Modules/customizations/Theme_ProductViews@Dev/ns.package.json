@@ -7,7 +7,7 @@
             "Sass/**/*.scss"
         ],
         "javascript": [
-            "JavaScript/**/*.js"
+            "JavaScript/*"
         ]
     },
     "overrides": {
