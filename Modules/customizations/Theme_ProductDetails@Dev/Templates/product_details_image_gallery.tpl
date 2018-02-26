@@ -10,11 +10,7 @@
 		{{#if showImageSlider}}
 			<ul class="bxslider" data-slider>
 				{{#each images}}
-<<<<<<< HEAD
 					<li data-zoom class="product-details-image-gallery-container" data-fancy="{{resizeImage url ../imageResizeId}}">
-=======
-					<li data-zoom class="product-details-image-gallery-container" data-fancybox="{{resizeImage url ../imageResizeId}}">
->>>>>>> 884f3b3728c48a5bb7058ab4071841b6cafae0e2
 						
 							<img
 							src="{{resizeImage url ../imageResizeId}}"
@@ -27,11 +23,7 @@
 			</ul>
 		{{else}}
 			{{#with firstImage}}
-<<<<<<< HEAD
 				<div class="product-details-image-gallery-detailed-image" data-zoom data-fancy="{{resizeImage url ../imageResizeId}}">
-=======
-				<div class="product-details-image-gallery-detailed-image" data-zoom data-fancybox="{{resizeImage url ../imageResizeId}}">
->>>>>>> 884f3b3728c48a5bb7058ab4071841b6cafae0e2
 						<img
 						class="center-block"
 						src="{{resizeImage url ../imageResizeId}}"
