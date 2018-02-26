@@ -26,6 +26,3 @@
   </div>
 </form>
 <div class="required-field" style="padding-top: 7px;"></div>
-<div class="" data-type="success-message">
-  <p>You will be notified when this item is back in stock. Thank‐you.</p>
-</div>

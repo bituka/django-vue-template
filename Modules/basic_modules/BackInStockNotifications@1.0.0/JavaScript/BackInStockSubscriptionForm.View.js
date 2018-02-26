@@ -67,8 +67,8 @@ define( 'BackInStockSubscriptionForm.View',
 
 		showSuccess: function ()
 		{
-			this.$('[data-type="success-message"]').css({ display: 'block' });
-			// this.$('[data-type="backinstocksubscription-form"]').css({ display: 'none' });
+			$('[data-type="success-message"]').css({ display: 'block' });
+			$('[data-action="show-bis-form"]').attr("disabled","disabled");
 		}
 
 	});
