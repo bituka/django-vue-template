@@ -22,7 +22,7 @@ govern your access and use. }}
 			</p>
 			<div class="product-reviews-review-review">
 				<p class="product-reviews-review-review-description" itemprop="description">
-					{{breaklines reviewText}}
+					{{{reviewText}}}
 				</p>
 				<div class="product-reviews-review-review-rating">
 					{{#if isReviewRatingPerAttributesLegthGreaterThan0}}
