@@ -21,6 +21,7 @@ define(
 	,	'Utils'
 
 	,	'jquery.zoom'
+	,	'jQuery.fancybox'
 	,	'jQuery.bxSlider'
 	]
 ,	function (
@@ -69,6 +70,63 @@ define(
 					self.$('[data-action="prev-image"]').click(_.bind(self.previousImageEventHandler, self));
 				}
 			}
+			
+			,	initZoom: function ()
+			{
+				if (!SC.ENVIRONMENT.isTouchEnabled)
+				{
+					var images = this.images
+					,	self = this;
+					
+					if (this.parentView.template.Name === "product_details_full") {
+						// This is for the fancybox 
+						var $links = this.$('[data-fancybox]');
+
+						$links.on('click', function(e){
+							var objs = [];
+
+							for(var i = 0; i < $links.length; i++) {
+								var link = $links[i];
+
+								var obj = {
+									src : self.$(link).data('fancybox'),
+									type : 'image'
+								}
+
+								objs.push(obj);
+							}
+							
+
+							$.fancybox.open( objs);
+						
+							return false;
+						});
+						// fancy box functioanlity
+					} else {
+						this.$('[data-zoom]').each(function (slide_index)
+						{
+							self.$(this).zoom({
+								url: resizeImage(images[slide_index].url, 'zoom')
+							,	callback: function()
+								{
+									var $this = self.$(this);
+		
+									if ($this.width() <= $this.closest('[data-view="Product.ImageGallery"]').width())
+									{
+										$this.remove();
+									}
+		
+									return this;
+								}
+							});
+						});
+					}
+					
+
+					
+				}
+			}
+				
   });
 
 

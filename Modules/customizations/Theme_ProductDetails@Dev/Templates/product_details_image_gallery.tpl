@@ -10,25 +10,26 @@
 		{{#if showImageSlider}}
 			<ul class="bxslider" data-slider>
 				{{#each images}}
-					<li data-zoom class="product-details-image-gallery-container">
-						<img
-						src="{{resizeImage url ../imageResizeId}}"
-						alt="{{altimagetext}}"
-						itemprop="image"
-						data-loader="false">
+					<li data-zoom class="product-details-image-gallery-container" data-fancybox="{{resizeImage url ../imageResizeId}}">
+						
+							<img
+							src="{{resizeImage url ../imageResizeId}}"
+							alt="{{altimagetext}}"
+							itemprop="image"
+							data-loader="false">
 						
 					</li>
 				{{/each}}
 			</ul>
 		{{else}}
 			{{#with firstImage}}
-				<div class="product-details-image-gallery-detailed-image" data-zoom>
-					<img
-					class="center-block"
-					src="{{resizeImage url ../imageResizeId}}"
-					alt="{{altimagetext}}"
-					itemprop="image"
-					data-loader="false">
+				<div class="product-details-image-gallery-detailed-image" data-zoom data-fancybox="{{resizeImage url ../imageResizeId}}">
+						<img
+						class="center-block"
+						src="{{resizeImage url ../imageResizeId}}"
+						alt="{{altimagetext}}"
+						itemprop="image"
+						data-loader="false">
 				</div>
 			{{/with}}
 
