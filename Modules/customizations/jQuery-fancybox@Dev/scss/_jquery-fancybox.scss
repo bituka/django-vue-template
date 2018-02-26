@@ -341,7 +341,9 @@ body.fancybox-iosfix {
   background: transparent;
   width: 60px;
   height: 100px;
-  padding: 17px; }
+  padding: 17px;
+  transform:scale(1.5);
+  }
 
 .fancybox-navigation button:before {
   content: "";
