@@ -38,6 +38,11 @@ govern your access and use. }}
 				<div class="product-details-full-main">
 					{{#if isItemProperlyConfigured}}
 					<form id="product-details-full-form" data-action="submit-form" method="POST">
+
+						{{#if isBestSeller}}
+							<div class="best-seller-layer">Best Seller</div>
+						{{/if}}
+
 						<div data-view="Product.Sku"></div>
 
 						{{#if showAvailability}}

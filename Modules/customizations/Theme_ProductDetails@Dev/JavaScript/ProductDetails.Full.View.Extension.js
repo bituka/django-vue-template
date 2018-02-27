@@ -57,7 +57,10 @@ define(
             warranty: warranty,
             showAvailability: showAvailability,
             isOutOfStock: showAvailability,
-            unitOfMeasure: model.get('item').get('saleunit')
+            // @property {string} unitOfMeasure
+            unitOfMeasure: model.get('item').get('saleunit'),
+            // @property {boolean} isBestSeller
+            isBestSeller: model.get('item').get('custitem_topseller')
 				});
 			}
         });
