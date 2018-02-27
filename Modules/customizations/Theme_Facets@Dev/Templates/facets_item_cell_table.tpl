@@ -25,6 +25,11 @@
 			</div>
 		{{/if}}
 	</div>
+
+	{{#if isBestSeller}}
+		<div class="best-seller-layer">Best Seller</div>
+	{{/if}}
+
 	<h2 class="facets-item-cell-table-title">
 		<a href="{{url}}">
 			<span itemprop="name">

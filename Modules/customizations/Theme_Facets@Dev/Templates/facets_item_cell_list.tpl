@@ -51,6 +51,10 @@
 			{{/if}}
 		</h2>
 
+		{{#if isBestSeller}}
+			<div class="best-seller-layer">Best Seller</div>
+		{{/if}}
+
 		{{#if showAvailability}}
 		<p class="facets-item-cell-list-availability">{{translate 'Availability:'}} <br>
 				<span>{{translate 'Usually ships within 24 hours.'}}</span>
