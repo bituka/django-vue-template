@@ -59,7 +59,7 @@ govern your access and use. }}
 						<section data-view="Product.Options"></section>
 						<div class="product-deatils-full-unit-of-measure">
 							<div data-view="Product.Price"></div>
-							<span>{{unitOfMeasure}}</span>
+							<!-- <span>{{unitOfMeasure}}</span> -->
 						</div>
 						<div data-view="Quantity.Pricing" class="product-details-full-quantity"></div>
 

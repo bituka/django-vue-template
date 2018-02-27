@@ -27,6 +27,10 @@
 		{{/if}}
 	</div>
 
+	{{#if isBestSeller}}
+		<div class="best-seller-layer">Best Seller</div>
+	{{/if}}
+
 	<div class="facets-item-cell-grid-details">
 		<a class="facets-item-cell-grid-title" href="{{url}}">
 			<span itemprop="name">{{name}}</span>
