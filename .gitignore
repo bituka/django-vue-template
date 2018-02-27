@@ -35,3 +35,4 @@ DeployDistribution
 .nsdeploy
 payload.json
 .git
+templates-manifest-shopping.json

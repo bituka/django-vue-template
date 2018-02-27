@@ -26,30 +26,22 @@ define('Cart.AddToCart.Button.Multiple.View',
   			var self = this
   			,	cart_promise;
         console.log('add to cart')
-        console.log(this.model)
+        //console.log(this.model)
         var groupItem = this.model.get('item').get('custitem_group_item');
         if(this.model.get('item').get('_itemType') === 'NonInvtPart' && groupItem){
           //console.log(this.model)
+          var line = LiveOrderLineModel.createFromProduct(this.model);
+          cart_promise = this.cart.addLine(line);
+
           _.each(this.model.get('items'), function(items){
-            console.log(items)
-            if (!items.areAttributesValid(['options','quantity'], self.getAddToCartValidators()))
-            {
-              return;
-            }
-            if (!items.isNew() && items.get('source') === 'cart')
-            {
-              cart_promise = this.cart.updateProduct(items);
-              cart_promise.done(function ()
-              {
-                self.options.application.getLayout().closeModal();
-              });
-            }
-            else
-            {
-              var line = LiveOrderLineModel.createFromProduct(items);
-              cart_promise = this.cart.addLine(line);
-              CartConfirmationHelpers.showCartConfirmation(cart_promise, line, self.options.application);
-            }
+            var quantity = _.findWhere(self.model.get('groupItems'), {'item': items.get('internalid').toString()});
+            console.log(quantity, items.get('internalid'))
+            items.set('item', items.attributes);
+            items.set('quantity', parseInt(quantity.quantity));
+
+            var line = LiveOrderLineModel.createFromProduct(items);
+            cart_promise = self.cart.addLine(line);
+
           });
         }
         else{

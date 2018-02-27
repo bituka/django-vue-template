@@ -71,8 +71,8 @@
 
 
 {{!----
-Use the following context variables when customizing this template: 
-	
+Use the following context variables when customizing this template:
+
 	model (Object)
 	model.addresses (Array)
 	model.addresses.0 (Object)

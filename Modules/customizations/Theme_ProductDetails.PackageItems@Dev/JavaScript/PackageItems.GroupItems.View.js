@@ -1,9 +1,11 @@
 define('PackageItems.GroupItems.View',
 [
-    'package_items_group_items.tpl'
+    'Backbone'
+  , 'package_items_group_items.tpl'
 ]
 , function(
-    package_items_group_items_tpl
+    Backbone
+  , package_items_group_items_tpl
 )
 {
   'use strict';
@@ -17,6 +19,7 @@ define('PackageItems.GroupItems.View',
         this.totalPrice = options.totalPrice;
     }
     , render: function(){
+      console.log(this.model)
       var oldPrice = jQuery('.product-views-price-lead').text().split(' ');
       if(this.totalPrice) jQuery('.product-views-price-lead').html(oldPrice[1] + ' '+ this.totalPrice.toFixed(2));
       if(_.findWhere(this.isOutOfStock(), {isInStock: false})){

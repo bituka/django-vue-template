@@ -13,7 +13,7 @@ define(
       Backbone,
       _
     ) {
-      
+
         'use strict';
 
         ProductViewsPriceView.prototype.installPlugin('postContext', {
@@ -22,7 +22,7 @@ define(
 
     				_.extend(context, {
                 // @property {string} unitOfMeasure
-                unitOfMeasure: view.model.get('item').get('saleunit')
+                //unitOfMeasure: view.model.get('item').get('saleunit')
     				});
     			}
         });

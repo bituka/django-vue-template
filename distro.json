@@ -302,7 +302,8 @@
                     "ProductDetails.QuickView.View.Extension",
                     "Theme_Landing_freebies",
                     "FacetsBrowse.CategoryHeading.FixHTMLDescription",
-                    "ProductViews.Price.Extension.View"
+                    "ProductViews.Price.Extension.View",
+                    "Cart.AddToCart.Button.Multiple.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
