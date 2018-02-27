@@ -5,6 +5,13 @@ div.facets-items-collection-view-cell-span3 {
 		// margin-bottom: $theme-base-size * 5;
 		margin-bottom: 0;
 		@extend .cells-border;
+		.best-seller-layer{
+			background: #c70505;
+			text-align: center;
+			line-height: 25px;
+			color: white;
+			text-transform: uppercase;
+		}
 	}
 	.facets-item-cell-grid-details{text-align: center;}
 	// Item Image

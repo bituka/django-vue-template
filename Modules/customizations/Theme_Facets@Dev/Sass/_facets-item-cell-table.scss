@@ -7,12 +7,20 @@ div.facets-items-collection-view-cell-span6 {
 		text-align: center;
 		@extend .cells-border;
 		@extend .clearfix;
+		.best-seller-layer{
+			background: #c70505;
+			text-align: center;
+			line-height: 25px;
+			color: white;
+			text-transform: uppercase;
+		}
 	}
 	// Item Image
 	div.facets-item-cell-table-image-wrapper {
 		//border: 1px solid $theme-neutral-color;
 		padding: $theme-base-size * 2;
 		width: 100%;
+		float: none;
 		a { display: block; }
 	}
 	// Item name
