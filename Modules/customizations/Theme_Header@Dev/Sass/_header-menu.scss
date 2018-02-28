@@ -131,6 +131,9 @@ nav.header-menu-secondary-nav ul.header-menu-level1 ul.header-menu-level2 ul.hea
 				color: $theme-header-ft-color-tertiary;
 				background:$theme-tertiary-color;
 			}
+			&:hover{
+				margin-left: 4px;
+			}
 		}
 	}
 }
