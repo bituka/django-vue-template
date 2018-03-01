@@ -17,8 +17,8 @@
 
 
 {{!----
-Use the following context variables when customizing this template: 
-	
+Use the following context variables when customizing this template:
+
 	collection (Array)
 	showCells (Boolean)
 

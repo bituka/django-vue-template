@@ -67,7 +67,7 @@ define(
 			this.model.on('change', this.updateURL, this);
 		}
 
-	,	childViews: _.extend({}, ProductDetailsBaseView.prototype.childViews, {
+	,	childViews: _.extend(ProductDetailsBaseView.prototype.childViews, {
 			'Correlated.Items': function ()
 			{
 				return new ItemRelationsCorrelatedView({
