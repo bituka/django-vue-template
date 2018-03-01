@@ -27,14 +27,14 @@ define('Facets.Helper'
 			fullurl = this.fixUrlMultiSelect(fullurl);
 			return new Translator(fullurl, null, configuration, isCategoryPage);
 		}
-		
+
 
 		//@method Fixes URL parametrs for MultiSelect Options and applies it to facet filters
 		, fixUrlMultiSelect: function(fullurl){
 				var encodedComma = "%2C";
 				var filtersAppliedOnMultiselect = fullurl.split(encodedComma);
 				for (var i = 0; i < filtersAppliedOnMultiselect.length; i++) {
-					if (fullurl.includes(encodedComma)) {
+					if (fullurl.indexOf(encodedComma)) {
 							fullurl = fullurl.replace(encodedComma, ',');
 					}
 				}
