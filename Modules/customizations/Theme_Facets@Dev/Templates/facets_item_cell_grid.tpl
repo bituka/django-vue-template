@@ -29,6 +29,8 @@
 
 	{{#if isBestSeller}}
 		<div class="best-seller-layer">Best Seller</div>
+	{{else}}
+	<div class="best-seller-layer empty"></div>
 	{{/if}}
 
 	<div class="facets-item-cell-grid-details">

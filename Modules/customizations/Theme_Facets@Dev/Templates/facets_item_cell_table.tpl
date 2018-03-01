@@ -28,6 +28,8 @@
 
 	{{#if isBestSeller}}
 		<div class="best-seller-layer">Best Seller</div>
+	{{else}}
+	<div class="best-seller-layer empty"></div>
 	{{/if}}
 
 	<h2 class="facets-item-cell-table-title">
