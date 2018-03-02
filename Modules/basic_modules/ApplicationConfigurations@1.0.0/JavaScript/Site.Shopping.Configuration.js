@@ -42,7 +42,7 @@ define('Site.Shopping.Configuration', [
                       $el = jQuery('#'+$el).length > 0 ? jQuery('#'+$el) : jQuery('.'+$el);
 
                       $('html, body').animate({
-                          scrollTop: $el.offset().top
+                          scrollTop: $el.offset().top - 200
                       }, 2000);
                     });
                   }
