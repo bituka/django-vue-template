@@ -1,4 +1,4 @@
-.item-relations-related, aside.recently-viewed-items {
+.item-relations-related, aside.recently-viewed-items , aside.item-relations-correlated{
 	text-align: center;
 	// Title
 	h3{
@@ -42,7 +42,7 @@ li.item-relations-cell, li.recently-viewed-cell-item {
 		text-transform: uppercase;
 	}
 	// Item Price
-	span.item-views-price-lead { 
+	span.item-views-price-lead {
 		color: $theme-primary-color;
 		span{color:$theme-primary-color;}
 	}
@@ -57,9 +57,13 @@ li.item-relations-cell, li.recently-viewed-cell-item {
 }
 
 // Carousel Controls
-aside.item-relations-related {
+aside.item-relations-related ,
+aside.item-relations-correlated{
+	.bx-viewport{
+    height: auto !important;
+	}
 	div.bx-controls-direction {
-		a[class*="item-details-carousel"] {
+		a{
 			background: transparent;
 			border: none;
 			padding: 0;
