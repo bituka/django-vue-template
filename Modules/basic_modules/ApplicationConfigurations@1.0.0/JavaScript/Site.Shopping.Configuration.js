@@ -28,8 +28,26 @@ define('Site.Shopping.Configuration', [
     _.extend(ShoppingConfiguration, GlobalConfiguration, SiteApplicationConfiguration);
 
     return {
-        mountToApp: function mountToApp(application) {
-            _.extend(application.Configuration, ShoppingConfiguration);
-        }
+      mountToApp: function mountToApp(application) {
+          _.extend(application.Configuration, ShoppingConfiguration);
+
+          var layout = application.getLayout();
+
+          layout.on('afterViewRender', function () {
+              layout.listenToOnce(
+                  typeof CMS !== 'undefined' ? CMS : Backbone.Events, 'page:content:set', function(){
+                    jQuery('a[data-action="scrollto"]').click(function(e){
+                      e.preventDefault();
+                      var $el = jQuery(e.currentTarget).attr('name');
+                      $el = jQuery('#'+$el).length > 0 ? jQuery('#'+$el) : jQuery('.'+$el);
+
+                      $('html, body').animate({
+                          scrollTop: $el.offset().top
+                      }, 2000);
+                    });
+                  }
+              );
+          });
+      }
     };
 });
