@@ -11,8 +11,12 @@ div.facets-items-collection-view-cell-span6 {
 			background: #c70505;
 			text-align: center;
 			line-height: 25px;
+			height: 25px;
 			color: white;
 			text-transform: uppercase;
+			&.empty{
+				background: none;
+			}
 		}
 	}
 	// Item Image
