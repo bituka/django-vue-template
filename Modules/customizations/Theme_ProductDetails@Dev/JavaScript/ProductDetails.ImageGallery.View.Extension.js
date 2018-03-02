@@ -70,18 +70,18 @@ define(
 					self.$('[data-action="prev-image"]').click(_.bind(self.previousImageEventHandler, self));
 				}
 			}
-			
+
 			,	initZoom: function ()
 			{
 				if (!SC.ENVIRONMENT.isTouchEnabled)
 				{
 					var images = this.images
 					,	self = this;
-					
-					if (this.parentView.template.Name === "product_details_full") {
-						// This is for the fancybox 
-						var $links = this.$('[data-fancy]');
 
+					if (this.parentView.template.Name === "product_details_full") {
+						// This is for the fancybox
+						var $links = this.$('[data-fancy]');
+$('.bx-viewport').append('<div>testest</div>')
 						$links.on('click', function(e){
 							var objs = [];
 
@@ -95,10 +95,10 @@ define(
 
 								objs.push(obj);
 							}
-							
+
 
 							$.fancybox.open( objs);
-						
+
 							return false;
 						});
 						// fancy box functioanlity
@@ -110,23 +110,23 @@ define(
 							,	callback: function()
 								{
 									var $this = self.$(this);
-		
+
 									if ($this.width() <= $this.closest('[data-view="Product.ImageGallery"]').width())
 									{
 										$this.remove();
 									}
-		
+
 									return this;
 								}
 							});
 						});
 					}
-					
 
-					
+
+
 				}
 			}
-				
+
   });
 
 

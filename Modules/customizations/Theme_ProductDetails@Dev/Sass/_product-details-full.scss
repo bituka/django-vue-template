@@ -138,6 +138,14 @@ margin-right: 10px;
 	@media (min-width: $screen-md-min) {
 		margin-bottom: $sc-margin-lv5;
 	}
+	.click-here{
+		text-align: center;
+background: #cccccc;
+color: #6b6b6b;
+line-height: 30px;
+height: 30px;
+font-size: 12px;
+	}
 }
 
 .product-details-full-gallery-prev-icon,
@@ -175,6 +183,9 @@ margin-right: 10px;
 .product-details-image-gallery{
 	.social-sharing-flyout-hover-icons {
 		z-index: 9;
+	}
+	li.product-details-image-gallery-container{
+		cursor: pointer;
 	}
 }
 
