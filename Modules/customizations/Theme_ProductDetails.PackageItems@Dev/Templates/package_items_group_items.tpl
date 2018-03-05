@@ -10,7 +10,7 @@
       <div class="product-details-full-main-pack-options">
         <label for="">{{itemOptions.label}}</label>
         {{#if itemOptions.values}}
-        <select>
+        <select data-action="set-option" data-item-id="{{item}}" data-item-option="{{itemOptions.internalid}}">
         {{#each itemOptions.values}}
             <option value="{{internalid}}">{{label}}</option>
         {{/each}}

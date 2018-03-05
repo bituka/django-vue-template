@@ -44,7 +44,7 @@ define('LiveOrder.Line.Model'
 			//@return {Transaction.Line.Model.JSON}
 		,	toJSON: function toJSON ()
 			{
-
+				console.log(this, this.get('options').toJSON())
 				//@class Transaction.Line.Model.JSON Class used to send a transaction line representation to the back-end
 				//without sending all the heavy weight JSON that is not totally needed by the back-end
 				return {

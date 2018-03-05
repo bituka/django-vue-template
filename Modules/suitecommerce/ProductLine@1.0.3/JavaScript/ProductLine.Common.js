@@ -54,7 +54,7 @@ define(
 					.filter(function(option)
 					{
 						return _.find(Configuration.get('ItemOptions.optionsConfiguration'), function(optionConfiguration)
-							{									
+							{
 								return optionConfiguration.cartOptionId === option.get('cartOptionId');
 							});
 					});
