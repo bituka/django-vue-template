@@ -55,10 +55,13 @@
 		</div> -->
 
 		<div class="facets-item-cell-grid-price" data-view="ItemViews.Price"></div>
+
 		<div class="facets-item-cell-grid-price">
+
 			<div data-view="ItemDetails.Options"></div>
 			<div class="cells-item-price">
-				<div data-view="Cart.QuickAddToCart"></div>
+				<div class="uom-cell-price" data-view="Cart.QuickAddToCart"></div>
+				<span class="uom-cell">{{unitOfMeasure}}</span>
 			</div>
 		</div>
 

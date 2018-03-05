@@ -26,7 +26,9 @@ define(
 
 				_.extend(context, {
                     // @property {string} badge
-                    badge: badge
+                    badge: badge,
+                    // @property {string} unitOfMeasure
+                    unitOfMeasure: model.get('item').get('saleunit')
 				});
 			}
         });

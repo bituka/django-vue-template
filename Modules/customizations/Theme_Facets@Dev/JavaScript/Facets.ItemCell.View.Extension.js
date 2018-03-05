@@ -28,7 +28,9 @@ define(
             // @property {string} badge
             badge: badge,
             // @property {boolean} isBestSeller
-            isBestSeller: model.get('custitem_topseller')
+            isBestSeller: model.get('custitem_topseller'),
+            // @property {string} unitOfMeasure
+            unitOfMeasure: model.get('saleunit'),
 				});
 			}
         });

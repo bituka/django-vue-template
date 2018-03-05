@@ -61,6 +61,7 @@
 		<div data-view="ItemDetails.Options"></div>
 		<div class="cells-item-price">
 			<div data-view="Cart.QuickAddToCart"></div>
+			<span class="uom-cell">{{unitOfMeasure}}</span>
 		</div>
 	</div>
 

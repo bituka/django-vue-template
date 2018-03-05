@@ -19,12 +19,13 @@ define(
         ProductViewsPriceView.prototype.installPlugin('postContext', {
             priority: 1,
             execute: function execute(context, view) {
+            
 
-    				_.extend(context, {
-                // @property {string} unitOfMeasure
-                unitOfMeasure: view.model.get('item').get('saleunit')
-    				});
-    			}
+      				_.extend(context, {
+                  // @property {string} unitOfMeasure
+                  // unitOfMeasure: view.model.get('item').get('saleunit')
+      				});
+            }
         });
 
 });

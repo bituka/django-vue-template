@@ -26,7 +26,8 @@
 			{{translate 'View full details'}}
 		</a>
 
-		<div data-view="Product.Price"></div>
+		<div class="uom-qv-price" data-view="Product.Price"></div>
+		<span class="uom-cell-qv">{{unitOfMeasure}}</span>
 		<div data-view="Quantity.Pricing"></div>
 
 		<div class="product-details-quickview-main">
