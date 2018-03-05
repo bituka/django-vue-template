@@ -256,20 +256,20 @@ define(
 
 			var self = this
 			,	options = self.selector ? {selector: self.selector} : {}
-			
+
 			// Returns the promise of the save action of the model
 			,	result = model.save(props || this.$savingForm.serializeObject(), _.extend({
 					wait: true
-				
+
 				,	forceUpdate: false
-				
+
 					// Hides error messages, re enables buttons and triggers the save event
 					// if we are in a modal this also closes it
 				,	success: function (model, response)
 					{
 						if (self.inModal && self.$containerModal)
 						{
-							self.$containerModal.modal('hide');
+							// self.$containerModal.modal('hide');
 						}
 
 						if (self.$savingForm.length)
@@ -281,7 +281,7 @@ define(
 						}
 						model.trigger('saveCompleted');
 					}
-				
+
 					// Re enables all button and shows an error message
 				,	error: function (model, response)
 					{

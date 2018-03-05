@@ -3,13 +3,15 @@ define( 'BackInStockSubscriptionForm.View',
 		'backinstock_form.tpl',
 
 		'Backbone.FormView',
-		'Backbone'
+		'Backbone',
+		'underscore'
 	],
 	function (
 		template,
 
 		BackboneFormView,
-		Backbone
+		Backbone,
+		_
 	)
 {
 
@@ -46,7 +48,7 @@ define( 'BackInStockSubscriptionForm.View',
 			var lastname = $('#in-modal-lastname').val();
 			var msg = $('.required-field').html();
 
-			if(msg == ''){
+			if(msg == '') {
 				if(email == ''){
 					$('.required-field').append('<p>Email address is required.<br></p>');
 				}
@@ -58,7 +60,10 @@ define( 'BackInStockSubscriptionForm.View',
 				}
 			}
 
-			var promise = BackboneFormView.saveForm.apply( this, arguments );
+			var promise = BackboneFormView.saveForm.apply(this, arguments);
+			// promise.done(function(response){
+			// });
+
 		},
 
 		cleanInput: function () {
@@ -67,8 +72,9 @@ define( 'BackInStockSubscriptionForm.View',
 
 		showSuccess: function ()
 		{
-			$('[data-type="success-message"]').css({ display: 'block' });
-			$('[data-action="show-bis-form"]').attr("disabled","disabled");
+			$('[data-type="backinstocksubscription-form"]').next().html('');
+			$('[data-type="backinstocksubscription-form"]').css({ display: 'none' });
+			$('[data-type="backinstocksubscription-form"]').next().append('<p class="bis-thank-you">You will be notified when this item is back in stock. Thank‐you.<br><br></p>');
 		}
 
 	});
