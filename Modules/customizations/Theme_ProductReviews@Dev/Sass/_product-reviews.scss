@@ -10,6 +10,7 @@ div.item-details-product-review-content {
     @media (min-width:  $screen-sm-min) {
         background: transparent;
         border: none;
+        width: 100%;
     }
     // Header
     div.product-reviews-center-container-header {
@@ -131,4 +132,16 @@ div.product-reviews-form-confirmation-message {
 }
 .product-reviews-center-container.no-reviews{
   width: 100%;
+}
+.product-reviews-center-content{
+  .product-reviews-center-more-info-content-container{
+    .product-reviews-center{
+      .product-reviews-center-container, .product-reviews-center-list{
+        width:100%;
+      }
+      .product-reviews-center-list{
+        margin-bottom: 0;
+      }
+    }
+  }
 }

@@ -281,7 +281,7 @@ div.product-reviews-center-review-container {
 	// Review
 	div.product-reviews-review {
 		padding: 0 !important;
-		margin-bottom: $theme-base-size * 10;
+		margin-bottom: 20px;
 		border-bottom: 1px solid $theme-neutral-color;
 		.row {
 			margin: 0;
@@ -310,6 +310,7 @@ div.product-reviews-center-review-container {
 		} // Content
 		p.product-reviews-review-review-description {
 			width: 100%;
+			font-size: 14px;
 			@media (max-width: $screen-xs-min) {
 				font-size: $theme-sm-font-size;
 			}
@@ -344,4 +345,5 @@ span.product-reviews-review-comment-item-cell-date{
 	margin: 0;
 	margin-top: 10px;
 	margin-right: 20px;
+	clear: both;
 }
