@@ -17,6 +17,7 @@ define(
         'use strict';
 
         _.extend(ProductDetailsFullView.prototype, {
+
           childViews: _.extend(ProductDetailsFullView.prototype.childViews, {
             'BackInStockSubscription.View': function(){
               return new BackInStockSubscriptionView({
@@ -24,7 +25,30 @@ define(
       				,	application: this.application
       				});
             }
-          })
+          }),
+
+          events: {
+    				'click .custcol_additional_options-controls-group .product-views-option-tile-picker': 'unsetOption'
+    			},
+
+    			unsetOption: function(e){
+            // function to manage 'ADDITIONAL OPTIONS'
+            e.preventDefault();
+    				var self = this.$(e.currentTarget);
+            var active = self[0].classList[1];
+            var selected_option = this.model.get('options').findWhere({cartOptionId: 'custcol_additional_options'});
+            if(active == 'active'){
+              self.removeClass('active');
+              selected_option.unset('value');
+            }else{
+              self.addClass('active');
+              selected_option.set('value', {
+                internalid: "3"
+              ,	label: "Additional Options"
+              });
+            }
+    			}
+
         });
 
         ProductDetailsFullView.prototype.installPlugin('postContext', {

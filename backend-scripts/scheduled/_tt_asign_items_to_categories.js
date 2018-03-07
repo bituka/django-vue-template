@@ -45,10 +45,12 @@ function assign_items() {
                         category.commitLineItem('items');
                         nlapiLogExecution('DEBUG', 'itemId', itemId);
 
-                          // fix only for this account (slowly server response)
-                          sleep(1000);
-                          
+                        // // fix only for this account (slowly server response)
+                        // sleep(1000);
+
                         nlapiSubmitRecord(category);
+                        // nlapiSubmitRecord(category, false,  true);
+                        nlapiLogExecution('DEBUG', 'submit-category', 'submit-category');
 
                         if (nlapiGetContext().getRemainingUsage() < 100) {
                             nlapiLogExecution('DEBUG', 'USAGE LOW', nlapiGetContext().getRemainingUsage());
