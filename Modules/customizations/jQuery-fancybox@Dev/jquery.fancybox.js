@@ -5150,7 +5150,7 @@
 					clearTimeout( timerID );
 				}
 
-				if ( current.opts.hash === false ) {
+				if ( current && current.opts.hash === false ) {
 					return;
 				}
 

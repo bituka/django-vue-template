@@ -42,7 +42,7 @@
 				</li>
 			{{/if}}
 		{{/each}}
-		<li><a class="header-menu-level1-anchor" href="http://www.thetubestore.com/resources" target="_blank">Resources</a></li>
+		<li><a class="header-menu-level1-anchor" href="/resources" data-hashtag="#resources" data-touchpoint="home">Resources</a></li>
 
 	</ul>
 
