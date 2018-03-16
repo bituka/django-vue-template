@@ -99,7 +99,7 @@ define(
 				//@property {Boolean} priceSchedule
 			,	priceSchedule: this.price_schedule
 				//@property {Boolean} isOpen
-			,	isOpen: this._isOpen
+			,	isOpen: true
 				//@property {Boolean} isModal
 			,	isModal: this.options.isModal
 				//@property {String} itemKey

@@ -16,7 +16,7 @@
 				</div>
 			<div class="quantity-pricing-expander-body collapse {{#if isOpen}}in{{/if}}" data-nonprefix='true' id="expander-body-container-{{itemKey}}" aria-expanded="true">
 			{{else}}
-				<a class="quantity-pricing-flyout-head-toggle" data-toggle="dropdown" aria-expanded="false"> {{translate 'Quantity discounts available'}} <i class="quantity-pricing-flyout-toggle-icon"></i></a>
+				<a class="quantity-pricing-flyout-head-toggle" data-toggle="dropdown" aria-expanded="true"> {{translate 'Quantity discounts available'}} <i class="quantity-pricing-flyout-toggle-icon"></i></a>
 			<div class="quantity-pricing-flyout-content collapsed">
 			{{/if}}
 				<!-- content -->

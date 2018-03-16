@@ -1,6 +1,6 @@
 /* ============= START BOOSTRAP HELPER VARIABLES ============== */
 i[class^="global-views-star-rating"] {
-  color: $theme-rating-stars-color !important;
+  color: #EDB745 !important;
   opacity: 1;
   &.global-views-star-rating-empty { opacity: 0.4 !important; }
 }
@@ -22,7 +22,7 @@ button{
   }
 }
 input[name="quantity"]{
-  background: $theme-neutral-color !important;
+  background: #ffffff !important;
 }
 
 .btn-primary{

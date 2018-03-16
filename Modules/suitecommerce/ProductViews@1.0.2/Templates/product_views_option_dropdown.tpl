@@ -18,7 +18,7 @@
 		{{/if}}
 		<div class="{{cartOptionId}}-controls" data-validation="control">
 			<select name="{{cartOptionId}}" id="{{cartOptionId}}" class="product-views-option-dropdown-select" data-toggle="select-option">
-				<option value="">{{translate '- Select -'}}</option>
+				<option value="">{{translate '- None -'}}</option>
 				{{#each values}}
 					{{#if internalId}}
 						<option
