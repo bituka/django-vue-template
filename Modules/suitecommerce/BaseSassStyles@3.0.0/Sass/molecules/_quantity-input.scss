@@ -20,7 +20,7 @@
 // Styleguide 3.11
 
 .quantity-input-container {
-	display: block;
+	display: inline-flex;
 }
 
 input[type="number"].quantity-input {
@@ -56,10 +56,12 @@ input[type="number"].quantity-input {
 	&:focus {
 		outline: none;
 	}
-
+	/*
 	@media (min-width: $screen-md-min) {
 		display: none;
 	}
+	*/
+
 }
 
 .quantity-input-button-add {

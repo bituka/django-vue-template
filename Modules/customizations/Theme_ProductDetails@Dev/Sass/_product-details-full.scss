@@ -627,6 +627,9 @@ div.cart-confirmation-modal div.cart-confirmation-modal-details div.cart-confirm
 	}
 }
 .product-details-quantity-container{
+	display: inline-flex;
+}
+.product-details-quantity-container{
 	@media(max-width: 768px){
 		display: inline-block;
 	}
