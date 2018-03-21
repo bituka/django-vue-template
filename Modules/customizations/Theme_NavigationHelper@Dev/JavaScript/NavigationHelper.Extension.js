@@ -33,7 +33,8 @@ define('NavigationHelper.Extension'
                     return ~_.indexOf(this.hrefApplicationPrefixes, href.split(':')[0]);
                 },
                 isKeepHref: function($element) {
-                    return $element.attr("target","_blank");
+                    return $element.attr('data-keep-href') === 'true';
+                    //return $element.attr("target","_blank");
                 },
 
                 executeClick: _.wrap(Layout.executeClick, function(fn, e) {

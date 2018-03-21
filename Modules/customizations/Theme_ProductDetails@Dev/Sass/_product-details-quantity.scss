@@ -38,6 +38,8 @@
 	border:1px solid lighten($sc-color-theme, 20%);
 	width: $sc-target-size-mobile;
 	height: $sc-target-size-mobile;
+	font-size: 26px;
+	border-radius: 4px !important;
 	/*
 	@media (min-width: $screen-md-min) {
 		display: none;
@@ -50,7 +52,7 @@
 	border: 1px solid $theme-input-color;
 	text-align: center;
 	background: transparent;
-	max-width: 70px;
+	max-width: 90px;
 }
 .product-details-quantity-value {
 	@extend .item-qty-box;
