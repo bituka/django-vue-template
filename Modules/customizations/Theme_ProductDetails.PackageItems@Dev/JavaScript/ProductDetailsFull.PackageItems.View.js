@@ -58,6 +58,8 @@ function(
                 self.model.set('items', self.items);
                 setTimeout(function(){
                   self.render();
+                  //self.$('.product-details-package-options h2').text('Tube upgrade package includes...');
+                  //self.$('.product-details-package-options table').show(2000);
                 }, 1000);
               })
           }

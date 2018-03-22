@@ -1,8 +1,10 @@
 .product-details-package-options{
+ 
   table{
     @extend .table;
     @extend .table-striped;
     margin-top: 20px;
+    //display: none;
   }
 }
 

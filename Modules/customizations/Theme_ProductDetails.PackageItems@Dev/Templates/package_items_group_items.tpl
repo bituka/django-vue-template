@@ -1,5 +1,5 @@
 <div class="product-details-package-options">
-  <h2>Tube upgrade package includes...</h2>
+  <h2>Tube upgrade package includes</h2>
   <table>
     {{#each packageItems}}
     <tr>
