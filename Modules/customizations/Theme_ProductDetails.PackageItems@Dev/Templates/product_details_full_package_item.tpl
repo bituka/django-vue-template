@@ -98,7 +98,7 @@
 			<!-- Nav tabs -->
 			<ul class="nav nav-tabs" role="tablist">
 				<li role="presentation" class="active"><button data-target="#tab-1" aria-controls="tab-1" role="tab" data-toggle="tab">Description</button></li>
-				<li role="presentation"><button data-target="#tab-2" aria-controls="profile" role="tab" data-toggle="tab">Aditional info</button></li>
+				<li role="presentation"><button data-target="#tab-2" aria-controls="profile" role="tab" data-toggle="tab">Additional info</button></li>
 			</ul>
 
 			<!-- Tab panes -->
