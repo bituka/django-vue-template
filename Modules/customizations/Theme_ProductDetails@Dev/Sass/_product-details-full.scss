@@ -279,6 +279,12 @@ font-size: 12px;
 .product-details-full-actions {
 	margin-bottom: $sc-margin-base * 2;
 	clear: none;
+	@media(max-width: 1200px){
+		clear: both;
+		.product-details-full-actions-container{
+			float: left;
+		}
+	}
 }
 
 .product-details-full-add-to-cart-help {

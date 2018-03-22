@@ -101,7 +101,6 @@
 			}
 		}
 	}
-	.product-details-quantity-options{width:15%;}
 }
 
 
@@ -127,4 +126,11 @@
 }
 .uom-cell-qv{
 	padding-left: 5px;
+}
+.product-details-quickview-main{
+	.product-details-quickview-actions{
+		padding: 0;
+		clear: both;
+		float: left;
+	}
 }
