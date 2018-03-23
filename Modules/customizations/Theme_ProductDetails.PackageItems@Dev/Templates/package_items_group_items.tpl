@@ -1,5 +1,5 @@
 <div class="tube_store_loading_packages">
-<img src="http://thetubestore.production.netsuitestaging.com/Images/Global/Rotating_Tube_Loading_Icon.gif" />
+<img src="/Images/Global/Rotating_Tube_Loading_Icon.gif" />
 </div>  
   <div class="product-details-package-options">
     <h2>Tube upgrade package includes</h2>
