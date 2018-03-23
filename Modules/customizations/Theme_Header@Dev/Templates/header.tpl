@@ -60,32 +60,23 @@ your access and use. }}
 		</button>
 	</div>
 	<!-- End Mobile Toggle -->
-
+<div class="header-redesign">
 	<div class="header-logo-wrapper">
 		<div data-view="Header.Logo"></div>
 	</div>
 
-	<!-- Start Search Mobile -->
-	<div class="header-menu-searchmobile">
-		<button class="header-menu-searchmobile-link" data-action="show-sitesearch" title="{{translate 'Search'}}">
-			<i class="header-menu-searchmobile-icon"></i>
-		</button>
-	</div>
-
-	<div class="header-menu-search-dsk">
-		<!-- Start Main Menu -->
-		<div class="header-secondary-wrapper" data-view="Header.Menu" data-phone-template="header_sidebar" data-tablet-template="header_sidebar"></div>
-
-		<!-- Start Search Desktop -->
-		<div class="header-menu-search">
-			<button class="header-menu-search-link" data-action="show-sitesearch" title="{{translate 'Search'}}">
-				<i class="header-menu-search-icon"></i>
-			</button>
-		</div>
-		<!-- End Search Desktop -->
-	</div>
-
 	<div class="header-site-search" data-view="SiteSearch" data-type="SiteSearch"></div>
+
+</div>
+
+
+
+
+
+	<div class="header-secondary-wrapper" data-view="Header.Menu" data-phone-template="header_sidebar" data-tablet-template="header_sidebar"></div>
+
+
+
 
 </div>
 

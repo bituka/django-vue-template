@@ -6,7 +6,7 @@
 }}
 
 <nav class="header-menu-secondary-nav">
-	<ul class="header-menu-level1">
+	<ul class="header-menu-level1 clearfix">
 		<!--<li><a class="header-menu-level1-anchor" href="/" data-hashtag="#/" data-touchpoint="home">HOME</a></li>
 		<li><a class="header-menu-level1-anchor" href="/search" data-hashtag="#/">SHOP</a></li>-->
 		{{#each categories}}
@@ -40,10 +40,20 @@
 					</ul>
 					{{/if}}
 				</li>
+				<li class="separator">|</li>
 			{{/if}}
 		{{/each}}
-		<li><a class="header-menu-level1-anchor" href="/resources" data-hashtag="#resources" data-touchpoint="home">Resources</a></li>
+		<li data-toggle="categories-menu"><a class="header-menu-level1-anchor" href="/resources" data-hashtag="#resources" data-touchpoint="home">Resources</a></li>
 
 	</ul>
 
 </nav>
+<section class="bottom-menu">
+	<ul>
+		<li><a href="">Product reviews</a></li>
+		<li><a href="">Vacuum tube basics</a></li>
+		<li><a href="">Preamp tube matching</a></li>
+		<li><a href="">Perfect pair system</a></li>
+		<li><a href="">Shop by amp guide</a></li>
+	</ul>
+</section>
