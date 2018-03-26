@@ -42,7 +42,7 @@ nav.header-menu-secondary-nav {
 			}
 			&[data-toggle="categories-menu"]{
 				padding: 0;
-				background: #2175b0;
+				background: #196ba5;
 				a.header-menu-level1-anchor {
 					color: white;
 					font-weight: normal;
@@ -72,13 +72,13 @@ nav.header-menu-secondary-nav {
 				}
 			}
 			&.open{
-				background: darken(#2175b0 , 15%);
+				background: darken(#196ba5 , 15%);
 			}
 			&.separator{
 				line-height: 42px;
 				color: white;
 				padding: 0;
-				background:#2175b0;
+				background:#196ba5;
 			}
 		}
 	}
