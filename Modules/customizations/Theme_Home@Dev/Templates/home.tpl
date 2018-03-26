@@ -16,30 +16,67 @@ govern your access and use. }}
 		<!-- End Slider Section -->
 
 		<!-- Start H1 home section -->
-		<section class="home-full-width welcome-msg">
-			<div class="home-wrappper">
-				<div class="home-h1" data-cms-area="home_welcome-message" data-cms-area-filters="path">
-
-				</div>
+		<section class="home-four-banners container" data-cms-area="home-four-banners" data-cms-area-filters="path">
+			<div class="row">
+				<article class="col-md-3 col-xs-6">
+					<a class="banner-link clearfix" href="">
+						<div class="img-container">
+							<img src="/Images/Home/banners/four-banners/four-banners-example.jpg" alt="">
+						</div>
+						<div class="text-container bottom">
+							<p>Shop for Preamp tubes!</p>
+							<p>We have a huge selection of 12AX7, 12AT7, 6922, and so much more!</p>
+						</div>
+					</a>
+				</article>
+				<article class="col-md-3 col-xs-6">
+					<a class="banner-link clearfix" href="">
+						<div class="text-container top">
+							<p>Shop for all common power tubes.</p>
+							<p>See our selection of 6L6GC, EL34, KT88, 300B and many many more!</p>
+						</div>
+						<div class="img-container">
+							<img src="/Images/Home/banners/four-banners/four-banners-example.jpg" alt="">
+						</div>
+					</a>
+				</article>
+				<article class="col-md-3 col-xs-6">
+					<a class="banner-link clearfix" href="">
+						<div class="img-container">
+							<img src="/Images/Home/banners/four-banners/four-banners-example.jpg" alt="">
+						</div>
+						<div class="text-container bottom">
+							<p>Rectifier tubes for guitar and Hi-Fi audio amplifiers.</p>
+							<p>All rectifier tubes in stock - 5AR4, 5U4, 5Y3, and more!</p>
+						</div>
+					</a>
+				</article>
+				<article class="col-md-3 col-xs-6">
+					<a class="banner-link clearfix" href="">
+						<div class="text-container top">
+							<p>Shop by Amp - The easiest way to buy tubes for your tube amplifier!</p>
+						</div>
+						<div class="img-container">
+							<img src="/Images/Home/banners/four-banners/four-banners-example.jpg" alt="">
+						</div>
+					</a>
+				</article>
 			</div>
 		</section>
 		<!-- End H1 home section -->
 
-		<!-- Start First Merchandising Zone -->
+
 		<section class="home-full-width">
 			<div class="home-wrappper">
-				<div class="home-merchandizing-zone">
-					<div class="section-title-merchandising" data-cms-area="home_merchandising-top-title" data-cms-area-filters="path">
+					<div class="section-editable-title" data-cms-area="home_merchandising-top-title" data-cms-area-filters="path">
 
 					</div>
-					<!--Merchandising zone-->
+					<!--Merchandising zone
 					<div class="home-cms-page-merchandising" data-cms-area="home_merchandising-top-list" data-cms-area-filters="path">
-
 					</div>
-				</div>
+					-->
 			</div>
 		</section>
-		<!-- End First Merchandising Zone -->
 
 		<!-- Start First Banner -->
 		<section class="home-full-banner-section container">
