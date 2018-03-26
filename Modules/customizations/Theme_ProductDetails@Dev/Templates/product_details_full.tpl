@@ -47,7 +47,7 @@ govern your access and use. }}
 
 						{{#if showAvailability}}
 						<div class="product-details-full-availabity">
-							<p class="availability"><strong>{{translate 'Availability:'}}</strong>
+							<p class="availability"><strong>{{translate 'Availability: '}}</strong>
                   <span>{{translate 'Usually ships within 24 hours.'}}</span>
               </p>
 						</div>
