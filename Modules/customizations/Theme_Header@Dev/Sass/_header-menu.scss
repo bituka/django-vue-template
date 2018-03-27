@@ -145,11 +145,11 @@ nav.header-menu-secondary-nav ul.header-menu-level1 ul.header-menu-level2 {
 		@extend .col-md-3; // Link
 		a.header-menu-level2-anchor {
 			color: $theme-header-ft-color-tertiary;
-			border-bottom: 1px solid $theme-header-ft-color-tertiary;
+			border-bottom: 1px solid #d0d0d0;
 			pointer-events: auto !important;
 			text-align: left;
 			padding-bottom: 5px !important;
-			font-size:$theme-md-font-size;
+			font-size:13px;
 		}
 		&:hover,
 		&:focus,

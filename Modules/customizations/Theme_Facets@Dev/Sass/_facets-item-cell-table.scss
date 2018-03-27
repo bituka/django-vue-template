@@ -32,7 +32,7 @@ div.facets-items-collection-view-cell-span6 {
 		padding: $theme-base-size * 3 0;
 		min-height: 70px;
 		text-align: center;
-		a {
+		div {
 			@extend .cells-item-name;
 			padding: 0;
 			@media (max-width: $screen-lg-min) { min-height: 90px; }
@@ -84,4 +84,7 @@ div.facets-items-collection-view-cell-span6 {
 		// Filled
 		div.global-views-star-rating-area-filled { text-align: right; }
 	}
+}
+.facets-item-cell-table .facets-item-cell-table-price{
+	margin-bottom: 0;
 }

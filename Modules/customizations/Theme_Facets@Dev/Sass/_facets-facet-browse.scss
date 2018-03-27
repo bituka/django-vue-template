@@ -473,3 +473,14 @@ ul.facets-faceted-navigation-item-facet-optionlist-extra.collapse.in {
 		}
 	}
 }
+.facets-facet-browse-items{
+	a.parent-link{
+		display: block;
+		margin-bottom: 10px;
+		&:hover{
+			> div{
+				border: 1px solid #cecece;
+			}
+		}
+	}
+}
