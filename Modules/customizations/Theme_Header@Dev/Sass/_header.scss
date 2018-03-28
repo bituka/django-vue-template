@@ -2,11 +2,6 @@ header#site-header {
 	background-color: $theme-header-bck-color-gral;
 	color:$theme-header-ft-color-secondary;
 	@include box-shadow(1px -3px 12px $theme-header-bck-color-top);
-	@media (min-width: $screen-md-min) {
-		width: 100%;
-		position: fixed;
-		z-index: 50;
-	}
 	&.shopping-layout-header {
 		margin-bottom: 0;
 	}

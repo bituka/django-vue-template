@@ -4,7 +4,7 @@
 	provided, however, if you are an authorized user with a NetSuite account or log-in, you
 	may use this code subject to the terms that govern your access and use.
 }}
-
+<a class="parent-link clearfix" href="{{url}}">
 <div class="facets-item-cell-list" itemprop="itemListElement"  data-item-id="{{itemId}}" itemscope itemtype="https://schema.org/Product" data-track-productlist-list="{{track_productlist_list}}" data-track-productlist-category="{{track_productlist_category}}" data-track-productlist-position="{{track_productlist_position}}" data-sku="{{sku}}">
 	<div class="facets-item-cell-list-left">
 		<div class="facets-item-cell-list-image-wrapper">
@@ -14,9 +14,9 @@
 				{{{ badge }}}
 			{{/if}}
 			<!-- addition END BADGES -->
-				<a class="facets-item-cell-list-anchor" href='{{url}}'>
+				<div class="facets-item-cell-list-anchor">
 					<img class="facets-item-cell-list-image" src="{{resizeImage thumbnail.url 'thumbnail'}}" alt="{{thumbnail.altimagetext}}" itemprop="image">
-				</a>
+				</div>
 			{{else}}
 			<!-- addition START BADGES -->
 			{{#if badge}}
@@ -25,25 +25,17 @@
 			<!-- addition END BADGES -->
 				<img class="facets-item-cell-list-image" src="{{resizeImage thumbnail.url 'thumbnail'}}" alt="{{thumbnail.altimagetext}}" itemprop="image">
 			{{/if}}
-			{{#if isEnvironmentBrowser}}
-				<div class="facets-item-cell-list-quick-view-wrapper">
-					<a href="{{url}}" class="facets-item-cell-list-quick-view-link" data-toggle="show-in-modal">
-						<i class="facets-item-cell-list-quick-view-icon"></i>
-						{{translate 'Quick View'}}
-					</a>
-				</div>
-			{{/if}}
 		</div>
 	</div>
 	<div class="facets-item-cell-list-right">
 		<meta itemprop="url" content="{{url}}">
 		<h2 class="facets-item-cell-list-title">
 			{{#if itemIsNavigable}}
-				<a class="facets-item-cell-list-name" href='{{url}}'>
+				<div class="facets-item-cell-list-name" >
 					<span itemprop="name">
 						{{name}}
 					</span>
-				</a>
+				</div>
 			{{else}}
 				<span itemprop="name">
 					{{name}}
@@ -54,7 +46,10 @@
 		{{#if isBestSeller}}
 			<div class="best-seller-layer">Best Seller</div>
 		{{/if}}
-
+		{{#if showRating}}
+		<div class="facets-item-cell-list-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"  data-view="GlobalViews.StarRating">
+		</div>
+		{{/if}}
 		{{#if showAvailability}}
 		<p class="facets-item-cell-list-availability">{{translate 'Availability:'}} <br>
 				<span>{{translate 'Usually ships within 24 hours.'}}</span>
@@ -81,11 +76,6 @@
 			</div>
 		</div>
 
-		{{#if showRating}}
-		<div class="facets-item-cell-list-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"  data-view="GlobalViews.StarRating">
-		</div>
-		{{/if}}
-
 		<div class="facets-item-cell-list-stock">
 			<div data-view="ItemViews.Stock" class="facets-item-cell-list-stock-message"></div>
 		</div>
@@ -94,7 +84,7 @@
 	</div>
 </div>
 
-
+</a>
 
 
 {{!----

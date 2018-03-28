@@ -31,7 +31,7 @@
 			</div>
 
 			<div class="product-details-full-main-content-right">
-			<div class="product-details-full-divider"></div>
+			<!-- <div class="product-details-full-divider"></div> -->
 
 			<div class="product-details-full-main">
 				{{#if isItemProperlyConfigured}}
@@ -43,7 +43,16 @@
 
 						<section data-view="Product.Options"></section>
 
-							<div data-view="Product.Sku"></div>
+						<div data-view="Product.Sku"></div>
+
+						{{#if showAvailability}}
+						<div class="product-details-full-availabity">
+							<p class="availability"><strong>{{translate 'Availability: '}}</strong>
+                  <span>{{translate 'Usually ships within 24 hours.'}}</span>
+              </p>
+						</div>
+						{{/if}}
+						<div class="product-details-full-divider"></div>
 
 						<div data-view="Product.Price"></div>
 						<div data-view="Quantity.Pricing"></div>
@@ -64,7 +73,7 @@
 								<div class="product-details-full-actions-container">
 									<div data-view="AddToProductList" class="product-details-full-actions-addtowishlist"></div>
 
-									<div data-view="ProductDetails.AddToQuote" class="product-details-full-actions-addtoquote"></div>
+									<!--<div data-view="ProductDetails.AddToQuote" class="product-details-full-actions-addtoquote"></div>-->
 								</div>
 
 							</section>

@@ -41,5 +41,8 @@
         border-top: none;
     }
 }
-.tt-dropdown-menu { margin-top: 0 !important; }
-.tt-dropdown-menu-shadow-fix { height:0; }
+.tt-dropdown-menu {
+  margin-top: 0 !important;
+  z-index: 120 !important;
+}
+.tt-dropdown-menu-shadow-fix{ height:0; }

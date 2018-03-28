@@ -29,7 +29,10 @@ margin-bottom: 10px;
 	}
 	// Item name
 	h2.facets-item-cell-list-title {
-		a { @extend .cells-item-name; }
+		div {
+			@extend .cells-item-name;
+			text-align: left !important;
+		}
 		@media (max-width: $screen-md-min) { padding-top: 0; }
 	}
 	// Item SKU
@@ -52,4 +55,8 @@ margin-bottom: 10px;
 			&.global-views-star-rating-empty { opacity: 0.25; }
 		}
 	}
+}
+.facets-item-cell-list-right .facets-item-cell-list-price{
+	float: left;
+	clear: both;
 }

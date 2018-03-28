@@ -4,7 +4,7 @@
 	provided, however, if you are an authorized user with a NetSuite account or log-in, you
 	may use this code subject to the terms that govern your access and use.
 }}
-
+<a class="parent-link clearfix" href="{{url}}">
 <div class="facets-item-cell-table" itemprop="itemListElement"  data-item-id="{{itemId}}" itemscope itemtype="https://schema.org/Product" data-track-productlist-list="{{track_productlist_list}}" data-track-productlist-category="{{track_productlist_category}}" data-track-productlist-position="{{track_productlist_position}}" data-sku="{{sku}}">
 	<meta itemprop="url" content="{{url}}">
 	<div class="facets-item-cell-table-image-wrapper">
@@ -13,17 +13,10 @@
             {{{ badge }}}
         {{/if}}
         <!-- addition END BADGES -->
-		<a class="facets-item-cell-table-link-image" href="{{url}}">
+		<div class="facets-item-cell-table-link-image">
 			<img class="facets-item-cell-table-image" src="{{resizeImage thumbnail.url 'main'}}" alt="{{thumbnail.altimagetext}}" itemprop="image">
-		</a>
-		{{#if isEnvironmentBrowser}}
-			<div class="facets-item-cell-table-quick-view-wrapper">
-				<a href="{{url}}" class="facets-item-cell-table-quick-view-link" data-toggle="show-in-modal">
-				<i class="facets-item-cell-table-quick-view-icon"></i>
-				{{translate 'Quick View'}}
-			</a>
-			</div>
-		{{/if}}
+		</div>
+
 	</div>
 
 	{{#if isBestSeller}}
@@ -33,16 +26,20 @@
 	{{/if}}
 
 	<h2 class="facets-item-cell-table-title">
-		<a href="{{url}}">
+		<div >
 			<span itemprop="name">
 				{{name}}
 			</span>
-		</a>
+		</div>
 	</h2>
 	{{#if showAvailability}}
 	<p class="facets-item-cell-table-availability">{{translate 'Availability:'}} <br>
 			<span>{{translate 'Usually ships within 24 hours.'}}</span>
 	</p>
+	{{/if}}
+	{{#if showRating}}
+	<div class="facets-item-cell-table-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"  data-view="GlobalViews.StarRating">
+	</div>
 	{{/if}}
 
 	<!-- SKU
@@ -65,18 +62,13 @@
 		</div>
 	</div>
 
-	{{#if showRating}}
-	<div class="facets-item-cell-table-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"  data-view="GlobalViews.StarRating">
-	</div>
-	{{/if}}
-
 	<div class="facets-item-cell-table-stock">
 		<div data-view="ItemViews.Stock" class="facets-item-cell-table-stock-message"></div>
 	</div>
 
 	<!-- <div data-view="StockDescription"></div> -->
 </div>
-
+</a>
 
 
 

@@ -6,7 +6,7 @@
 }}
 
 <nav class="header-menu-secondary-nav">
-	<ul class="header-menu-level1">
+	<ul class="header-menu-level1 clearfix">
 		<!--<li><a class="header-menu-level1-anchor" href="/" data-hashtag="#/" data-touchpoint="home">HOME</a></li>
 		<li><a class="header-menu-level1-anchor" href="/search" data-hashtag="#/">SHOP</a></li>-->
 		{{#each categories}}
@@ -40,10 +40,20 @@
 					</ul>
 					{{/if}}
 				</li>
+				<li class="separator">|</li>
 			{{/if}}
 		{{/each}}
-		<li><a class="header-menu-level1-anchor" href="/resources" data-hashtag="#resources" data-touchpoint="home">Resources</a></li>
+		<li data-toggle="categories-menu"><a class="header-menu-level1-anchor" href="/resources" data-hashtag="#resources" data-touchpoint="home">Resources</a></li>
 
 	</ul>
 
 </nav>
+<section class="bottom-menu">
+	<ul>
+		<div class="bottom-menu-links-1" data-cms-area="bottom-menu-links-1" data-cms-area-filters="path"></div>
+		<div class="bottom-menu-links-2" data-cms-area="bottom-menu-links-2" data-cms-area-filters="path"></div>
+		<div class="bottom-menu-links-3" data-cms-area="bottom-menu-links-3" data-cms-area-filters="path"></div>
+		<div class="bottom-menu-links-4" data-cms-area="bottom-menu-links-4" data-cms-area-filters="path"></div>
+		<div class="bottom-menu-links-5" data-cms-area="bottom-menu-links-5" data-cms-area-filters="path"></div>
+	</ul>
+</section>

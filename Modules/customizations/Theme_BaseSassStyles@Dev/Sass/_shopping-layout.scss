@@ -31,12 +31,6 @@ body {
 	padding: 0 !important;
 }
 
-#main-container {
-	@media (min-width: $screen-md-min) {
-		padding-top:149px;
-	}
-}
-
 // Breadcrumb
 div.shopping-layout-breadcrumb {
 	width: 100%;

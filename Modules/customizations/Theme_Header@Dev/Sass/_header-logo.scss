@@ -5,15 +5,12 @@
 	@media (min-width: $screen-md-min) {
 	  height:75px;
 	}
-	@media (max-width: $screen-md-min) {
-		width:210px;
-		height:auto;
-		max-height:49px;
-	}
-	@media (max-width: $screen-xxs-min) {
-		width:199px;
-   	height:auto;
-		max-height:49px;
+	@media (max-width: $screen-md-min){
+		width:calc(100% - 70px);
+    margin-bottom: 0;
+		img.header-logo-image{
+			max-height: 60px;
+		}
 	}
 }
 

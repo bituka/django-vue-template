@@ -24,7 +24,7 @@ div.facets-items-collection-view-cell-span3 {
 		padding: $theme-base-size * 2;
 		min-height:180px;
 		a { display: block; }
-		a.facets-item-cell-grid-link-image{
+		div.facets-item-cell-grid-link-image{
 			height: 145px;
 			vertical-align: middle;
 			line-height: 145px;
@@ -34,15 +34,16 @@ div.facets-items-collection-view-cell-span3 {
 		}
 	}
 	// Item Name
-	a.facets-item-cell-grid-title {
+	div.facets-item-cell-grid-title {
 		@extend .cells-item-name;
-		min-height: 75px;
+		min-height: 65px;
 		@media (max-width: $screen-lg-min) { min-height: 90px; }
 		@media (max-width: $screen-sm-min) { min-height: 75px; }
 		@media (max-width: $screen-xs-min) {
 			font-size: $theme-sm-font-size !important;
 			min-height: 90px;
 		}
+    padding: 12px 0 8px 0 !important;
 	}
 	// Item SKU
 	div.item-details-sku-container {
@@ -70,5 +71,7 @@ div.facets-items-collection-view-cell-span3 {
 		> div { height: 55px; }
 	}
 }
-
+.facets-item-cell-grid-details .facets-item-cell-grid-price{
+	margin-bottom: 0;
+}
 .facets-item-cell-grid-image{width:auto; height:auto; max-width:100%; max-height:100%;}

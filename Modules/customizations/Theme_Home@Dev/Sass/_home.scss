@@ -403,6 +403,13 @@ section.home-mix-banner-container {
 		a {
 			display: block;
 			overflow: hidden;
+			p{
+				margin-top: 10px;
+				float: left;
+				text-align: center;
+				display: block;
+				width:100%;
+			}
 		}
 
 		img {
@@ -560,5 +567,104 @@ section.home-items-carousel {
 			font-size: 20px;
 			padding: 30px 0;
 		}
+	}
+}
+.home-four-banners{
+	margin-top: 50px;
+	article{
+		margin-bottom: 20px;
+		a{
+			display:block;
+			.img-container{
+				@extend .clearfix;
+				img{
+					float: left;
+				}
+			}
+			.text-container{
+				height: 120px;
+				display:flex;
+				justify-content: center;
+				flex-direction: column;
+				text-align: center;
+				position: relative;
+				overflow: hidden;
+				p{
+					line-height: normal;
+					z-index: 100;
+					font-size: 16px;
+					transition: all 0.5s;
+					margin: 4px 0;
+					padding: 0 10px;
+				}
+				&:after{
+					content:"";
+					display: block;
+					width: 100%;
+					background: #196ba5;
+					height: 120px;
+					position: absolute;
+					z-index: 50;
+			    transition: all 0.4s;
+				}
+				&.bottom{
+					&:after{
+						top: 118px;
+					}
+				}
+				&.top{
+					&:after{
+						top: -118px;
+					}
+				}
+			}
+			&:hover{
+				.text-container{
+					&:after{
+						top: 0;
+					}
+					p{
+						color: white;
+					}
+				}
+			}
+		}
+		@media(max-width: 1200px){
+			a{
+				.text-container{
+					p{
+						font-size: 14px;
+					}
+				}
+			}
+		}
+		@media(max-width: 480px){
+			width: 100%;
+			a{
+				.text-container{
+					p{
+
+					}
+				}
+			}
+		}
+	}
+}
+.section-editable-title{
+	margin-bottom: 75px;
+	margin-top: 50px;
+	h2{
+		padding: 20px 0;
+		font-size: 20px;
+		border-top: 1px solid #2d74b0;
+		border-bottom: 1px solid #2d74b0;
+	}
+}
+.bottom-banner-container{
+	float: left;
+	width: 100%;
+	margin:25px 0 50px 0;
+	a{
+		display: block;
 	}
 }
