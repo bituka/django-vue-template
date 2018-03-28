@@ -8,7 +8,7 @@ govern your access and use. }}
 
 		<!-- Start Slider Section -->
 		<section class="home-slider-container container">
-			<div class="home-image-slider" data-cms-area="home_main-slider" data-cms-area-filters="path">
+			<div class="home-image-slider" data-cms-area="home_main-slider_v2" data-cms-area-filters="path">
 
 			</div>
 		</section>
