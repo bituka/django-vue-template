@@ -43,6 +43,7 @@ nav.header-menu-secondary-nav {
 			&[data-toggle="categories-menu"]{
 				padding: 0;
 				background: #196ba5;
+				position: relative;
 				a.header-menu-level1-anchor {
 					color: white;
 					font-weight: normal;
@@ -99,6 +100,9 @@ section.bottom-menu{
 	margin-top: 10px;
 	ul{
 		text-align: center;
+		> div{
+			display: inline-block;
+		}
 		li{
 			display: inline-block;
 			a{
@@ -122,6 +126,10 @@ ul.header-menu-level-container {
 	background:$theme-tertiary-color;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
 	border-bottom: 0;
+	width: 200px;
+	border: none;
+	min-height: 0;
+	padding: 0;
 	@media (min-width: $screen-md-min) {
 		position: absolute;
 		top: 42px;
@@ -133,6 +141,7 @@ ul.header-menu-level-container {
 		&:active {
 			background:$theme-tertiary-color !important;
 		}
+		padding: 0;
 	} // Img. Banners
 	.header-menu-banner {
 		width: 25%;
@@ -141,15 +150,23 @@ ul.header-menu-level-container {
 
 // LEVEL 2 Links
 nav.header-menu-secondary-nav ul.header-menu-level1 ul.header-menu-level2 {
+	@extend .clearfix;
 	li {
 		@extend .col-md-3; // Link
+		padding: 0;
+		width: 100%;
 		a.header-menu-level2-anchor {
 			color: $theme-header-ft-color-tertiary;
-			border-bottom: 1px solid #d0d0d0;
+			border-bottom: none;
 			pointer-events: auto !important;
 			text-align: left;
-			padding-bottom: 5px !important;
-			font-size:13px;
+			font-size:12px;
+			padding:12px 10px;
+			margin: 0;
+			&:hover{
+				background: #2a80bd;
+				color: white;
+			}
 		}
 		&:hover,
 		&:focus,

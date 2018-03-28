@@ -50,10 +50,10 @@
 </nav>
 <section class="bottom-menu">
 	<ul>
-		<li><a href="">Product reviews</a></li>
-		<li><a href="">Vacuum tube basics</a></li>
-		<li><a href="">Preamp tube matching</a></li>
-		<li><a href="">Perfect pair system</a></li>
-		<li><a href="">Shop by amp guide</a></li>
+		<div class="bottom-menu-links-1" data-cms-area="bottom-menu-links-1" data-cms-area-filters="path"></div>
+		<div class="bottom-menu-links-2" data-cms-area="bottom-menu-links-2" data-cms-area-filters="path"></div>
+		<div class="bottom-menu-links-3" data-cms-area="bottom-menu-links-3" data-cms-area-filters="path"></div>
+		<div class="bottom-menu-links-4" data-cms-area="bottom-menu-links-4" data-cms-area-filters="path"></div>
+		<div class="bottom-menu-links-5" data-cms-area="bottom-menu-links-5" data-cms-area-filters="path"></div>
 	</ul>
 </section>
