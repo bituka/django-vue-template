@@ -2,11 +2,13 @@ define('Cart.AddToCart.Button.Multiple.View'
 , [
   'Cart.AddToCart.Button.View'
   , 'LiveOrder.Line.Model'
+  ,	'Cart.Confirmation.Helpers'
 ]
 , function
 (
   CartAddToCartButtonView
   , LiveOrderLineModel
+  ,	CartConfirmationHelpers
 )
 {
     'use strict';
@@ -16,21 +18,36 @@ define('Cart.AddToCart.Button.Multiple.View'
         console.log('render', this.model)
         this._render();
       }
+
+    , sleep: function (milliseconds) {
+		  var start = new Date().getTime();
+		  for (var i = 0; i < 1e7; i++) {
+		    if ((new Date().getTime() - start) > milliseconds){
+		      break;
+		    }
+		  }
+		}
+
     , addToCart: function addToCart (e)
     		{
     			e.preventDefault();
 
     			var self = this
+          ,	cart_promise1
     			,	cart_promise;
           console.log('add to cart')
           console.log(this.model)
           var groupItem = this.model.get('item').get('custitem_group_item');
           if(this.model.get('item').get('_itemType') === 'NonInvtPart' && groupItem){
-            //console.log(this.model)
-            var line = LiveOrderLineModel.createFromProduct(this.model);
-            cart_promise = this.cart.addLine(line);
+
+            // for package items, get the non inventory information
+            var line1 = LiveOrderLineModel.createFromProduct(this.model);
+            cart_promise1 = this.cart.addLine(line1);
+            // fix to show only package item information on modal
+            this.sleep(500);
 
             _.each(this.model.get('items'), function(items){
+
               var quantity = _.findWhere(self.model.get('groupItems'), {'item': items.get('internalid').toString()});
               //console.log(quantity, items.get('internalid'))
 
@@ -62,8 +79,9 @@ define('Cart.AddToCart.Button.Multiple.View'
 
               var line = LiveOrderLineModel.createFromProduct(items);
               cart_promise = self.cart.addLine(line);
-
             });
+            // show modal with the package information
+            CartConfirmationHelpers.showCartConfirmation(cart_promise1, line1, self.options.application);
           }
           else{
             if (!this.model.areAttributesValid(['options','quantity'], self.getAddToCartValidators()))

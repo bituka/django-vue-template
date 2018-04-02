@@ -50,7 +50,7 @@ define('PackageItems.GroupItems.View',
     , render: function(){
       //console.log(this.model)
       var oldPrice = jQuery('.product-views-price-lead').text().split(' ');
-      if(this.totalPrice) jQuery('.product-views-price-lead').html(oldPrice[1] + ' USD $'+ this.totalPrice.toFixed(2));
+      // if(this.totalPrice) jQuery('.product-views-price-lead').html(oldPrice[1] + ' USD $'+ this.totalPrice.toFixed(2));
       if(_.findWhere(this.isOutOfStock(), {isInStock: false})){
         jQuery('.product-line-stock').html('<span>This item is out of stock</span>');
         jQuery('[data-type="add-to-cart"]').attr('disabled', true);
