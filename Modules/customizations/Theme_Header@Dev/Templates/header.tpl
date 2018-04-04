@@ -74,7 +74,7 @@ your access and use. }}
 
 
 	<div class="header-secondary-wrapper" data-view="Header.Menu" data-phone-template="header_sidebar" data-tablet-template="header_sidebar"></div>
-	<section class="bottom-menu">
+	<div class="bottom-menu">
 		<ul>
 			<div class="bottom-menu-links-1" data-cms-area="bottom-menu-links-1" data-cms-area-filters="global"></div>
 			<div class="bottom-menu-links-2" data-cms-area="bottom-menu-links-2" data-cms-area-filters="global"></div>
@@ -82,7 +82,7 @@ your access and use. }}
 			<div class="bottom-menu-links-4" data-cms-area="bottom-menu-links-4" data-cms-area-filters="global"></div>
 			<div class="bottom-menu-links-5" data-cms-area="bottom-menu-links-5" data-cms-area-filters="global"></div>
 		</ul>
-	</section>
+	</div>
 
 
 
