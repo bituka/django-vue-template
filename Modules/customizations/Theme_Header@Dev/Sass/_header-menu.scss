@@ -17,7 +17,7 @@ div.header-secondary-wrapper {
 	}
 	background-color: $theme-header-bck-color-gral;
 	border: none;
-	margin-bottom: 10px;
+	margin-bottom:0;
 	@media (min-width: $screen-md-min) {
 		background-color: $theme-header-bck-color-gral;
 		height: auto;
@@ -98,6 +98,9 @@ nav.header-menu-secondary-nav {
 }
 section.bottom-menu{
 	margin-top: 10px;
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
 	ul{
 		text-align: center;
 		> div{
@@ -115,6 +118,9 @@ section.bottom-menu{
 				}
 			}
 		}
+	}
+	@media(max-width: 992px){
+		display: none;
 	}
 }
 
