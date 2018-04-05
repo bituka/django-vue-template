@@ -35,7 +35,7 @@
 			</div>
 
 		{{/if}}
-		<div>
+		<div class="list-counter">
 		{{#if showRatingCount}}
 			<span class="global-views-star-rating-review-total">
 
