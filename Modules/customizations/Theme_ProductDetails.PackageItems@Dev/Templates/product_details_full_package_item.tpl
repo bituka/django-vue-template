@@ -55,6 +55,7 @@
 						<div class="product-details-full-divider"></div>
 
 						<div data-view="Product.Price"></div>
+						<div data-view="Product.Quantity.Available"></div>
 						<div data-view="Quantity.Pricing"></div>
 
 						<div data-view="Product.Stock.Info"></div>

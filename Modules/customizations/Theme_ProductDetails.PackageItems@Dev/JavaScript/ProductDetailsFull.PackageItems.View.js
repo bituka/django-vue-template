@@ -8,9 +8,11 @@ define('ProductDetailsFull.PackageItems.View'
 
   , 'ProductDetails.Full.View'
   , 'ProductDetails.Base.View'
+  , 'ProductDetail.ShowQuantityAvailable.View'
 
   , 'PackageItems.GroupItems.View'
   , 'PackageItems.GroupItems.Model'
+  , 'QuantityPricing.View'
 ],
 function(
   BackboneCompositeView,
@@ -21,9 +23,11 @@ function(
 
   ProductDetailsFullView,
   ProductDetailsBaseView,
+  ProductDetailShowQuantityAvailableView,
 
   PackageItemsGroupItemsView,
-  PackageItemsModel
+  PackageItemsModel,
+
 ){
   'use strict';
 
@@ -116,8 +120,17 @@ function(
             model: this.model,
             totalPrice: this.totalPrice
           });
-  			}
-      })
+  			},
+        'Product.Quantity.Available': function()
+        {
+            return new ProductDetailShowQuantityAvailableView({
+                model: this.model
+            });
+        }
+      }),
+
+
+
   });
 
 });

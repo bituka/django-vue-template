@@ -29,10 +29,33 @@
 		<div class="facets-item-cell-grid-title">
 			<span itemprop="name">{{name}}</span>
 		</div>
+
 		{{#if showRating}}
 			<div class="facets-item-cell-grid-rating" itemprop="aggregateRating" itemscope="" itemtype="https://schema.org/AggregateRating" data-view="GlobalViews.StarRating">
 			</div>
+
 		{{/if}}
+		<div>
+		{{#if showRatingCount}}
+			<span class="global-views-star-rating-review-total">
+
+					{{#if ratingCountGreaterThan0}}
+						<span class="global-views-star-rating-review-total-number" itemprop="reviewCount">({{ratingCount}}</span>
+						{{#if hasOneReview}}
+							<span class="global-views-star-rating-review-total-review">{{ translate ' Review'}})</span>
+						{{else}}
+							<span class="global-views-star-rating-review-total-review">{{ translate ' Reviews'}})</span>
+						{{/if}}
+
+					{{/if}}
+			</span>
+			{{else}}
+				<span class="global-views-star-rating-review-total-empty-number" itemprop="reviewCount">({{ratingCount}})</span>
+				<span class="global-views-star-rating-review-total-no-review">{{ translate ' No Reviews yet'}}</span>
+
+		{{/if}}
+		</div>
+
 
 		{{#if showAvailability}}
 		<p class="facets-item-cell-grid-availability">{{translate 'Availability:'}} <br>

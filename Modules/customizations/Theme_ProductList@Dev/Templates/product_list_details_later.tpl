@@ -25,7 +25,7 @@
 					{{/if}}
 				</small>
 			</h3>
-			
+
 			<div data-confirm-message class="product-list-details-later-confirm-message"></div>
 			
 			{{#if hasItems}}

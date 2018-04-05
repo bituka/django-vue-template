@@ -66,6 +66,7 @@ govern your access and use. }}
 							<div data-view="Product.Price"></div>
 							<span>{{unitOfMeasure}}</span>
 						</div>
+						<div data-view="Product.Quantity.Available"></div>
 						<div data-view="Quantity.Pricing" class="product-details-full-quantity"></div>
 
 						<div data-view="Product.Stock.Info"></div>

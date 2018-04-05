@@ -37,10 +37,26 @@
 			<span>{{translate 'Usually ships within 24 hours.'}}</span>
 	</p>
 	{{/if}}
-	{{#if showRating}}
-	<div class="facets-item-cell-table-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"  data-view="GlobalViews.StarRating">
+	<div>
+		{{#if showRatingCount}}
+		<span class="global-views-star-rating-review-total">
+
+					{{#if ratingCountGreaterThan0}}
+						<span class="global-views-star-rating-review-total-number" itemprop="reviewCount">({{ratingCount}}</span>
+						{{#if hasOneReview}}
+							<span class="global-views-star-rating-review-total-review">{{ translate ' Review'}})</span>
+						{{else}}
+							<span class="global-views-star-rating-review-total-review">{{ translate ' Reviews'}})</span>
+						{{/if}}
+
+					{{/if}}
+			</span>
+		{{else}}
+		<span class="global-views-star-rating-review-total-empty-number" itemprop="reviewCount">({{ratingCount}})</span>
+		<span class="global-views-star-rating-review-total-no-review">{{ translate ' No Reviews yet'}}</span>
+
+		{{/if}}
 	</div>
-	{{/if}}
 
 	<!-- SKU
 	<div class="item-details-sku-container">
