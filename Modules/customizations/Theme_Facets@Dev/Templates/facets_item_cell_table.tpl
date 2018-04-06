@@ -37,7 +37,12 @@
 			<span>{{translate 'Usually ships within 24 hours.'}}</span>
 	</p>
 	{{/if}}
-	<div>
+	{{#if showRating}}
+		<div class="facets-item-cell-grid-rating" itemprop="aggregateRating" itemscope="" itemtype="https://schema.org/AggregateRating" data-view="GlobalViews.StarRating">
+		</div>
+
+	{{/if}}
+	<div class="list-counter">
 		{{#if showRatingCount}}
 		<span class="global-views-star-rating-review-total">
 
