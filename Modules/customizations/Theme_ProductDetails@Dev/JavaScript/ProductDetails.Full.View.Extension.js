@@ -3,7 +3,6 @@
 define(
     'ProductDetails.Full.View.Extension',
     [
-        'ProductDetail.ShowQuantityAvailable.View',
       'ProductDetails.Full.View',
       'BackInStockSubscription.View',
       'Backbone',
@@ -12,7 +11,6 @@ define(
     function(
       ProductDetailsFullView,
       BackInStockSubscriptionView,
-      ProductDetailShowQuantityAvailableView,
       Backbone,
       _
     ) {
@@ -26,13 +24,8 @@ define(
       					item: this.model.get('item')
       				,	application: this.application
       				});
-            },
-              'Product.Quantity.Available': function()
-              {
-                  return new ProductDetailShowQuantityAvailableView({
-                      model: this.model
-                  });
-              }
+            }
+
           }),
 
           events: {

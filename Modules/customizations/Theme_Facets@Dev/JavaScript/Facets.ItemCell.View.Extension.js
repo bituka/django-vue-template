@@ -2,14 +2,30 @@
 // addition to include custom Fields at FS
 define(
     'Facets.ItemCell.View.Extension',
-    ['Facets.ItemCell.View', 'Backbone', 'underscore'],
+
+    ['Facets.ItemCell.View', 'Product.Model','Facets.ItemCell.ShowQuantityAvailable.View', 'Backbone', 'underscore' ],
 
     function(
         FacetsItemCellView,
+        ProductModel,
+        FacetsItemCellShowQuantityAvailableView,
         Backbone,
         _)
     {
         'use strict';
+
+        _.extend(FacetsItemCellView.prototype, {
+            childViews: _.extend(FacetsItemCellView.prototype.childViews, {
+                'Product.Quantity.Available': function() {
+
+                    return new FacetsItemCellShowQuantityAvailableView({
+                        model: new ProductModel({item:this.model})
+                    });
+                },
+
+            })
+        })
+
         FacetsItemCellView.prototype.installPlugin('postContext', {
             priority: 1,
             execute: function execute(context, view) {
@@ -46,6 +62,10 @@ define(
             //@property {Boolean} hasOneReview
             ,hasOneReview: model.get('custitem_ns_pr_count') === 1
 				});
-			}
+
+			},
+
+
+
         });
     });
