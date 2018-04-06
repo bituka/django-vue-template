@@ -83,7 +83,7 @@
 				<span class="uom-cell">{{unitOfMeasure}}</span>
 			</div>
 		</div>
-		<div data-view="Product.Quantity.Available"></div>
+		<div class="product-qty" data-view="Product.Quantity.Available"></div>
 	<!--
 		<div class="facets-item-cell-grid-stock">
 			<div data-view="ItemViews.Stock" class="facets-item-cell-grid-stock-message"></div>
