@@ -179,3 +179,18 @@ div.cart-detailed-body {
 		section.cart-lines-table-middle{width: 100%;padding: 0;}
 	}
 }
+.cart-cms-text{
+	margin-bottom: 15px;
+	p{
+		font-size: 18px;
+		a{
+	    color: #296aa5;
+			&:hover{
+		    color: #2c91d8;
+			}
+		}
+		&:first-of-type{
+			margin-bottom: 10px;
+		}
+	}
+}
