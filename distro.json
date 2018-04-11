@@ -212,7 +212,8 @@
         "customizations/Theme_ProductViews":"Dev",
         "customizations/Theme_OrderHistory":"Dev",
         "customizations/Theme_Utils":"Dev",
-        "customizations/Theme_ProductDetails.PackageItems": "Dev"
+        "customizations/Theme_ProductDetails.PackageItems": "Dev",
+        "customizations/Theme_Wizard": "Dev"
     },
     "tasksConfig": {
         "local": {

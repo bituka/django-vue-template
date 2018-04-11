@@ -53,6 +53,7 @@ div.layout.sec_wizard {
 div.checkout-layout-content {
 	//padding-top: 81px;
 	header.wizard-header {
+		margin-bottom: 20px;
 		border-bottom: 1px solid $theme-neutral-color;
 		// Title
 		h1.wizard-header-title {
@@ -432,4 +433,7 @@ button.order-wizard-step-button-back {
 section#wizard-step-content div.order-wizard-address-module-show-addresses-container div.address-details a, section#wizard-step-content div.order-wizard-shipmethod-module div.address-details a,
 a.order-wizard-address-module-new-button{
 	border-radius: 0;
+}
+.wizard-top-text{
+	margin-bottom: 20px;
 }
