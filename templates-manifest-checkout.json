@@ -132,6 +132,7 @@
   "header_sidebar.tpl.js",
   "header.tpl.js",
   "order_wizard_title.tpl.js",
+  "additional_fields.tpl.js",
   "global_views_modal.tpl.js",
   "global_views_back_to_top.tpl.js",
   "footer.tpl.js",

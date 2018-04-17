@@ -255,6 +255,7 @@ section.order-wizard-showshipments-module-shipping-details {
 	border: none !important;
 	h3.order-wizard-showshipments-module-shipping-title {
 		//color: $theme-primary-color;
+		margin-left: 15px;
 	}
 	div.address-details {
 		border: none;
@@ -436,4 +437,11 @@ a.order-wizard-address-module-new-button{
 }
 .wizard-top-text{
 	margin-bottom: 20px;
+}
+
+.additional-fields-tittle {
+	margin: 14px 0 10px 0!important;
+}
+.additional-fields-po{
+	padding-bottom: 20px;
 }

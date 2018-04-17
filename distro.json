@@ -213,7 +213,8 @@
         "customizations/Theme_OrderHistory":"Dev",
         "customizations/Theme_Utils":"Dev",
         "customizations/Theme_ProductDetails.PackageItems": "Dev",
-        "customizations/Theme_Wizard": "Dev"
+        "customizations/Theme_Wizard": "Dev",
+        "customizations/Theme_CheckoutAdditionalFields": "Dev"
     },
     "tasksConfig": {
         "local": {
@@ -563,7 +564,8 @@
 
                     "Theme_Header",
                     "Theme_Footer",
-                    "NavigationHelper.Extension"
+                    "NavigationHelper.Extension",
+                    "CheckoutAdditionalFields.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
