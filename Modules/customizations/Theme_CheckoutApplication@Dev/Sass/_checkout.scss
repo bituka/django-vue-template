@@ -445,3 +445,20 @@ a.order-wizard-address-module-new-button{
 .additional-fields-po{
 	padding-bottom: 20px;
 }
+
+.order-wizard-register-guest-module-create-account-button{
+	text-transform: uppercase;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  border: 1px solid #c70505;
+  background: #c70505;
+  color: #fff;
+  font-size: 12px;
+  font-family: Helvetica,Arial,sans-serif;
+}
+.order-wizard-register-guest-module-create-account-button:hover{
+	background: transparent;
+  color: #c70505;
+}

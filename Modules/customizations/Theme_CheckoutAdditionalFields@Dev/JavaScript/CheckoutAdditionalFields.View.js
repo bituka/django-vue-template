@@ -21,6 +21,9 @@ define( 'CheckoutAdditionalFields.View',
 
       submit : function(){
 
+        this.profileModel = ProfileModel.getInstance();
+        var log = this.profileModel.get('isLoggedIn');
+
         var purchase_order_number = this.$('#ponumber').val() || '';
         if(purchase_order_number != "") {
           this.wizard.model.set('purchasenumber', purchase_order_number);
@@ -32,7 +35,7 @@ define( 'CheckoutAdditionalFields.View',
           options.custbody_weborder_comments = comments;
           this.wizard.model.set('options', options);
         }
-                
+
       }
 
     });

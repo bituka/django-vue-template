@@ -1,0 +1,13 @@
+{
+    "gulp": {
+        "sass": [
+            "Sass/**/*.scss"
+        ],
+        "templates": [
+            "Templates/*"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/OrderWizard.Module.Register@2.1.2/Templates/order_wizard_register_guest_module.tpl": "Templates/order_wizard_register_guest_module.tpl"        
+    }
+}
