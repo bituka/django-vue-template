@@ -62,6 +62,7 @@ define(
                 var addInformation = model.get('item').get('custitem_addition_information');
                 var warranty = model.get('item').get('custitem_warranty');
                 var storeDescription = model.get('item').get('storedetaileddescription');
+                var customVideo = model.get('item').get('custitem_field_video');
                 var badge = '',
                 showAvailability = model.get('item').get('_isInStock');
                 if (getBadge === 'NEW') {
@@ -83,6 +84,7 @@ define(
             warranty: warranty,
             showAvailability: showAvailability,
             isOutOfStock: showAvailability,
+            customVideo:customVideo,
             // @property {string} unitOfMeasure
             unitOfMeasure: model.get('item').get('saleunit'),
             // @property {boolean} isBestSeller
