@@ -11,7 +11,7 @@
   <div class="address-edit-fields-group additional-fields-po">
     <h4 class="order-wizard-showshipments-module-shipping-title additional-fields-tittle"> Order Comments: What amp will you use this in? </h4>
 	  <div class="address-edit-fields-group-form-controls">
-	    <textarea id="notes-comments" name="textarea" class="address-edit-fields-group-input" rows="5" cols="40"></textarea>
+	    <textarea id="notes-comments" name="textarea" class="address-edit-fields-group-input" rows="7" cols="40"></textarea>
 	  </div>
 	</div>
 

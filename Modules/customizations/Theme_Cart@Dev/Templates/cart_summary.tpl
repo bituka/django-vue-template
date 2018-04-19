@@ -173,13 +173,18 @@
 			</div>
 		{{/if}}
 	</div>
+	<div class="cart-summary-truck-image">
+		<a href="#shipping-options" target="_blank">
+			<img src="/Images/Shipping-Truck.png" alt="">
+		</a>
+	</div>
 
 	{{#if showPromocodeForm}}
 		<div class="cart-summary-grid cart-summary-promocode-container">
 			<div class="cart-summary-expander-head">
 				<a class="cart-summary-expander-head-toggle collapsed" data-toggle="collapse" data-target="#promo-code-container" aria-expanded="false" aria-controls="promo-code-container">
-							{{translate 'Have a Promo Code?'}}
-							<i data-toggle="tooltip" class="cart-summary-expander-tooltip" title="{{translate '<b>Promo Code</b><br>To redeem a promo code, simply enter your information and we will apply the offer to your purchase during checkout.'}}"></i>
+							{{translate 'Have a Coupon Code?'}}
+							<i data-toggle="tooltip" class="cart-summary-expander-tooltip" title="{{translate '<b>Coupon Code</b><br>To redeem a coupon code, simply enter your information and we will apply the offer to your purchase during checkout.'}}"></i>
 							<i class="cart-summary-expander-toggle-icon-promocode"></i>
 				</a>
 			</div>
@@ -188,11 +193,7 @@
 			</div>
 		</div>
 	{{/if}}
-		<div class="cart-summary-truck-image">
-			<a href="#shipping-options" target="_blank">
-				<img src="/Images/Shipping-Truck.png" alt="">
-			</a>
-		</div>
+
 	{{#if showActions}}
 		<div class="cart-summary-button-container">
 			<a id="btn-proceed-checkout" class="cart-summary-button-proceed-checkout {{#if showProceedButton}} cart-summary-button-proceed-checkout-sb {{/if}}" href="#" data-touchpoint="checkout" data-hashtag="#">

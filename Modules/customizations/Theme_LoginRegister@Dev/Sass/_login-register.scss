@@ -42,3 +42,9 @@ div.login-register-wrapper-column-register {
 button.login-register-forgot-password-submit{
 	@include btn($theme-primary-color);
 }
+.create-accout-custom{
+	display: none;
+	&.collapsed{
+		display: block;
+	}
+}

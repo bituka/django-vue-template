@@ -12,6 +12,7 @@
     },
     "overrides": {
         "suitecommerce/LoginRegister@2.4.0/Templates/login_register_checkout_as_guest.tpl": "Templates/login_register_checkout_as_guest.tpl",
-        "suitecommerce/LoginRegister@2.4.0/Templates/login_register.tpl": "Templates/login_register.tpl"
+        "suitecommerce/LoginRegister@2.4.0/Templates/login_register.tpl": "Templates/login_register.tpl",
+        "suitecommerce/LoginRegister@2.4.0/Templates/login_register_register.tpl": "Templates/login_register_register.tpl"
     }
 }
