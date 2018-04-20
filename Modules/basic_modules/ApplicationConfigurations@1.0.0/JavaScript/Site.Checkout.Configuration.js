@@ -15,7 +15,7 @@ define('Site.Checkout.Configuration', [
 ) {
     'use strict';
 
-    var useSimplifyLayout = true;
+    var useSimplifyLayout = false;
 
     if(!useSimplifyLayout){
         _.each(CheckoutConfigurationStepsOPC, function (step) {
