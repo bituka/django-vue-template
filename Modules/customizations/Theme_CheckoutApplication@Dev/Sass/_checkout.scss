@@ -343,7 +343,7 @@ div.order-wizard-confirmation-module {
 	// Download PDF btn.
 	a.order-wizard-confirmation-module-download-pdf {
 		border-radius: 0;
-		@media (max-width: $screen-md-min) { width: 100%; }
+		display: none;
 	}
 	@media (max-width: $screen-md-min) { padding-top: 0; }
 	@media (max-width: $screen-sm-min) { padding-top: $theme-base-size * 7; }
