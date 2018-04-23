@@ -215,7 +215,8 @@
         "customizations/Theme_ProductDetails.PackageItems": "Dev",
         "customizations/Theme_Wizard": "Dev",
         "customizations/Theme_CheckoutAdditionalFields": "Dev",
-        "customizations/Theme_OrderWizard.Module.Register": "Dev"
+        "customizations/Theme_OrderWizard.Module.Register": "Dev",
+        "customizations/Theme_LiveOrder": "Dev"
     },
     "tasksConfig": {
         "local": {
