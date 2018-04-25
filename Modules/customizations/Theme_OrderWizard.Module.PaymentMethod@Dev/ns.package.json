@@ -1,0 +1,13 @@
+{
+    "gulp": {
+        "sass": [
+            "Sass/**/*.scss"
+        ],
+        "templates": [
+            "Templates/*"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/OrderWizard.Module.PaymentMethod@3.1.0/Templates/order_wizard_paymentmethod_purchasenumber_module.tpl": "Templates/order_wizard_paymentmethod_purchasenumber_module.tpl"        
+    }
+}
