@@ -1,0 +1,16 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*"
+        ],
+        "templates": [
+            "Templates/*"
+        ],
+        "sass": [
+            "Sass/**/*.scss"
+        ]
+    },
+    "overrides": {
+      "suitecommerce/OrderWizard.Module.CartItems@2.0.1/Templates/order_wizard_cartitems_module_ship.tpl": "Templates/order_wizard_cartitems_module_ship.tpl"      
+    }
+}
