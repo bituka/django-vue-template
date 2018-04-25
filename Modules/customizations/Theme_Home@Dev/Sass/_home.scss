@@ -432,6 +432,13 @@ section.home-mix-banner-container {
 				margin-left: 0;
 			}
 		}
+		@media (max-width: 420px) {
+			width: 100%;
+			margin-bottom: 15px;
+			img{
+				width: 100%;
+			}
+		}
 	}
 }
 //Items carousel
