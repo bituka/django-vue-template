@@ -3,6 +3,7 @@ however, if you are an authorized user with a NetSuite account or log-in, you ma
 govern your access and use. }}
 
 <div class="product-details-full">
+	<!-- Regular Product Detail Pages-->
 	<div data-cms-area="item_details_banner" data-cms-area-filters="page_type"></div>
 	<!--<header class="product-details-full-header">
 		<div id="banner-content-top" class="product-details-full-banner-top"></div>
@@ -30,6 +31,11 @@ govern your access and use. }}
 				<div class="product-details-full-image-gallery-container">
 					<div id="banner-image-top" class="content-banner banner-image-top"></div>
 					<div data-view="Product.ImageGallery"></div>
+					{{#if model.item.custitem_field_video}}
+					<a id="product-video-link" data-fancybox="true" data-small-btn="true" href="https://www.youtube.com/watch?v={{model.item.custitem_field_video}}">
+						<img class="card-img-top img-fluid" src="http://img.youtube.com/vi/{{model.item.custitem_field_video}}/1.jpg" />
+					</a>
+					{{/if}}
 					<div id="banner-image-bottom" class="content-banner banner-image-bottom"></div>
 				</div>
 			</div>
