@@ -38,21 +38,14 @@ define('Cart.AddToCart.Button.Multiple.View'
           console.log('add to cart')
           console.log(this.model)
           var groupItem = this.model.get('item').get('custitem_group_item');
-          if(this.model.get('item').get('_itemType') === 'NonInvtPart' && groupItem){
 
-            // for package items, get the non inventory information
-            var line1 = LiveOrderLineModel.createFromProduct(this.model);
-            cart_promise1 = this.cart.addLine(line1);
-            // fix to show only package item information on modal
-            this.sleep(500);
+          if(this.model.get('item').get('_itemType') === 'NonInvtPart' && groupItem){
 
             _.each(this.model.get('items'), function(items){
 
               var quantity = _.findWhere(self.model.get('groupItems'), {'item': items.get('internalid').toString()});
               //console.log(quantity, items.get('internalid'))
-
               var $el = jQuery("select[data-item-id="+items.get('internalid')+"]");
-
               if($el){
                 var itemId = $el.data("item-id"),
                   itemOptionId = $el.data("item-option"),
@@ -70,9 +63,7 @@ define('Cart.AddToCart.Button.Multiple.View'
                   items.get('options').set(selectedOption);
                 }
               }
-
-            // /  items.setOption(itemOptionId, value);
-
+              // /  items.setOption(itemOptionId, value);
               items.set('item', items.attributes);
               items.get('options').set(selectedOption);
               items.set('quantity', parseInt(quantity.quantity));
@@ -80,6 +71,13 @@ define('Cart.AddToCart.Button.Multiple.View'
               var line = LiveOrderLineModel.createFromProduct(items);
               cart_promise = self.cart.addLine(line);
             });
+
+            // fix to show only package item information on modal
+            this.sleep(500);
+            // for package items, get the non inventory information
+            var line1 = LiveOrderLineModel.createFromProduct(this.model);
+            // add the package item
+            cart_promise1 = this.cart.addLine(line1);
             // show modal with the package information
             CartConfirmationHelpers.showCartConfirmation(cart_promise1, line1, self.options.application);
           }
@@ -88,7 +86,6 @@ define('Cart.AddToCart.Button.Multiple.View'
             {
               return;
             }
-
             if (!this.model.isNew() && this.model.get('source') === 'cart')
             {
               cart_promise = this.cart.updateProduct(this.model);
