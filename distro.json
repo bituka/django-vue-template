@@ -219,7 +219,8 @@
         "customizations/Theme_LiveOrder": "Dev",
         "customizations/Theme_OrderWizard": "Dev",
         "customizations/Theme_OrderWizard.Module.PaymentMethod": "Dev",
-        "customizations/Theme_OrderWizard.Module.CartItems": "Dev"
+        "customizations/Theme_OrderWizard.Module.CartItems": "Dev",
+        "customizations/Theme_Product": "Dev"
 
     },
     "tasksConfig": {
@@ -311,7 +312,8 @@
                     "Theme_Landing_freebies",
                     "FacetsBrowse.CategoryHeading.FixHTMLDescription",
                     "ProductViews.Price.Extension.View",
-                    "Cart.AddToCart.Button.Multiple.View"
+                    "Cart.AddToCart.Button.Multiple.View",
+                    "Product.Model.Extension"
                 ],
                 "amdclean": false,
                 "amdConfig": {
