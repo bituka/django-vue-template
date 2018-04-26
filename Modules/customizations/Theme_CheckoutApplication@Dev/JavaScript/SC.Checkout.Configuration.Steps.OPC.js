@@ -338,7 +338,9 @@ define(
 							}
 						]
 					, CheckoutAdditionalFieldsView
-					,	[OrderWizardModuleShowShipments, show_shipment_options]
+
+
+
 					,	[OrderWizardModuleMultiShipToShipmethod, show_mst_shipment_options]
 					,	[
 							OrderWizardModuleNonShippableItems
@@ -366,6 +368,8 @@ define(
 								}
 							}
 						]
+					,	[OrderWizardModuleShowShipments, show_shipment_options]
+					
 					,	[OrderWizardModuleTermsAndConditions, {className: 'order-wizard-termsandconditions-module-default'}]
 					,	[OrderWizardModuleCartSummary, _.extend(_.clone(cart_summary_options), {hideSummaryItems: true, hide_continue_button: false, hide_cart_terms: false})]
 					,	[	//Desktop Right
@@ -383,6 +387,20 @@ define(
 							}
 						]
 					,	[OrderWizardModulePromocodeForm, cart_items_options_right]
+
+					,	[
+							OrderWizardModuleCartItemsShip
+						,	_.extend(
+								{
+									show_opened_accordion: true
+								,	show_edit_cart_button: true
+								,	show_headers: false
+								,	show_mobile: true
+								}
+							,	cart_items_options_right
+							)
+						]
+
 					,	[
 							//Mobile Right Bottom
 							OrderWizardModuleTermsAndConditions

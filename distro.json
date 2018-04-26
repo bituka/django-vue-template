@@ -220,7 +220,8 @@
         "customizations/Theme_OrderWizard": "Dev",
         "customizations/Theme_OrderWizard.Module.PaymentMethod": "Dev",
         "customizations/Theme_OrderWizard.Module.CartItems": "Dev",
-        "customizations/Theme_Product": "Dev"
+        "customizations/Theme_Product": "Dev",
+        "customizations/Theme_OrderWizard.Module.Shipmethod": "Dev"
 
     },
     "tasksConfig": {

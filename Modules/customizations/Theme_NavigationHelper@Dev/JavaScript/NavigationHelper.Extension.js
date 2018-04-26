@@ -1,15 +1,14 @@
 //Addition to include Data-Keep-Href attribute
 define('NavigationHelper.Extension'
-,	[	'NavigationHelper'
-    ,   'Session'
-	,	'PluginContainer'
-	,	'underscore'
+,	[	  'NavigationHelper'
+    , 'Session'
+	  ,	'PluginContainer'
+	  , 'underscore'
     ,	'jQuery'
-    ,	'jQuery.fancybox'
-	,	'Utils'
+	  ,	'Utils'
 	]
 ,	function (
-        NavigationHelper
+    NavigationHelper
 	,	Session
 	,	PluginContainer
 	,	_
@@ -29,7 +28,7 @@ define('NavigationHelper.Extension'
             _.extend(Layout, {
 
                 hrefApplicationPrefixes: ['mailto', 'tel'],
-                
+
                 isLinkWithApplicationPrefix: function(href) {
                     return ~_.indexOf(this.hrefApplicationPrefixes, href.split(':')[0]);
                 },
@@ -45,7 +44,7 @@ define('NavigationHelper.Extension'
                     var anchor = jQuery(e.currentTarget),
                     href = this.getUrl(anchor) || '#';
 
-                    if(this.isKeepHref(anchor)) { 
+                    if(this.isKeepHref(anchor)) {
                         return;
                     }
 
