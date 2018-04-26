@@ -4,7 +4,8 @@ define('NavigationHelper.Extension'
     ,   'Session'
 	,	'PluginContainer'
 	,	'underscore'
-	,	'jQuery'
+    ,	'jQuery'
+    ,	'jQuery.fancybox'
 	,	'Utils'
 	]
 ,	function (
@@ -36,6 +37,9 @@ define('NavigationHelper.Extension'
                     return $element.attr('data-keep-href') === 'true';
                     //return $element.attr("target","_blank");
                 },
+                isFancyBoxLink: function($element){
+                    return $element.attr('data-fancybox') == 'true';
+                },
 
                 executeClick: _.wrap(Layout.executeClick, function(fn, e) {
                     var anchor = jQuery(e.currentTarget),
@@ -48,6 +52,8 @@ define('NavigationHelper.Extension'
                     if(this.isLinkWithApplicationPrefix(href)) {
                         e.preventDefault();
                         window.location.href = href;
+                    }else if(this.isFancyBoxLink(anchor)){
+                        return;
                     } else {
                         fn.apply(this, Array.prototype.slice.call(arguments, 1));
                     }
