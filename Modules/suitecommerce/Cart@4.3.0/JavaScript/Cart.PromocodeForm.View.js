@@ -8,7 +8,7 @@
 // @module Cart
 define(
 	'Cart.PromocodeForm.View'
-,	[	
+,	[
 		'ErrorManagement'
 	,	'GlobalViews.Message.View'
 
@@ -36,10 +36,10 @@ define(
 
 	// @class Cart.PromocodeForm.View @extends Backbone.View
 	return Backbone.View.extend({
-			
+
 		// @property {Function} template
 		template: cart_promocode_form_tpl
-		
+
 	,	events: {
 			'submit form[data-action="apply-promocode"]': 'applyPromocode'
 		}
@@ -76,7 +76,7 @@ define(
 
 			if (!options.promocode)
 			{
-				this.state.errorMessage = _('Promo Code is required').translate();
+				this.state.errorMessage = _('Coupon Code is required').translate();
 			}
 			else
 			{
@@ -102,7 +102,7 @@ define(
 						{
 							//@event {Void} apply_promocode_succeeded
 							self.trigger('apply_promocode_succeeded');
-							self.model.trigger('promocodeUpdated', 'applied');			
+							self.model.trigger('promocodeUpdated', 'applied');
 						}
 					).always(function savePromocodeEnded ()
 						{
@@ -124,7 +124,7 @@ define(
 			'GlobalsViewErrorMessage': function ()
 			{
 				var placeholder = jQuery('[data-type="promocode-error-placeholder"]');
-				
+
 				var global_view_message = new GlobalViewsMessageView({
 					message: this.state.errorMessage
 				,	type: 'error'
