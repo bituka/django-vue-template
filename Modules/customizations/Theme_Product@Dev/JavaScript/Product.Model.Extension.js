@@ -28,8 +28,8 @@ define('Product.Model.Extension',
 
       				this.setOptionsValidation();
 
-              // set default option 'Matched Triodes (Balanced) $5'
-      				this.setOption("custcol_additional_options","3");
+              // set default option 'POWER TUBE MATCHING' to Matched
+      				this.setOption("custcol2","1");
       			}
 
         })
