@@ -711,14 +711,13 @@ label.product-views-option-tile-label{
 				}
 			}
 			.bx-pager-item{
-				&#custom-video{
-					margin: 0 8px;
-				}
+					margin: 0 6px !important;
 				a{
 					display: block;
 					height: 70px;
 					width: 70px;
 					background: black;
+			    margin: 0 !important;
 					img{
 						width: 70px;
 						max-width: 70px;
