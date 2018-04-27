@@ -81,8 +81,8 @@ define(
 				});
 			}
 			, appendVideo: function(){
-				var pepe = this.$('#custom-video')
-				this.$('.bx-has-controls-direction').append(pepe)
+				var customVideo = this.$('#custom-video')
+				this.$('.bx-has-controls-direction').append(customVideo)
 			}
 
 		, initSlider: function initSlider ()
