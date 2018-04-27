@@ -5,6 +5,9 @@
         ],
         "sass": [
             "Sass/**/*.scss"
+        ],
+        "javascript": [
+            "JavaScript/*"
         ]
     },
     "overrides": {

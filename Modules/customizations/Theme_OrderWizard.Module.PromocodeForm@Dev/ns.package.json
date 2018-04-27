@@ -1,0 +1,13 @@
+{
+    "gulp": {
+        "sass": [
+            "Sass/**/*.scss"
+        ],
+        "templates": [
+            "Templates/*"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/OrderWizard.Module.PromocodeForm@2.0.2/Templates/order_wizard_promocodeform.tpl": "Templates/order_wizard_promocodeform.tpl"        
+    }
+}

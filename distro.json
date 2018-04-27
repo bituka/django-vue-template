@@ -221,7 +221,8 @@
         "customizations/Theme_OrderWizard.Module.PaymentMethod": "Dev",
         "customizations/Theme_OrderWizard.Module.CartItems": "Dev",
         "customizations/Theme_Product": "Dev",
-        "customizations/Theme_OrderWizard.Module.Shipmethod": "Dev"
+        "customizations/Theme_OrderWizard.Module.Shipmethod": "Dev",
+        "customizations/Theme_OrderWizard.Module.PromocodeForm": "Dev"
 
     },
     "tasksConfig": {
@@ -576,7 +577,8 @@
                     "NavigationHelper.Extension",
                     "CheckoutAdditionalFields.View",
                     "OrderWizard.Step.Extension",
-                    "OrderWizard.Module.CartItems.Ship.Extension"
+                    "OrderWizard.Module.CartItems.Ship.Extension",
+                    "Cart.PromocodeForm.Extension.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
