@@ -31,11 +31,6 @@ govern your access and use. }}
 				<div class="product-details-full-image-gallery-container">
 					<div id="banner-image-top" class="content-banner banner-image-top"></div>
 					<div data-view="Product.ImageGallery"></div>
-					{{#if model.item.custitem_field_video}}
-					<a id="product-video-link" data-fancybox="true" data-small-btn="true" href="https://www.youtube.com/watch?v={{model.item.custitem_field_video}}">
-						<img class="card-img-top img-fluid" src="http://img.youtube.com/vi/{{model.item.custitem_field_video}}/1.jpg" />
-					</a>
-					{{/if}}
 					<div id="banner-image-bottom" class="content-banner banner-image-bottom"></div>
 				</div>
 			</div>

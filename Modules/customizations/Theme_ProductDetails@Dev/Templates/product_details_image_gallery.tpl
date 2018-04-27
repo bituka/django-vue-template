@@ -20,6 +20,7 @@
 
 					</li>
 				{{/each}}
+
 			</ul>
 		{{else}}
 			{{#with firstImage}}
@@ -37,9 +38,13 @@
 	{{/if}}
 	<div data-view="SocialSharing.Flyout.Hover"></div>
 </div>
-
-
-
+	{{#if customVideo}}
+		<div id="custom-video" class="bx-pager-item	{{#unless showImageSlider}}no-slider{{/unless}}">
+			<a class="product-video-link" data-fancybox="true" data-small-btn="true" href="https://www.youtube.com/watch?v={{customVideo}}">
+					<img class="card-img-top img-fluid" src="http://img.youtube.com/vi/{{customVideo}}/1.jpg" />
+			</a>
+		</div>
+	{{/if}}
 
 {{!----
 Use the following context variables when customizing this template:

@@ -38,9 +38,54 @@ define(
 	)
 {
 	'use strict';
+	ProductDetailsImageGalleryView.prototype.installPlugin('postContext', {
+			priority: 1,
+			execute: function execute(context, view) {
+			var model = view.model;
+			// START inclusion of Badges Logic
+			var customVideo = model.get('item').get('custitem_field_video');
+			_.extend(context, {
+						customVideo: customVideo
+				});
+			}
+	});
 
 	_.extend(ProductDetailsImageGalleryView.prototype, {
-		initSlider: function initSlider ()
+
+		initialize: function initialize ()
+			{
+				Backbone.View.prototype.initialize.apply(this, arguments);
+				BackboneCompositeView.add(this);
+
+				var self = this;
+
+				this.images = this.model.getImages();
+
+				this.model.on('change', function ()
+				{
+					var model_images = this.model.getImages();
+					if (!_.isEqual(this.images, model_images))
+					{
+						this.images = model_images;
+						this.render();
+					}
+				}, this);
+
+
+
+				this.on('afterViewRender', function ()
+				{
+					self.initSlider();
+					self.initZoom();
+					_.defer(self.appendVideo());
+				});
+			}
+			, appendVideo: function(){
+				var pepe = this.$('#custom-video')
+				this.$('.bx-has-controls-direction').append(pepe)
+			}
+
+		, initSlider: function initSlider ()
 			{
 
 				var self = this;
