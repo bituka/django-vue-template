@@ -725,8 +725,15 @@ label.product-views-option-tile-label{
 					&.product-video-link{
 						display: table-cell;
 						vertical-align: middle;
+						position: relative;
 						img{
 							display: table;
+							&.play-icon{
+								display: inline-block;
+								position: absolute;
+								top: 0;
+								left: 0;
+							}
 						}
 					}
 				}
@@ -752,14 +759,29 @@ label.product-views-option-tile-label{
 	}
 }
 .product-details-full-image-gallery-container{
+	text-align: center;
 	.no-slider{
 		text-align: center;
 		margin-top: 20px;
+		display: inline-block;
 		a{
-			display: inline-block;
+			position: relative;
+			height: 70px;
+			width: 70px;
+			background: black;
+			display: table-cell;
+			vertical-align: middle;
+			position: relative;
 			img{
 				width: 70px;
 				max-width: 70px;
+				display: table;
+				&.play-icon{
+					display: inline-block;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
 			}
 		}
 	}
