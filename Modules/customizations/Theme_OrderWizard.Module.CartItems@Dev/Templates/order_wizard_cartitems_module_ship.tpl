@@ -3,8 +3,8 @@
 	<div class="order-wizard-cartitems-module-ship-accordion-head">
 		<a class="order-wizard-cartitems-module-ship-accordion-head-toggle{{#unless showOpenedAccordion}} collapsed{{/unless}}{{#if isAccordionPrimary}} order-wizard-cartitems-module-ship-accordion-primary{{/if}}" data-toggle="collapse" data-target="#unfulfilled-items-ship" aria-controls="unfulfilled-items">
 		{{#if showAddress}}
-			<span>{{translate 'Ship to '}}</span>
-			<span class="order-wizard-cartitems-module-ship-accordion-head-toggle-address-name">{{address.fullname}}</span>
+			<span>{{translate 'Shopping Cart '}}</span>
+			<!-- <span class="order-wizard-cartitems-module-ship-accordion-head-toggle-address-name">{{address.fullname}}</span> -->
 			<span> ({{itemCount}})</span>
 		{{else}}
 			{{translate 'Items to Ship ($(0))' itemCount}}

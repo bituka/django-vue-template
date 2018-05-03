@@ -369,7 +369,7 @@ define(
 							}
 						]
 					,	[OrderWizardModuleShowShipments, show_shipment_options]
-					
+
 					,	[OrderWizardModuleTermsAndConditions, {className: 'order-wizard-termsandconditions-module-default'}]
 					,	[OrderWizardModuleCartSummary, _.extend(_.clone(cart_summary_options), {hideSummaryItems: true, hide_continue_button: false, hide_cart_terms: false})]
 					,	[	//Desktop Right
@@ -379,27 +379,28 @@ define(
 							,	className: 'order-wizard-termsandconditions-module-top-summary'
 							}
 						]
+					,	[OrderWizardModulePromocodeForm, cart_items_options_right]
 					,	[	OrderWizardModuleSubmitButton
 						,	{
 								container: '#wizard-step-content-right'
 							,	showWrapper: true
-							,	wrapperClass: 'order-wizard-submitbutton-container'
+							// ,	wrapperClass: 'order-wizard-submitbutton-container'
 							}
 						]
-					,	[OrderWizardModulePromocodeForm, cart_items_options_right]
 
-					,	[
-							OrderWizardModuleCartItemsShip
-						,	_.extend(
-								{
-									show_opened_accordion: true
-								,	show_edit_cart_button: true
-								,	show_headers: false
-								,	show_mobile: true
-								}
-							,	cart_items_options_right
-							)
-						]
+
+					// ,	[
+					// 		OrderWizardModuleCartItemsShip
+					// 	,	_.extend(
+					// 			{
+					// 				show_opened_accordion: true
+					// 			,	show_edit_cart_button: true
+					// 			,	show_headers: false
+					// 			,	show_mobile: true
+					// 			}
+					// 		,	cart_items_options_right
+					// 		)
+					// 	]
 
 					,	[
 							//Mobile Right Bottom

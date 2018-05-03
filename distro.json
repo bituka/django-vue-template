@@ -222,7 +222,8 @@
         "customizations/Theme_OrderWizard.Module.CartItems": "Dev",
         "customizations/Theme_Product": "Dev",
         "customizations/Theme_OrderWizard.Module.Shipmethod": "Dev",
-        "customizations/Theme_OrderWizard.Module.PromocodeForm": "Dev"
+        "customizations/Theme_OrderWizard.Module.PromocodeForm": "Dev",
+        "customizations/Theme_Transaction.Line.Views": "Dev"        
 
     },
     "tasksConfig": {

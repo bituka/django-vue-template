@@ -465,3 +465,27 @@ a.order-wizard-address-module-new-button{
 #notes-comments{
 	width: 100%;
 }
+
+// Remove Continue button and text shown on the bottom of the page
+#wizard-content > div > div.order-wizard-step-content-wrapper > div {
+	display:none;
+}
+// Continue button on left width 100%
+#wizard-step-content-right .order-wizard-step-actions {
+	width: 100%;
+}
+#wizard-step-content-right .order-wizard-step-button-continue {
+	width: 100%;
+}
+#wizard-step-content-right .order-wizard-submitbutton-module-button{
+	margin-bottom: 20px;
+}
+#wizard-step-content .order-wizard-showshipments-module-shipping-details-items{
+	width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.module-rendered .order-wizard-showshipments-module-shipping-details{
+	margin-bottom: 0;
+}

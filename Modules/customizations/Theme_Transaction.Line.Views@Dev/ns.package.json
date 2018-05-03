@@ -1,0 +1,10 @@
+{
+    "gulp": {
+      "templates": [
+          "Templates/*"
+      ]
+    },
+    "overrides": {
+        "suitecommerce/Transaction.Line.Views@1.2.1/Templates/transaction_line_views_cell_navigable.tpl": "Templates/transaction_line_views_cell_navigable.tpl"
+    }
+}

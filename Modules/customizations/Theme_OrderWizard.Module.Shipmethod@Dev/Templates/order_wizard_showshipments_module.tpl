@@ -47,9 +47,10 @@
 					</div>
 				{{/if}}
 			</div>
-			<!-- <div class="order-wizard-showshipments-module-shipping-details-items" data-view="Items.Collection"></div> -->
+
 		</div>
 	</section>
+	<div class="order-wizard-showshipments-module-shipping-details-items" data-view="Items.Collection"></div>
 {{/if}}
 
 
