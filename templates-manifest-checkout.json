@@ -237,5 +237,7 @@
   "store_locator_list_all.tpl.js",
   "store_locator_list_all_store.tpl.js",
   "store_locator_upgrade.tpl.js",
-  "sc_cct_html.tpl.js"
+  "sc_cct_html.tpl.js",
+  "backinstock_button.tpl.js",
+  "backinstock_form.tpl.js"
 ]

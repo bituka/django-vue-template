@@ -7,7 +7,6 @@ define(
       'BackInStockSubscription.View',
       'Backbone',
       'underscore',
-      'ProductDetails.Base.View',
       'jQuery'
     ],
     function(
@@ -15,26 +14,12 @@ define(
       BackInStockSubscriptionView,
       Backbone,
       _ ,
-      ProductDetailsBaseView,
       jQuery
     ) {
         'use strict';
 
         _.extend(ProductDetailsFullView.prototype, {
-
-          test: function test ()
-          {
-            jQuery('.product-details-image-gallery').remove();
-          },
-
-          	initialize: function initialize ()
-            {
-              ProductDetailsBaseView.prototype.initialize.apply(this, arguments);
-
-              this.model.on('change', this.updateURL, this);
-
-              this.test();
-            },
+        
 
           childViews: _.extend(ProductDetailsFullView.prototype.childViews, {
             'BackInStockSubscription.View': function(){
@@ -43,7 +28,6 @@ define(
       				,	application: this.application
       				});
             }
-
           }),
 
           events: {
