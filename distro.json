@@ -223,7 +223,8 @@
         "customizations/Theme_Product": "Dev",
         "customizations/Theme_OrderWizard.Module.Shipmethod": "Dev",
         "customizations/Theme_OrderWizard.Module.PromocodeForm": "Dev",
-        "customizations/Theme_Transaction.Line.Views": "Dev"        
+        "customizations/Theme_Transaction.Line.Views": "Dev",
+        "customizations/Theme_MatchOptionPDP": "Dev"
 
     },
     "tasksConfig": {
@@ -316,7 +317,10 @@
                     "FacetsBrowse.CategoryHeading.FixHTMLDescription",
                     "ProductViews.Price.Extension.View",
                     "Cart.AddToCart.Button.Multiple.View",
-                    "Product.Model.Extension"
+                    "Product.Model.Extension",
+                    "TriodeOption.Cart.View",
+                    "TriodeOption.SelectedOption.View",
+                    "TriodeOption.LiveOrder.Model"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -447,7 +451,10 @@
 
                     "Theme_Header",
                     "Theme_Footer",
-                    "NavigationHelper.Extension"
+                    "NavigationHelper.Extension",
+                    "TriodeOption.SelectedOption.View",
+                    "TriodeOption.Cart.View",
+                    "TriodeOption.LiveOrder.Model"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -579,7 +586,10 @@
                     "CheckoutAdditionalFields.View",
                     "OrderWizard.Step.Extension",
                     "OrderWizard.Module.CartItems.Ship.Extension",
-                    "Cart.PromocodeForm.Extension.View"
+                    "Cart.PromocodeForm.Extension.View",
+                    "TriodeOption.SelectedOption.View",
+                    "TriodeOption.Cart.View",
+                    "TriodeOption.LiveOrder.Model"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -698,7 +708,10 @@
                 "CMSOnSecure.ServiceController",
                 "ContactUs.Model",
                 "ContactUs.ServiceController",
-                "PackageItem.ServiceController"
+                "PackageItem.ServiceController",
+                "TriodeOption.LiveOrder.Triggers",
+                "TriodeOption.LiveOrder.Extension",
+                "Application.Events.Once"
             ],
             "exportFile": "ssp_libraries.js",
             "amdConfig": {

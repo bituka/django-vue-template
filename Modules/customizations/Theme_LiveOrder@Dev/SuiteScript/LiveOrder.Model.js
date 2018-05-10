@@ -185,6 +185,8 @@ define(
 	,	update: function update (data)
 		{
 
+			nlapiLogExecution('Debug','update - data',JSON.stringify(data));
+
 			var current_order = this.get();
 
 			if(this.isAutoapplyPromotionsEnabled)
@@ -565,6 +567,9 @@ define(
 		// @param {LiveOrder.Model.Line} line_data
 	,	addLine: function addLine (line_data)
 		{
+
+			nlapiLogExecution('Debug','addLine - line_data',JSON.stringify(line_data));
+
 			var item = {
 				internalid: line_data.item.internalid.toString()
 			,	quantity: _.isNumber(line_data.quantity) ? parseInt(line_data.quantity, 10) : 1
@@ -608,6 +613,8 @@ define(
 		// @param {Array<LiveOrder.Model.Line>} lines_data
 	,	addLines: function addLines (lines_data)
 		{
+			nlapiLogExecution('Debug','lines data --', JSON.stringify(lines_data));
+
 			var items = []
 			,	self = this;
 
@@ -624,6 +631,8 @@ define(
 					,	options: self.parseLineOptionsToCommerceAPI(line_data.options)
 				};
 
+
+
 				if (self.isPickupInStoreEnabled && line_data.fulfillmentChoice === 'pickup' && line_data.location)
 				{
 					item.fulfillmentPreferences = {
@@ -631,6 +640,7 @@ define(
 					,	pickupLocationId: parseInt(line_data.location, 10)
 					};
 				}
+
 
 				items.push(item);
 			});
@@ -652,6 +662,8 @@ define(
 		// @param {String} line_id
 	,	removeLine: function removeLine (line_id)
 		{
+
+			nlapiLogExecution('DEBUG','removeLine - line_id', JSON.stringify(line_id));
 			if(this.isAutoapplyPromotionsEnabled)
 			{
 				this.setOldPromocodes();
@@ -670,6 +682,10 @@ define(
 		// @param {LiveOrder.Model.Line} line_data
 	,	updateLine: function updateLine (line_id, line_data)
 		{
+
+			nlapiLogExecution('DEBUG','liveorder updateLine - data', JSON.stringify(line_data));
+			nlapiLogExecution('DEBUG','liveorder updateLine - lineId', JSON.stringify(line_id));
+
 			var lines_sort = this.getLinesSort()
 			,	current_position = _.indexOf(lines_sort, line_id)
 			,	original_line_object = ModelsInit.order.getItem(line_id, [
@@ -1284,6 +1300,7 @@ define(
 
 					if (!line.item)
 					{
+						nlapiLogExecution('DEBUG','REMOVE - get lines','REMOVE - get lines');
 						self.removeLine(line.internalid);
 						restart = true;
 					}
@@ -1751,7 +1768,7 @@ define(
 			{
 				var shipmethod = _.findWhere(current_order.shipmethods, {internalid: data.shipmethod});
 
-        nlapiLogExecution('DEBUG', '-shipmethod-', data.shipmethod);
+        // nlapiLogExecution('DEBUG', '-shipmethod-', data.shipmethod);
 
 				if (shipmethod)
 				{
