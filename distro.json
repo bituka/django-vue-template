@@ -320,7 +320,8 @@
                     "Product.Model.Extension",
                     "TriodeOption.Cart.View",
                     "TriodeOption.SelectedOption.View",
-                    "TriodeOption.LiveOrder.Model"
+                    "TriodeOption.LiveOrder.Model",
+                    "ProductDetails.Options.Selector.Extension.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
