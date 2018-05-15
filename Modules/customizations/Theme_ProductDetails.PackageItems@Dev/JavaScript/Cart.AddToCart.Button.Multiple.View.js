@@ -15,7 +15,7 @@ define('Cart.AddToCart.Button.Multiple.View'
 
     _.extend(CartAddToCartButtonView.prototype, {
       render: function(){
-        console.log('render', this.model)
+        // console.log('render', this.model)
         this._render();
       }
 
@@ -35,8 +35,9 @@ define('Cart.AddToCart.Button.Multiple.View'
     			var self = this
           ,	cart_promise1
     			,	cart_promise;
-          console.log('add to cart')
-          console.log(this.model)
+          // console.log('add to cart');
+          // console.log('this.model',this.model);
+          var packageQty = self.model.get('quantity');
           var groupItem = this.model.get('item').get('custitem_group_item');
 
           if(this.model.get('item').get('_itemType') === 'NonInvtPart' && groupItem){
@@ -66,7 +67,8 @@ define('Cart.AddToCart.Button.Multiple.View'
               // /  items.setOption(itemOptionId, value);
               items.set('item', items.attributes);
               items.get('options').set(selectedOption);
-              items.set('quantity', parseInt(quantity.quantity));
+              var totalQty = quantity.quantity * packageQty;              
+              items.set('quantity', parseInt(totalQty));
 
               var line = LiveOrderLineModel.createFromProduct(items);
               cart_promise = self.cart.addLine(line);
