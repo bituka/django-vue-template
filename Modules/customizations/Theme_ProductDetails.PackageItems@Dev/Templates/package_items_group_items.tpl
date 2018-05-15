@@ -1,6 +1,6 @@
 <div class="tube_store_loading_packages">
 <img src="/Images/Global/Rotating_Tube_Loading_Icon.gif" />
-</div>  
+</div>
   <div class="product-details-package-options">
     <h2>Tube upgrade package includes</h2>
     <table>
@@ -15,7 +15,11 @@
           {{#if itemOptions.values}}
           <select data-action="set-option" data-item-id="{{item}}" data-item-option="{{itemOptions.internalid}}">
           {{#each itemOptions.values}}
-              <option value="{{internalid}}">{{label}}</option>
+            {{#if label}}
+              <option value="{{internalid}}">{{label}}</option>              
+            {{else}}
+              <option value="{{internalid}}">- None -</option>
+            {{/if}}
           {{/each}}
           </select>
           {{else}}
@@ -28,4 +32,3 @@
       {{/each}}
     </table>
   </div>
-
