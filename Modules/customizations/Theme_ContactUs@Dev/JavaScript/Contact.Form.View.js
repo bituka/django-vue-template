@@ -1,144 +1,118 @@
 //@module Contact
 define(
-	'Contact.Form.View'
-,	[
-		'SC.Configuration'
-	,	'Utilities.ResizeImage'
-    ,   'Contact.Model'
-	,	'contact.tpl'
-	, 'GlobalViews.Message.View'
-	
-	,	'Backbone'
-	,	'Backbone.CompositeView'
-	,	'Backbone.CollectionView'
-	,	'Backbone.FormView'
-	,	'jQuery'
-	,	'underscore'
-	,	'Utils'
-	]
-,	function (
-		Configuration
+    'Contact.Form.View', [
+        'SC.Configuration', 'Utilities.ResizeImage', 'Contact.Model', 'contact.tpl', 'GlobalViews.Message.View'
 
-	,	resizeImage
-    ,   ContactModel
-	,	contact_tpl
-	, MessageView	
+        , 'Backbone', 'Backbone.CompositeView', 'Backbone.CollectionView', 'Backbone.FormView', 'jQuery', 'underscore', 'Utils'
+    ],
+    function (
+        Configuration
 
-	,	Backbone
-	,	BackboneCompositeView
-	,	BackboneCollectionView
-	,	BackboneFormView
-	,	jQuery
-	,	_
-	,	Utils
-	)
-{
-	'use strict';
+        , resizeImage, ContactModel, contact_tpl, MessageView
 
-	//@module Home.View @extends Backbone.View
-	return Backbone.View.extend({
+        , Backbone, BackboneCompositeView, BackboneCollectionView, BackboneFormView, jQuery, _, Utils
+    ) {
+        'use strict';
 
-		template: contact_tpl
+        //@module Home.View @extends Backbone.View
+        return Backbone.View.extend({
 
-	,	title: _('Contact Us').translate()
+            template: contact_tpl
 
-	,	page_header: _('Contact Us').translate()
+                ,
+            title: _('Contact Us').translate()
 
-	,	attributes: {
-			'id': 'contact-us-page'
-		,	'class': 'contact-us-page'
-		}
+                ,
+            page_header: _('Contact Us').translate()
 
-	,	events: {
-			'submit form': 'customSaveForm'
-	}
+                ,
+            attributes: {
+                'id': 'contact-us-page',
+                'class': 'contact-us-page'
+            }
 
-	,	bindings: {
-		'[name="firstname"]': 'firstname'
-	,	'[name="lastname"]': 'lastname'
-	,	'[name="company"]': 'company'
-	,	'[name="email"]': 'email'
-	,	'[name="message"]': 'message'
-	}
+            ,
+            events: {
+                'submit form': 'customSaveForm'
+            }
 
-	,   initialize: function (options)
-		{
-			BackboneCompositeView.add(this);
-			this.application = options.application;
-      this.model = new ContactModel();
-			BackboneFormView.add(this);
-		}
+            ,
+            bindings: {
+                '[name="firstname"]': 'firstname',
+                '[name="lastname"]': 'lastname',
+                '[name="company"]': 'company',
+                '[name="email"]': 'email',
+                '[name="message"]': 'message'
+            }
 
-    ,	customSaveForm: function (e)
-		{
+            ,
+            initialize: function (options) {
+                    BackboneCompositeView.add(this);
+                    this.application = options.application;
+                    this.model = new ContactModel();
+                    BackboneFormView.add(this);
+                }
 
-			jQuery('form .global-views-message').parent().remove();
+                ,
+            customSaveForm: function (e) {
 
-			var promise = BackboneFormView.saveForm.apply(this, arguments)
-			,	self = this;
+                    jQuery('form .global-views-message').parent().remove();
 
-			e && e.preventDefault();
+                    var promise = BackboneFormView.saveForm.apply(this, arguments),
+                        self = this;
 
-			return promise && promise.then
-			(
-			  function(success)
-			  {
-				if (success.successMessage)
-				{
-				  self.showMessage(success.successMessage, 'success');
-				}
-				else {
-				  self.showMessage('An error occured, please try again', 'error')
-				}
-			  }
-			, function(fail)
-			  {
-				fail.preventDefault = true;
-	  
-				_.each(fail.responseJSON.errorMessage, function(message, field)
-				{
-				  self.showMessage(message, 'error', field);
-				});
-			  }
-			);
-			
-			// if(this.model.isValid(true)){
-			// 	promise && promise.done(function ()
-			// 	{
-			// 		// preview_review.showContent();
-			// 	});
-	
-			// 	return promise;
-			// } else {
-				
-			// }
-		}
-	// The function we use to actually generate the messages. It uses the global message view functionality, which is a simple of way of creating messages throughout the site, ensuring that they all look consistent. Depending on whether it is passed a field, it will generate the message either at that field's location, or simply at the bottom of the form.
-	, showMessage: function(message, type, field)
-    {
-      var messageView = new MessageView
-      ({
-        message: message
-      , type: type
-      });
+                    e && e.preventDefault();
 
-      if (typeof field !== 'undefined')
-      {
-        this.application.getLayout().$('[data-input="' + field + '"]').append(messageView.render().$el);
-      }
-      else
-      {
-        this.application.getLayout().$('#contact-us-form').append(messageView.render().$el);
-      }
-    }
+                    return promise && promise.then(
+                        function (success) {
+                            if (success.successMessage) {
+                                self.showMessage(success.successMessage, 'success');
+                            } else {
+                                self.showMessage('An error occured, please try again', 'error')
+                            }
+                        },
+                        function (fail) {
+                            fail.preventDefault = true;
 
-		// @method getContext @return Home.View.Context
-	,	getContext: function()
-		{
-			return {
+                            _.each(fail.responseJSON.errorMessage, function (message, field) {
+                                self.showMessage(message, 'error', field);
+                            });
+                        }
+                    );
 
-			};
-		}
+                    // if(this.model.isValid(true)){
+                    // 	promise && promise.done(function ()
+                    // 	{
+                    // 		// preview_review.showContent();
+                    // 	});
 
-	});
-});
+                    // 	return promise;
+                    // } else {
+
+                    // }
+                }
+                // The function we use to actually generate the messages. It uses the global message view functionality, which is a simple of way of creating messages throughout the site, ensuring that they all look consistent. Depending on whether it is passed a field, it will generate the message either at that field's location, or simply at the bottom of the form.
+                ,
+            showMessage: function (message, type, field) {
+                    var messageView = new MessageView({
+                        message: message,
+                        type: type
+                    });
+
+                    if (typeof field !== 'undefined') {
+                        this.application.getLayout().$('[data-input="' + field + '"]').append(messageView.render().$el);
+                    } else {
+                        this.application.getLayout().$('#contact-us-form').append(messageView.render().$el);
+                    }
+                }
+
+                // @method getContext @return Home.View.Context
+                ,
+            getContext: function () {
+                return {
+
+                };
+            }
+
+        });
+    });
