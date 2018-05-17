@@ -1,0 +1,22 @@
+#contact-us-page {
+    h1,
+    h2 {
+        font-size: 18px;
+        font-weight: bold;
+        color: #166ca7;
+        margin-bottom: 20px;
+        text-transform: inherit;
+        margin-bottom: 0 !important;
+    }
+    p {
+        margin: 10px 0 20px 0;
+        font-size: 13px;
+    }
+    form {
+        padding: 30px 0;
+    }
+    .iframe {
+        margin: 20px 0;
+        text-align: center;
+    }
+}
