@@ -20,6 +20,7 @@ define(
             priority: 1,
             execute: function execute(context, view) {
 
+              var currency = SC.ENVIRONMENT.currentCurrency;
               var isNonInv = false;
               var item = view.model.get('item');
               if(item != undefined){
@@ -32,7 +33,7 @@ define(
                   if (price.substring(price.indexOf("."),price.length) == ".5") {
                     price = price + "0";
                   }
-                  price = "USD $" + price;
+                  price = currency.symbol + price;
                 }
               }
 
