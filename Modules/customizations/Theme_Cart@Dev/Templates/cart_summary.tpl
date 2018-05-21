@@ -6,64 +6,64 @@
 }}
 
 <div class="cart-summary">
-	<div class="cart-summary-container">
-		<h3 class="cart-summary-title">
-			{{translate 'Order Summary'}}
-		</h3>
+    <div class="cart-summary-container">
+        <h3 class="cart-summary-title">
+            {{translate 'Order Summary'}}
+        </h3>
 
-		{{#if isPriceEnabled}}
-			<div class="cart-summary-subtotal">
-				<p class="cart-summary-grid-float">
-					<span class="cart-summary-amount-subtotal">
-						{{ summary.subtotal_formatted }}
-					</span>
-						{{#if isSingleItem}}
-							{{translate 'Subtotal <span class="cart-summary-item-quantity-subtotal">$(0) item</span>'itemCount}}
-						{{else}}
-							{{translate 'Subtotal <span class="cart-summary-item-quantity-subtotal">$(0) items</span>' itemCount}}
-						{{/if}}
-				</p>
-				{{#if showEstimate}}
-					<div class="cart-summary-subtotal-legend">
-						{{translate 'Subtotal does not include shipping or tax'}}
-					</div>
-				{{/if}}
-			</div>
+        {{#if isPriceEnabled}}
+            <div class="cart-summary-subtotal">
+                <p class="cart-summary-grid-float">
+                    <span class="cart-summary-amount-subtotal">
+                        {{ summary.subtotal_formatted }}
+                    </span>
+                    {{#if isSingleItem}}
+                        {{translate 'Subtotal <span class="cart-summary-item-quantity-subtotal">$(0) item</span>'itemCount}}
+                    {{else}}
+                        {{translate 'Subtotal <span class="cart-summary-item-quantity-subtotal">$(0) items</span>' itemCount}}
+                    {{/if}}
+                </p>
+                {{#if showEstimate}}
+                    <div class="cart-summary-subtotal-legend">
+                        {{translate 'Subtotal does not include shipping or tax'}}
+                    </div>
+                {{/if}}
+            </div>
 
-			<div data-view="CartPromocodeListView"></div>
+            <div data-view="CartPromocodeListView"></div>
 
-			{{#if showDiscountTotal}}
-				<div class="cart-summary-discount-applied">
-					<p class="cart-summary-grid-float">
-						<span class="cart-summary-amount-discount-total">
-							{{summary.discounttotal_formatted}}
-						</span>
-							{{translate 'Discount Total'}}
-					</p>
-				</div>
-			{{/if}}
+            {{#if showDiscountTotal}}
+                <div class="cart-summary-discount-applied">
+                    <p class="cart-summary-grid-float">
+                        <span class="cart-summary-amount-discount-total">
+                            {{summary.discounttotal_formatted}}
+                        </span>
+                        {{translate 'Discount Total'}}
+                    </p>
+                </div>
+            {{/if}}
 
-			{{#if showGiftCertificates}}
-				<div class="cart-summary-giftcertificate-applied">
-					<h5 class="cart-summary-giftcertificate-applied-title">
-						{{translate 'Gift Certificates Applied ($(0))' giftCertificates.length}}
-					</h5>
-					<div data-view="GiftCertificates"></div>
-				</div>
-			{{/if}}
+            {{#if showGiftCertificates}}
+                <div class="cart-summary-giftcertificate-applied">
+                    <h5 class="cart-summary-giftcertificate-applied-title">
+                        {{translate 'Gift Certificates Applied ($(0))' giftCertificates.length}}
+                    </h5>
+                    <div data-view="GiftCertificates"></div>
+                </div>
+            {{/if}}
 
-			{{#if showPickupInStoreLabel}}
-				<div class="cart-summary-pickup-container">
-					<p class="cart-summary-grid-float">
-						{{translate 'Pick Up'}}
-						<span class="cart-summary-pickup-label-free"> {{translate 'FREE'}}</span>
-					</p>
-				</div>
-			{{/if}}
+            {{#if showPickupInStoreLabel}}
+                <div class="cart-summary-pickup-container">
+                    <p class="cart-summary-grid-float">
+                        {{translate 'Pick Up'}}
+                        <span class="cart-summary-pickup-label-free"> {{translate 'FREE'}}</span>
+                    </p>
+                </div>
+            {{/if}}
 
-			{{#unless areAllItemsPickupable}}
-				{{#if showEstimate}}
-					<!-- <div class="cart-summary-expander-container">
+            {{#unless areAllItemsPickupable}}
+                {{#if showEstimate}}
+                    <!-- <div class="cart-summary-expander-container">
 						<div class="cart-summary-expander-head">
 							<a class="cart-summary-expander-head-toggle collapsed" data-toggle="collapse" data-target="#estimate-shipping-form" aria-expanded="false" aria-controls="estimate-shipping-form">
 								{{translate 'Estimate Tax &amp; Shipping'}} <i data-toggle="tooltip" class="cart-summary-expander-tooltip" title="{{translate '<b>Shipping Estimator</b><br>Shipping fees are based on your shipping location. Please enter your information to view estimated shipping costs.'}}" ></i><i class="cart-summary-expander-toggle-icon"></i>
@@ -104,8 +104,8 @@
 							</div>
 						</div>
 					</div> -->
-				{{else}}
-					<!-- <div class="cart-summary-shipping-cost-applied">
+                {{else}}
+                    <!-- <div class="cart-summary-shipping-cost-applied">
 						<div class="cart-summary-grid">
 							<div class="cart-summary-label-shipto">
 								{{translate 'Ship to:'}}
@@ -151,70 +151,72 @@
 
 					</div> -->
 
-					<div class="cart-summary-total">
-						<p class="cart-summary-grid-float">
-							<span class="cart-summary-amount-total">
-								{{summary.total_formatted}}
-							</span>
-								{{#if showLabelsAsEstimated}}
-									{{translate 'Estimated Total'}}
-								{{else}}
-									{{translate 'Total'}}
-								{{/if}}
-						</p>
-					</div>
-				{{/if}}
-			{{/unless}}
-		{{else}}
-			<div class="cart-summary-message cart-summary-msg-description">
-				<p class="cart-summary-login-to-see-price">
-					{{translate 'Please <a href="$(0)">log in</a> to see prices or purchase items' urlLogin}}
-				</p>
-			</div>
-		{{/if}}
-	</div>
-	<div class="cart-summary-truck-image">
-		<a href="#shipping-options" target="_blank">
-			<img src="/Images/Shipping-Truck.png" alt="">
-		</a>
-	</div>
+                    <div class="cart-summary-total">
+                        <p class="cart-summary-grid-float">
+                            <span class="cart-summary-amount-total">
+                                {{summary.total_formatted}}
+                            </span>
+                            {{#if showLabelsAsEstimated}}
+                                {{translate 'Estimated Total'}}
+                            {{else}}
+                                {{translate 'Total'}}
+                            {{/if}}
+                        </p>
+                    </div>
+                {{/if}}
+            {{/unless}}
+        {{else}}
+            <div class="cart-summary-message cart-summary-msg-description">
+                <p class="cart-summary-login-to-see-price">
+                    {{translate 'Please <a href="$(0)">log in</a> to see prices or purchase items' urlLogin}}
+                </p>
+            </div>
+        {{/if}}
+    </div>
+    <div class="cart-summary-truck-image">
+        <a href="http://www.thetubestore.com/Resources/Customer-Service-Info/Shipping-Options" target="_blank">
+            <img src="/Images/Shipping-Truck.png" alt="">
+        </a>
+    </div>
 
-	{{#if showPromocodeForm}}
-		<div class="cart-summary-grid cart-summary-promocode-container">
-			<div class="cart-summary-expander-head">
-				<a class="cart-summary-expander-head-toggle collapsed" data-toggle="collapse" data-target="#promo-code-container" aria-expanded="false" aria-controls="promo-code-container">
-							{{translate 'Have a Coupon Code?'}}
-							<i data-toggle="tooltip" class="cart-summary-expander-tooltip" title="{{translate '<b>Coupon Code</b><br>To redeem a coupon code, simply enter your information and we will apply the offer to your purchase during checkout.'}}"></i>
-							<i class="cart-summary-expander-toggle-icon-promocode"></i>
-				</a>
-			</div>
-			<div class="cart-summary-expander-body collapse" role="form" id="promo-code-container" aria-expanded="false">
-				<div data-view="Cart.PromocodeFrom"></div>
-			</div>
-		</div>
-	{{/if}}
+    {{#if showPromocodeForm}}
+        <div class="cart-summary-grid cart-summary-promocode-container">
+            <div class="cart-summary-expander-head">
+                <a class="cart-summary-expander-head-toggle collapsed" data-toggle="collapse" data-target="#promo-code-container" aria-expanded="false"
+                    aria-controls="promo-code-container">
+                    {{translate 'Have a Coupon Code?'}}
+                    <i data-toggle="tooltip" class="cart-summary-expander-tooltip" title="{{translate '<b>Coupon Code</b><br>To redeem a coupon code, simply enter your information and we will apply the offer to your purchase during checkout.'}}"></i>
+                    <i class="cart-summary-expander-toggle-icon-promocode"></i>
+                </a>
+            </div>
+            <div class="cart-summary-expander-body collapse" role="form" id="promo-code-container" aria-expanded="false">
+                <div data-view="Cart.PromocodeFrom"></div>
+            </div>
+        </div>
+    {{/if}}
 
-	{{#if showActions}}
-		<div class="cart-summary-button-container">
-			<a id="btn-proceed-checkout" class="cart-summary-button-proceed-checkout {{#if showProceedButton}} cart-summary-button-proceed-checkout-sb {{/if}}" href="#" data-touchpoint="checkout" data-hashtag="#">
-				{{translate 'Proceed to Checkout'}}
-			</a>
+    {{#if showActions}}
+        <div class="cart-summary-button-container">
+            <a id="btn-proceed-checkout" class="cart-summary-button-proceed-checkout {{#if showProceedButton}} cart-summary-button-proceed-checkout-sb {{/if}}"
+                href="#" data-touchpoint="checkout" data-hashtag="#">
+                {{translate 'Proceed to Checkout'}}
+            </a>
 
-			{{#if showPaypalButton}}
-				<div class="cart-summary-btn-paypal-express">
-					<a href="#" data-touchpoint="checkout" data-hashtag="#" data-parameters="paypalexpress=T">
-						<img src="{{paypalButtonImageUrl}}" class="cart-summary-btn-paypal-express-image" alt="PayPal Express" />
-					</a>
-				</div>
-			{{/if}}
+            {{#if showPaypalButton}}
+                <div class="cart-summary-btn-paypal-express">
+                    <a href="#" data-touchpoint="checkout" data-hashtag="#" data-parameters="paypalexpress=T">
+                        <img src="{{paypalButtonImageUrl}}" class="cart-summary-btn-paypal-express-image" alt="PayPal Express" />
+                    </a>
+                </div>
+            {{/if}}
 
-			{{#if isWSDK}}
-				<a class="cart-summary-continue-shopping" href="{{continueURL}}">
-					{{translate 'Continue Shopping'}}
-				</a>
-			{{/if}}
-		</div>
-	{{/if}}
+            {{#if isWSDK}}
+                <a class="cart-summary-continue-shopping" href="{{continueURL}}">
+                    {{translate 'Continue Shopping'}}
+                </a>
+            {{/if}}
+        </div>
+    {{/if}}
 </div>
 
 
