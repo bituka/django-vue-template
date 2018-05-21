@@ -91,12 +91,12 @@ govern your access and use. }}
                                             </label>-->
                                             <div data-validation="control-group" data-input="firstname">
                                                 <div class="contact-us-form-controls" data-validation="control">
-                                                    <input type='text' placeholder='First Name' id="firstname" name='firstname' value="{{firstname}}">
+                                                    <input type='text' placeholder='First Name*' id="firstname" name='firstname' value="{{firstname}}">
                                                 </div>
                                             </div>
                                             <div data-validation="control-group" data-input="lastname">
                                                 <div class="contact-us-form-controls" data-validation="control">
-                                                    <input type='text' placeholder='Last Name' id="lastname" name='lastname' value="{{lastname}}">
+                                                    <input type='text' placeholder='Last Name*' id="lastname" name='lastname' value="{{lastname}}">
                                                 </div>
                                             </div>
                                             <div data-validation="control-group" data-input="company">
@@ -106,7 +106,7 @@ govern your access and use. }}
                                             </div>
                                             <div data-validation="control-group" data-input="email">
                                                 <div class="contact-us-form-controls" data-validation="control">
-                                                    <input type='text' placeholder='Email' id="email" name='email' value="{{email}}">
+                                                    <input type='text' placeholder='Email*' id="email" name='email' value="{{email}}">
                                                 </div>
                                             </div>
                                             <div data-validation="control-group" data-input="message">
