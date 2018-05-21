@@ -9,10 +9,10 @@ define('TriodeOption.LiveOrder.Triggers', [
     'use strict';
 
 
-    Application.on('before:LiveOrder.addLine',
-        function beforeLiveOrderAddLineTriodeOption(Model, currentLine) {
-            Model.addTriodeOption(currentLine);
-        });
+    // Application.on('before:LiveOrder.addLine',
+    //     function beforeLiveOrderAddLineTriodeOption(Model, currentLine) {
+    //         Model.addTriodeOption(currentLine);
+    //     });
 
     Application.on('before:LiveOrder.addLines',
         function beforeLiveOrderAddLinesTriodeOption(Model, lines) {

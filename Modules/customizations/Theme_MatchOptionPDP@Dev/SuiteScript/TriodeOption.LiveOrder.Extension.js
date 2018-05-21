@@ -28,7 +28,7 @@ define('TriodeOption.LiveOrder.Extension', [
         if (currentLine.options.length > 0) {
 
           var aux = currentLine.options[0].cartOptionId;
-          nlapiLogExecution('DEBUG', 'aux', aux);
+          // nlapiLogExecution('DEBUG', 'aux', aux);
 
           if (currentLine && currentLine.options[0].cartOptionId == "custcol_additional_options") {
 
@@ -67,19 +67,19 @@ define('TriodeOption.LiveOrder.Extension', [
         return null;
       }
 
-    , addTriodeOption: function addTriodeOption(currentLine){
-
-        nlapiLogExecution('DEBUG', 'addTriodeOption - line', JSON.stringify(currentLine));
-        var triodeOptionLine = this.tweakLinesGetTriodeOption(currentLine);
-        if (triodeOptionLine) {
-            Application.once('after:LiveOrder.addLine', function afterLiveOrderAddLine(Model, responseData) {
-                if (responseData) {
-                    Model.addLine(triodeOptionLine);
-                    CommerceAPI.context.setSessionObject('latest_addition', responseData);
-                }
-            });
-        }
-    }
+    // , addTriodeOption: function addTriodeOption(currentLine){
+    //
+    //     nlapiLogExecution('DEBUG', 'addTriodeOption - line', JSON.stringify(currentLine));
+    //     var triodeOptionLine = this.tweakLinesGetTriodeOption(currentLine);
+    //     if (triodeOptionLine) {
+    //         Application.once('after:LiveOrder.addLine', function afterLiveOrderAddLine(Model, responseData) {
+    //             if (responseData) {
+    //                 Model.addLine(triodeOptionLine);
+    //                 CommerceAPI.context.setSessionObject('latest_addition', responseData);
+    //             }
+    //         });
+    //     }
+    // }
 
 
     /**
@@ -90,7 +90,7 @@ define('TriodeOption.LiveOrder.Extension', [
 
         var currentLine;
         var triodeLine;
-        nlapiLogExecution('DEBUG','addTriodeOptions - lines',JSON.stringify(lines));
+        nlapiLogExecution('DEBUG','addTriodeOptions - line',JSON.stringify(lines));
 
         if (_.isArray(lines) && lines.length === 1) {
 
@@ -100,14 +100,7 @@ define('TriodeOption.LiveOrder.Extension', [
 
           //If the add to cart contain a triode Request
           if (triodeLine) {
-
-            // nlapiLogExecution('DEBUG','triodeLine',JSON.stringify(triodeLine));
-            lines[1] = triodeLine;
-            Application.once('after:LiveOrder.addLines', function afterLiveOrderAddLines(Model, responseData) {
-              if (responseData) {
-                CommerceAPI.context.setSessionObject('latest_addition', responseData[0].orderitemid);
-              }
-            });
+            this.addLine(triodeLine);
           }
         }
       }
@@ -125,14 +118,14 @@ define('TriodeOption.LiveOrder.Extension', [
         // get the 'parent' item id
         var itemLine = JSON.stringify(currentLine);
         var itemId = itemLine.substring(5, itemLine.indexOf('set'));
-        nlapiLogExecution('DEBUG','removeTriodeOption - itemId', itemId);
+        // nlapiLogExecution('DEBUG','removeTriodeOption - itemId', itemId);
 
         // Removing current line, we have to find the triode option
         var line = CommerceAPI.order.getItem(currentLine, orderFieldKeys);
         var optionTriode = _.findWhere(line.options, {
           id: 'CUSTCOL_ADDITIONAL_OPTIONS'
         });
-        nlapiLogExecution('DEBUG','removeTriodeOption - optionTriode', JSON.stringify(optionTriode));
+        // nlapiLogExecution('DEBUG','removeTriodeOption - optionTriode', JSON.stringify(optionTriode));
 
         var lines;
 
