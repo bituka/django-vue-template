@@ -51,7 +51,8 @@ govern your access and use. }}
                         <p>You can contact us by filling out the form at the bottom of this page. Be sure to include your order
                             number! If you prefer to call you can do so.</p>
                         <h2>How much does shipping cost and how do I pay?</h2>
-                        <p>Check out our Shipping Options page for these answers and more.</p>
+                        <p>Check out our
+                            <a href="/Resources/Customer-Service-Info/Shipping-Options">Shipping Options</a> page for these answers and more.</p>
                         <h2>Do we have a printed catalog?</h2>
                         <p>No, but our site is updated daily and includes the most up-to-date info on our products that we have.</p>
                         <h2>If you are looking for a certain tube type,</h2>
@@ -62,7 +63,8 @@ govern your access and use. }}
                         <p>Every product on our site has an Availability section that is constantly updated with our current
                             inventory information.</p>
                         <h2>Questions about your amp or tubes in general?</h2>
-                        <p>We've got a lot of answers on our Resources pages.</p>
+                        <p>We've got a lot of answers on our
+                            <a href="/Resources">Resources pages</a>.</p>
                         <h2>Do we have Telefunken, Mullard, Siemens...</h2>
                         <p>Search our site. These brands are rare but when we do get them they are put on our site immediately.</p>
                         <h2>If you have a question about your order,</h2>

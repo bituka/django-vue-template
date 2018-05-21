@@ -4,7 +4,7 @@
         font-size: 18px;
         font-weight: bold;
         color: #166ca7;
-        margin-bottom: 20px;
+        margin-bottom: 0;
         text-transform: inherit;
         margin-bottom: 0 !important;
     }
@@ -18,5 +18,8 @@
     .iframe {
         margin: 20px 0;
         text-align: center;
+    }
+    .contact-us-form {
+        background: transparent !important;
     }
 }
