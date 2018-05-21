@@ -320,7 +320,8 @@
                     "TriodeOption.Cart.View",
                     "TriodeOption.SelectedOption.View",
                     "TriodeOption.LiveOrder.Model",
-                    "ProductDetails.Options.Selector.Extension.View"
+                    "ProductDetails.Options.Selector.Extension.View",
+                    "GlobalViews.CurrencySelector.Extension.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -454,7 +455,8 @@
                     "NavigationHelper.Extension",
                     "TriodeOption.SelectedOption.View",
                     "TriodeOption.Cart.View",
-                    "TriodeOption.LiveOrder.Model"
+                    "TriodeOption.LiveOrder.Model",
+                    "GlobalViews.CurrencySelector.Extension.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -589,7 +591,8 @@
                     "Cart.PromocodeForm.Extension.View",
                     "TriodeOption.SelectedOption.View",
                     "TriodeOption.Cart.View",
-                    "TriodeOption.LiveOrder.Model"
+                    "TriodeOption.LiveOrder.Model",
+                    "GlobalViews.CurrencySelector.Extension.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {

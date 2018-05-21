@@ -19,14 +19,18 @@ define('Cart.AddToCart.Button.Multiple.View'
         this._render();
       }
 
-    , sleep: function (milliseconds) {
-		  var start = new Date().getTime();
-		  for (var i = 0; i < 1e7; i++) {
-		    if ((new Date().getTime() - start) > milliseconds){
-		      break;
-		    }
-		  }
-		}
+    , addToCartAsync : function (lines, pos, application) {
+      console.log('---line--- ', lines[pos]);
+      var self = this;
+      if (lines.length > 0 && pos < (lines.length) ){
+        var promise = self.cart.addLine(lines[pos]).done(function(result){
+          self.addToCartAsync(lines, pos + 1, application)
+        })
+        if(pos == (lines.length -1)){
+          CartConfirmationHelpers.showCartConfirmation(promise, lines[pos], application);
+        }
+      }
+    }
 
     , addToCart: function addToCart (e)
     		{
@@ -41,6 +45,8 @@ define('Cart.AddToCart.Button.Multiple.View'
           var groupItem = this.model.get('item').get('custitem_group_item');
 
           if(this.model.get('item').get('_itemType') === 'NonInvtPart' && groupItem){
+
+            var linesToAddAsync = [];
 
             _.each(this.model.get('items'), function(items){
 
@@ -67,21 +73,23 @@ define('Cart.AddToCart.Button.Multiple.View'
               // /  items.setOption(itemOptionId, value);
               items.set('item', items.attributes);
               items.get('options').set(selectedOption);
-              var totalQty = quantity.quantity * packageQty;              
+              var totalQty = quantity.quantity * packageQty;
               items.set('quantity', parseInt(totalQty));
 
               var line = LiveOrderLineModel.createFromProduct(items);
-              cart_promise = self.cart.addLine(line);
+
+              linesToAddAsync.push(line);
+
             });
 
-            // fix to show only package item information on modal
-            this.sleep(500);
-            // for package items, get the non inventory information
+            // add the 'parent'
             var line1 = LiveOrderLineModel.createFromProduct(this.model);
-            // add the package item
-            cart_promise1 = this.cart.addLine(line1);
-            // show modal with the package information
-            CartConfirmationHelpers.showCartConfirmation(cart_promise1, line1, self.options.application);
+
+            if (linesToAddAsync.length > 0 ){
+              linesToAddAsync.push(line1);
+              self.addToCartAsync(linesToAddAsync,0, self.options.application);
+            }
+
           }
           else{
             if (!this.model.areAttributesValid(['options','quantity'], self.getAddToCartValidators()))
@@ -125,5 +133,6 @@ define('Cart.AddToCart.Button.Multiple.View'
             return false;
           }
     		}
+
     });
 });
