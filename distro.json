@@ -321,7 +321,8 @@
                     "TriodeOption.SelectedOption.View",
                     "TriodeOption.LiveOrder.Model",
                     "ProductDetails.Options.Selector.Extension.View",
-                    "GlobalViews.CurrencySelector.Extension.View"
+                    "GlobalViews.CurrencySelector.Extension.View",
+                    "Facets.Browse.Extension.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
