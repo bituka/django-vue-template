@@ -20,7 +20,7 @@ define('Cart.AddToCart.Button.Multiple.View'
       }
 
     , addToCartAsync : function (lines, pos, application) {
-      console.log('---line--- ', lines[pos]);
+      //console.log('---line--- ', lines[pos]);
       var self = this;
       if (lines.length > 0 && pos < (lines.length) ){
         var promise = self.cart.addLine(lines[pos]).done(function(result){
