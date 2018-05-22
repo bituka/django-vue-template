@@ -593,7 +593,8 @@
                     "TriodeOption.SelectedOption.View",
                     "TriodeOption.Cart.View",
                     "TriodeOption.LiveOrder.Model",
-                    "GlobalViews.CurrencySelector.Extension.View"
+                    "GlobalViews.CurrencySelector.Extension.View",
+                    "OrderWizard.Module.Shipmethod.Extension"
                 ],
                 "amdclean": false,
                 "amdConfig": {
