@@ -54,7 +54,11 @@ define(
 		{
 
       /* - START - CUSTOM SHIP METHODS */
-      var order_fields2 = this.getFieldValues(), result = {};
+      var order_fields2 = this.getFieldValues()
+				, result = {};
+
+
+
       order_fields2 = this.hidePaymentPageWhenNoBalance(order_fields2);
       result.ismultishipto = this.getIsMultiShipTo(order_fields2);
       // Ship Methods
@@ -65,6 +69,7 @@ define(
     		result.shipmethod = null;
     	} else {
     		result.shipmethods = this.getShipMethods(order_fields2);
+				nlapiLogExecution('DEBUG', '- result.shipmethods -', JSON.stringify(result.shipmethods));
     		result.shipmethod = order_fields2.shipmethod ? order_fields2.shipmethod.shipmethod : null;
     	}
       // nlapiLogExecution('DEBUG', '-get-orderfields', JSON.stringify(order_fields2));
@@ -79,6 +84,11 @@ define(
     	var response = nlapiRequestURL(url, null, null, null);
     	var responseArray = JSON.parse(response.getBody());
     	var shipResult = [];
+
+			// nlapiLogExecution('DEBUG', '- response -', JSON.stringify(response));
+			nlapiLogExecution('DEBUG', '- responseArray -', JSON.stringify(responseArray));
+			// nlapiLogExecution('DEBUG', '- result.shipmethods -', JSON.stringify(result.shipmethods));
+
     	for (var i = 0; i < result.shipmethods.length; i++) {
     		for(var j = 0; j < responseArray.length; j++){
     			if(result.shipmethods[i].internalid == responseArray[j].shipping){
@@ -175,6 +185,7 @@ define(
 
       // set custom shipmethods
       result.shipmethods = shipResult;
+			nlapiLogExecution('Debug','- shipResult -',JSON.stringify(shipResult));
 
 			// @class LiveOrder.Model
 			return result;
@@ -185,7 +196,7 @@ define(
 	,	update: function update (data)
 		{
 
-			nlapiLogExecution('Debug','update - data',JSON.stringify(data));
+			// nlapiLogExecution('Debug','update - data',JSON.stringify(data));
 
 			var current_order = this.get();
 
@@ -568,7 +579,7 @@ define(
 	,	addLine: function addLine (line_data)
 		{
 
-			nlapiLogExecution('Debug','addLine - line_data',JSON.stringify(line_data));
+			// nlapiLogExecution('Debug','addLine - line_data',JSON.stringify(line_data));
 
 			var item = {
 				internalid: line_data.item.internalid.toString()
@@ -613,7 +624,7 @@ define(
 		// @param {Array<LiveOrder.Model.Line>} lines_data
 	,	addLines: function addLines (lines_data)
 		{
-			nlapiLogExecution('Debug','lines data --', JSON.stringify(lines_data));
+			// nlapiLogExecution('Debug','lines data --', JSON.stringify(lines_data));
 
 			var items = []
 			,	self = this;
@@ -663,7 +674,7 @@ define(
 	,	removeLine: function removeLine (line_id)
 		{
 
-			nlapiLogExecution('DEBUG','removeLine - line_id', JSON.stringify(line_id));
+			// nlapiLogExecution('DEBUG','removeLine - line_id', JSON.stringify(line_id));
 			if(this.isAutoapplyPromotionsEnabled)
 			{
 				this.setOldPromocodes();
@@ -683,8 +694,8 @@ define(
 	,	updateLine: function updateLine (line_id, line_data)
 		{
 
-			nlapiLogExecution('DEBUG','liveorder updateLine - data', JSON.stringify(line_data));
-			nlapiLogExecution('DEBUG','liveorder updateLine - lineId', JSON.stringify(line_id));
+			// nlapiLogExecution('DEBUG','liveorder updateLine - data', JSON.stringify(line_data));
+			// nlapiLogExecution('DEBUG','liveorder updateLine - lineId', JSON.stringify(line_id));
 
 			var lines_sort = this.getLinesSort()
 			,	current_position = _.indexOf(lines_sort, line_id)
@@ -1300,7 +1311,7 @@ define(
 
 					if (!line.item)
 					{
-						nlapiLogExecution('DEBUG','REMOVE - get lines','REMOVE - get lines');
+						// nlapiLogExecution('DEBUG','REMOVE - get lines','REMOVE - get lines');
 						self.removeLine(line.internalid);
 						restart = true;
 					}

@@ -2,9 +2,12 @@
     "gulp": {
         "templates": [
             "Templates/*.*"
+        ],
+        "javascript": [
+            "JavaScript/*.js"
         ]
     },
     "overrides": {
-        "suitecommerce/OrderWizard.Module.Shipmethod@3.0.1/Templates/order_wizard_showshipments_module.tpl": "Templates/order_wizard_showshipments_module.tpl"        
+        "suitecommerce/OrderWizard.Module.Shipmethod@3.0.1/Templates/order_wizard_showshipments_module.tpl": "Templates/order_wizard_showshipments_module.tpl"
     }
 }
