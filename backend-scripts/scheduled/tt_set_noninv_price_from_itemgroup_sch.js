@@ -32,8 +32,13 @@ function setNonInventoryPrice() {
           var quantity = parseFloat(groupRecord.getLineItemValue('member', 'quantity', j));
 
           var item = loadItem(memberId);
-          var itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,1));
-
+          var itemPrice = 0;
+          if(quantity < 5){
+            itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,1));
+          }else{
+            itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,2));
+          }
+          
           totalGroupPrice = totalGroupPrice + itemPrice*quantity;
         }
 
@@ -56,7 +61,7 @@ function setNonInventoryPrice() {
         if (nlapiGetContext().getRemainingUsage() < 100) {
             nlapiLogExecution('DEBUG', 'USAGE LOW', nlapiGetContext().getRemainingUsage());
             nlapiYieldScript();
-        }        
+        }
     }
 
   } catch(e) {
