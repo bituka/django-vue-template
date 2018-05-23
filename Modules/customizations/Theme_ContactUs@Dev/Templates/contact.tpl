@@ -21,9 +21,11 @@ govern your access and use. }}
                                     <div class='col-md-12'>
                                         <div data-type="alert-placeholder"></div>
                                         <div class='contact-us-form-box'>
-                                            <!--<label class="contact-us-form-content-label-required">
-                                                {{translate 'Required'}} <span class="contact-us-form-content-required">*</span> 
-                                            </label>-->
+                                            <div data-validation="control-group" data-input="subject">
+                                                <div class="contact-us-form-controls" data-validation="control">
+                                                    <input type='text' placeholder='Subject*' id="subject" name='subject' value="{{subject}}">
+                                                </div>
+                                            </div>
                                             <div data-validation="control-group" data-input="firstname">
                                                 <div class="contact-us-form-controls" data-validation="control">
                                                     <input type='text' placeholder='First Name*' id="firstname" name='firstname' value="{{firstname}}">
