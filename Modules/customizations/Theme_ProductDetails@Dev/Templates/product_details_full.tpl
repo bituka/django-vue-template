@@ -49,8 +49,8 @@ govern your access and use. }}
 						{{#if showAvailability}}
 						<div class="product-details-full-availabity">
 							<p class="availability"><strong>{{translate 'Availability: '}}</strong>
-                  <span>{{translate 'Usually ships within 24 hours.'}}</span>
-              </p>
+								<span>{{translate 'Usually ships within 24 hours.'}}</span>
+							</p>
 						</div>
 						{{/if}}
 						<div data-view="BackInStockSubscription.View">
@@ -89,23 +89,22 @@ govern your access and use. }}
 						{{/if}}{{/if}}
 
 						<div class="product-details-full-divider"></div>
-
-						<div class="product-details-share-section">
-							<!-- Go to www.addthis.com/dashboard to customize your tools -->
-							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script>
-							<div class="addthis_inline_share_toolbox"></div>
-							<!--<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>-->
-						</div>
-
-
-						<div class="product-details-full-main-bottom-banner">
-							<div id="banner-summary-bottom" class="product-details-full-banner-summary-bottom"></div>
-						</div>
 					</form>
 					{{else}}
 					<div data-view="GlobalViewsMessageView.WronglyConfigureItem"></div>
 					{{/if}}
 
+					<div class="product-details-share-section">
+						<!-- Go to www.addthis.com/dashboard to customize your tools -->
+						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script>
+						<div class="addthis_inline_share_toolbox"></div>
+						<!--<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>-->
+					</div>
+
+					<div class="product-details-full-main-bottom-banner">
+						<div id="banner-summary-bottom" class="product-details-full-banner-summary-bottom"></div>
+					</div>
+					
 					<div id="banner-details-bottom" class="product-details-full-banner-details-bottom" data-cms-area="item_info_bottom" data-cms-area-filters="page_type"></div>
 				</div>
 			</div>

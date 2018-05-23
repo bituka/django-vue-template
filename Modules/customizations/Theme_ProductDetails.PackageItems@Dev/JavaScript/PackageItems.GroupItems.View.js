@@ -17,7 +17,7 @@ define('PackageItems.GroupItems.View',
     , initialize: function( options ){
         this.model = options.model;
         this.totalPrice = options.totalPrice;
-        console.log('group items view')
+        //console.log('group items view')
     }
     , events: {
       'change [data-action="set-option"]': 'setOption'

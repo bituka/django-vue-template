@@ -24,19 +24,30 @@ define(
         , Backbone, _, Utils
     ) {
         'use strict';
-        ProductDetailsImageGalleryView.prototype.installPlugin('postContext', {
-            priority: 1,
-            execute: function execute(context, view) {
-                var model = view.model;
-                // START inclusion of Badges Logic
-                var customVideo = model.get('item').get('custitem_field_video');
-                _.extend(context, {
-                    customVideo: customVideo
-                });
-            }
-        });
-
+        // ProductDetailsImageGalleryView.prototype.installPlugin('postContext', {
+        //     priority: 1,
+        //     execute: function execute(context, view) {
+        //         var model = view.model;
+        //         // START inclusion of Badges Logic
+        //         var customVideo = model.get('item').get('custitem_field_video');
+        //         _.extend(context, {
+        //             customVideo: customVideo
+        //         });
+        //     }
+        // });
+        
         _.extend(ProductDetailsImageGalleryView.prototype, {
+
+            getContext : _.wrap(ProductDetailsImageGalleryView.prototype.getContext, function(fn){
+                var ctx = fn.apply(this, _.toArray(arguments).slice(1));
+                var model = this.model;
+                // START inclusion of Video
+                var customVideo = model.get('item').get('custitem_field_video');
+                ctx.customVideo = customVideo;
+
+                return ctx;
+
+            }),
 
             initialize: function initialize() {
                 Backbone.View.prototype.initialize.apply(this, arguments);
@@ -54,8 +65,6 @@ define(
                     }
                 }, this);
 
-
-
                 this.on('afterViewRender', function () {
                     self.initSlider();
                     self.initZoom();
@@ -65,9 +74,7 @@ define(
             appendVideo: function () {
                     var customVideo = this.$('#custom-video')
                     this.$('.bx-has-controls-direction').append(customVideo)
-                }
-
-                ,
+            },
             initSlider: function initSlider() {
 
                     var self = this;
@@ -95,9 +102,7 @@ define(
                         self.$('[data-action="next-image"]').click(_.bind(self.nextImageEventHandler, self));
                         self.$('[data-action="prev-image"]').click(_.bind(self.previousImageEventHandler, self));
                     }
-                }
-
-                ,
+            },
             initZoom: function () {
                 if (!SC.ENVIRONMENT.isTouchEnabled) {
                     var images = this.images,

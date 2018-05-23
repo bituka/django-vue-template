@@ -1,7 +1,6 @@
 define('FacetsBrowse.CategoryHeading.FixHTMLDescription', ['Facets.Browse.CategoryHeading.View'], function(FacetsBrowseCategoryHeading){
   _.extend(FacetsBrowseCategoryHeading.prototype, {
     render: function(){
-      console.log('cms finised')
       setTimeout(function(){
         jQuery('a[data-action="scrollto"]').click(function(e){
           e.preventDefault();
@@ -27,14 +26,24 @@ define('FacetsBrowse.CategoryHeading.FixHTMLDescription', ['Facets.Browse.Catego
     }
   });
 
-  FacetsBrowseCategoryHeading.prototype.installPlugin('postContext', {
-      name: 'FacetsFacetedNavigationItemView.getContext',
-      priority: 1,
-      execute: function execute(context, view) {
-        var description = view.htmldecode(view.model.get('description'));
-        _.extend(context, {
-            description: description
-        });
-      }
-    });
+  // FacetsBrowseCategoryHeading.prototype.installPlugin('postContext', {
+  //     name: 'FacetsFacetedNavigationItemView.getContext',
+  //     priority: 1,
+  //     execute: function execute(context, view) {
+  //       var description = view.htmldecode(view.model.get('description'));
+  //       _.extend(context, {
+  //           description: description
+  //       });
+  //     }
+  //   });
+
+  _.extend(FacetsBrowseCategoryHeading.prototype, {
+    getContext : _.wrap(FacetsBrowseCategoryHeading.prototype.getContext, function(fn){
+    var ctx = fn.apply(this, _.toArray(arguments).slice(1));
+
+    ctx.description = this.htmldecode(this.model.get('description'));
+    return ctx;
+    })	
+  });
+
 });
