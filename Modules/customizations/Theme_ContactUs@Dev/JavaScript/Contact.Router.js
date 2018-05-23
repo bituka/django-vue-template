@@ -17,7 +17,7 @@ define(
         return Backbone.Router.extend({
 
             routes: {
-                'tt_contact-us': 'presentContactUs'
+                'contact-us': 'presentContactUs'
             },
 
             initialize: function (Application) {
