@@ -17,43 +17,31 @@ define(
         //@module Home.View @extends Backbone.View
         return Backbone.View.extend({
 
-            template: contact_tpl
-
-                ,
-            title: _('Contact Us').translate()
-
-                ,
-            page_header: _('Contact Us').translate()
-
-                ,
+            template: contact_tpl,
+            title: _('Contact Us').translate(),
+            page_header: _('Contact Us').translate(),
             attributes: {
                 'id': 'contact-us-page',
                 'class': 'contact-us-page'
-            }
-
-            ,
+            },
             events: {
                 'submit form': 'customSaveForm'
-            }
-
-            ,
+            },
             bindings: {
+                '[name="subject"]': 'subject',
                 '[name="firstname"]': 'firstname',
                 '[name="lastname"]': 'lastname',
                 '[name="company"]': 'company',
                 '[name="email"]': 'email',
                 '[name="message"]': 'message'
-            }
+            },
 
-            ,
             initialize: function (options) {
-                    BackboneCompositeView.add(this);
-                    this.application = options.application;
-                    this.model = new ContactModel();
-                    BackboneFormView.add(this);
-                }
-
-                ,
+                BackboneCompositeView.add(this);
+                this.application = options.application;
+                this.model = new ContactModel();
+                BackboneFormView.add(this);
+            },
             customSaveForm: function (e) {
 
                     jQuery('form .global-views-message').parent().remove();

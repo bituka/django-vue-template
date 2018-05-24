@@ -174,7 +174,7 @@
         {{/if}}
     </div>
     <div class="cart-summary-truck-image">
-        <a href="http://www.thetubestore.com/Resources/Customer-Service-Info/Shipping-Options" target="_blank">
+        <a href="/Shipping-Options" target="_blank">
             <img src="/Images/Shipping-Truck.png" alt="">
         </a>
     </div>
