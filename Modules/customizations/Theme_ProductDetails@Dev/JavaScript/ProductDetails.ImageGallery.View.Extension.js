@@ -68,12 +68,12 @@ define(
                 this.on('afterViewRender', function () {
                     self.initSlider();
                     self.initZoom();
-                    _.defer(self.appendVideo());
+                    _.defer(_.bind(self.appendVideo,self));
                 });
             },
             appendVideo: function () {
-                    var customVideo = this.$('#custom-video')
-                    this.$('.bx-has-controls-direction').append(customVideo)
+                var customVideo = this.$('#custom-video')
+                this.$('.bx-has-controls-direction').append(customVideo)
             },
             initSlider: function initSlider() {
 
