@@ -59,7 +59,7 @@ define('TriodeOption.SelectedOption.View', [
     _.extend(ItemViewsSelectedOptionView.prototype, {
         getContext : _.wrap(ItemViewsSelectedOptionView.prototype.getContext, function(fn){
             var ctx = fn.apply(this, _.toArray(arguments).slice(1));
-    
+
             var model = this.model;
             var item = this.options.model;
             var rate5090 = sessionStorage.getItem('5090');
@@ -85,7 +85,7 @@ define('TriodeOption.SelectedOption.View', [
                 //   });
 
                     ctx.total_formatted = item.get('total_formatted');
-                    isValid = item.get('amount') !== 0;
+                    ctx.isValid = item.get('amount') !== 0;
 
                     return ctx;
 
@@ -93,8 +93,8 @@ define('TriodeOption.SelectedOption.View', [
               }
             }
 
-            
-        })	
+
+        })
     });
 
 
