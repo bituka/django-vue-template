@@ -33,12 +33,16 @@ function setNonInventoryPrice() {
 
           var item = loadItem(memberId);
           var itemPrice = 0;
-          if(quantity < 5){
-            itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,1));
-          }else{
+
+          if(quantity > 5 && Number(itemRecord.getLineItemMatrixValue('price1', 'price', 1,2)) != 0.0){
             itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,2));
+          }else{
+            itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,1));
           }
-          
+
+          // nlapiLogExecution("ERROR", "memberId", memberId);
+          // nlapiLogExecution("ERROR", "itemPrice", itemPrice);
+          // nlapiLogExecution("ERROR", "quantity", quantity);
           totalGroupPrice = totalGroupPrice + itemPrice*quantity;
         }
 

@@ -118,11 +118,12 @@ define(
 				settings.negativesuffix = window.negativesuffix;
 				settings.dateformat = window.dateformat;
 				settings.longdateformat = window.longdateformat;
+				settings.exchangerate = this.getExchangeRate();
 
 				settings.isMultiShippingRoutesEnabled = this.isMultiShippingRoutesEnabled();
 
 				settings.isPickupInStoreEnabled = this.isPickupInStoreEnabled();
-				
+
 				settings.isAutoapplyPromotionsEnabled = this.isAutoapplyPromotionsEnabled();
 
 				settings.isSCISIntegrationEnabled = this.isSCISIntegrationEnabled();
@@ -141,7 +142,7 @@ define(
 			settings.is_logged_in = ModelsInit.session.isLoggedIn2();
 			settings.shopperCurrency = ModelsInit.session.getShopperCurrency();
 			settings.touchpoints = this.getTouchPoints();
-	
+
 			return settings;
 		}
 		// @method isPickupInStoreEnabled. @returns {Boolean}
@@ -175,6 +176,24 @@ define(
 			}
 
 			return settings.touchpoints;
+		}
+
+	, getExchangeRate: function(){
+			var today = new Date();
+			var dd = today.getDate();
+			var mm = today.getMonth()+1; //January is 0!
+
+			var yyyy = today.getFullYear();
+			if(dd<10){
+				dd='0'+dd;
+			}
+			if(mm<10){
+				mm='0'+mm;
+			}
+			today = mm+'/'+dd+'/'+yyyy;
+			var rate = nlapiExchangeRate('CAD', 'USD', today);
+
+			return rate;
 		}
 	});
 });

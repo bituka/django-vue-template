@@ -19,7 +19,7 @@ define(
         'use strict';
 
         _.extend(ProductDetailsFullView.prototype, {
-        
+
           childViews: _.extend(ProductDetailsFullView.prototype.childViews, {
             'BackInStockSubscription.View': function(){
               return new BackInStockSubscriptionView({
@@ -50,57 +50,14 @@ define(
               });
             }
     			}
-
+          
         });
-
-
-      //   ProductDetailsFullView.prototype.installPlugin('postContext', {
-      //       priority: 1,
-      //       execute: function execute(context, view) {
-			//           var model = view.model;
-      //           // START inclusion of Badges Logic
-      //           var getBadge = model.get('item').get('custitem_tt_itembadges');
-      //           var addInformation = model.get('item').get('custitem_addition_information');
-      //           var warranty = model.get('item').get('custitem_warranty');
-      //           var storeDescription = model.get('item').get('storedetaileddescription');
-      //           var customVideo = model.get('item').get('custitem_field_video');
-      //           var badge = '',
-      //           showAvailability = model.get('item').get('_isInStock');
-      //           if (getBadge === 'NEW') {
-      //               badge = '<div class="custombadge new">NEW</div>';
-      //           } else if (getBadge === 'BEST SELLER') {
-      //               badge = '<div class="custombadge bestseller">BEST SELLER</div>';
-      //           } else if (getBadge === 'SALE') {
-      //               badge = '<div class="custombadge sale">SALE</div>';
-      //           } else {
-      //               badge = false;
-      //           }
-      //           // END  inclusion of Badges Logic
-
-			// 	_.extend(context, {
-      //       // @property {string} badge
-      //       badge: badge ,
-      //       addInformation: addInformation ,
-      //       storeDescription: storeDescription ,
-      //       warranty: warranty,
-      //       showAvailability: showAvailability,
-      //       isOutOfStock: showAvailability,
-      //       customVideo:customVideo,
-      //       // @property {string} unitOfMeasure
-      //       unitOfMeasure: model.get('item').get('saleunit'),
-      //       // @property {boolean} isBestSeller
-      //       isBestSeller: model.get('item').get('custitem_topseller')
-      //   });
-        
-      // }
-      
-      // });
 
 
       _.extend(ProductDetailsFullView.prototype, {
         getContext : _.wrap(ProductDetailsFullView.prototype.getContext, function(fn){
             var ctx = fn.apply(this, _.toArray(arguments).slice(1));
-    
+
             var model = this.model;
 
             // START inclusion of Badges Logic
@@ -135,7 +92,7 @@ define(
             ctx.isBestSeller = model.get('item').get('custitem_topseller');
 
             return ctx;
-        })	
+        })
     });
 
 

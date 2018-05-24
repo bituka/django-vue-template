@@ -4,12 +4,14 @@ define(
     'ProductViews.Price.Extension.View',
     [
       'ProductViews.Price.View',
+      // 'SiteSettings.Model',
       'Backbone',
       'underscore'
     ],
     function(
 
       ProductViewsPriceView,
+      // SiteSettingsModel,
       Backbone,
       _
     ) {
@@ -49,11 +51,13 @@ define(
         _.extend(ProductViewsPriceView.prototype, {
           getContext : _.wrap(ProductViewsPriceView.prototype.getContext, function(fn){
               var ctx = fn.apply(this, _.toArray(arguments).slice(1));
-      
+
               var model = this.model;
               var currency = SC.ENVIRONMENT.currentCurrency;
               var isNonInv = false;
               var item = this.model.get('item');
+              var exchangerate = Number(SC.ENVIRONMENT.siteSettings.exchangerate);
+
               if(item != undefined){
                 if (item.get('itemtype') == "NonInvtPart"){
                   isNonInv = true;
@@ -64,7 +68,11 @@ define(
                   if (price.substring(price.indexOf("."),price.length) == ".5") {
                     price = price + "0";
                   }
-                  price = currency.symbol + price;
+                  if(currency.internalid == "2"){
+                    price = currency.symbol + (price/exchangerate).toFixed(2);
+                  }else{
+                    price = currency.symbol + price;
+                  }
                 }
               }
 
@@ -72,9 +80,9 @@ define(
               ctx.nonInvPrice = price;
               // @property {boolean} isNonInv
               ctx.isNonInv = isNonInv;
-  
+
               return ctx;
-          })	
+          })
       });
 
 });
