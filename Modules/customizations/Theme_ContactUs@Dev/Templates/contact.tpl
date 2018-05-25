@@ -5,13 +5,13 @@ govern your access and use. }}
 <!--CONTACT US  -->
 <section class='theme-landing-page' id='theme-contact-us'>
 
-    <div class="row contact-us-content" data-cms-area="contact_full-banner-2" data-cms-area-filters="path"></div>
+    <div class="contact-us-content" data-cms-area="contact_full-banner-2" data-cms-area-filters="path"></div>
 
     <div class="contact-us-form">
 
         <div class="contact-us-form-content">
-            <div class='container'>
-                <div class='row'>
+            <div class='row'>
+                <div class='container'>
                     <div class='col-md-12'>
 
                         <form id="contact-us-form" class="contact-us-form-new" action="POST">

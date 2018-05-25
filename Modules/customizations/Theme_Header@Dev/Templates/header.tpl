@@ -20,7 +20,7 @@ your access and use. }}
                 {{/if}}
                 <li class="separator"> | </li>
                 <li class="blog-link">
-                    <a href="https://blog.th†etubestore.com/" target="_blank">BLOG</a>
+                    <a href="https://blog.thetubestore.com/" target="_blank">BLOG</a>
                 </li>
                 <li class="separator"> | </li>
                 <!-- <ul class="header-menu-actions">
@@ -46,9 +46,7 @@ your access and use. }}
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>
 
 <div class="header-secondary-section">
@@ -60,6 +58,7 @@ your access and use. }}
         </button>
     </div>
     <!-- End Mobile Toggle -->
+
     <div class="header-redesign">
         <div class="header-logo-wrapper">
             <div data-view="Header.Logo"></div>
