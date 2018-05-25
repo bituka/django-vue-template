@@ -19,10 +19,6 @@ define('Contact.Model', [
                 required: true,
                 msg: _('First name is required').translate()
             },
-            lastname: {
-                required: true,
-                msg: _('Last name is required').translate()
-            },
             email: {
                 required: true,
                 msg: _('Email is required').translate()

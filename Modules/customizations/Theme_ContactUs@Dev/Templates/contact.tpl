@@ -21,11 +21,6 @@ govern your access and use. }}
                                     <div class='col-md-12'>
                                         <div data-type="alert-placeholder"></div>
                                         <div class='contact-us-form-box'>
-                                            <div data-validation="control-group" data-input="subject">
-                                                <div class="contact-us-form-controls" data-validation="control">
-                                                    <input type='text' placeholder='Subject*' id="subject" name='subject' value="{{subject}}">
-                                                </div>
-                                            </div>
                                             <div data-validation="control-group" data-input="firstname">
                                                 <div class="contact-us-form-controls" data-validation="control">
                                                     <input type='text' placeholder='First Name*' id="firstname" name='firstname' value="{{firstname}}">
@@ -33,12 +28,7 @@ govern your access and use. }}
                                             </div>
                                             <div data-validation="control-group" data-input="lastname">
                                                 <div class="contact-us-form-controls" data-validation="control">
-                                                    <input type='text' placeholder='Last Name*' id="lastname" name='lastname' value="{{lastname}}">
-                                                </div>
-                                            </div>
-                                            <div data-validation="control-group" data-input="company">
-                                                <div class="contact-us-form-controls" data-validation="control">
-                                                    <input type='text' placeholder='Company Name' id="company" name='company' value="{{company}}">
+                                                    <input type='text' placeholder='Last Name' id="lastname" name='lastname' value="{{lastname}}">
                                                 </div>
                                             </div>
                                             <div data-validation="control-group" data-input="email">
@@ -46,13 +36,28 @@ govern your access and use. }}
                                                     <input type='text' placeholder='Email*' id="email" name='email' value="{{email}}">
                                                 </div>
                                             </div>
+                                            <div data-validation="control-group" data-input="phone">
+                                                <div class="contact-us-form-controls" data-validation="control">
+                                                    <input type='text' placeholder='Phone' id="phone" name='phone' value="{{phone}}">
+                                                </div>
+                                            </div>
+                                            <div data-validation="control-group" data-input="ordernumber">
+                                                <div class="contact-us-form-controls" data-validation="control">
+                                                    <input type='text' placeholder='Order Number' id="ordernumber" name='ordernumber' value="{{ordernumber}}">
+                                                </div>
+                                            </div>
+                                            <div data-validation="control-group" data-input="subject">
+                                                <div class="contact-us-form-controls" data-validation="control">
+                                                    <input type='text' placeholder='Subject*' id="subject" name='subject' value="{{subject}}">
+                                                </div>
+                                            </div>
                                             <div data-validation="control-group" data-input="message">
                                                 <div class="contact-us-form-controls" data-validation="control">
-                                                    <textarea rows='10' class='form-control' id="text" name='message' placeholder='Message'>{{message}}</textarea>
+                                                    <textarea rows='10' class='form-control' id="text" name='message' placeholder='Message*'>{{message}}</textarea>
                                                 </div>
                                             </div>
                                             <button type='submit' class='contact-us-form-btn'>SUBMIT</button>
-                                            <div id='alert-container'></div>
+                                            <div id='alert-container' style="margin-top:20px;"></div>
                                         </div>
                                     </div>
                                 </div>
