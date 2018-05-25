@@ -53,8 +53,8 @@ define('ProductDetailsFull.PackageItems.View', [
                 itemOptions.done(function() {
                   self.model.set('groupItems', self.groupItems);
                   self.model.set('items', self.items);
-                  setTimeout(function() {
-                    self.render();
+                  setTimeout(function() {                    
+                    self.childViewInstances['GroupItems.Items']['GroupItems.Items'].childViewInstance.render();
                     self.$('.tube_store_loading_packages').hide(1000);
                     self.$('.product-details-package-options').show(1000);
                   }, 1000);
