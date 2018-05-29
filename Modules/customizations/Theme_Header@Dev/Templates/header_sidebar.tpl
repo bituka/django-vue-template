@@ -68,7 +68,7 @@
                 {{/if}}
 			{{/each}}
             <li>
-                <a href="/resources" data-hashtag="#/resources" data-touchpoint="home"> Ressources </a>
+                <a href="/resources" data-hashtag="#/resources" data-touchpoint="home"> Resources </a>
             </li>
 			{{#if showExtendedMenu}}
 			<li class="header-sidebar-menu-separator"></li>
