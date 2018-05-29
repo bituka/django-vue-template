@@ -3,5 +3,8 @@
         "sass": [
             "Sass/**/*.scss"
         ]
+    },
+    "overrides": {
+        "suitecommerce/CheckoutApplication@2.4.0/JavaScript/SC.Checkout.Configuration.Steps.OPC.js": "JavaScript/SC.Checkout.Configuration.Steps.OPC.js"        
     }
 }

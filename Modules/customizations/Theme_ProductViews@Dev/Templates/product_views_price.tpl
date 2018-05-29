@@ -32,12 +32,16 @@
 					</small>
 				{{/if}}
 				<span class="product-views-price-lead" itemprop="price" data-rate="{{price}}">
-					{{priceFormatted}}
+					{{#if isNonInv}}
+						{{nonInvPrice}}
+					{{else}}
+						{{priceFormatted}}
+					{{/if}}
 				</span>
 				<link itemprop="availability" href="{{#if isInStock}}https://schema.org/InStock{{else}}https://schema.org/OutOfStock{{/if}}"/>
 			</span>
 		{{/if}}
-		<span class="item-views-price-unit-of-measure">{{unitOfMeasure}}</span> 
+		<span class="item-views-price-unit-of-measure">{{unitOfMeasure}}</span>
 	{{else}}
 
 		{{#if showHighlightedMessage}}

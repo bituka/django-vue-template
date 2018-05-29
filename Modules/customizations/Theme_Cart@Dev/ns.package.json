@@ -5,10 +5,16 @@
         ],
         "sass": [
             "Sass/**/*.scss"
+        ],
+        "javascript": [
+            "JavaScript/*"
         ]
     },
     "overrides": {
         "suitecommerce/Cart@4.3.0/Templates/cart_detailed.tpl": "Templates/cart_detailed.tpl",
-        "suitecommerce/Cart@4.3.0/Templates/cart_item_actions.tpl": "Templates/cart_item_actions.tpl"
+        "suitecommerce/Cart@4.3.0/Templates/cart_item_actions.tpl": "Templates/cart_item_actions.tpl",
+        "suitecommerce/Cart@4.3.0/Templates/cart_lines.tpl": "Templates/cart_lines.tpl",
+        "suitecommerce/Cart@4.3.0/Templates/cart_summary.tpl": "Templates/cart_summary.tpl",
+        "suitecommerce/Cart@4.3.0/Templates/cart_confirmation_modal.tpl": "Templates/cart_confirmation_modal.tpl"
     }
 }

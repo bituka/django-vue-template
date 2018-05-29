@@ -181,38 +181,51 @@
         "third_parties/underscore.js": "1.7.0",
         "customizations/jQuery-fancybox": "Dev",
 
-        "basic_modules/CMSOnSecure":"2.0.0",
-        "basic_modules/FacetRangeFix":"2.0.0",
-        "basic_modules/HashScroll":"1.0.0",
-        "basic_modules/LayoutClass":"1.0.0",
-        "basic_modules/ResolveAssetUrl":"1.1.0",
-        "basic_modules/ShoppingStarterFixes":"Dev",
+        "basic_modules/CMSOnSecure": "2.0.0",
+        "basic_modules/FacetRangeFix": "2.0.0",
+        "basic_modules/HashScroll": "1.0.0",
+        "basic_modules/LayoutClass": "1.0.0",
+        "basic_modules/ResolveAssetUrl": "1.1.0",
+        "basic_modules/ShoppingStarterFixes": "Dev",
 
-        "customizations/Theme_GlobalViews":"Dev",
-        "customizations/Theme_BaseSassStyles":"Dev",
-        "customizations/Theme_Header":"Dev",
-        "customizations/Theme_Footer":"Dev",
-        "customizations/Theme_Newsletter":"Dev",
-        "customizations/Theme_Home":"Dev",
-        "customizations/Theme_Content":"Dev",
+        "customizations/Theme_GlobalViews": "Dev",
+        "customizations/Theme_BaseSassStyles": "Dev",
+        "customizations/Theme_Header": "Dev",
+        "customizations/Theme_Footer": "Dev",
+        "customizations/Theme_Newsletter": "Dev",
+        "customizations/Theme_Home": "Dev",
+        "customizations/Theme_Content": "Dev",
         "customizations/Theme_NavigationHelper": "Dev",
-        "customizations/Theme_Facets":"Dev",
-        "customizations/Theme_LoginRegister":"Dev",
-        "customizations/Theme_CheckoutApplication":"Dev",
-        "customizations/Theme_MyAccountApplication":"Dev",
-        "customizations/Theme_ItemRelations":"Dev",
-        "customizations/Theme_ProductReviews":"Dev",
-        "customizations/Theme_ProductDetails":"Dev",
-        "customizations/Theme_QuantityPricing":"Dev",
-        "customizations/Theme_Cart":"Dev",
-        "customizations/Theme_ProductList":"Dev",
-        "customizations/Theme_RequestQuoteWizard":"Dev",
-        "customizations/Theme_ContactUs":"Dev",
-        "customizations/Theme_StoreLocator":"Dev",
-        "customizations/Theme_ProductViews":"Dev",
-        "customizations/Theme_OrderHistory":"Dev",
-        "customizations/Theme_Utils":"Dev",
-        "customizations/Theme_ProductDetails.PackageItems": "Dev"
+        "customizations/Theme_Facets": "Dev",
+        "customizations/Theme_LoginRegister": "Dev",
+        "customizations/Theme_CheckoutApplication": "Dev",
+        "customizations/Theme_MyAccountApplication": "Dev",
+        "customizations/Theme_ItemRelations": "Dev",
+        "customizations/Theme_ProductReviews": "Dev",
+        "customizations/Theme_ProductDetails": "Dev",
+        "customizations/Theme_QuantityPricing": "Dev",
+        "customizations/Theme_Cart": "Dev",
+        "customizations/Theme_ProductList": "Dev",
+        "customizations/Theme_RequestQuoteWizard": "Dev",
+        "customizations/Theme_ContactUs": "Dev",
+        "customizations/Theme_StoreLocator": "Dev",
+        "customizations/Theme_ProductViews": "Dev",
+        "customizations/Theme_OrderHistory": "Dev",
+        "customizations/Theme_Utils": "Dev",
+        "customizations/Theme_ProductDetails.PackageItems": "Dev",
+        "customizations/Theme_Wizard": "Dev",
+        "customizations/Theme_CheckoutAdditionalFields": "Dev",
+        "customizations/Theme_OrderWizard.Module.Register": "Dev",
+        "customizations/Theme_LiveOrder": "Dev",
+        "customizations/Theme_OrderWizard": "Dev",
+        "customizations/Theme_OrderWizard.Module.PaymentMethod": "Dev",
+        "customizations/Theme_OrderWizard.Module.CartItems": "Dev",
+        "customizations/Theme_Product": "Dev",
+        "customizations/Theme_OrderWizard.Module.Shipmethod": "Dev",
+        "customizations/Theme_OrderWizard.Module.PromocodeForm": "Dev",
+        "customizations/Theme_Transaction.Line.Views": "Dev",
+        "customizations/Theme_MatchOptionPDP": "Dev"
+
     },
     "tasksConfig": {
         "local": {
@@ -222,8 +235,7 @@
             "lessSourcemap": false,
             "jsRequire": true
         },
-        "javascript": [
-            {
+        "javascript": [{
                 "entryPoint": "SC.Shopping.Starter",
                 "exportFile": "shopping.js",
                 "dependencies": [
@@ -303,7 +315,14 @@
                     "Theme_Landing_freebies",
                     "FacetsBrowse.CategoryHeading.FixHTMLDescription",
                     "ProductViews.Price.Extension.View",
-                    "Cart.AddToCart.Button.Multiple.View"
+                    "Cart.AddToCart.Button.Multiple.View",
+                    "Product.Model.Extension",
+                    "TriodeOption.Cart.View",
+                    "TriodeOption.SelectedOption.View",
+                    "TriodeOption.LiveOrder.Model",
+                    "ProductDetails.Options.Selector.Extension.View",
+                    "GlobalViews.CurrencySelector.Extension.View",
+                    "Facets.Browse.Extension.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -434,7 +453,11 @@
 
                     "Theme_Header",
                     "Theme_Footer",
-                    "NavigationHelper.Extension"
+                    "NavigationHelper.Extension",
+                    "TriodeOption.SelectedOption.View",
+                    "TriodeOption.Cart.View",
+                    "TriodeOption.LiveOrder.Model",
+                    "GlobalViews.CurrencySelector.Extension.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -562,7 +585,16 @@
 
                     "Theme_Header",
                     "Theme_Footer",
-                    "NavigationHelper.Extension"
+                    "NavigationHelper.Extension",
+                    "CheckoutAdditionalFields.View",
+                    "OrderWizard.Step.Extension",
+                    "OrderWizard.Module.CartItems.Ship.Extension",
+                    "Cart.PromocodeForm.Extension.View",
+                    "TriodeOption.SelectedOption.View",
+                    "TriodeOption.Cart.View",
+                    "TriodeOption.LiveOrder.Model",
+                    "GlobalViews.CurrencySelector.Extension.View",
+                    "OrderWizard.Module.Shipmethod.Extension"
                 ],
                 "amdclean": false,
                 "amdConfig": {
@@ -681,7 +713,10 @@
                 "CMSOnSecure.ServiceController",
                 "ContactUs.Model",
                 "ContactUs.ServiceController",
-                "PackageItem.ServiceController"
+                "PackageItem.ServiceController",
+                "TriodeOption.LiveOrder.Triggers",
+                "TriodeOption.LiveOrder.Extension",
+                "Application.Events.Once"
             ],
             "exportFile": "ssp_libraries.js",
             "amdConfig": {
@@ -777,22 +812,20 @@
                 "type=number",
                 "disabled"
             ],
-            "applications": [
-                {
+            "applications": [{
                     "name": "Shopping",
                     "exportFile": "shopping.css",
-                    "dependencies": [
-                        {
+                    "dependencies": [{
                             "module": "Theme_BaseSassStyles",
                             "include": [
                                 "fonts"
                             ]
                         },
                         {
-                          "module": "Theme_BaseSassStyles",
-                          "include": [
-                            "main-variables"
-                          ]
+                            "module": "Theme_BaseSassStyles",
+                            "include": [
+                                "main-variables"
+                            ]
                         },
                         {
                             "module": "twitter-bootstrap-sass",
@@ -872,9 +905,9 @@
                         {
                             "module": "Theme_BaseSassStyles",
                             "include": [
-                              "checkout-layout",
-                              "myaccount-layout",
-                              "shopping-layout"
+                                "checkout-layout",
+                                "myaccount-layout",
+                                "shopping-layout"
                             ]
                         },
                         {
@@ -968,14 +1001,14 @@
                         "Theme_ProductList",
                         "Theme_ProductDetails",
                         "Theme_Content",
-                        "Theme_ProductDetails.PackageItems"
+                        "Theme_ProductDetails.PackageItems",
+                        "Theme_ContactUs"
                     ]
                 },
                 {
                     "name": "MyAccount",
                     "exportFile": "myaccount.css",
-                    "dependencies": [
-                        {
+                    "dependencies": [{
                             "module": "Theme_BaseSassStyles",
                             "include": [
                                 "fonts"
@@ -1076,9 +1109,9 @@
                         {
                             "module": "Theme_BaseSassStyles",
                             "include": [
-                              "checkout-layout",
-                              "myaccount-layout",
-                              "shopping-layout"
+                                "checkout-layout",
+                                "myaccount-layout",
+                                "shopping-layout"
                             ]
                         },
                         {
@@ -1195,8 +1228,7 @@
                 {
                     "name": "Checkout",
                     "exportFile": "checkout.css",
-                    "dependencies": [
-                        {
+                    "dependencies": [{
                             "module": "Theme_BaseSassStyles",
                             "include": [
                                 "fonts"
@@ -1205,7 +1237,7 @@
                         {
                             "module": "Theme_BaseSassStyles",
                             "include": [
-                              "main-variables"
+                                "main-variables"
                             ]
                         },
                         {
@@ -1286,9 +1318,9 @@
                         {
                             "module": "Theme_BaseSassStyles",
                             "include": [
-                              "checkout-layout",
-                              "myaccount-layout",
-                              "shopping-layout"
+                                "checkout-layout",
+                                "myaccount-layout",
+                                "shopping-layout"
                             ]
                         },
                         "CheckoutApplication",

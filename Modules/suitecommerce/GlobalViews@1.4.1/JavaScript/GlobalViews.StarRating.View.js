@@ -47,6 +47,8 @@ define(
 			this.options.name = this.model.get('name');
 		}
 
+
+
 		// @method getContext
 		// @returns {GlobalViews.StarRating.View.Context}
 	,	getContext: function ()

@@ -7,36 +7,29 @@
 
 //@module Home
 define(
-	'Contact.Router'
-,	[
-		'Contact.Form.View'
-	,	'Backbone'
-	]
-,	function (
-		ContactView
-	,	Backbone
-	)
-{
-	'use strict';
+    'Contact.Router', [
+        'Contact.Form.View', 'Backbone'
+    ],
+    function (ContactView, Backbone) {
+        'use strict';
 
-	// @lass Home.Router @extends Backbone.Router
-	return Backbone.Router.extend({
+        // @lass Home.Router @extends Backbone.Router
+        return Backbone.Router.extend({
 
-		routes: {
-			'contact-us': 'presentContactUs'
-		}
+            routes: {
+                'contact-us': 'presentContactUs'
+            },
 
-	,	initialize: function (Application)
-		{
-			this.application = Application;
-		}
+            initialize: function (Application) {
+                this.application = Application;
+            },
 
-		// @method homePage dispatch the 'go to home page' route
-	,	presentContactUs: function ()
-		{
-			var view = new ContactView({application: this.application});
+            presentContactUs: function () {
+                var view = new ContactView({
+                    application: this.application
+                });
 
-			view.showContent();
-		}
-	});
-});
+                view.showContent();
+            }
+        });
+    });

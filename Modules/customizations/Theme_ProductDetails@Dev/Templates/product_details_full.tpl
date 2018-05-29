@@ -3,6 +3,7 @@ however, if you are an authorized user with a NetSuite account or log-in, you ma
 govern your access and use. }}
 
 <div class="product-details-full">
+	<!-- Regular Product Detail Pages-->
 	<div data-cms-area="item_details_banner" data-cms-area-filters="page_type"></div>
 	<!--<header class="product-details-full-header">
 		<div id="banner-content-top" class="product-details-full-banner-top"></div>
@@ -48,8 +49,8 @@ govern your access and use. }}
 						{{#if showAvailability}}
 						<div class="product-details-full-availabity">
 							<p class="availability"><strong>{{translate 'Availability: '}}</strong>
-                  <span>{{translate 'Usually ships within 24 hours.'}}</span>
-              </p>
+								<span>{{translate 'Usually ships within 24 hours.'}}</span>
+							</p>
 						</div>
 						{{/if}}
 						<div data-view="BackInStockSubscription.View">
@@ -66,6 +67,7 @@ govern your access and use. }}
 							<div data-view="Product.Price"></div>
 							<span>{{unitOfMeasure}}</span>
 						</div>
+						<div data-view="Product.Quantity.Available"></div>
 						<div data-view="Quantity.Pricing" class="product-details-full-quantity"></div>
 
 						<div data-view="Product.Stock.Info"></div>
@@ -87,23 +89,22 @@ govern your access and use. }}
 						{{/if}}{{/if}}
 
 						<div class="product-details-full-divider"></div>
-
-						<div class="product-details-share-section">
-							<!-- Go to www.addthis.com/dashboard to customize your tools -->
-							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script>
-							<div class="addthis_inline_share_toolbox"></div>
-							<!--<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>-->
-						</div>
-
-
-						<div class="product-details-full-main-bottom-banner">
-							<div id="banner-summary-bottom" class="product-details-full-banner-summary-bottom"></div>
-						</div>
 					</form>
 					{{else}}
 					<div data-view="GlobalViewsMessageView.WronglyConfigureItem"></div>
 					{{/if}}
 
+					<div class="product-details-share-section">
+						<!-- Go to www.addthis.com/dashboard to customize your tools -->
+						<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script>
+						<div class="addthis_inline_share_toolbox"></div>
+						<!--<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>-->
+					</div>
+
+					<div class="product-details-full-main-bottom-banner">
+						<div id="banner-summary-bottom" class="product-details-full-banner-summary-bottom"></div>
+					</div>
+					
 					<div id="banner-details-bottom" class="product-details-full-banner-details-bottom" data-cms-area="item_info_bottom" data-cms-area-filters="page_type"></div>
 				</div>
 			</div>
@@ -136,7 +137,7 @@ govern your access and use. }}
 		</div>
 
 		<div class="product-details-full-content-correlated-items">
-			<div data-view="Correlated.Items"></div>
+			<!-- <div data-view="Correlated.Items"></div> -->
 		</div>
 		<div id="banner-details-bottom" class="content-banner banner-details-bottom" data-cms-area="item_details_banner_bottom" data-cms-area-filters="page_type"></div>
 	</article>

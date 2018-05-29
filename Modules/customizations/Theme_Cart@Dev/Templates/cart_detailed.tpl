@@ -18,6 +18,9 @@
 			{{else}}
 				<h2 class="cart-detailed-title">{{translate 'Your Shopping Cart is empty'}}</h2>
 			{{/if}}
+			<div class="cart-cms-text" data-cms-area="cart-cms-text" data-cms-area-filters="global">
+				
+			</div>
 		</header>
 	</div>
 

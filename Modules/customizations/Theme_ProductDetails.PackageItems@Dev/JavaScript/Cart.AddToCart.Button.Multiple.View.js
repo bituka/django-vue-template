@@ -2,40 +2,57 @@ define('Cart.AddToCart.Button.Multiple.View'
 , [
   'Cart.AddToCart.Button.View'
   , 'LiveOrder.Line.Model'
+  ,	'Cart.Confirmation.Helpers'
 ]
 , function
 (
   CartAddToCartButtonView
   , LiveOrderLineModel
+  ,	CartConfirmationHelpers
 )
 {
     'use strict';
 
     _.extend(CartAddToCartButtonView.prototype, {
       render: function(){
-        console.log('render', this.model)
+        // console.log('render', this.model)
         this._render();
       }
+
+    , addToCartAsync : function (lines, pos, application) {
+      //console.log('---line--- ', lines[pos]);
+      var self = this;
+      if (lines.length > 0 && pos < (lines.length) ){
+        var promise = self.cart.addLine(lines[pos]).done(function(result){
+          self.addToCartAsync(lines, pos + 1, application)
+        })
+        if(pos == (lines.length -1)){
+          CartConfirmationHelpers.showCartConfirmation(promise, lines[pos], application);
+        }
+      }
+    }
+
     , addToCart: function addToCart (e)
     		{
     			e.preventDefault();
 
     			var self = this
+          ,	cart_promise1
     			,	cart_promise;
-          console.log('add to cart')
-          console.log(this.model)
+          // console.log('add to cart');
+          // console.log('this.model',this.model);
+          var packageQty = self.model.get('quantity');
           var groupItem = this.model.get('item').get('custitem_group_item');
+
           if(this.model.get('item').get('_itemType') === 'NonInvtPart' && groupItem){
-            //console.log(this.model)
-            var line = LiveOrderLineModel.createFromProduct(this.model);
-            cart_promise = this.cart.addLine(line);
+
+            var linesToAddAsync = [];
 
             _.each(this.model.get('items'), function(items){
+
               var quantity = _.findWhere(self.model.get('groupItems'), {'item': items.get('internalid').toString()});
               //console.log(quantity, items.get('internalid'))
-
               var $el = jQuery("select[data-item-id="+items.get('internalid')+"]");
-
               if($el){
                 var itemId = $el.data("item-id"),
                   itemOptionId = $el.data("item-option"),
@@ -53,24 +70,32 @@ define('Cart.AddToCart.Button.Multiple.View'
                   items.get('options').set(selectedOption);
                 }
               }
-
-            // /  items.setOption(itemOptionId, value);
-
+              // /  items.setOption(itemOptionId, value);
               items.set('item', items.attributes);
               items.get('options').set(selectedOption);
-              items.set('quantity', parseInt(quantity.quantity));
+              var totalQty = quantity.quantity * packageQty;
+              items.set('quantity', parseInt(totalQty));
 
               var line = LiveOrderLineModel.createFromProduct(items);
-              cart_promise = self.cart.addLine(line);
+
+              linesToAddAsync.push(line);
 
             });
+
+            // add the 'parent'
+            var line1 = LiveOrderLineModel.createFromProduct(this.model);
+
+            if (linesToAddAsync.length > 0 ){
+              linesToAddAsync.push(line1);
+              self.addToCartAsync(linesToAddAsync,0, self.options.application);
+            }
+
           }
           else{
             if (!this.model.areAttributesValid(['options','quantity'], self.getAddToCartValidators()))
             {
               return;
             }
-
             if (!this.model.isNew() && this.model.get('source') === 'cart')
             {
               cart_promise = this.cart.updateProduct(this.model);
@@ -108,5 +133,6 @@ define('Cart.AddToCart.Button.Multiple.View'
             return false;
           }
     		}
+
     });
 });

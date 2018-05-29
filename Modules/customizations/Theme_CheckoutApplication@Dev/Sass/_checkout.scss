@@ -53,6 +53,7 @@ div.layout.sec_wizard {
 div.checkout-layout-content {
 	//padding-top: 81px;
 	header.wizard-header {
+		margin-bottom: 20px;
 		border-bottom: 1px solid $theme-neutral-color;
 		// Title
 		h1.wizard-header-title {
@@ -254,6 +255,7 @@ section.order-wizard-showshipments-module-shipping-details {
 	border: none !important;
 	h3.order-wizard-showshipments-module-shipping-title {
 		//color: $theme-primary-color;
+		margin-left: 15px;
 	}
 	div.address-details {
 		border: none;
@@ -341,7 +343,7 @@ div.order-wizard-confirmation-module {
 	// Download PDF btn.
 	a.order-wizard-confirmation-module-download-pdf {
 		border-radius: 0;
-		@media (max-width: $screen-md-min) { width: 100%; }
+		display: none;
 	}
 	@media (max-width: $screen-md-min) { padding-top: 0; }
 	@media (max-width: $screen-sm-min) { padding-top: $theme-base-size * 7; }
@@ -432,4 +434,58 @@ button.order-wizard-step-button-back {
 section#wizard-step-content div.order-wizard-address-module-show-addresses-container div.address-details a, section#wizard-step-content div.order-wizard-shipmethod-module div.address-details a,
 a.order-wizard-address-module-new-button{
 	border-radius: 0;
+}
+.wizard-top-text{
+	margin-bottom: 20px;
+}
+
+.additional-fields-tittle {
+	margin: 14px 0 10px 0!important;
+}
+.additional-fields-po{
+	padding-bottom: 20px;
+}
+
+.order-wizard-register-guest-module-create-account-button{
+	text-transform: uppercase;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease;
+  transition-timing-function: ease;
+  border: 1px solid #c70505;
+  background: #c70505;
+  color: #fff;
+  font-size: 12px;
+  font-family: Helvetica,Arial,sans-serif;
+}
+.order-wizard-register-guest-module-create-account-button:hover{
+	background: transparent;
+  color: #c70505;
+}
+#notes-comments{
+	width: 100%;
+}
+
+// Remove Continue button and text shown on the bottom of the page
+#wizard-content > div > div.order-wizard-step-content-wrapper > div {
+	display:none;
+}
+// Continue button on left width 100%
+#wizard-step-content-right .order-wizard-step-actions {
+	width: 100%;
+}
+#wizard-step-content-right .order-wizard-step-button-continue {
+	width: 100%;
+}
+#wizard-step-content-right .order-wizard-submitbutton-module-button{
+	margin-bottom: 20px;
+}
+#wizard-step-content .order-wizard-showshipments-module-shipping-details-items{
+	width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.module-rendered .order-wizard-showshipments-module-shipping-details{
+	margin-bottom: 0;
 }

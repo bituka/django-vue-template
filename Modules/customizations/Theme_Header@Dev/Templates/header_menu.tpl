@@ -48,12 +48,3 @@
 	</ul>
 
 </nav>
-<section class="bottom-menu">
-	<ul>
-		<div class="bottom-menu-links-1" data-cms-area="bottom-menu-links-1" data-cms-area-filters="path"></div>
-		<div class="bottom-menu-links-2" data-cms-area="bottom-menu-links-2" data-cms-area-filters="path"></div>
-		<div class="bottom-menu-links-3" data-cms-area="bottom-menu-links-3" data-cms-area-filters="path"></div>
-		<div class="bottom-menu-links-4" data-cms-area="bottom-menu-links-4" data-cms-area-filters="path"></div>
-		<div class="bottom-menu-links-5" data-cms-area="bottom-menu-links-5" data-cms-area-filters="path"></div>
-	</ul>
-</section>

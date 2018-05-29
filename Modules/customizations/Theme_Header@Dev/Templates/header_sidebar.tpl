@@ -67,9 +67,9 @@
 			</li>
                 {{/if}}
 			{{/each}}
-<!-- <li data-view="RequestQuoteWizardHeaderLink"></li>
-<li data-view="QuickOrderHeaderLink"></li>
-<li><a data-touchpoint="customercenter" data-hashtag="#reorderItems">EASY REORDER</a></li>-->
+            <li>
+                <a href="/resources" data-hashtag="#/resources" data-touchpoint="home"> Ressources </a>
+            </li>
 			{{#if showExtendedMenu}}
 			<li class="header-sidebar-menu-separator"></li>
 

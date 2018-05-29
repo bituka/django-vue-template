@@ -132,6 +132,7 @@
   "header_sidebar.tpl.js",
   "header.tpl.js",
   "order_wizard_title.tpl.js",
+  "additional_fields.tpl.js",
   "global_views_modal.tpl.js",
   "global_views_back_to_top.tpl.js",
   "footer.tpl.js",
@@ -236,5 +237,7 @@
   "store_locator_list_all.tpl.js",
   "store_locator_list_all_store.tpl.js",
   "store_locator_upgrade.tpl.js",
-  "sc_cct_html.tpl.js"
+  "sc_cct_html.tpl.js",
+  "backinstock_button.tpl.js",
+  "backinstock_form.tpl.js"
 ]

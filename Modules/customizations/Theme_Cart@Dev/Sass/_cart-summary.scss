@@ -47,9 +47,12 @@ div.cart-summary {
 		background: #FFF;
 		border: none;
 		border-top: 1px solid $theme-neutral-color;
-		input[type="text"] { 
-			//border-color: rgb(228, 228, 228); 
+		input[type="text"] {
+			//border-color: rgb(228, 228, 228);
 		}
 		button { @include lineal-btn($theme-secondary-color); }
 	}
+}
+.cart-summary-truck-image{
+  margin:10px 0 20px 0;
 }

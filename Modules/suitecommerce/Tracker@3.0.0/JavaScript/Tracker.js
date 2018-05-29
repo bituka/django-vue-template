@@ -61,7 +61,8 @@ define('Tracker'
 		return this.track('trackEvent', event || {
 			category: 'add-to-cart'
 		,	action: 'button'
-		,	label: line.generateURL()
+		// line removed to add to cart modal on package items
+		// ,	label: line.generateURL()
 		,	value: 1
 		}).track('trackAddToCart', line);
 	};

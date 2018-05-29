@@ -6,13 +6,15 @@ define(
       'ProductDetails.Full.View',
       'BackInStockSubscription.View',
       'Backbone',
-      'underscore'
+      'underscore',
+      'jQuery'
     ],
     function(
       ProductDetailsFullView,
       BackInStockSubscriptionView,
       Backbone,
-      _
+      _ ,
+      jQuery
     ) {
         'use strict';
 
@@ -48,46 +50,50 @@ define(
               });
             }
     			}
-
+          
         });
 
-        ProductDetailsFullView.prototype.installPlugin('postContext', {
-            priority: 1,
-            execute: function execute(context, view) {
-			          var model = view.model;
-                // START inclusion of Badges Logic
-                var getBadge = model.get('item').get('custitem_tt_itembadges');
-                var addInformation = model.get('item').get('custitem_addition_information');
-                var warranty = model.get('item').get('custitem_warranty');
-                var storeDescription = model.get('item').get('storedetaileddescription');
-                var badge = '',
-                showAvailability = model.get('item').get('_isInStock');
-                if (getBadge === 'NEW') {
-                    badge = '<div class="custombadge new">NEW</div>';
-                } else if (getBadge === 'BEST SELLER') {
-                    badge = '<div class="custombadge bestseller">BEST SELLER</div>';
-                } else if (getBadge === 'SALE') {
-                    badge = '<div class="custombadge sale">SALE</div>';
-                } else {
-                    badge = false;
-                }
-                // END  inclusion of Badges Logic
 
-				_.extend(context, {
-            // @property {string} badge
-            badge: badge ,
-            addInformation: addInformation ,
-            storeDescription: storeDescription ,
-            warranty: warranty,
-            showAvailability: showAvailability,
-            isOutOfStock: showAvailability,
+      _.extend(ProductDetailsFullView.prototype, {
+        getContext : _.wrap(ProductDetailsFullView.prototype.getContext, function(fn){
+            var ctx = fn.apply(this, _.toArray(arguments).slice(1));
+
+            var model = this.model;
+
+            // START inclusion of Badges Logic
+            var getBadge = model.get('item').get('custitem_tt_itembadges');
+            var addInformation = model.get('item').get('custitem_addition_information');
+            var warranty = model.get('item').get('custitem_warranty');
+            var storeDescription = model.get('item').get('storedetaileddescription');
+            var customVideo = model.get('item').get('custitem_field_video');
+            var badge = '',
+            showAvailability = model.get('item').get('_isInStock');
+            if (getBadge === 'NEW') {
+                badge = '<div class="custombadge new">NEW</div>';
+            } else if (getBadge === 'BEST SELLER') {
+                badge = '<div class="custombadge bestseller">BEST SELLER</div>';
+            } else if (getBadge === 'SALE') {
+                badge = '<div class="custombadge sale">SALE</div>';
+            } else {
+                badge = false;
+            }
+            // END  inclusion of Badges Logic
+
+            ctx.badge = badge;
+            ctx.addInformation = addInformation;
+            ctx.storeDescription = storeDescription;
+            ctx.warranty = warranty;
+            ctx.showAvailability = showAvailability;
+            ctx.isOutOfStock = showAvailability;
+            ctx.customVideo = customVideo;
             // @property {string} unitOfMeasure
-            unitOfMeasure: model.get('item').get('saleunit'),
+            ctx.unitOfMeasure = model.get('item').get('saleunit');
             // @property {boolean} isBestSeller
-            isBestSeller: model.get('item').get('custitem_topseller')
-				});
-			}
-        });
+            ctx.isBestSeller = model.get('item').get('custitem_topseller');
+
+            return ctx;
+        })
+    });
 
 
     });

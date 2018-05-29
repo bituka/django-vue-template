@@ -26,6 +26,11 @@
 			<div class="product-details-full-image-gallery-container">
 				<div id="banner-image-top" class="content-banner banner-image-top"></div>
 				<div data-view="Product.ImageGallery"></div>
+				{{#if model.item.custitem_field_video}}
+				<a id="product-video-link" data-fancybox="true" data-small-btn="true" href="https://www.youtube.com/watch?v={{model.item.custitem_field_video}}">
+					<img class="card-img-top img-fluid" src="http://img.youtube.com/vi/{{model.item.custitem_field_video}}/1.jpg" />
+				</a>
+				{{/if}}
 				<div id="banner-image-bottom" class="content-banner banner-image-bottom"></div>
 			</div>
 			</div>
@@ -55,6 +60,7 @@
 						<div class="product-details-full-divider"></div>
 
 						<div data-view="Product.Price"></div>
+						<div data-view="Product.Quantity.Available"></div>
 						<div data-view="Quantity.Pricing"></div>
 
 						<div data-view="Product.Stock.Info"></div>
@@ -81,21 +87,21 @@
 
 						<div data-view="StockDescription"></div>
 
-						<div class="product-details-share-section">
-							<!-- Go to www.addthis.com/dashboard to customize your tools -->
-							<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script>
-							<div class="addthis_inline_share_toolbox"></div>
-							<!--<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>-->
-						</div>
-
-						<div class="product-details-full-main-bottom-banner">
-							<div id="banner-summary-bottom" class="product-details-full-banner-summary-bottom"></div>
-						</div>
 					</form>
 				{{else}}
 					<div data-view="GlobalViewsMessageView.WronglyConfigureItem"></div>
 				{{/if}}
 
+				<div class="product-details-share-section">
+					<!-- Go to www.addthis.com/dashboard to customize your tools -->
+					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script>
+					<div class="addthis_inline_share_toolbox"></div>
+					<!--<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>-->
+				</div>
+
+				<div class="product-details-full-main-bottom-banner">
+					<div id="banner-summary-bottom" class="product-details-full-banner-summary-bottom"></div>
+				</div>
 				<div id="banner-details-bottom" class="product-details-full-banner-details-bottom" data-cms-area="item_info_bottom" data-cms-area-filters="page_type"></div>
 			</div>
 			</div>
@@ -126,7 +132,7 @@
 		</div>
 
 		<div class="product-details-full-content-correlated-items">
-			<div data-view="Correlated.Items"></div>
+			<!-- <div data-view="Correlated.Items"></div> -->
 		</div>
 		<div id="banner-details-bottom" class="content-banner banner-details-bottom" data-cms-area="item_details_banner_bottom" data-cms-area-filters="page_type"></div>
 	</article>
