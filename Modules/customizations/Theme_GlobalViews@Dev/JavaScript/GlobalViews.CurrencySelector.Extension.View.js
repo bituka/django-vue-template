@@ -21,6 +21,8 @@ define(
 
           setCurrency: function (e) {
 
+              e.stopPropagation();
+
         			var currency_code = this.$(e.target).val()
         			,	selected_currency = _.find(SC.ENVIRONMENT.availableCurrencies, function (currency)
         				{
@@ -36,8 +38,8 @@ define(
         				var url2 = curerntUrl.slice(auxposition, curerntUrl.length);
         				curerntUrl = url1 + url2;
         			}
-
-        			window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: selected_currency.code});
+              window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code});
+              return false;
         		}
 
         });
