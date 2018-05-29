@@ -71,14 +71,17 @@ define(
     		result.shipmethods = this.getShipMethods(order_fields2);
 				nlapiLogExecution('DEBUG', '- result.shipmethods -', JSON.stringify(result.shipmethods));
     		result.shipmethod = order_fields2.shipmethod ? order_fields2.shipmethod.shipmethod : null;
-    	}
-      // nlapiLogExecution('DEBUG', '-get-orderfields', JSON.stringify(order_fields2));
-      // nlapiLogExecution('DEBUG', '-get-orderfields country', JSON.stringify(order_fields2.shipaddress.country));
-      // nlapiLogExecution('DEBUG', '-get-orderfields state', JSON.stringify(order_fields2.shipaddress.state));
-      // nlapiLogExecution('DEBUG', '-get-orderfields zip', JSON.stringify(order_fields2.shipaddress.zip));
+		}
+		/*
+       nlapiLogExecution('DEBUG', '-get-orderfields shipaddress', JSON.stringify(order_fields2.shipaddress));
+       nlapiLogExecution('DEBUG', '-get-orderfields country', JSON.stringify(order_fields2.shipaddress.country));
+	   nlapiLogExecution('DEBUG', '-get-orderfields state', JSON.stringify(order_fields2.shipaddress.state));
+	   nlapiLogExecution('DEBUG', '-get-orderfields state (session)', ModelsInit.context.getSessionObject('temp_state'));	   
+	   nlapiLogExecution('DEBUG', '-get-orderfields zip', JSON.stringify(order_fields2.shipaddress.zip));
+	   */
       var url = nlapiResolveURL('SUITELET', 'customscript_ts_ssu_getshippingmethod', 'customdeploy_ts_ssu_getshippingmethod', true);
     	url = url + '&country=' + encodeURIComponent(order_fields2.shipaddress.country);
-    	url = url + '&state=' + encodeURIComponent(order_fields2.shipaddress.state);
+    	url = url + '&state=' + encodeURIComponent(order_fields2.shipaddress.state || ModelsInit.context.getSessionObject('temp_state'));
     	url = url + '&postalcode=' + encodeURIComponent(order_fields2.shipaddress.zip);
 
     	var response = nlapiRequestURL(url, null, null, null);
@@ -1573,6 +1576,7 @@ define(
 				{
 					if (this.isSecure && !~data.shipaddress.indexOf('null'))
 					{
+						nlapiLogExecution('DEBUG', '- ** setShippingAddress', JSON.stringify(data.addresses));
 						// Heads Up!: This "new String" is to fix a nasty bug
 						ModelsInit.order.setShippingAddress(new String(data.shipaddress).toString());
 					}
@@ -1582,6 +1586,13 @@ define(
 						{
 							return address.internalid === data.shipaddress;
 						});
+
+						nlapiLogExecution('DEBUG', '- ** estimateShippingCost', JSON.stringify(address));
+
+						if (address.state)
+						{
+							ModelsInit.context.setSessionObject('temp_state', address.state);
+						}					
 
 						address && ModelsInit.order.estimateShippingCost(address);
 					}
