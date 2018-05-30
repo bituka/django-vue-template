@@ -79,7 +79,7 @@ define(
 
             var showAdditionalContButton = false;
             var url = window.location.href;
-            if(url.indexOf('#opc') != -1) {
+            if(url.indexOf('#opc') != -1 || url.indexOf('/opc') != -1) {
               showAdditionalContButton = true;
             }
 
