@@ -88,7 +88,17 @@
 	</form>
 </div>
 
-
+{{#unless hideRegister}}
+	<hr>
+	<div class="login-register-checkout-as-guest-register-header collapse in" id="register-show-view">
+		<p class="login-register-checkout-as-guest-description">
+			{{translate 'Create an account and take advantage of faster checkouts and other great benefits.'}}
+		</p>
+		<button class="login-register-checkout-as-guest-button-show" data-toggle="collapse" data-target="#register-show-view,#register-view">
+			{{translate 'Create Account'}}
+		</button>
+	</div>
+{{/unless}}
 
 {{!----
 Use the following context variables when customizing this template:
