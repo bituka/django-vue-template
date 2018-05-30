@@ -588,6 +588,7 @@
                     "NavigationHelper.Extension",
                     "CheckoutAdditionalFields.View",
                     "OrderWizard.Step.Extension",
+                    "OrderWizard.Router.Extension",
                     "OrderWizard.Module.CartItems.Ship.Extension",
                     "Cart.PromocodeForm.Extension.View",
                     "TriodeOption.SelectedOption.View",
