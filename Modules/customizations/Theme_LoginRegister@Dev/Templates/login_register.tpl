@@ -24,9 +24,9 @@
 				<div class="login-register-wrapper-register">
 					<h2 class="login-register-title-register">{{translate 'New customer'}}</h2>
 
-					<!-- {{#if showCheckoutAsGuest}} -->
+					{{#if showCheckoutAsGuest}}
 						<div class="login-register-wrapper-guest" data-view="CheckoutAsGuest"></div>
-					<!-- {{/if}} -->
+					{{/if}} 
 
 					{{#if showRegister}}
 						<div class="{{#if showCheckoutAsGuest}}collapse{{/if}} " data-view="Register" id="register-view"></div>
