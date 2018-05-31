@@ -35,6 +35,7 @@ define('ProductDetailsFull.PackageItems.View', [
       initialize: function initialize() {
         BackboneCompositeView.add(this);
         ProductDetailsBaseView.prototype.initialize.apply(this, arguments);
+
         this.model.on('change', this.updateURL, this);
         //    this.model.on('change', this.render, this);
 
@@ -51,8 +52,11 @@ define('ProductDetailsFull.PackageItems.View', [
               itemOptions = self.getItemOptions(self.groupItems);
               if (itemOptions)
                 itemOptions.done(function() {
-                  self.model.set('groupItems', self.groupItems);
-                  self.model.set('items', self.items);
+                  self.model.set({
+                    'groupItems': self.groupItems,
+                    'items': self.items
+                  }, { silent: true });
+                  
                   setTimeout(function() {                    
                     self.childViewInstances['GroupItems.Items']['GroupItems.Items'].childViewInstance.render();
                     self.$('.tube_store_loading_packages').hide(1000);
