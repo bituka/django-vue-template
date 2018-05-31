@@ -105,7 +105,7 @@ define(
             },
 
             createLead: function (e) {
-                console.log("CREATE LEAD");
+                //console.log("CREATE LEAD");
                 e && e.preventDefault();
                 var self = this,
                     data = {

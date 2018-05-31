@@ -24,7 +24,7 @@
     if ( $.fn.fancybox ) {
 
         if ( 'console' in window ) {
-            console.log( 'fancyBox already initialized' );
+            //console.log( 'fancyBox already initialized' );
         }
 
         return;

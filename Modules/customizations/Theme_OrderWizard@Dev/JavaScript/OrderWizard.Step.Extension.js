@@ -43,7 +43,7 @@ define(
                 if (urlRedirect != url)
                 {
                   _.defer(function () {
-                    console.log('Redirecting...');                  
+                    //console.log('Redirecting...');                  
                     window.location.href = urlRedirect;
                   });
                 }               

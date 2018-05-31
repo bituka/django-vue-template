@@ -59,10 +59,10 @@ define('TriodeOption.LiveOrder.Model', [
         if (value && !_.isUndefined(value.index)) {
           lines[value.index] = null;
         } else {
-          console.log(
-            'Error with option sync',
-            'Key:' + JSON.stringify(k) + ',Value:' + JSON.stringify(value)
-          );
+          // console.log(
+          //   'Error with option sync',
+          //   'Key:' + JSON.stringify(k) + ',Value:' + JSON.stringify(value)
+          // );
         }
       });
 
