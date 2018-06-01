@@ -74,6 +74,22 @@ define(
                     price = currency.symbol + price;
                   }
                 }
+              }else{
+                if(model.attributes.itemtype == "NonInvtPart"){
+                  isNonInv = true;
+                  var price = model.attributes.custitem_tt_price_total;
+                  price = parseFloat(price).toFixed(2);
+                  price = String(price);
+                  // '.50' correction
+                  if (price.substring(price.indexOf("."),price.length) == ".5") {
+                    price = price + "0";
+                  }
+                  if(currency.internalid == "2"){
+                    price = currency.symbol + (price/exchangerate).toFixed(2);
+                  }else{
+                    price = currency.symbol + price;
+                  }
+                }
               }
 
               // @property {string} nonInvPrice
