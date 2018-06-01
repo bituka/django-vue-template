@@ -1,25 +1,28 @@
 define('ProductDetailsFull.PackageItems.View', [
-    'Backbone.CompositeView', 'Item.Model', 'Product.Model'
-
+    'Backbone.CompositeView'
+    , 'Item.Model'
+    , 'Product.Model'
     , 'product_details_full_package_item.tpl'
 
-    , 'ProductDetails.Full.View', 'ProductDetails.Base.View'
-
-
-    , 'PackageItems.GroupItems.View', 'PackageItems.GroupItems.Model', 'QuantityPricing.View'
+    , 'ProductDetails.Full.View'
+    , 'ProductDetails.Base.View'
+    , 'PackageItems.GroupItems.View'
+    , 'PackageItems.GroupItems.Model'
+    , 'QuantityPricing.View'
+    , 'underscore'
   ],
   function(
     BackboneCompositeView,
     ItemModel,
     ProductModel,
-
     product_details_full_package_item_tpl,
 
     ProductDetailsFullView,
     ProductDetailsBaseView,
-
     PackageItemsGroupItemsView,
     PackageItemsModel,
+    QuantityPricingView,
+    _
 
   ) {
     'use strict';
@@ -56,8 +59,8 @@ define('ProductDetailsFull.PackageItems.View', [
                     'groupItems': self.groupItems,
                     'items': self.items
                   }, { silent: true });
-                  
-                  setTimeout(function() {                    
+
+                  setTimeout(function() {
                     self.childViewInstances['GroupItems.Items']['GroupItems.Items'].childViewInstance.render();
                     self.$('.tube_store_loading_packages').hide(1000);
                     self.$('.product-details-package-options').show(1000);

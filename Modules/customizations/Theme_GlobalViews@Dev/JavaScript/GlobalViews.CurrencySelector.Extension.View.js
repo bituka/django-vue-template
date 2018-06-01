@@ -38,7 +38,18 @@ define(
         				var url2 = curerntUrl.slice(auxposition, curerntUrl.length);
         				curerntUrl = url1 + url2;
         			}
+              // var nocacheparam = 't';
+              // if(curerntUrl.indexOf('nocache=') == -1){
+              //   window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code, nocache: nocacheparam});
+              // }else{
+              //   // remove 'no cache param'
+              //   curerntUrl = curerntUrl.slice(0, curerntUrl.indexOf('nocache=')-1)
+              //   window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code, nocache: nocacheparam});
+              // }
+
               window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code});
+              // window.location.href = curerntUrl;
+
               return false;
         		}
 
