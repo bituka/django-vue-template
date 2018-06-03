@@ -6,20 +6,44 @@ define(
       'GlobalViews.CurrencySelector.View',
       'underscore',
       'Utils',
-      'jQuery'
+      'Profile.Model',
+      'jQuery',
+      'OrderHistory.List.Tracking.Number.View',
+      'Backbone.CollectionView',
+      'Handlebars',
+      'RecordViews.View'
     ],
     function(
       GlobalViewsCurrencySelectorView ,
       _ ,
       Utils ,
-      jQuery
+      ProfileModel,
+      jQuery,
+      OrderHistoryListTrackingNumberView,
+      BackboneCollectionView,
+      Handlebars,
+      RecordViewsView
     ) {
         'use strict';
 
         _.extend(GlobalViewsCurrencySelectorView.prototype, {
 
 
-          setCurrency: function (e) {
+            events: {
+              'change select[data-toggle="currency-selector"]' : 'setCurrency'
+        		  // ,'mouseover select[data-toggle="currency-selector"]' : 'currencySelectorHover'
+        		}
+
+           , initialize: function (e) {
+              var profileModel = ProfileModel.getInstance();
+              var currency = profileModel.attributes.currency.code;
+              setTimeout(function(){
+                $('.global-views-currency-selector-select').val(currency);
+                console.log('set currency:', currency);
+              }, 1000);
+           }
+
+           , setCurrency: function (e) {
 
               e.stopPropagation();
 
@@ -38,6 +62,7 @@ define(
         				var url2 = curerntUrl.slice(auxposition, curerntUrl.length);
         				curerntUrl = url1 + url2;
         			}
+
               // var nocacheparam = 't';
               // if(curerntUrl.indexOf('nocache=') == -1){
               //   window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code, nocache: nocacheparam});
@@ -46,12 +71,128 @@ define(
               //   curerntUrl = curerntUrl.slice(0, curerntUrl.indexOf('nocache=')-1)
               //   window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code, nocache: nocacheparam});
               // }
+              // var profileModel = ProfileModel.getInstance();
+              // alert(JSON.stringify(profileModel));
 
               window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code});
               // window.location.href = curerntUrl;
 
               return false;
         		}
+
+              // FUNCTION TO DISABLE CURRENCY (for customers with orders registered)
+            ,	currencySelectorHover: function ()
+          		{
+          			// //e.stopPropagation();
+                // var profileModel = ProfileModel.getInstance();
+                // var hasOrders = localStorage.getItem('hasOrders');
+                // console.log('hover-profileModel: ', JSON.stringify(profileModel));
+                //
+                // if(profileModel.attributes.isLoggedIn == 'T' && hasOrders && hasOrders == 'true' ) {
+                //   var currencyCode = profileModel.attributes.currency.code;
+                //   var aux = '';
+                //   if(currencyCode == "CAD"){
+                //     aux = '.global-views-currency-selector-select option[value="USD"]';
+                //     // console.log('disable USD');
+                //   }else{
+                //     aux = '.global-views-currency-selector-select option[value="CAD"]';
+                //     // console.log('disable CAD');
+                //   }
+                //   $(aux).attr('disabled', 'disabled');
+                // }
+                // else{
+                //   console.log('disable nothing');
+                // }
+
+                // this.test();
+          		}
+
+            , test: function() {
+
+        				// var self = this
+        				// ,	records_collection = new Backbone.Collection(this.collection.map(function (order)
+        				// 	{
+        				// 		var dynamic_column;
+                //
+        				// 		if (self.isSCISIntegrationEnabled)
+        				// 		{
+        				// 			dynamic_column = {
+        				// 				label: _('Origin:').translate()
+        				// 			,	type: 'origin'
+        				// 			,	name: 'origin'
+        				// 			,	value: _.findWhere(Configuration.get('transactionRecordOriginMapping'), { origin: order.get('origin') }).name
+        				// 			};
+        				// 		}
+        				// 		else
+        				// 		{
+        				// 			dynamic_column = {
+        				// 				label: _('Status:').translate()
+        				// 			,	type: 'status'
+        				// 			,	name: 'status'
+        				// 			,	value: order.get('status').name
+        				// 			};
+        				// 		}
+                //
+        				// 		var columns = [
+        				// 			{
+        				// 				label: _('Date:').translate()
+        				// 			,	type: 'date'
+        				// 			,	name: 'date'
+        				// 			,	value: order.get('trandate')
+        				// 			}
+        				// 		,	{
+        				// 				label: _('Amount:').translate()
+        				// 			,	type: 'currency'
+        				// 			,	name: 'amount'
+        				// 			,	value: order.get('amount_formatted')
+        				// 			}
+        				// 		,	{
+        				// 				type: 'tracking-number'
+        				// 			,	name: 'trackingNumber'
+        				// 			,	compositeKey: 'OrderHistoryListTrackingNumberView'
+        				// 			,	composite: new OrderHistoryListTrackingNumberView({
+        				// 					model: new Backbone.Model({
+        				// 						trackingNumbers: order.get('trackingnumbers')
+        				// 					})
+        				// 				,	showContentOnEmpty: true
+        				// 				,	contentClass: ''
+        				// 				,	collapseElements: true
+        				// 				})
+        				// 			}
+        				// 		];
+                //
+        				// 		columns.splice(2, 0, dynamic_column);
+                //
+        				// 		var model = new Backbone.Model({
+        				// 			title: new Handlebars.SafeString(_('<span class="tranid">$(0)</span>').translate(order.get('tranid')))
+        				// 		,	touchpoint: 'customercenter'
+        				// 		,	detailsURL: '/purchases/view/' + order.get('recordtype')  + '/' + order.get('internalid')
+        				// 		,	recordType: order.get('recordtype')
+        				// 		,	id: order.get('internalid')
+        				// 		,	internalid: order.get('internalid')
+        				// 		,	trackingNumbers: order.get('trackingnumbers')
+        				// 		,	columns: columns
+        				// 		});
+                //
+        				// 		return model;
+        				// 	}));
+                //
+        				// // CURRENCY SELECTOR FIX
+                // this.profileModel = ProfileModel.getInstance();
+                // if(records_collection){
+        				// 	localStorage.setItem('hasOrders', 'true');
+                //   this.profileModel.set('hasOrders', 'true').save();
+        				// }else{
+                //   localStorage.setItem('hasOrders', 'false');
+                //   this.profileModel.set('hasOrders', 'false').save();
+                // }
+                //
+        				// return new BackboneCollectionView({
+        				// 	childView: RecordViewsView
+        				// ,	collection: records_collection
+        				// ,	viewsPerRow: 1
+        				// });
+            }
 
         });
     });

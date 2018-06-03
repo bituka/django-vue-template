@@ -224,7 +224,9 @@
         "customizations/Theme_OrderWizard.Module.Shipmethod": "Dev",
         "customizations/Theme_OrderWizard.Module.PromocodeForm": "Dev",
         "customizations/Theme_Transaction.Line.Views": "Dev",
-        "customizations/Theme_MatchOptionPDP": "Dev"
+        "customizations/Theme_MatchOptionPDP": "Dev",
+        "customizations/Theme_Overview": "Dev"
+
 
     },
     "tasksConfig": {
@@ -457,7 +459,8 @@
                     "TriodeOption.SelectedOption.View",
                     "TriodeOption.Cart.View",
                     "TriodeOption.LiveOrder.Model",
-                    "GlobalViews.CurrencySelector.Extension.View"
+                    "GlobalViews.CurrencySelector.Extension.View",
+                    "Overview.Home.Extension.View"
                 ],
                 "amdclean": false,
                 "amdConfig": {
