@@ -53,32 +53,53 @@ define(
         					return currency.code === currency_code;
         				});
 
-        			// window.location.href = Utils.addParamsToUrl(Session.get('touchpoints.'+Configuration.get('currentTouchpoint')), {cur: selected_currency.code});
         			var curerntUrl = window.location.href;
-        			// remove 'cur' parameter
+              var urlRedirect = '';
+              // remove auxiliary parameter from checkout
+              curerntUrl = this.removeParam('one', curerntUrl);
+
         			if(curerntUrl.indexOf('cur=') != -1){
-        				var url1 = curerntUrl.slice(0, curerntUrl.indexOf('cur=')-1);
-        				var auxposition = curerntUrl.indexOf('cur=') + 7;
-        				var url2 = curerntUrl.slice(auxposition, curerntUrl.length);
-        				curerntUrl = url1 + url2;
-        			}
+                // remove 'cur' parameter
+        				// var url1 = curerntUrl.slice(0, curerntUrl.indexOf('cur=')-1);
+        				// var auxposition = curerntUrl.indexOf('cur=') + 7;
+        				// var url2 = curerntUrl.slice(auxposition, curerntUrl.length);
+        				// curerntUrl = url1 + url2;
+                urlRedirect = this.addParameterToUrl('cur', currency_code);
+        			}else{
+                urlRedirect = Utils.addParamsToUrl(curerntUrl, {cur: currency_code});
+              }
 
-              // var nocacheparam = 't';
-              // if(curerntUrl.indexOf('nocache=') == -1){
-              //   window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code, nocache: nocacheparam});
-              // }else{
-              //   // remove 'no cache param'
-              //   curerntUrl = curerntUrl.slice(0, curerntUrl.indexOf('nocache=')-1)
-              //   window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code, nocache: nocacheparam});
-              // }
-              // var profileModel = ProfileModel.getInstance();
-              // alert(JSON.stringify(profileModel));
-
-              window.location.href = Utils.addParamsToUrl(curerntUrl, {cur: currency_code});
-              // window.location.href = curerntUrl;
-
+              window.location.href = urlRedirect;
               return false;
         		}
+
+            , addParameterToUrl: function (name, value)
+            {
+                var urlParts = window.location.href.split('#');
+                var urlBase = urlParts[0];
+                var hash = urlParts[1];
+
+               return _.setUrlParameter(urlBase, name, value) + (urlParts.length > 1 ? '#' + hash : '');
+
+            }
+
+            , removeParam: function (key, sourceURL) {
+                var rtn = sourceURL.split("?")[0],
+                    param,
+                    params_arr = [],
+                    queryString = (sourceURL.indexOf("?") !== -1) ? sourceURL.split("?")[1] : "";
+                if (queryString !== "") {
+                    params_arr = queryString.split("&");
+                    for (var i = params_arr.length - 1; i >= 0; i -= 1) {
+                        param = params_arr[i].split("=")[0];
+                        if (param === key) {
+                            params_arr.splice(i, 1);
+                        }
+                    }
+                    rtn = rtn + "?" + params_arr.join("&");
+                }
+                return rtn;
+             }
 
               // FUNCTION TO DISABLE CURRENCY (for customers with orders registered)
             ,	currencySelectorHover: function ()
