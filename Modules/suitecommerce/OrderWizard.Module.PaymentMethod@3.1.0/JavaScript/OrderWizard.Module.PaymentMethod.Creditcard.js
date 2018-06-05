@@ -540,6 +540,10 @@ define(
 				{
 					control_error.attr('data-validation-error', '');
 					this.$('.creditcard-edit-form-securitycode-controls').append('<p ' + errorBlock.attr + '="' + errorBlock.value +'">'+error.errorMessage+'</p>');
+					//TavanoTeam - Fix scrollTo
+					jQuery("body,html,document").animate({
+					scrollTop: jQuery(".creditcard-edit-form-securitycode-controls").offset().top - 75
+					}, 600);
 				}
 				else
 				{

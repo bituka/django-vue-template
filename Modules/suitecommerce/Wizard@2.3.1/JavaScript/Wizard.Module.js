@@ -154,9 +154,15 @@ define('Wizard.Module'
 			if (error_container_parent.length)
 			{
 				//may be more than one, we are interested in the last one
-				jQuery('body').animate({
-					scrollTop: jQuery(error_container_parent[0]).offset().top
+				// jQuery('body').animate({
+				// 	scrollTop: jQuery(error_container_parent[0]).offset().top
+				// }, 600);
+
+				//TavanoTeam - Fix scrollTo
+				jQuery("body,html,document").animate({
+				scrollTop: jQuery(error_container_parent[0]).offset().top - 75
 				}, 600);
+				
 			}
 
 			error_container.html(global_view_message.render().$el.html());
