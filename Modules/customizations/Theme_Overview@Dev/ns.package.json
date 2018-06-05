@@ -1,9 +1,0 @@
-{
-    "gulp": {
-        "javascript": [
-            "JavaScript/*"
-        ]
-    },
-    "overrides": {
-    }
-}
