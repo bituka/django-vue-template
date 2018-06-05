@@ -42,10 +42,15 @@ define(
 
               LiveOrderModel.loadCart().done(function () {
 
-                var liveOrderModel = LiveOrderModel.getInstance();                
+                var liveOrderModel = LiveOrderModel.getInstance();
 
-                var urlRedirect1 = url.substring(0,url.indexOf('&_ga='));
-                var urlRedirect2 = url.substring(url.indexOf('&_ga='),url.indexOf('#review'));
+                var pos1 = url.indexOf('&_ga=');
+                if(pos1 == -1){
+                  pos1 = url.indexOf('#');
+                }
+
+                var urlRedirect1 = url.substring(0, pos1);
+                var urlRedirect2 = url.substring(pos1,url.indexOf('#review'));
 
                 var shippingAddress = liveOrderModel.get('addresses').findWhere({defaultshipping: 'T'});
                 var country = shippingAddress && shippingAddress.get('country');

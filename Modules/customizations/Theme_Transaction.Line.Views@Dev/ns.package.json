@@ -2,6 +2,9 @@
     "gulp": {
       "templates": [
           "Templates/*"
+      ],
+      "javascript": [
+          "JavaScript/*.js"
       ]
     },
     "overrides": {

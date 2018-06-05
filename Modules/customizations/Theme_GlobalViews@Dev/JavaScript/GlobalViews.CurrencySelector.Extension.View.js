@@ -59,11 +59,6 @@ define(
               curerntUrl = this.removeParam('one', curerntUrl);
 
         			if(curerntUrl.indexOf('cur=') != -1){
-                // remove 'cur' parameter
-        				// var url1 = curerntUrl.slice(0, curerntUrl.indexOf('cur=')-1);
-        				// var auxposition = curerntUrl.indexOf('cur=') + 7;
-        				// var url2 = curerntUrl.slice(auxposition, curerntUrl.length);
-        				// curerntUrl = url1 + url2;
                 urlRedirect = this.addParameterToUrl('cur', currency_code);
         			}else{
                 urlRedirect = Utils.addParamsToUrl(curerntUrl, {cur: currency_code});
