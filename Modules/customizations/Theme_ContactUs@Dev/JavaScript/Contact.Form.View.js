@@ -116,7 +116,7 @@ define(
                         custevent_tt_ordernumber: this.$('input[name="ordernumber"]').val(),
                         incomingmessage: this.$('textarea[name="message"]').val(),
                         phone: this.$('input[name="phone"]').val(),
-                        url: "/app/site/crm/externalcasepage.nl",
+                        url: "app/site/crm/externalcasepage.nl",
                         type: "Customer", // do not change
                         h: "AACffht_iM_Up0zUTaY-5-tjdKtCyIiwrw8", // do not change
                         compid: "3538477", // do not change
@@ -127,6 +127,7 @@ define(
                     buttonSubmitProgress(this.$('.contact-us-form-box'));
                     jQuery.post(data.url, data).done(function () {
                         self.$('#alert-container').text('Thank you for contacting us! You will receive an email shortly!').addClass('message-success');
+                        $('input, textarea').val('');
                     }).always(function () {
                         buttonSubmitDone(self.$('.contact-us-form-box'));
                     });
