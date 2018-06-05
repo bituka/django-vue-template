@@ -5,6 +5,7 @@ define(
     [
       'ProductViews.Price.View',
       // 'SiteSettings.Model',
+      'Profile.Model',
       'Backbone',
       'underscore'
     ],
@@ -12,6 +13,7 @@ define(
 
       ProductViewsPriceView,
       // SiteSettingsModel,
+      ProfileModel,
       Backbone,
       _
     ) {
@@ -52,8 +54,12 @@ define(
           getContext : _.wrap(ProductViewsPriceView.prototype.getContext, function(fn){
               var ctx = fn.apply(this, _.toArray(arguments).slice(1));
 
+              var profileModel = ProfileModel.getInstance();
+              var currency = profileModel.attributes.currency;
+              console.log('price-currency: ', JSON.stringify(currency));
+
               var model = this.model;
-              var currency = SC.ENVIRONMENT.currentCurrency;
+              // var currency = SC.ENVIRONMENT.currentCurrency;
               var isNonInv = false;
               var item = this.model.get('item');
               var exchangerate = Number(SC.ENVIRONMENT.siteSettings.exchangerate);
