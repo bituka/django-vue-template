@@ -244,8 +244,13 @@ define('Wizard.Step'
 
 				this.$('[data-type="alert-placeholder-step"]').html(global_view_message.render().$el.html());
 
-				jQuery('body').animate({
-					scrollTop: jQuery('body .global-views-message-error:first').offset().top
+				// jQuery('body').animate({
+				// 	scrollTop: jQuery('body .global-views-message-error:first').offset().top
+				// }, 600);
+
+				//TavanoTeam - Fix scrollTo
+				jQuery("body,html,document").animate({
+					scrollTop: (jQuery('body .global-views-message-error:first, html .global-views-message-error:first, document .global-views-message-error:first').offset().top ) - 75
 				}, 600);
 				
 				this.error = null;
