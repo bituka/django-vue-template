@@ -35,8 +35,15 @@ define(
         		}
 
            , initialize: function (e) {
+
+                if(SC.isPageGenerator()){
+                    return;
+                }
+
               var profileModel = ProfileModel.getInstance();
-              var currency = profileModel.attributes.currency.code;
+                console.log("new version");
+                var currency = profileModel.attributes.currency.code;
+                console.log("new version post");
               setTimeout(function(){
                 $('.global-views-currency-selector-select').val(currency);
                 console.log('set currency:', currency);
