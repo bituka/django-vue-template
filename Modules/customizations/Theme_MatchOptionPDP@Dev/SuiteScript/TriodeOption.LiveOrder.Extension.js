@@ -67,20 +67,19 @@ define('TriodeOption.LiveOrder.Extension', [
         return null;
       }
 
-    // , addTriodeOption: function addTriodeOption(currentLine){
-    //
-    //     nlapiLogExecution('DEBUG', 'addTriodeOption - line', JSON.stringify(currentLine));
-    //     var triodeOptionLine = this.tweakLinesGetTriodeOption(currentLine);
-    //     if (triodeOptionLine) {
-    //         Application.once('after:LiveOrder.addLine', function afterLiveOrderAddLine(Model, responseData) {
-    //             if (responseData) {
-    //                 Model.addLine(triodeOptionLine);
-    //                 CommerceAPI.context.setSessionObject('latest_addition', responseData);
-    //             }
-    //         });
-    //     }
-    // }
+    , addTriodeOption: function addTriodeOption(currentLine){
 
+        nlapiLogExecution('DEBUG', 'addTriodeOption - line', JSON.stringify(currentLine));
+        var triodeOptionLine = this.tweakLinesGetTriodeOption(currentLine);
+        if (triodeOptionLine) {
+            Application.once('after:LiveOrder.addLine', function afterLiveOrderAddLine(Model, responseData) {
+                if (responseData) {
+                    Model.addLine(triodeOptionLine);
+                    CommerceAPI.context.setSessionObject('latest_addition', responseData);
+                }
+            });
+        }
+    }
 
     /**
      * @param lines
@@ -90,7 +89,7 @@ define('TriodeOption.LiveOrder.Extension', [
 
         var currentLine;
         var triodeLine;
-        nlapiLogExecution('DEBUG','addTriodeOptions - line',JSON.stringify(lines));
+        nlapiLogExecution('DEBUG','addTriodeOptions - line', JSON.stringify(lines));
 
         if (_.isArray(lines) && lines.length === 1) {
 
@@ -100,6 +99,7 @@ define('TriodeOption.LiveOrder.Extension', [
 
           //If the add to cart contain a triode Request
           if (triodeLine) {
+            nlapiLogExecution('DEBUG','addTriodeOptions - addline', JSON.stringify(triodeLine));
             this.addLine(triodeLine);
           }
         }
@@ -155,65 +155,6 @@ define('TriodeOption.LiveOrder.Extension', [
           });
         }
       }
-
-
-    // , updateTriode: function updateTriode(line) {
-    //   var orderFieldKeys = [
-    //     'orderitemid',
-    //     'quantity',
-    //     'internalid',
-    //     'options'
-    //   ];
-    //
-    //   nlapiLogExecution('DEBUG', 'updateTriode - line', JSON.stringify(line));
-    //   var quantity = line.quantity;
-    //
-    //   // get the 'parent' item id
-    //   var itemId = line.item.internalid;
-    //   // nlapiLogExecution('DEBUG','updateTriode - itemId', itemId);
-    //
-    //   // Removing current line, we have to find the triode option
-    //   var optionTriode = _.findWhere(line.options, {
-    //     cartOptionId: 'custcol_additional_options'
-    //   });
-    //   // nlapiLogExecution('DEBUG','update - optionTriode', JSON.stringify(optionTriode));
-    //
-    //   // If it has triode
-    //   if (optionTriode && optionTriode.value.internalid == 3) {
-    //
-    //     // nlapiLogExecution('DEBUG','update - optionTriode','optionTriode');
-    //     // we have to search for the other line :(
-    //     var lines = CommerceAPI.order.getItems(orderFieldKeys);
-    //
-    //     // Why EVERY instead of each? Every will break on the first FALSE returned;
-    //     // We need to iterate only until we get the triode wrap item
-    //     _.every(lines, function every(l) {
-    //
-    //       // filter by service item
-    //       if (l.internalid == 5090) {
-    //
-    //         var itemlineId = l.value;
-    //         // nlapiLogExecution('DEBUG','update - 5090', itemlineId);
-    //
-    //         var serviceItem = _.findWhere(l.options, {id: 'CUSTCOL_TT_ASSOCIATED_ITEM'});
-    //         // nlapiLogExecution('DEBUG','update - serviceItem',JSON.stringify(serviceItem));
-    //
-    //         if (serviceItem && serviceItem.value == itemId) {
-    //           nlapiLogExecution('DEBUG', 'update - line_data', JSON.stringify(l));
-    //           var updateLinId = "item" + l.internalid + "set" + l.internal_setid;
-    //           // set new quantity
-    //           l.quantity = quantity;
-    //
-    //           return false;
-    //         }
-    //         return true;
-    //       }
-    //
-    //     });
-    //
-    //   }
-    // }
-
 
   });
 });

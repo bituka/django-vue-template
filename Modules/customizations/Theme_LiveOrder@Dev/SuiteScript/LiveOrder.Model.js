@@ -69,14 +69,14 @@ define(
     		result.shipmethod = null;
     	} else {
     		result.shipmethods = this.getShipMethods(order_fields2);
-				nlapiLogExecution('DEBUG', '- result.shipmethods -', JSON.stringify(result.shipmethods));
+				// nlapiLogExecution('DEBUG', '- result.shipmethods -', JSON.stringify(result.shipmethods));
     		result.shipmethod = order_fields2.shipmethod ? order_fields2.shipmethod.shipmethod : null;
 		}
 		/*
        nlapiLogExecution('DEBUG', '-get-orderfields shipaddress', JSON.stringify(order_fields2.shipaddress));
        nlapiLogExecution('DEBUG', '-get-orderfields country', JSON.stringify(order_fields2.shipaddress.country));
 	   nlapiLogExecution('DEBUG', '-get-orderfields state', JSON.stringify(order_fields2.shipaddress.state));
-	   nlapiLogExecution('DEBUG', '-get-orderfields state (session)', ModelsInit.context.getSessionObject('temp_state'));	   
+	   nlapiLogExecution('DEBUG', '-get-orderfields state (session)', ModelsInit.context.getSessionObject('temp_state'));
 	   nlapiLogExecution('DEBUG', '-get-orderfields zip', JSON.stringify(order_fields2.shipaddress.zip));
 	   */
       var url = nlapiResolveURL('SUITELET', 'customscript_ts_ssu_getshippingmethod', 'customdeploy_ts_ssu_getshippingmethod', true);
@@ -89,7 +89,7 @@ define(
     	var shipResult = [];
 
 			// nlapiLogExecution('DEBUG', '- response -', JSON.stringify(response));
-			nlapiLogExecution('DEBUG', '- responseArray -', JSON.stringify(responseArray));
+			// nlapiLogExecution('DEBUG', '- responseArray -', JSON.stringify(responseArray));
 			// nlapiLogExecution('DEBUG', '- result.shipmethods -', JSON.stringify(result.shipmethods));
 
     	for (var i = 0; i < result.shipmethods.length; i++) {
@@ -188,7 +188,7 @@ define(
 
       // set custom shipmethods
       result.shipmethods = shipResult;
-			nlapiLogExecution('Debug','- shipResult -',JSON.stringify(shipResult));
+			// nlapiLogExecution('Debug','- shipResult -',JSON.stringify(shipResult));
 
 			// @class LiveOrder.Model
 			return result;
@@ -709,6 +709,7 @@ define(
 				,	'fulfillmentPreferences'
 			]);
 
+
 			this.removeLine(line_id);
 
 			if (!_.isNumber(line_data.quantity) || line_data.quantity > 0)
@@ -718,9 +719,11 @@ define(
 				try
 				{
 					new_line_id = this.addLine(line_data);
+					// nlapiLogExecution('DEBUG','new_line_id', new_line_id);
 				}
 				catch (e)
 				{
+					// nlapiLogExecution('DEBUG','update catch', e.message);
 					// we try to roll back the item to the original state
 					var roll_back_item = {
 						item: {
@@ -1587,12 +1590,12 @@ define(
 							return address.internalid === data.shipaddress;
 						});
 
-						nlapiLogExecution('DEBUG', '- ** estimateShippingCost', JSON.stringify(address));
+						// nlapiLogExecution('DEBUG', '- ** estimateShippingCost', JSON.stringify(address));
 
 						if (address.state)
 						{
 							ModelsInit.context.setSessionObject('temp_state', address.state);
-						}					
+						}
 
 						address && ModelsInit.order.estimateShippingCost(address);
 					}
