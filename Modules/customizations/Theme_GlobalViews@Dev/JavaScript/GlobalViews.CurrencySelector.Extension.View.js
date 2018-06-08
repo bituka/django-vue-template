@@ -36,18 +36,17 @@ define(
 
            , initialize: function (e) {
 
-                if(SC.isPageGenerator()){
-                    return;
-                }
-
+              if(SC.isPageGenerator()){
+                  return;
+              }
               var profileModel = ProfileModel.getInstance();
-                console.log("new version");
-                var currency = profileModel.attributes.currency.code;
-                console.log("new version post");
-              setTimeout(function(){
-                $('.global-views-currency-selector-select').val(currency);
-                console.log('set currency:', currency);
-              }, 1000);
+              var currency = profileModel.get('currency');
+              if(currency && currency.code){
+                setTimeout(function(){
+                  $('.global-views-currency-selector-select').val(currency.code);
+                  console.log('set currency:', currency.code);
+                }, 1000);
+              }
            }
 
            , setCurrency: function (e) {

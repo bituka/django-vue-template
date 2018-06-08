@@ -786,3 +786,22 @@ label.product-views-option-tile-label{
 		}
 	}
 }
+
+.at-icon-wrapper svg, .at-icon-wrapper{
+	line-height: 32px!important;
+    height: 32px!important;
+    width: 32px!important;
+}
+
+.add-this-btn a:hover{
+	transform: translateY(-4px);
+    color: #fff;
+    text-decoration: none;
+		transition: all .2s ease-in-out;
+}
+
+@media (max-width: 767px) {
+	.add-this-btn { text-align: center; }
+	.add-this-btn a { float:none!important; }
+	.custcol2-controls-group div select {text-align: center; display: inline;}
+}

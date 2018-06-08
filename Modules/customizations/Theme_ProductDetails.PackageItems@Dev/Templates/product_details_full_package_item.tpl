@@ -87,6 +87,8 @@
 
 						<div data-view="StockDescription"></div>
 
+						<div class="product-details-full-divider"></div>
+
 					</form>
 				{{else}}
 					<div data-view="GlobalViewsMessageView.WronglyConfigureItem"></div>
@@ -94,9 +96,9 @@
 
 				<div class="product-details-share-section">
 					<!-- Go to www.addthis.com/dashboard to customize your tools -->
-					<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script>
-					<div class="addthis_inline_share_toolbox"></div>
-					<!--<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>-->
+					<!-- <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5a591df3cb1b105b"></script> -->
+					<!-- <div class="addthis_inline_share_toolbox"></div> -->
+					<div data-view="SocialSharing.Flyout" class="product-details-full-social-sharing"></div>
 				</div>
 
 				<div class="product-details-full-main-bottom-banner">
