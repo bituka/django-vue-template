@@ -5,12 +5,14 @@ define(
     [
       'Cart.PromocodeForm.View',
       'BackInStockSubscription.View',
+      'ErrorManagement',
       'Backbone',
       'underscore'
     ],
     function(
       CartPromocodeFormView,
       BackInStockSubscriptionView,
+      ErrorManagement,
       Backbone,
       _
     ) {
