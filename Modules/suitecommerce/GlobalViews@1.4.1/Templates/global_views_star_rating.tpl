@@ -41,6 +41,7 @@
 				</div>
 			</div>
 
+			<meta itemprop="worstRating" content="0">
 			<meta itemprop="bestRating" content="{{maxValue}}">
 
 			<div class="global-views-star-rating-area-fill" data-toggle='ratting-component-fill' style="width: {{filledBy}}%">
