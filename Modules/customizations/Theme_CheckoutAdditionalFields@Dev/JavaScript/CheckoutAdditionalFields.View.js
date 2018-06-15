@@ -5,12 +5,16 @@ define( 'CheckoutAdditionalFields.View',
     'Wizard.Module',
 		'Profile.Model',
 		'LiveOrder.Model',
+    'jQuery',
+    'underscore',
 		'Backbone'],
     function (
         template
       , WizardModule
       , ProfileModel
       , LiveOrderModel
+      , jQuery
+      , _
       , Backbone
     )
       {
@@ -20,6 +24,14 @@ define( 'CheckoutAdditionalFields.View',
       template: template,
 
       submit : function(){
+
+        // get ip address from session storage (setted on OrderWizard.Step.Extension)
+        var customerIp = sessionStorage.getItem('customerIp');//this.getCustomerIP();
+        if(customerIp && customerIp != '' && customerIp != null){
+          var options1 = this.wizard.model.get('options');
+          options1.custbody_ip_address = customerIp;
+          this.wizard.model.set('options', options1);                    
+        }
 
         this.profileModel = ProfileModel.getInstance();
         var log = this.profileModel.get('isLoggedIn');

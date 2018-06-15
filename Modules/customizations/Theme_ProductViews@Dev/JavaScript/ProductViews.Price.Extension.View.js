@@ -56,7 +56,7 @@ define(
 
               var profileModel = ProfileModel.getInstance();
               var currency = profileModel.attributes.currency;
-              console.log('price-currency: ', JSON.stringify(currency));
+              // console.log('price-currency: ', JSON.stringify(currency));
 
               var model = this.model;
               // var currency = SC.ENVIRONMENT.currentCurrency;
