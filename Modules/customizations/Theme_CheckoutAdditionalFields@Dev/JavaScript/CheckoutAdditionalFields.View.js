@@ -30,8 +30,13 @@ define( 'CheckoutAdditionalFields.View',
         if(customerIp && customerIp != '' && customerIp != null){
           var options1 = this.wizard.model.get('options');
           options1.custbody_ip_address = customerIp;
-          this.wizard.model.set('options', options1);                    
+          this.wizard.model.set('options', options1);
         }
+
+        var options2 = this.wizard.model.get('options');
+        // get user browser
+        options2.custbody_browser = navigator.userAgent;
+        this.wizard.model.set('options', options2);
 
         this.profileModel = ProfileModel.getInstance();
         var log = this.profileModel.get('isLoggedIn');
