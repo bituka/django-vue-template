@@ -272,23 +272,41 @@
 			loadElements(preloadSelector, start);
 		}
 
-		var loadElements = function(selector, callback){
-			var total = selector.find('img, iframe').length;
-			if (total == 0){
-				callback();
-				return;
-			}
-			var count = 0;
-			selector.find('img, iframe').each(function(){
-				// CUSTOM: remove time stamp, we want images to be cached
-				// if($(this).is('img')) $(this).attr('src', $(this).attr('src') + '?timestamp=' + new Date().getTime());
-				$(this).load(function(){
-					setTimeout(function(){
-						if(++count == total) callback();
-					}, 0)
-				});
-			});
-		}
+        // Netsuite version
+		// var loadElements = function(selector, callback){
+		// 	var total = selector.find('img, iframe').length;
+		// 	if (total == 0){
+		// 		callback();
+		// 		return;
+		// 	}
+		// 	var count = 0;
+		// 	selector.find('img, iframe').each(function(){
+		// 		// CUSTOM: remove time stamp, we want images to be cached
+		// 		// if($(this).is('img')) $(this).attr('src', $(this).attr('src') + '?timestamp=' + new Date().getTime());
+		// 		$(this).load(function(){
+		// 			setTimeout(function(){
+		// 				if(++count == total) callback();
+		// 			}, 0)
+		// 		});
+		// 	});
+        // }
+        
+        // Default bxslider version: Fix for homepage bxslider
+        var loadElements = function (selector, callback) {
+            var total = selector.find('img, iframe').length;
+            if (total == 0) {
+                callback();
+                return;
+            }
+            var count = 0;
+            selector.find('img, iframe').each(function () {
+                $(this).one('load', function () {
+                    if (++count == total) callback();
+                }).each(function () {
+                    if (this.complete) $(this).load();
+                });
+            });
+        }
 
 		/**
 		 * Start the slider
