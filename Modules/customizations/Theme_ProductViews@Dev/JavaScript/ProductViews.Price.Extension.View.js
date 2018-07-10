@@ -57,7 +57,7 @@ define(
               var profileModel = ProfileModel.getInstance();
               var currency = profileModel.attributes.currency;
               // console.log('price-currency: ', JSON.stringify(currency));
-
+              
               var model = this.model;
               // var currency = SC.ENVIRONMENT.currentCurrency;
               var isNonInv = false;
@@ -74,10 +74,12 @@ define(
                   if (price.substring(price.indexOf("."),price.length) == ".5") {
                     price = price + "0";
                   }
-                  if(currency.internalid == "2"){
+                  if(currency && currency.internalid == "2"){
                     price = currency.symbol + (price/exchangerate).toFixed(2);
                   }else{
-                    price = currency.symbol + price;
+                    if(currency){
+                      price = currency.symbol + price;
+                    }
                   }
                 }
               }else{
@@ -90,10 +92,12 @@ define(
                   if (price.substring(price.indexOf("."),price.length) == ".5") {
                     price = price + "0";
                   }
-                  if(currency.internalid == "2"){
+                  if(currency && currency.internalid == "2"){
                     price = currency.symbol + (price/exchangerate).toFixed(2);
                   }else{
-                    price = currency.symbol + price;
+                    if(currency){
+                      price = currency.symbol + price;
+                    }
                   }
                 }
               }
