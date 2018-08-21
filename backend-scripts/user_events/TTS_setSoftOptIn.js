@@ -15,6 +15,11 @@ function afterSubmit(type) {
             nlapiSubmitField('customer', customerId, 'phone', '1234567');
             nlapiSubmitField('customer', customerId, 'globalsubscriptionstatus', '1');
             nlapiSubmitField('customer', customerId, 'phone', phone);
+        } else if (currentGlobalSubsriptionStatus === '4') {
+            var phone = nlapiLookupField('customer', customerId, 'phone') || '';
+            nlapiSubmitField('customer', customerId, 'phone', '1234567');
+            nlapiSubmitField('customer', customerId, 'globalsubscriptionstatus', '2');
+            nlapiSubmitField('customer', customerId, 'phone', phone);
         }
         return true;
     }
