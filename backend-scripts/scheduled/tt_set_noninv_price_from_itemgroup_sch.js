@@ -37,8 +37,15 @@ function setNonInventoryPrice() {
           if(quantity > 5 && Number(itemRecord.getLineItemMatrixValue('price1', 'price', 1,2)) != 0.0){
             itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,2));
           }else{
-            itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,1));
+            // if item has discount on the online price, get discount value from qty 1
+            if(item.getLineItemMatrixValue('price1', 'price', 8,2) != null && item.getLineItemMatrixValue('price1', 'price', 8,2) != '' && item.getLineItemMatrixValue('price1', 'price', 8,2) != undefined){
+              itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 8,2));
+            }else{
+              // get the base price
+              itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,1));
+            }
           }
+
 
           // nlapiLogExecution("ERROR", "memberId", memberId);
           // nlapiLogExecution("ERROR", "itemPrice", itemPrice);
