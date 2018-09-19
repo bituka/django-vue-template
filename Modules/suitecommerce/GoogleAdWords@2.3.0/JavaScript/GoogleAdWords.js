@@ -42,6 +42,10 @@ define('GoogleAdWords'
 			return this;
 		}
 
+	, doCallback : function(){
+		
+	}
+
 	,	mountToApp: function (application)
 		{
 			GoogleAdWords.application = application;
