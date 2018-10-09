@@ -35,7 +35,7 @@ define(
         //         });
         //     }
         // });
-        
+
         _.extend(ProductDetailsImageGalleryView.prototype, {
 
             getContext : _.wrap(ProductDetailsImageGalleryView.prototype.getContext, function(fn){
@@ -44,6 +44,8 @@ define(
                 // START inclusion of Video
                 var customVideo = model.get('item').get('custitem_field_video');
                 ctx.customVideo = customVideo;
+                // get 'zoom' image
+                ctx.imageResizeId = Utils.getViewportWidth() < 768 ? 'thumbnail' : 'zoom'
 
                 return ctx;
 
