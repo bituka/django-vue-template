@@ -38,7 +38,7 @@ function setNonInventoryPrice() {
             itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 1,2));
           }else{
             // if item has discount on the online price, get discount value from qty 1
-            if(item.getLineItemMatrixValue('price1', 'price', 8,2) != null && item.getLineItemMatrixValue('price1', 'price', 8,2) != '' && item.getLineItemMatrixValue('price1', 'price', 8,2) != undefined){
+            if(item.getFieldValue('price1quantity2') == 1 && item.getLineItemMatrixValue('price1', 'price', 8,2) != null && item.getLineItemMatrixValue('price1', 'price', 8,2) != '' && item.getLineItemMatrixValue('price1', 'price', 8,2) != undefined){
               itemPrice = parseFloat(item.getLineItemMatrixValue('price1', 'price', 8,2));
             }else{
               // get the base price
