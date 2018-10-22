@@ -38,7 +38,7 @@ define(
           {
             /* Start - Customization: change currency from shipping address */
       			var url = window.location.href;
-            
+
             this.getCustomerIP();
 
       			if (url.indexOf('#review') != -1 && LiveOrderModel.loadCart().state() === 'resolved' && url.indexOf('&one') == -1) {
@@ -98,13 +98,11 @@ define(
           // get customer ip and storage on session storage
           , getCustomerIP: function(){
 
-            jQuery.getJSON('//geoip.nekudo.com/api', function(data) {
-              console.log('data: ', data);
+            $.getJSON('https://ipapi.co/json/', function(data) {
+              console.log('- IP - ',data.ip);
               sessionStorage.setItem('customerIp', data.ip);
             });
           }
-
-
 
       });
 });
