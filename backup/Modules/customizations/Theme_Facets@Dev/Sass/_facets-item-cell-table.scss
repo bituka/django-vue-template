@@ -1,0 +1,99 @@
+div.facets-items-collection-view-cell-span6 {
+	 padding: 0 $theme-base-size * 2;
+	div.facets-item-cell-table {
+		width: 100%;
+		padding: $theme-base-size * 3;
+		margin-bottom: $theme-base-size * 5;
+		text-align: center;
+		@extend .cells-border;
+		@extend .clearfix;
+		.best-seller-layer{
+			background: #c70505;
+			text-align: center;
+			line-height: 25px;
+			height: 25px;
+			color: white;
+			text-transform: uppercase;
+			&.empty{
+				background: none;
+			}
+		}
+		.global-views-star-rating-area{
+			margin-bottom: 5px;
+		}
+		.global-views-star-rating-review-total{
+			line-height:normal;
+		}
+		.list-counter{
+			margin-bottom: 15px;
+		}
+	}
+	// Item Image
+	div.facets-item-cell-table-image-wrapper {
+		//border: 1px solid $theme-neutral-color;
+		padding: $theme-base-size * 2;
+		width: 100%;
+		float: none;
+		a { display: block; }
+	}
+	// Item name
+	h2.facets-item-cell-table-title {
+		padding: $theme-base-size * 3 0;
+		min-height: 70px;
+		text-align: center;
+		div {
+			@extend .cells-item-name;
+			padding: 0;
+			@media (max-width: $screen-lg-min) { min-height: 90px; }
+			@media (max-width: $screen-sm-min) { min-height: 75px; }
+			@media (max-width: $screen-xs-min) {
+				font-size: $theme-sm-font-size !important;
+				min-height: 90px;
+			}
+		}
+		@media (max-width: $screen-xs-min) { line-height: 12px; }
+	}
+	// Item SKU
+	div.item-details-sku-container {
+		margin: 0 0 $theme-base-size 0;
+		text-transform: uppercase;
+		text-align: center;
+		//color: $theme-secondary-color;
+		font-size: $theme-sm-font-size;
+		span.item-details-sku { font-weight: $theme-font-weight-semi-bold; }
+	}
+	// Item price
+	span.item-views-price-lead { @extend .cells-item-price; }
+	.facets-item-cell-table-price .product-views-price{text-align:center;}
+	// Quick View btn.
+	div.facets-item-cell-table-quick-view-wrapper {
+		a {
+			margin: 0 auto;
+			max-width: 155px;
+		}
+	}
+	// Stock
+	div.facets-item-cell-list-stock {
+		text-align: center;
+		> div {
+	    height: $theme-base-size * 8;
+		    .item-views-stock-msg-out { margin: 0; }
+		}
+	}
+	// Rating
+	div.facets-item-cell-table-rating {
+		text-align: center;
+		.global-views-star-rating{
+			display:inline-block;
+		}
+		i {
+			color: $theme-rating-stars-color;
+			&.global-views-star-rating-empty { opacity: 0.25; }
+		}
+		// Filled
+		div.global-views-star-rating-area-filled { text-align: right; }
+	}
+}
+.facets-item-cell-table .facets-item-cell-table-price{
+	margin-bottom: 0;
+}

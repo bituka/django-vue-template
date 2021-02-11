@@ -1,0 +1,44 @@
+/*
+	© 2017 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/
+
+.product-list-details-later {
+	border-bottom:1px solid $theme-neutral-color;
+	h3{
+		margin-bottom:$sc-margin-base;
+		font-size:$theme-lg-font-size;
+		border-bottom: 1px solid $theme-neutral-color;
+		width:100%;
+	}
+	.backbone-collection-view-row{margin:0px;}
+	.product-list-details-later-macro-details{text-align: center;}
+	p.product-list-details-later-macro-name{
+		a{
+			text-align: center;
+			font-weight: normal;
+			text-transform: uppercase;
+			font-size:$theme-sm-font-size;
+			color:$theme-primary-ft-color;
+		}
+	}
+	.product-list-details-later-macro-label-qty{display:inline-block; vertical-align:top; margin-top:13px;}
+	.product-list-details-later-macro-input-qty{display:inline-block;}
+	.product-list-details-later-macro-qty input[type=number]{border:1px solid $theme-input-color;}
+	.transaction-line-views-options-selected-content{padding-bottom:5px;}
+}
+.product-list-details-later-col{padding-right:0px;}
+.product-list-details-later-macro-button-addtocart {
+	@include btn($theme-primary-color);
+	display:inline-block;
+	padding:$theme-base-size*2 $theme-base-size*3;
+	margin:$theme-base-size;
+}
+.product-list-details-later-macro-button-remove{
+	@include lineal-btn($theme-secondary-color);
+	display:inline-block;
+	padding:$theme-base-size*2 $theme-base-size*3;
+	margin:$theme-base-size;
+}

@@ -1,0 +1,91 @@
+div.facets-items-collection-view-cell-span3 {
+	padding: 0 $theme-base-size * 2;
+	div.facets-item-cell-grid {
+		padding: $theme-base-size * 3;
+		// margin-bottom: $theme-base-size * 5;
+		margin-bottom: 0;
+		@extend .cells-border;
+		.best-seller-layer{
+			background: #c70505;
+			text-align: center;
+			line-height: 25px;
+			height: 25px;
+			color: white;
+			text-transform: uppercase;
+			&.empty{
+				background: none;
+			}
+		}
+		.global-views-star-rating-area{
+			margin-bottom: 5px;
+		}
+		.global-views-star-rating-review-total{
+			line-height:normal;
+		}
+		.list-counter{
+			margin-bottom: 15px;
+		}
+
+	}
+	.facets-item-cell-grid-details{text-align: center;}
+	// Item Image
+	div.facets-item-cell-grid-image-wrapper {
+		//border: 1px solid $theme-neutral-color;
+		padding: $theme-base-size * 2;
+		min-height:180px;
+		a { display: block; }
+		div.facets-item-cell-grid-link-image{
+			height: 145px;
+			vertical-align: middle;
+			line-height: 145px;
+			img{
+				display:inline-block;
+			}
+		}
+	}
+	// Item Name
+	div.facets-item-cell-grid-title {
+		@extend .cells-item-name;
+		min-height: 65px;
+		@media (max-width: $screen-lg-min) { min-height: 90px; }
+		@media (max-width: $screen-sm-min) { min-height: 75px; }
+		@media (max-width: $screen-xs-min) {
+			font-size: $theme-sm-font-size !important;
+			min-height: 90px;
+		}
+    padding: 12px 0 8px 0 !important;
+	}
+	// Item SKU
+	div.item-details-sku-container {
+		margin: 0 0 $theme-base-size 0;
+		text-transform: uppercase;
+		//color: $theme-secondary-color;
+		font-size: $theme-sm-font-size;
+		span.item-details-sku { font-weight: $theme-font-weight-semi-bold; }
+	}
+	// Item Price
+	span.item-views-price-lead { @extend .cells-item-price; }
+	// Quick View btn.
+	div.facets-item-cell-grid-quick-view-wrapper {
+		a { padding: $theme-base-size * 2 $theme-base-size; }
+	}
+	// Rating
+	div.facets-item-cell-grid-rating {
+		i {
+			color: $theme-rating-stars-color;
+			&.global-views-star-rating-empty { opacity: 0.25; }
+		}
+	}
+	// Stock
+	div.facets-item-cell-grid-stock {
+		> div { height: 55px; }
+	}
+}
+.facets-item-cell-grid-details .facets-item-cell-grid-price{
+	margin-bottom: 0;
+}
+.facets-item-cell-grid-image{width:auto; height:auto; max-width:100%; max-height:100%;}
+.product-qty{
+	min-height: 18px;
+display: block;
+}

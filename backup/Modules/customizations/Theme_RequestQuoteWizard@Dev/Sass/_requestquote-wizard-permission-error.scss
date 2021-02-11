@@ -1,0 +1,12 @@
+div.requestquote-wizard-permission-error {
+	// Title
+	h1 {
+		padding-top: $theme-base-size * 2;
+		font-weight: $theme-font-weight-light;
+		text-transform: uppercase;
+	}
+	// "Go To Home Page" btn.
+	a.requestquote-wizard-permission-error-button {
+		@include btn($theme-primary-color);
+	}
+}

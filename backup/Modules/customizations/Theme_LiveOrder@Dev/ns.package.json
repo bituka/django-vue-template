@@ -1,0 +1,10 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/LiveOrder@4.1.0/SuiteScript/LiveOrder.Model.js": "SuiteScript/LiveOrder.Model.js"
+    }
+}

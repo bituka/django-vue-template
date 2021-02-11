@@ -1,0 +1,8 @@
+.cart-confirmation-modal-item-name {
+	@extend .medium-title-navigable;
+	margin-bottom: 13px;//$sc-padding-lv3;
+	display: inline-block;
+}
+.cart-confirmation-modal-actions {
+	margin-top: 50px; //$sc-padding-lv3;
+}

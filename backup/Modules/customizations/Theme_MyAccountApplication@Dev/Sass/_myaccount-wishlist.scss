@@ -1,0 +1,33 @@
+// Right Content
+div.myaccount-layout-main {
+	// WISHLIST
+	div.ProductListListsView,
+	div.ProductListDetailsView {
+		h2 {
+			//font-weight: $theme-font-weight-light;
+		}
+		// Create New List btn.
+		button.product-list-lists-button-add { @include btn($theme-primary-color); }
+		// Table
+		table.product-list-lists-details {
+			td.product-list-list-details-actions {
+				> button { @include btn($theme-primary-color); }
+				button.product-list-list-details-button-edit, button.product-list-list-details-button-expander {
+					background: $theme-tertiary-color;
+					border-color: $theme-input-color;
+					color: $theme-input-color;
+				}
+				ul.product-list-list-details-dropdown {
+					background: $theme-tertiary-color;
+					a {
+						color: $theme-primary-color;
+						&:hover { text-decoration: underline; }
+					}
+				}
+			}
+		}
+	}
+}
+.product-list-display-full-price .product-views-price-lead{
+	color: $theme-primary-color;
+}

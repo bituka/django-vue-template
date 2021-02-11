@@ -1,0 +1,52 @@
+//Header
+.checkout-layout-header {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.checkout-layout .header-simplified-header {
+	@extend .container;
+    padding-top: 0px;
+    background-color:$theme-header-bck-color-gral;
+}
+
+//Simplyfied Header
+.checkout-layout.simplify-layout header#site-header{
+	@media (min-width: $screen-md-min) {
+		position:relative;
+	}
+}
+
+.checkout-layout.simplify-layout #main-container {
+	@media (min-width: $screen-md-min){
+    	padding-top: 10px;
+	}
+}
+
+.checkout-layout.simplify-layout .header-simplified-header-logo{
+	.header-logo-image{
+		margin:16px 5px 16px 0;
+    	max-width: 231px;
+    }
+	@media (max-width: $screen-md-min){
+    	.header-logo{
+			margin-top: 0;
+		}
+	}
+}
+
+div.sec_login_register {
+  div#main-container {
+    //padding-top: 89px !important;
+    //@media (max-width: $screen-md-min) { padding: 0 !important; }
+  }
+}
+
+.checkout-layout.simplify-layout .header-simplified-header{
+	height: auto;
+}
+// Reset Styles - Google buttons
+button, html input[type="button"], input[type="reset"], input[type="submit"]{border-radius:0px !important;}
+.checkout-layout-header{
+  border-bottom: 1px solid #cccccc;
+}

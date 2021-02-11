@@ -1,0 +1,93 @@
+// Right Content
+div.myaccount-layout-main {
+	// PURCHASE HISTORY
+	div.OrderListView,
+	div.ReturnAuthorizationList,
+	div.OrderItemReorderListView,
+	div.QuoteListView {
+		h2 {
+			//font-weight: $theme-font-weight-light;
+		}
+		tr.recordviews-actionable {
+			td.recordviews-actionable-title {
+				a {
+					color: $theme-primary-color;
+					&:hover { text-decoration: underline; }
+				}
+			}
+			td.recordviews-actionable-status {
+				span { color: $theme-primary-color; }
+			}
+		}
+	}
+	// REORDER ITEMS
+	table.reorder-items-list-reorder-items-table {
+		// Item Name & Item Price
+		a.item-views-cell-actionable-name-link, span.item-views-price-lead { color: $theme-primary-color; }
+		// SKU
+		div.item-views-cell-actionable-sku {
+			span {
+				color: $theme-primary-ft-color;
+				&.item-views-cell-actionable-sku-label { font-weight: $theme-font-weight-semi-bold; }
+			}
+		}
+		// Qty.
+		input.reorder-items-actions-quantity-value {
+			background: transparent;
+			//border: 1px solid #CCC;
+			padding: 0 $theme-base-size;
+			text-align: center;
+		}
+		// Add To Cart
+		button.reorder-items-actions-add-to-cart {
+			@include btn($theme-primary-color);
+			@media (max-width: $screen-sm-min) { margin-top: $theme-base-size * 3; }
+		}
+	}
+	// Filter Dropdown btn.
+	button.list-header-view-filter-button {
+		@include btn($theme-primary-color);
+		i {
+			top: 0;
+			font-size: 20px;
+			color: $theme-tertiary-color;
+		}
+		&:hover {
+			i { color: $theme-primary-color; }
+		}
+	}
+	div.list-header-view-accordion-body-header {
+		background: transparent;
+		select.list-header-view-accordion-body-select { background-color: transparent; }
+		button.list-header-view-accordion-body-button-sort {
+			background-color: transparent;
+			i { color: $theme-secondary-color; }
+		}
+	}
+}
+a.overview-profile-card-button-edit,
+a.overview-shipping-card-button-edit,
+a.overview-payment-card-button-edit{
+	border-radius: 0;
+}
+.list-header-view-accordion-body-button-sort{
+	border: 1px solid #cccccc;
+}
+.reorder-items-list-hedaer{
+  border-top: 1px solid #e4e4e4;
+}
+.list-header-view{
+	border-bottom: 1px solid #e4e4e4;
+}
+.order-history-list-header-button-group{
+	.order-history-list-header-button-all-active,
+	.order-history-list-header-button-open-active{
+		background: $theme-secondary-ft-color;
+		border-radius: 0 !important;
+	}
+	.order-history-list-header-button-open,
+	.order-history-list-header-button-all{
+		border-radius: 0 !important;
+		border:1px solid $theme-secondary-ft-color;
+	}
+}

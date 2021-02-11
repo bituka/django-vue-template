@@ -1,0 +1,13 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*.js"
+        ],
+        "templates": [
+            "Templates/*"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/OrderWizard.Module.Address@2.2.2/Templates/order_wizard_address_module.tpl": "Templates/order_wizard_address_module.tpl"
+    }
+}

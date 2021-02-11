@@ -1,0 +1,231 @@
+/* ============= START BOOSTRAP HELPER VARIABLES ============== */
+
+i[class^="global-views-star-rating"] {
+    color: #EDB745 !important;
+    opacity: 1;
+    &.global-views-star-rating-empty {
+        opacity: 0.4 !important;
+    }
+}
+
+button {
+    &[data-action="minus"],
+    &[data-action="plus"],
+    &[data-action="updateQuantity"],
+    &[data-ui-action="minus"],
+    &[data-ui-action="add"],
+        {
+        background: $theme-primary-color !important;
+        border: none;
+        &:hover {
+            background: darken($theme-primary-color, 15%) !important;
+        }
+    }
+}
+
+input[name="quantity"] {
+    background: #ffffff !important;
+}
+
+.btn-primary {
+    background: $theme-primary-color !important;
+    border: 1px solid $theme-primary-color !important;
+    transition: all 0.2s;
+    color: white !important;
+    &:hover {
+        background: none !important;
+        border: 1px solid $theme-primary-color !important;
+        color: $theme-primary-color !important;
+    }
+}
+
+.btn-secondary {
+    background: $theme-secondary-color !important;
+    border: 1px solid $theme-secondary-color !important;
+    transition: all 0.2s;
+    color: white !important;
+    border-radius: 0 !important;
+    &:hover {
+        background: none !important;
+        border: 1px solid $theme-secondary-color !important;
+        color: $theme-secondary-color !important;
+    }
+}
+
+/* ============= END BOOSTRAP HELPER VARIABLES ============== */
+
+.m-0 {
+    margin: 0px !important;
+}
+
+.m-10 {
+    margin: 10px !important;
+}
+
+.m-20 {
+    margin: 20px !important;
+}
+
+.m-30 {
+    margin: 30px !important;
+}
+
+.mt-0 {
+    margin-top: 0px !important;
+}
+
+.mt-10 {
+    margin-top: 10px !important;
+}
+
+.mt-20 {
+    margin-top: 20px !important;
+}
+
+.mt-30 {
+    margin-top: 30px !important;
+}
+
+.mb-0 {
+    margin-bottom: 0px !important;
+}
+
+.mb-10 {
+    margin-bottom: 10px !important;
+}
+
+.mb-20 {
+    margin-bottom: 20px !important;
+}
+
+.mb-30 {
+    margin-bottom: 30px !important;
+}
+
+.mtb-0 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.mtb-10 {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.mtb-20 {
+    margin-top: 20px !important;
+    margin-bottom: 20px !important;
+}
+
+.mtb-30 {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+}
+
+.mlr-0 {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.mlr-10 {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+}
+
+.mlr-20 {
+    margin-left: 20px !important;
+    margin-right: 20px !important;
+}
+
+.mlr-30 {
+    margin-left: 30px !important;
+    margin-right: 30px !important;
+}
+
+.p-0 {
+    padding: 0px !important;
+}
+
+.p-10 {
+    padding: 10px !important;
+}
+
+.p-20 {
+    padding: 20px !important;
+}
+
+.p-30 {
+    padding: 30px !important;
+}
+
+.pt-0 {
+    padding-top: 0px !important;
+}
+
+.pt-10 {
+    padding-top: 10px !important;
+}
+
+.pt-20 {
+    padding-top: 20px !important;
+}
+
+.pt-30 {
+    padding-top: 30px !important;
+}
+
+.pb-0 {
+    padding-bottom: 0px !important;
+}
+
+.pb-10 {
+    padding-bottom: 10px !important;
+}
+
+.pb-20 {
+    padding-bottom: 20px !important;
+}
+
+.pb-30 {
+    padding-bottom: 30px !important;
+}
+
+.ptb-0 {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.ptb-10 {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.ptb-20 {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.ptb-30 {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+
+.plr-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.plr-10 {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+
+.plr-20 {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+}
+
+.plr-30 {
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+}

@@ -1,0 +1,84 @@
+// Header mini cart container
+div.header-menu-cart {
+	@media (min-width: $screen-md-min) {
+		margin-left: 0;
+	}
+	a.header-mini-cart-menu-cart-link {
+		height:auto;
+		line-height: $theme-base-size * 7;
+		&.header-mini-cart-menu-cart-link-enabled {
+			background: $theme-header-bck-color-top-dark;
+			&:hover{
+				background: $theme-header-bck-color-top-dark;
+			}
+		}
+		@media (max-width: $screen-md-min) { padding-top: 3px; }
+		// Cart icon
+		i.header-mini-cart-menu-cart-icon {
+			color: $theme-header-ft-color-secondary;
+			line-height: $theme-base-size * 5;
+			font-size: 15px;
+			min-width: 32px;
+			@media (max-width: $screen-md-min) {
+				line-height: 23px;
+				font-size: 17px;
+			}
+		}
+		// Item quantity
+		span.header-mini-cart-menu-cart-legend{
+			margin-left: 0;
+			padding-left: 0px;
+			display: block;
+			color:$theme-header-ft-color-secondary;
+		}
+	}
+}
+
+// Header mini cart items container
+div.header-mini-cart {
+	border: 2px solid $theme-header-bck-color-top-dark;
+	border-top: 0;
+	&:before, &:after { display: none; }
+	// Item
+	li.header-mini-cart-item-cell {
+		padding-bottom: $theme-base-size * 3;
+		border-bottom: 1px solid $theme-neutral-color;
+		text-align: left;
+		// Item name
+		li.header-mini-cart-item-cell-product-title {
+			margin-bottom: $theme-base-size;
+			text-transform:uppercase;
+		}
+		// Item Price
+		li.header-mini-cart-item-cell-product-price { color: $theme-primary-color; }
+	}
+}
+
+// Buttons
+div.header-mini-cart-buttons {
+	a.header-mini-cart-button-view-cart{
+		@include btn($theme-secondary-color);
+		 color:#fff;
+		  background: $theme-secondary-color;
+			border-radius: 0;
+		}
+	a.header-mini-cart-button-checkout{
+		@include btn($theme-primary-color);
+		background: $theme-primary-color;
+		border-radius: 0;
+	}
+}
+
+.header-menu-cart-legend {
+	background-color: transparent;
+}
+.header-menu-cart-link {
+	color: #FFF;
+	background-color: transparent;
+}
+.header-mini-cart-item-cell-title-navigable{
+	color:$theme-secondary-ft-color;
+	&:hover{
+		color:lighten($theme-secondary-ft-color , 10%);
+	}
+}

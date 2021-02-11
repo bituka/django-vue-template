@@ -1,0 +1,59 @@
+{
+	"type": "object"
+,	"subtab": {
+		"id": "minimumOrderValue"
+	,	"group": "advancedSettings"
+	,	"title": "Minimum Order Value"
+	,	"description": "Minimum Order Value Configuration"
+	}
+,	"properties": {
+		"minimumOrderValue.enabled": {
+			"group": "advancedSettings"
+		,	"subtab": "minimumOrderValue"
+		,	"type": "boolean"
+		,	"title": "Enabled"
+		,	"description": "Enable Minimum Order Value validation before checkout"
+		,	"default": false
+		}
+	,	"minimumOrderValue.errorMessage": {
+			"group": "advancedSettings"
+		,	"subtab": "minimumOrderValue"
+		,	"type": "string"
+		,	"title": "Cart and Checkout Validation Error Message"
+		,	"description": "Customized message shown on the cart and checkout when purchasing amount is less than minimum order amount.<br>$(0) Currency Symbol<br>$(1) Minimum Order Amount"
+		,	"default": "Your order is below the minimum order amount of $(0)$(1)."
+		}
+	,	"minimumOrderValue.Currencies": {
+			"group": "advancedSettings"
+		,	"subtab": "minimumOrderValue"
+		,	"type": "array"
+		,	"title": "Minimum Order Value per currency"
+		,	"description": "Specify minimum order value per currency setup on Web Site Settings."
+		,	"items": {
+				"type": "object",
+				"properties": {
+					"id": {
+						"type": "string",
+						"title": "Currency Code",
+						"description": "Currency Code used by web site"
+					},
+					"value": {
+						"type": "string",
+						"title": "Minimum Order Amount",
+						"description": "Minimum Order Amount corresponding to the currency code"
+					}
+				}
+			}
+		,	"default":[
+				{
+					"id": "USD",
+					"value": "19.90"
+				}
+			,	{
+					"id": "CAD",
+					"value": "19.90"
+				}
+			]
+		}
+	}
+}

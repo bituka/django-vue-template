@@ -1,0 +1,172 @@
+section.tavanothemes-freebies{
+
+.freebies-content{
+    h1{font-size:$theme-landings-font-size; margin:$theme-base-size*4;}
+    p{margin:$theme-base-size*2 0;}
+    div > img{margin:$theme-base-size*2 0;}
+    h2, h3{margin:$theme-base-size 0;}
+}
+
+
+// Slider caption
+div.freebies-slide-caption {
+	height: auto;
+	padding-left: 0;
+	color: $theme-tertiary-ft-color;
+	h2.freebies-slide-caption-title{
+		font-size:$home-top-banner-font-size;
+		color: $theme-tertiary-ft-color;
+		@include banner-font-shadow;
+	}
+	>span {
+		color: $theme-tertiary-ft-color;
+		font-size: $home-top-banner-font-size;
+		text-transform: uppercase;
+		font-weight: $sc-font-weight-semibold;
+	}
+	>p {
+		text-transform: initial;
+		color: $theme-tertiary-ft-color;
+		@include banner-font-shadow;
+	}
+	@media (min-width: $screen-sm-min) {
+		position: absolute;
+	}
+	@media (max-width: $screen-sm-min) {
+		padding-top: 4%;
+		h2.freebies-slide-caption-title{
+			font-size:$home-full-banners-ft-size;
+		}
+		>p {
+			display: none;
+		}
+		>span {
+			font-size: 25px;
+		}
+	}
+	@media (max-width: $screen-xxs-min) {
+		>span {
+			display: none;
+		}
+	}
+}
+
+// Slider pager
+div.freebies-slider-pager>a {
+	float: left;
+	text-align: center;
+	background-color: $theme-secondary-color;
+	color: $theme-tertiary-color;
+	font-weight: $sc-font-weight-semibold;
+	text-transform: uppercase;
+	max-height: 37px;
+	@include transition-duration(.2s);
+	@include transition-timing-function(ease);
+	&:hover,
+	&.active {
+		background-color: $theme-primary-color;
+	}
+	@media (max-width: $screen-sm-min) {
+		font-size: $sc-small-font-size;
+	}
+}
+
+// Slider pager configuration depending images
+div.freebies-slider-pager {
+	// Four images
+	&[data-slides-total="4"]>a {
+		@extend .col-md-3;
+		@extend .col-sm-6;
+		@extend .col-xs-6;
+		padding: 10px 1%;
+	} // Three images
+	&[data-slides-total="3"]>a {
+		@extend .col-md-4;
+		@extend .col-sm-4;
+		@extend .col-xs-4;
+		padding: 10px 2%;
+	} // Two images
+	&[data-slides-total="2"]>a {
+		@extend .col-md-6;
+		@extend .col-sm-6;
+		@extend .col-xs-6;
+		padding: 10px 2%;
+	} // One image
+	&[data-slides-total="1"]>a {
+		@extend .col-md-12;
+		@extend .col-sm-12;
+		@extend .col-xs-12;
+		padding: 10px 2%;
+	}
+}
+
+// Top slider
+section.slider-container {
+	margin: 0;
+	div.freebies-full-slider {
+		position: relative;
+		@extend .this-full-width;
+		div.bx-wrapper {
+			margin-bottom: 0;
+			ul.freebies-slider-list {
+				float: left;
+				div.freebies-slide-main-container {
+					height: auto; // Slider img
+					img {
+						float: left;
+						margin-top: 0;
+						@media (min-width: $screen-sm-min) {
+							max-width: none !important;
+							margin: 0;
+							width: 100%;
+						}
+					}
+				}
+			}
+		} // Slider controls
+		div.bx-controls.bx-has-controls-direction {
+			position: absolute;
+			top: 44%;
+			width: 100%;
+			a.freebies-gallery-prev-icon,
+			a.freebies-gallery-next-icon {
+				color: $theme-color-links;
+				@media (max-width: $screen-md-min) {
+					display: none;
+				}
+				&:hover,
+				&:focus,
+				&:active {
+					color: $theme-color-links;
+				}
+			}
+		}
+	}
+}
+
+div.freebies-image-slider {
+	div.bx-wrapper,
+	div.bx-viewport {
+		height: auto !important;
+		@media (min-width: $screen-sm-min) {
+			max-height: 530px;
+			height: auto !important;
+		}
+	}
+}
+
+// SIX BOXES SECTION
+section.freebies-six-infoicon-boxes{
+    .freebies-six-box{
+        background:$theme-neutral-color;
+        color:$theme-primary-ft-color;
+        i{font-family:FontAwesome;
+            text-rendering: auto;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            margin-right:5px;
+            margin-top: 3px;float:left;width:auto;height:auto;content:"\f004"; background:$theme-primary-ft-color;color:$theme-tertiary-color; border-radius:15px;}        
+    }
+}
+
+}

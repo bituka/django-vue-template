@@ -1,0 +1,22 @@
+div.cart-item-summary-item-list-actionable-input-qty {
+	// Qty. box
+	input {
+		border: 1px solid $theme-input-color;
+		text-align: center !important;
+		max-width: 70px;
+	}
+	.cart-item-summary-quantity-add, .cart-item-summary-quantity-remove {
+		background: $sc-color-secondary-light;
+		border-color: $theme-input-color;
+	}
+}
+.cart-summary-container{
+	border: 1px solid #e4e4e4;
+	.cart-summary-title{
+		background: none;
+		border-bottom: 1px solid #e4e4e4;
+	}
+}
+.cart-summary-button-proceed-checkout{
+	border-radius: 0;
+}

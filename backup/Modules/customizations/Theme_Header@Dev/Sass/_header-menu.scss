@@ -1,0 +1,210 @@
+// Header & search bar container
+.header-menu-search-dsk{
+	float: right;
+    width:calc(100% - 190px);
+    height: auto;
+	margin-top: 20px;
+	@media (max-width: $screen-md-min) {
+		margin:0px;
+	}
+}
+
+// Header Menu Container
+div.header-secondary-wrapper {
+	@media(min-width: 992px){
+		width: 100%;
+		margin-top: 5px;
+	}
+	background-color: $theme-header-bck-color-gral;
+	border: none;
+	margin-bottom:0;
+	@media (min-width: $screen-md-min) {
+		background-color: $theme-header-bck-color-gral;
+		height: auto;
+		float: left;
+		position: initial;
+		position: static;
+	}
+}
+
+// Header Nav. Links
+nav.header-menu-secondary-nav {
+	width: 100%;
+	position: relative;
+	ul.header-menu-level1 {
+		margin-left: 0;
+		> li {
+			&:first-of-type{
+				border-radius: 0 0 0 20px;
+			}
+			&:last-of-type{
+				border-radius: 0 20px 0 0;
+			}
+			&[data-toggle="categories-menu"]{
+				padding: 0;
+				background: #196ba5;
+				position: relative;
+				a.header-menu-level1-anchor {
+					color: white;
+					font-weight: normal;
+					text-transform: capitalize;
+					height: 42px;
+					line-height: 42px;
+					padding: 0 24px;
+					margin-right: 0;
+					font-size:14px;
+					&:after{
+						display: none;
+					}
+					// &:after {
+					// 	@extend .fa;
+					// 	content: "\f107";
+					// 	top: 0px;
+					// 	border: none;
+					// 	right: 0;
+					// 	left: auto;
+					// 	font-weight: 700;
+					// 	margin-left: 7px;
+					// 	font-size: 17px;
+					// 	margin-top: 17px;
+					// 	float: right;
+					// 	position: relative;
+					// }
+				}
+			}
+			&.open{
+				background: darken(#196ba5 , 15%);
+			}
+			&.separator{
+				line-height: 42px;
+				color: white;
+				padding: 0;
+				background:#196ba5;
+			}
+		}
+	}
+	@media(max-width:1200px){
+		padding: 0;
+		ul.header-menu-level1 {
+			> li {
+				&[data-toggle="categories-menu"]{
+					a.header-menu-level1-anchor {
+						padding:0 13px;
+					}
+				}
+			}
+		}
+	}
+}
+div.bottom-menu{
+	margin-top: 10px;
+	width: 100%;
+	float: left;
+	margin-bottom: 10px;
+	ul{
+		text-align: center;
+		> div{
+			display: inline-block;
+		}
+		li{
+			display: inline-block;
+			a{
+				line-height:40px;
+				padding: 0 20px;
+				display: block;
+				&:hover{
+					color: #6b6b6b;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+	@media(max-width: 992px){
+		display: none;
+	}
+}
+
+
+
+// Dropdown Container
+ul.header-menu-level-container {
+	border-top: 4px solid $sc-color-tertiary;
+	background:$theme-tertiary-color;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+	border-bottom: 0;
+	width: 200px;
+	border: none;
+	min-height: 0;
+	padding: 0;
+	@media (min-width: $screen-md-min) {
+		position: absolute;
+		top: 42px;
+	}
+	>li {
+		@extend .col-md-12;
+		&:hover,
+		&:focus,
+		&:active {
+			background:$theme-tertiary-color !important;
+		}
+		padding: 0;
+	} // Img. Banners
+	.header-menu-banner {
+		width: 25%;
+	}
+}
+
+// LEVEL 2 Links
+nav.header-menu-secondary-nav ul.header-menu-level1 ul.header-menu-level2 {
+	@extend .clearfix;
+	li {
+		@extend .col-md-3; // Link
+		padding: 0;
+		width: 100%;
+		a.header-menu-level2-anchor {
+			color: $theme-header-ft-color-tertiary;
+			border-bottom: none;
+			pointer-events: auto !important;
+			text-align: left;
+			font-size:12px;
+			padding:12px 10px;
+			margin: 0;
+			&:hover{
+				background: #2a80bd;
+				color: white;
+			}
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			background:$theme-tertiary-color !important;
+		}
+	}
+}
+
+// LEVEL 3 Links
+nav.header-menu-secondary-nav ul.header-menu-level1 ul.header-menu-level2 ul.header-menu-level3 {
+	li {
+		@extend .col-md-12;
+		padding: 0 !important;
+		a.header-menu-level3-anchor {
+			color: $theme-header-ft-color-tertiary;
+			border-bottom: 1px solid $theme-tertiary-color;
+			margin-bottom: $theme-base-size;
+			font-weight: 400;
+			text-align: left;
+			padding: 0 0 5px 0 !important;
+			font-size:$theme-sm-font-size;
+			&:hover,
+			&:active,
+			&:focus {
+				padding-left: $theme-base-size;
+				color: $theme-header-ft-color-tertiary;
+				background:$theme-tertiary-color;
+			}
+			&:hover{
+				margin-left: 4px;
+			}
+		}
+	}
+}

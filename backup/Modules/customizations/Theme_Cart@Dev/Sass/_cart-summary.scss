@@ -1,0 +1,58 @@
+div.cart-summary {
+	margin-bottom: $theme-base-size * 6;
+	// "Order Summary" title
+	h3.cart-summary-title {
+		//font-weight: $sc-font-weight-normal;
+		//color: $theme-primary-color;
+	}
+	// "Proceed To Checkout" button container
+	div.cart-summary-button-container {
+		@media (min-width: $screen-sm-min) {
+			background: transparent;
+		}
+		// Button
+		a.cart-summary-button-proceed-checkout {
+			@include btn($theme-primary-color);
+		}
+	}
+	.accordion-head-toggle,
+	.accordion-head-toggle-secondary {
+		background-color: $sc-color-theme-background;
+	}
+	.cart-summary-btn-paypal-express {
+		background:transparent;
+		border:1px solid $theme-secondary-color;
+	}
+	// Estimate Tax & Shipping
+	a[data-target="#estimate-shipping-form"] {
+		background: #FFF;
+		border-color: rgb(228, 228, 228);
+		color: $theme-primary-color;
+		i { color: $theme-primary-color; }
+	}
+	div#estimate-shipping-form {
+		background: #FFF;
+		border-color: rgb(228, 228, 228);
+		button { @include lineal-btn($theme-secondary-color); }
+	}
+	// Have a Promo Code?
+	a[data-target="#promo-code-container"] {
+		background: #FFF;
+		border: none;
+		border-top: 1px solid $theme-neutral-color;
+		color: $theme-primary-color;
+		i { color: $theme-primary-color; }
+	}
+	div#promo-code-container {
+		background: #FFF;
+		border: none;
+		border-top: 1px solid $theme-neutral-color;
+		input[type="text"] {
+			//border-color: rgb(228, 228, 228);
+		}
+		button { @include lineal-btn($theme-secondary-color); }
+	}
+}
+.cart-summary-truck-image{
+  margin:10px 0 20px 0;
+}

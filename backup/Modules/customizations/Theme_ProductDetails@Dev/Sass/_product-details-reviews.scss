@@ -1,0 +1,349 @@
+// Ratings & Reviews - bottom page.
+div.product-reviews-center {
+	>div {
+		padding: 0;
+		border: none;
+		>div {
+			padding: 0; // Title
+			h2.product-reviews-center-container-header-title,
+			h3.product-reviews-center-container-header-title {
+				text-transform: uppercase;
+				font-size: $theme-lg-font-size;
+				font-weight: $theme-font-weight-semi-bold; //color: $theme-primary-color !important;
+				padding-bottom: $theme-base-size * 2;
+				margin-bottom: $theme-base-size * 3;
+				border-bottom: 1px solid $theme-neutral-color;
+			}
+			div.product-reviews-rating-qty {
+				// Reviews Number
+				h3.product-reviews-center-container-header-number {
+					float: left;
+					margin: 0 $theme-base-size * 3 $theme-base-size * 3 0;
+					font-size: $theme-md-font-size; //font-weight: $theme-font-weight-light;
+					font-family:$font-family-primary;
+					color:$theme-primary-ft-color;
+				} // Ratings
+				div[data-view="Global.StarRating"] {
+					float: left;
+					div.global-views-star-rating-area {
+						i {
+							//color: $theme-primary-color;
+							&.global-views-star-rating-empty {
+								opacity: 0.25;
+							}
+						}
+					}
+					.global-views-star-rating-review-total {
+						display: none;
+					}
+				}
+			}
+			h4 {
+				font-size: $theme-md-font-size; //font-weight: $theme-font-weight-light;
+			} // "Write A Review" btn.
+			p {
+				//font-weight: $theme-font-weight-light;
+				a.product-reviews-center-container-button {
+					@include lineal-btn($theme-secondary-color);
+				}
+			}
+		}
+	} // Ratings Bars
+	div.product-reviews-center-container-wrapper {
+		width: 100%;
+		div.global-views-rating-by-star {
+			// Left - Stars
+			li.global-views-rating-by-star-label {
+				width: 25%;
+				text-align: right;
+				a.global-views-rating-by-star-link {
+					color: $theme-primary-ft-color;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				@media (max-width: $screen-sm-min) {
+					width: 15%;
+					padding-right: $theme-base-size * 3;
+				}
+				@media (max-width: $screen-xs-min) {
+					width: 20%;
+					font-size: $theme-sm-font-size;
+				}
+			} // Center -Bar
+			li.global-views-rating-by-star-percentage-area {
+				width: 50%;
+				div.global-views-rating-by-star-percentage-area-progress-bar {
+					box-shadow: none; // Filled Area
+					>div {
+						background: $theme-primary-color;
+					}
+				}
+				@media (max-width: $screen-sm-min) {
+					width: 70%;
+				}
+				@media (max-width: $screen-xs-min) {
+					width: 60%;
+				}
+			} // Right - Reviews
+			li.global-views-rating-by-star-second-label {
+				width: 25%;
+				a.global-views-rating-by-star-link {
+					color: $theme-rating-stars-color;
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+				@media (max-width: $screen-sm-min) {
+					width: 15%;
+				}
+				@media (max-width: $screen-xs-min) {
+					width: 20%;
+					font-size: $theme-sm-font-size;
+				}
+			}
+		}
+	} // "Write A Review" btn.
+	a.product-reviews-center-container-footer-button {
+		@include lineal-btn($theme-secondary-color);
+	}
+	@media (max-width: $screen-md-min) {
+		//padding: $theme-base-size * 4 !important;
+	}
+}
+
+// Pusher info-content
+div.item-details-options-content {
+	// Back Pusher btn.
+	div.sc-pusher-header {
+		background: $theme-primary-color;
+		border: none;
+		margin: 0 0 $theme-base-size * 4 0;
+		a {
+			color: $theme-tertiary-color;
+			font-size: $theme-sm-font-size;
+			text-transform: uppercase;
+			&:after {
+				content: "\f104";
+			}
+		}
+	} // Item Price
+	div.item-details-options-content-price {
+		padding: 0 $theme-base-size * 4;
+		span {
+			color: $theme-primary-color;
+			font-size: 20px;
+		}
+	}
+	@media (max-width: $screen-sm-min) {
+		padding: 0;
+	}
+}
+
+// Reviews pusher btn.
+button.item-details-product-review-pusher {
+	border-color: $theme-primary-color;
+	color: $theme-tertiary-color;
+	text-transform: uppercase;
+	font-size: $theme-sm-font-size !important;
+	>i {
+		color: $theme-tertiary-color;
+		line-height: 22px;
+		font-size: 18px;
+	} // Rating
+	div.global-views-star-rating-area {
+		i {
+			color:$theme-rating-stars-color;
+			&.global-views-star-rating-empty {
+				opacity: 0.25;
+			}
+		}
+		@media (max-width: $screen-sm-min) {
+			margin: 0;
+		}
+	}
+}
+
+// Push Ratings & Reviews
+section.item-details-more-info-content {
+	div.item-details-more-info-content-container {
+		overflow-x: hidden;
+	}
+	@media (max-width: $screen-sm-min) {
+		div.item-details-more-info-content-container {
+			padding: 0;
+			background: #FFF; // Back Pusher btn.
+			div.sc-pusher-header {
+				background: $theme-primary-color;
+				border: none;
+				margin: 0 0 $theme-base-size * 4 0;
+				a {
+					color: $theme-tertiary-color;
+					font-size: $theme-sm-font-size;
+					text-transform: uppercase;
+					&:after {
+						content: "\f104";
+					}
+				}
+			} // Reviews
+			div.product-reviews-center {
+				padding: 0 $theme-base-size * 4;
+				div.product-reviews-center-container-header {
+					background: #FFF;
+				}
+			}
+		}
+	}
+}
+
+// Rating Stars total
+  div.product-reviews-center-container, div.product-reviews-review-comment-item-cell {
+    .global-views-star-rating-area{
+      margin-top:-3px;
+    }
+  }
+
+// Product Reviews - Filters
+section.product-reviews-center-list {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	border-color: $theme-neutral-color; // Reviews Filters
+	div.list-header-view {
+		border-color: $theme-neutral-color;
+		div.list-header-view-accordion-body-header {
+			// Browse by Date
+			span.list-header-view-sorts {
+				>label {
+					>select {
+						margin: 0;
+						background: transparent;
+						border: none;
+						min-width: auto;
+						padding: 0 0 0 $theme-base-size * 2;
+						font-size: $theme-sm-font-size;
+					}
+					@media (max-width: $screen-sm-min) {
+						margin: 0;
+						width: auto;
+					}
+				}
+				>button {
+					i {
+						width: auto;
+						font-size: $theme-lg-font-size;
+						line-height: 44px;
+						color: $theme-secondary-color;
+					}
+				}
+				@media (max-width: $screen-md-min) {
+					margin-right: $theme-base-size * 2;
+					width: auto;
+					float: left;
+				}
+			} // Browse by Star
+			label.list-header-view-filters {
+				select {
+					border-color: $theme-neutral-color;
+					font-size: $theme-sm-font-size;
+				}
+				@media (max-width: $screen-md-min) {
+					width: auto;
+					float: left;
+					margin: 0 0 $theme-base-size * 4 0;
+				}
+				@media (max-width: $screen-sm-min) {
+					margin: 0;
+				}
+			}
+			@media (max-width: $screen-sm-min) {
+				border: none;
+				background: transparent;
+			}
+		}
+	} // View Filters btn. - small screen
+	button.list-header-view-filter-button {
+		font-size: $theme-sm-font-size;
+		font-weight: $theme-font-weight-light;
+		text-transform: uppercase;
+		background: $theme-primary-ft-color;
+		border: none;
+		i {
+			font-size: $theme-lg-font-size;
+		}
+	}
+	@media (max-width: $screen-sm-min) {
+		border: none;
+	}
+}
+
+// Product Reviews - Reviews
+div.product-reviews-center-review-container {
+	// Review
+	div.product-reviews-review {
+		padding: 0 !important;
+		margin-bottom: 20px;
+		border-bottom: 1px solid $theme-neutral-color;
+		.row {
+			margin: 0;
+		} // Ratings
+		div.global-views-star-rating-area {
+			i {
+				color: $theme-rating-stars-color;
+				&.global-views-star-rating-empty {
+					opacity: 0.25;
+				}
+			}
+		} // Title
+		h4 {
+			text-transform: uppercase;
+			margin-bottom: 0;
+			margin-top: 0;
+			font-size: 15px;
+			@media (max-width: $screen-sm-min) {
+				margin-top: 20px;
+			}
+		} // Username
+		p.product-reviews-review-comment-username {
+			i {
+				color: $theme-primary-color;
+			}
+		} // Content
+		p.product-reviews-review-review-description {
+			width: 100%;
+			font-size: 14px;
+			@media (max-width: $screen-xs-min) {
+				font-size: $theme-sm-font-size;
+			}
+		} // "Was this review helpful?"
+		div.product-reviews-review-comment-footer {
+			p {
+				color: $theme-primary-ft-color;
+				text-decoration: underline;
+			}
+			button {
+				&:first-of-type {
+					@include lineal-btn($theme-secondary-color);
+					font-size: $theme-xs-font-size;
+				}
+				&:last-of-type {
+					@include lineal-btn($theme-secondary-color);
+					font-size: $theme-xs-font-size;
+				}
+			}
+			@media (max-width: $screen-xs-min) {
+				margin-top: 0;
+			}
+		}
+		&:last-of-type {
+			border-bottom: none;
+		}
+	}
+}
+span.product-reviews-review-comment-item-cell-date{
+	display: block;
+	float: left;
+	margin: 0;
+	margin-top: 10px;
+	margin-right: 20px;
+	clear: both;
+}

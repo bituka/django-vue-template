@@ -1,0 +1,29 @@
+.tube_store_loading_packages{
+   width: 100%;
+ }
+
+.tube_store_loading_packages img{
+  display: block;
+  margin: auto;
+  width: 64px;
+  height: 64px;
+}
+.product-details-package-options{
+  display: none;
+  table{
+    @extend .table;
+    @extend .table-striped;
+    margin-top: 20px;
+  }
+}
+
+.product-line-stock{
+  span{
+    display: block;
+    margin-bottom: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #c70505;
+    padding: 5px;
+  }
+}

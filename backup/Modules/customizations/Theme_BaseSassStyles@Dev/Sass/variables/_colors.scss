@@ -1,0 +1,331 @@
+/*
+	© 2017 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/
+
+
+// Custom Tavano Theme Color Palette
+//
+// Here you will find the main user interface color palette for the Tavano of the box theme.
+//
+// Styleguide 2.1
+
+// Primary Color
+//
+// $theme-primary-color - The Primary Color is used for primary actions and highlighted information.
+//
+// Markup:
+// <div class="styleguide-color-primary">theme-primary-color</div>
+//
+// Styleguide 2.1.2
+
+// Start New Variables
+
+    // Global Client Colors
+    $theme-primary-color:                   #c70505; //#FD7A19 Client identity Primary color (primary buttons - add to cart, price color)
+
+// Secondary Color
+//
+// $theme-secondary-color - The Secondary Color is used for secondary actions. Different shades of this color are used for theme backgrounds, borders and text.
+//
+// Markup:
+// <div class="styleguide-color-secondary">theme-secondary-color</div>
+//
+// Styleguide 2.1.3
+    $theme-secondary-color:                 #808080; // Client identity Secondary color (secondary buttons - see more, add to wishlist, edit ..)
+
+    $theme-tertiary-color:                  #fff; // NS Backgrounds & texts over colored backgrounds - DO NOT EDIT
+
+    // Header
+    $theme-header-bck-color-gral:           #FFFFFF; // Header global background (client color)
+    $theme-header-bck-color-top:            darken($theme-header-bck-color-gral, 20%); // Header top bar background
+    $theme-header-bck-color-top-dark:       darken($theme-header-bck-color-gral, 20%); // Header darker color
+
+    $theme-header-ft-color-primary:          #6b6b6b; // Main Header font color
+    $theme-header-ft-color-primary-active:  $theme-header-bck-color-top; // Main nav hover background
+    $theme-header-ft-color-secondary:       #000; // Header Top Bar font color
+    $theme-header-ft-color-tertiary:        #6b6b6b; // Header Main nav sub-links color
+
+    $theme-header-ft-color-primary-dark:    darken($theme-header-ft-color-primary, 55%);
+
+    $theme-header-bck-color-promoline:      #000;
+    $theme-header-ft-color-promoline:       #fff;
+
+        // Search Typeahead
+        $theme-header-ft-search-input:          #000; // Search box input text
+        $theme-header-ft-search-typeahead:      #000; // Search input typeahead text
+        $theme-header-bck-button:               #000; // Search box button background
+
+        //Mobile Menu
+        $theme-header-bck-color-mobile:         #666; // Mobile menu background
+        $theme-header-bck-color-mobile-active:  lighten($theme-header-bck-color-mobile, 20%); // Mobile menu highlighted nav
+        $theme-header-ft-color-mobile:          #fff; // Mobile menu font color
+
+    // Footer
+    $theme-footer-bck-color-gral:           #F8F8F8; // Footer global background (client color)
+    $theme-footer-bck-color-bottom:         darken($theme-footer-bck-color-gral, 20%); // Footer bottom label copyright section background
+
+    $theme-footer-ft-color-primary:         #6b6b6b; // Footer global font color
+    $theme-footer-ft-color-secondary:       #6b6b6b; // Footer bottom label copyright section font color
+
+    $theme-footer-bck-color-social:         $theme-footer-bck-color-bottom; // Footer social icons buttons color
+
+    $theme-footer-ft-color-btn:             #383838; // Footer - subscribe button font color
+    $theme-footer-bck-color-btn:            #fff; // Footer - subscribe button background color
+
+    // Body Font Colors
+    $theme-primary-ft-color:                #6b6b6b; // Regular body font color (client color from form)
+    $theme-secondary-ft-color:              #2175b0; // Font color for Titles, Subtitles
+    $theme-tertiary-ft-color:               #fff; // Font color for Slider & Banners: Title(h2) and Description(p)
+    $theme-color-links:                     #000; // Font color for "a" link
+    $theme-color-links-hover:               $theme-primary-color; // Font color for "a" hover
+    $sc-color-link:$theme-color-links;
+    $sc-color-link-hover:$theme-color-links-hover;
+    $theme-color-out:                       #CB1B2C; // Font color for out of stock
+
+    $theme-fourth-color:                    $theme-primary-ft-color; // (secondary for ns standard)
+
+    //Slider & Banners Buttons
+    $theme-slider-btn-bck-color:            #fff;// button background
+    $theme-slider-btn-ft-color:             #000;// button font color
+
+    //Border Lines & neutral backgrounds
+    $theme-neutral-color:                   #e4e4e4;// Borders and neutral backgrounds (divider lines, fs borders ..)
+    $theme-neutral-color-light:             lighten($theme-neutral-color, 6);
+    $theme-neutral-color-lightest:          lighten($theme-neutral-color, 6);
+    $theme-input-color:                     #6b6b6b;// Item Options & Forms: input, select, textareas
+    $theme-input-color-dark:darken($theme-input-color, 20%); // Active -item options selected
+
+    $sc-color-theme-background:$theme-neutral-color;
+    $sc-color-background-list:$theme-neutral-color;
+
+    //Rating Stars
+    $theme-rating-stars-color:              #6b6b6b; // Rating Stars color
+    $sc-color-star-filled:                  $theme-rating-stars-color;
+    $sc-color-star-empty:                   lighten($theme-rating-stars-color, 6);
+
+// NS Standard Color Variables
+
+    $sc-color-theme:                        $theme-primary-ft-color; // Font color
+    $sc-color-theme-light:                  lighten($theme-primary-ft-color, 6);
+    $sc-color-copy:$theme-primary-ft-color; // PDP info section - font color
+    $sc-color-light-copy:lighten($theme-primary-ft-color, 6);
+
+    $sc-color-theme-background:          	#e4e4e4;
+    $sc-color-theme-background-light:    	lighten($sc-color-theme-background, 55%);
+    $sc-color-theme-background-lightest: 	lighten($sc-color-theme-background, 6);
+    $sc-color-theme-border:                 $theme-neutral-color;
+    $sc-color-background-list:              #f1f8fa;
+
+    $sc-color-gallery-icon-control:$theme-primary-ft-color;
+
+    $sc-color-dark-copy:$theme-primary-ft-color; // input font color
+
+    $sc-color-primary:                      $theme-primary-color; //Primary buttons, section titles, item price.
+    $sc-color-secondary:                    $theme-fourth-color; //Text in website, social icons, secondary buttons.
+    $sc-color-tertiary:                     $theme-tertiary-color;
+
+    $sc-color-primary-hover: $sc-color-primary;
+    $sc-color-primary-active: darken($sc-color-primary, 6);
+
+    $sc-color-secondary-hover: $sc-color-secondary;
+    $sc-color-secondary-active: darken($sc-color-secondary, 6);
+
+    $sc-color-tertiary-hover: $sc-color-secondary;
+    $sc-color-tertiary-active: darken($sc-color-secondary, 6);
+
+    $sc-color-primary-dark:              	desaturate(darken($sc-color-primary, 8), 3);
+    $sc-color-secondary-light: 			 	lighten($sc-color-secondary, 18); //For light grey (facets), secondary buttons, some sections in my account.
+    $sc-color-secondary-lightest:		 	lighten($sc-color-secondary, 30); //For light grey (facets), secondary buttons, some sections in my account.
+
+    $sc-color-typeahead-plugin-dropdown-menu: $theme-primary-ft-color;
+
+// End NS Standard Color Variables
+
+
+//Custom Theme Color Variables
+
+$theme-accent-color:                 	#FFF; //Do not change
+
+//General:: Theme Colors
+//$theme-rating-stars-color:            #ffd700; // Rating Stars
+$theme-color-tertiary:               	$theme-color-out; //Out of stock, copyright, subscribe footer, some hover effects.
+$item-name-color:                       $theme-primary-color;
+
+// Header
+$theme-header-top:                      $theme-header-bck-color-top; // Top Header section.
+$theme-header-bottom:                   $theme-header-bck-color-gral; // Bottom Header section.
+$theme-header-ft-color-primary:         $theme-header-ft-color-primary;
+$theme-header-secondary:                $theme-header-ft-color-secondary;
+
+//Header:: Custom Values (To edit)
+$top-header-ft-color:                	#FFF; //Main header section
+$header-dropdown-top-border:         	#FFF;
+
+//Home:: Home Slide Theme
+$home-pager-background-color:        	#000;
+
+//General:: Site Selection
+$theme-selection-background:		    #000;  //Site Selection
+
+
+
+
+
+// Color palette
+//
+// Here you will find the main user interface color palette for the out of the box theme.
+// Shades of orange, blue-grey, white and grey are used for backgrounds, boders, buttons and text all along the application.
+//
+// Styleguide 1.1
+
+// Primary Color
+//
+// $sc-color-primary - The Primary Color is used for primary actions and highlighted information.
+//
+// Markup:
+// <div class="styleguide-color-primary">sc-color-primary</div>
+//
+// Styleguide 1.1.2
+$sc-color-primary: #e23200;
+
+// Secondary Color
+//
+// $sc-color-secondary - The Secondary Color is used for secondary actions. Different shades of this color are used for theme backgrounds, borders and text.
+//
+// Markup:
+// <div class="styleguide-color-secondary">sc-color-secondary</div>
+//
+// Styleguide 1.1.3
+$sc-color-secondary: #15607b;
+
+// Neutral shades
+//
+// The neutral shade palette is a scale from 1000 (dark) to 0 (light).
+// This theme defines a couple of medium scale values. The developer might find useful to add more intermetiate colors within the scale that might be referenced to this scale.
+//
+// $sc-neutral-shade-900 - The darkest value on this scale is raraly used. It may be found on some texts or backgrounds.
+// $sc-neutral-shade-600 - In occasions you will find this shade assigned to text but most of the times it will be the shade used for shadows.
+// $sc-neutral-shade-300 - This light shade is used exclusively used in texts.
+// $sc-neutral-shade-0 - The lightest value on this scale is largely used and may be usually found in texts, backgrounds and borders.
+//
+//
+// Markup:
+// <div class="styleguide-color-neutral-shade-900">sc-neutral-shade-900</div>
+// <div class="styleguide-color-neutral-shade-600">sc-neutral-shade-600</div>
+// <div class="styleguide-color-neutral-shade-300">sc-neutral-shade-300</div>
+// <div class="styleguide-color-neutral-shade-0">sc-neutral-shade-0</div>
+//
+// Styleguide 1.1.4
+$sc-neutral-shade-base: #222426;
+$sc-neutral-shade-900: $sc-neutral-shade-base;
+$sc-neutral-shade-600: lighten($sc-neutral-shade-base, 18);
+$sc-neutral-shade-300: lighten($sc-neutral-shade-base, 55);
+$sc-neutral-shade-0: lighten($sc-neutral-shade-base, 100);
+
+// Theme Palette
+//
+// Just as the neutral shades palette, the Theme Palette is a scale from 1000 (dark) to 0 (light).
+// This theme defines a couple of medium scale values. The developer might find useful to add more intermetiate colors within the scale that might be referenced to this scale.
+//
+// $sc-color-theme-900 - Used mainly for headings
+// $sc-color-theme-400 - Used mainly for general backgrounds (also referenced as $sc-color-theme-background)
+// $sc-color-theme-300 - Used mainly for borders (also referenced as $sc-color-theme-border-light)
+// $sc-color-theme-200 - Used mainly for borders (also referenced as $sc-color-theme-border)
+//
+// Markup:
+// <div class="styleguide-color-theme-900">sc-color-theme-900</div>
+// <div class="styleguide-color-theme-400">sc-color-theme-400</div>
+// <div class="styleguide-color-theme-300">sc-color-theme-300</div>
+// <div class="styleguide-color-theme-200">sc-color-theme-200</div>
+//
+// Styleguide 1.1.5
+$sc-color-theme-base: $sc-color-secondary;
+$sc-color-theme-900: $sc-color-theme-base;
+$sc-color-theme-400: desaturate(lighten($sc-color-theme-base, 45), 18);
+$sc-color-theme-300: desaturate(lighten($sc-color-theme-base, 60), 22);
+$sc-color-theme-200: desaturate(lighten($sc-color-theme-base, 68), 22);
+
+$sc-color-theme-border: $sc-color-theme-400;
+$sc-color-theme-border-light: $sc-color-theme-300;
+$sc-color-theme-background: $sc-color-theme-200;
+
+// Messagging Palette
+//
+// The message box is defined by a colored text displayed over a colored background with an outline border.
+// It might or may not include an icon in which case it should use the same color as the text.
+// Possible message types are: Success, Warning, Error and Information.
+// Each type is defined by a main color used for text. Background and border colors are calculated according to the main color.
+//
+// $sc-color-success, $sc-color-success-background, $sc-color-success-border - Used for success messages.
+// $sc-color-warning, $sc-color-warning-background, $sc-color-warning-border - Used for warning messages.
+// $sc-color-error, $sc-color-error-background, $sc-color-error-border - Used for error messages.
+// $sc-color-info, $sc-color-info-background, $sc-color-info-border - Used for information messages.
+//
+// Markup:
+// <div class="styleguide-color-success">sc-color-success</div>
+// <div class="styleguide-color-success-border">sc-color-success-border</div>
+// <div class="styleguide-color-success-background">sc-color-success-background</div>
+// <div class="styleguide-color-warning">sc-color-warning</div>
+// <div class="styleguide-color-warning-border">sc-color-warning-border</div>
+// <div class="styleguide-color-warning-background">sc-color-warning-background</div>
+// <div class="styleguide-color-error">sc-color-error</div>
+// <div class="styleguide-color-error-border">sc-color-error-border</div>
+// <div class="styleguide-color-error-background">sc-color-error-background</div>
+// <div class="styleguide-color-info">sc-color-info</div>
+// <div class="styleguide-color-info-border">sc-color-info-border</div>
+// <div class="styleguide-color-info-background">sc-color-info-background</div>
+//
+// Styleguide 1.1.6
+$sc-color-success: #097839;
+$sc-color-success-background: desaturate(lighten($sc-color-success, 69), 20);
+$sc-color-success-border: desaturate(lighten($sc-color-success, 61), 20);
+
+$sc-color-warning: #946a00;
+$sc-color-warning-background: desaturate(lighten($sc-color-warning, 65), 1);
+$sc-color-warning-border: desaturate(lighten($sc-color-warning, 50), 20);
+
+$sc-color-error: #c01a29;
+$sc-color-error-background: lighten($sc-color-error, 54);
+$sc-color-error-border: desaturate(lighten($sc-color-error, 45), 20);
+
+$sc-color-info: $sc-color-secondary;
+$sc-color-info-background: $sc-color-theme-background;
+$sc-color-info-border: $sc-color-theme-border-light;
+
+// Links
+//
+// Links are used primarily as a navigational element. Links may also change what or how data is displayed (view more, show all). If the action taken by the user will change or manipulate data, use a button.
+// Two different color variables are defined for this element:
+//
+// $sc-color-link - The color the link is written with. This color should ensure they look clickable.
+// $sc-color-link-hover - The color with which links are hilighted when hovered.
+//
+// Markup:
+// <div class="styleguide-color-link">sc-color-link</div>
+// <div class="styleguide-color-link-hover">sc-color-link-hover</div>
+//
+// Styleguide 1.1.7
+$sc-color-link: #0067b9;
+$sc-color-link-hover: desaturate(lighten($sc-color-link, 15), 15);
+
+// Copy
+//
+// The out of the box theme uses only 3 different color shades when it comes to rendering text.
+// The shades available are:
+//
+// $sc-color-copy-dark - Used for almost every text on the site.
+// $sc-color-copy - Mainly used for values such as SKU
+// $sc-color-copy-light - Used for labels
+//
+// Markup:
+//<div class="styleguide-color-copy-dark">sc-color-copy-dark</div>
+//<div class="styleguide-color-copy">sc-color-copy</div>
+//<div class="styleguide-color-copy-light">sc-color-copy-light</div>
+//
+// Styleguide 1.1.8
+$sc-color-copy-dark: $sc-neutral-shade-base;
+$sc-color-copy: lighten($sc-neutral-shade-base, 18);
+$sc-color-copy-light: lighten($sc-neutral-shade-base, 35);

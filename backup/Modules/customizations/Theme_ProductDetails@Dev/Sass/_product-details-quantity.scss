@@ -1,0 +1,59 @@
+/*
+	© 2017 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/
+
+.product-details-quantity-options-title {
+	text-transform: capitalize;
+  	font-weight: normal;
+	margin-bottom: $sc-margin-base * 2;
+	display: block;
+}
+.product-details-quantity-options {
+	margin-top:0;
+	clear:both;
+	width: 25%;
+	float: left;
+	[data-validation-error="block"] {
+		margin-top: $sc-margin-base * 2;
+	}
+	@media(max-width: $screen-sm-max) {
+		width:100%;
+	}
+}
+
+.product-details-quantity-options-title-help {
+	clear: both;
+	display: block;
+	//font-weight:$sc-font-weight-light;
+	margin: $sc-margin-base * 2 0;
+}
+
+.product-details-quantity-add,
+.product-details-quantity-remove{
+	@extend .button-secondary;
+	background-color:lighten($sc-color-theme, 20%);
+	border:1px solid lighten($sc-color-theme, 20%);
+	width: $sc-target-size-mobile;
+	height: $sc-target-size-mobile;
+	font-size: 26px;
+	border-radius: 4px !important;
+	/*
+	@media (min-width: $screen-md-min) {
+		display: none;
+		
+	}
+	*/
+	
+}
+.item-qty-box {
+	border: 1px solid $theme-input-color;
+	text-align: center;
+	background: transparent;
+	max-width: 90px;
+}
+.product-details-quantity-value {
+	@extend .item-qty-box;
+}

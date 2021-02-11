@@ -1,0 +1,50 @@
+// Title
+header.login-register-header {
+	margin: $theme-base-size * 8 0;
+	h1 {
+		font-size: 30px;
+		//font-weight: $theme-font-weight-light;
+		//color: $theme-primary-color;
+	}
+	@media (max-width: $screen-md-min) { margin-top: 0; }
+	@media (max-width: $screen-md-min) { margin-top: 20px; }
+}
+
+// Content
+div.login-register-wrapper-column-login,
+div.login-register-wrapper-column-register {
+	padding: 0;
+	> div {
+		padding: 0 $theme-base-size * 6;
+		border: none !important;
+		// Buttons
+		button {
+			@include btn($theme-primary-color);
+		}
+		// Forgot Password
+		a.login-register-login-forgot {
+			color: $theme-primary-color;
+			&:hover { text-decoration: underline; }
+		}
+		// Log In Form
+		form.login-register-login-form {
+			@media (max-width: $screen-sm-min) { padding-bottom: $theme-base-size * 4; border-bottom: 1px solid $theme-neutral-color; }
+		}
+	}
+	@media (max-width: $screen-sm-min) { padding: 0 $theme-base-size * 3; }
+}
+.login-register-forgot-password-body{
+	background: none;
+	@media(min-width:$screen-sm-min ){
+		padding: 0;
+	}
+}
+button.login-register-forgot-password-submit{
+	@include btn($theme-primary-color);
+}
+.create-accout-custom{
+	display: none;
+	&.collapsed{
+		display: block;
+	}
+}

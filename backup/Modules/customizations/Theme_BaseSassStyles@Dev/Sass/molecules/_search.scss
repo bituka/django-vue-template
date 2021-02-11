@@ -1,0 +1,48 @@
+/*
+	© 2016 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/
+
+.itemssearcher-item-all-results{
+    .itemssearcher-item-shadow{
+        background-color: $theme-color-tertiary;
+    }
+}
+.nav-search-content, .site-search-content{
+    @media (min-width: $screen-md-min) {
+        width:320px;
+    }
+}
+.item-results { padding:10px; border-bottom: 1px solid #eaeaea; @include transition-duration(.2s); @include transition-timing-function(ease); }
+.item-results:hover { background:$theme-neutral-color; color:$theme-header-ft-search-typeahead;}
+.item-results:hover .item-results-title { color:$theme-header-ft-search-typeahead; }
+.item-results:hover .tt-highlight{color:$theme-header-ft-search-typeahead;}
+.all-results{
+    display:block;
+    border-bottom:none;
+    color:$theme-tertiary-color;
+    padding:20px 15px;
+    font-size:$sc-base-font-size;
+    margin:0;
+    //background-color:$header-top-bg-color;
+    text-transform: uppercase;
+    font-weight:$sc-font-weight-semibold;
+    text-align: center;
+    border-top:none;
+}
+.item-results-image{
+    padding-left:0;
+}
+.nav-search {
+    @media (min-width: $screen-md-min){
+        padding:0;
+        border-top: none;
+    }
+}
+.tt-dropdown-menu {
+  margin-top: 0 !important;
+  z-index: 120 !important;
+}
+.tt-dropdown-menu-shadow-fix{ height:0; }

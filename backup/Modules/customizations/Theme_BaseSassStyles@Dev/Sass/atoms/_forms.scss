@@ -1,0 +1,91 @@
+/*
+	© 2017 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/
+
+///////////////////////////////////////////////////////////////
+
+.theme-border{border-color:$theme-input-color;}
+
+// Form Inputs
+//
+// .input-generic  		- Input Generic (width 100% fit column)
+// .input-large  		- Input Large
+// .input-medium		- Input Medium
+// .input-small			- Input Small
+//
+// Markup: <input class="{$modifiers}"/>
+//
+// Styleguide 3.2
+
+.input-base{
+@extend .theme-border;
+}
+
+.input-generic {
+	@extend .input-base;
+}
+
+.input-large{
+	@extend .input-base;
+}
+
+.input-medium{
+	@extend .input-base;
+}
+
+.input-small{
+	@extend .input-base;
+}
+
+.input-xsmall{
+	@extend .input-base;
+}
+
+
+// Input Type Textarea
+//
+// Markup: <textarea class="input-textarea">Textarea</textarea>
+//
+// Styleguide 3.6
+
+.input-textarea{
+@extend .theme-border;
+}
+
+// Input Type Checkbox
+//
+// Markup: <input class="input-checkbox" type="checkbox" />
+//
+// Styleguide 3.7
+
+.input-checkbox{
+	@extend .theme-border;
+}
+
+// Inside Button
+//
+// Markup:
+//<div class="input-icon-box">
+//			<input class="input-large" type="text" />
+//			<button class="input-inside-button"><i class="fa fa-globe input_inside_icon"></i></button>
+//</div>
+//
+// Styleguide 3.10
+
+.input-inside-button{
+	@extend .theme-border;
+}
+
+.selector-select {
+	@extend .input-generic;
+}
+
+select[class]{
+	@extend .theme-border;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="search"], input[type="date"], input[type="number"] , select , textarea{
+	border-color:#cccccc !important;
+}

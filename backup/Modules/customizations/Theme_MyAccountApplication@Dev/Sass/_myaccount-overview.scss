@@ -1,0 +1,53 @@
+// Right Content
+div.myaccount-layout-main {
+	// Overview
+	div.ProfileHomeView {
+		h3{font-size:$theme-lg-font-size;}
+		// Recent Purchases
+		section.overview-home {
+			h3 { 
+				//font-weight: $theme-font-weight-light; 
+			}
+			a.overview-home-orders-title-link {
+				color: $theme-primary-color;
+				&:hover { text-decoration: underline; }
+			}
+			tr.recordviews-row {
+				td.recordviews-title {
+					a {
+						color: $theme-primary-color;
+						&:hover { text-decoration: underline; }
+					}
+				}
+				td.recordviews-status {
+					span { color: $theme-primary-color; }
+				}
+			}
+		}
+		// My Settings
+		section.overview-home-mysettings {
+			padding: 0;
+			background: transparent;
+			h3, h4 { 
+				//font-weight: $theme-font-weight-light; 
+			}
+			// Boxes
+			div.overview-home-mysettings-profile,
+			div.overview-home-mysettings-shipping,
+			div.overview-home-mysettings-payment {
+				section[class$="card"] {
+					padding: $theme-base-size * 5 0;
+					background: transparent;
+					border: none;
+					div { background: transparent; }
+					a { @include lineal-btn($theme-secondary-color);}
+				}
+				@media (max-width: $screen-md-min) { width: calc(100%/3); }
+				@media (max-width: $screen-sm-min) { width: 100%; }
+			}
+			@media (max-width: $screen-sm-min) { padding: $theme-base-size* 3; }
+		}
+	}
+
+	.overview-shipping-header, .overview-payment-header, .overview-profile-header{width:100%; border-bottom:1px solid $theme-neutral-color;}
+}

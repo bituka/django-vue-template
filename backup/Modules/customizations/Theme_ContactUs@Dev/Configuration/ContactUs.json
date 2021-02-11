@@ -1,0 +1,34 @@
+{
+	"type": "object"
+,	"subtab": {
+		"id": "contactus"
+	,	"title": "Contact Us"
+	,	"docRef": ""
+	,	"description": "Contact Us form configuration"
+	,   "group": "shoppingApplication"
+	}
+,	"properties": {
+		"contactus.recipient": {
+			"group": "shoppingApplication"
+        ,   "subtab": "contactus"
+		,   "type": "string"
+		,	"title": "Recipient email"
+		,	"description": "Enter the email please"
+		}
+	,	"contactus.subject": {
+            "group": "shoppingApplication"
+        ,   "subtab": "contactus"
+		,	"type": "string"
+		,	"title": "Email's subject"
+		,	"description": "Type the email's subject"
+		,	"default": "New contact from website"
+		}
+	,	"contactus.sender": {
+            "group": "shoppingApplication"
+        ,   "subtab": "contactus"
+		,	"type": "integer"
+		,	"title": "Sender ID"
+		,	"description": "Provide the ID for the sender"
+		}
+	}
+}

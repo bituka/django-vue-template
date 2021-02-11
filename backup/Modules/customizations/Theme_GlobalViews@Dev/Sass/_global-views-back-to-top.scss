@@ -1,0 +1,17 @@
+div.global-views-back-to-top {
+	background: $theme-footer-bck-color-bottom;
+	border-top: 1px solid $theme-footer-bck-color-gral;
+	border-bottom: none;
+	padding: $theme-base-size * 3 0;
+	a {
+		font-size: $theme-sm-font-size;
+		font-family:$font-family-primary;
+		text-transform: uppercase;
+		color: $theme-footer-ft-color-primary;
+		i {
+			color: $theme-footer-ft-color-primary;
+			text-transform: uppercase;
+			padding: 0;
+		}
+	}
+}

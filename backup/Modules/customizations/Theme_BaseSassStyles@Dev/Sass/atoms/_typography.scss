@@ -1,0 +1,24 @@
+h1, h2, h3{
+    font-family:$font-family-secondary;
+    font-weight:$theme-font-weight-semi-bold;
+    letter-spacing:2px;
+    color:$theme-secondary-ft-color;
+    text-transform:uppercase;
+}
+
+h4, h5, p, span, a  {
+    color:$theme-primary-ft-color;
+    font-family:$font-family-primary;
+}
+
+h1{font-size: $theme-xl-font-size;}
+h2{font-size: $theme-lg-font-size;}
+h3{font-size: $theme-md-font-size;}
+h4{font-size: $theme-md-font-size;}
+
+p.top-banner-main-line{
+    font-family:$font-family-secondary;
+    font-weight:$theme-font-weight-semi-bold;
+    letter-spacing:2px;
+    font-size:$home-full-banners-ft-size;
+}

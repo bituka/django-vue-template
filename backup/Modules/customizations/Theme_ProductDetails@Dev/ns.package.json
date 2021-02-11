@@ -1,0 +1,18 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*"
+        ],
+        "templates": [
+            "Templates/*"
+        ],
+        "sass": [
+            "Sass/**/*.scss"
+        ]
+    },
+    "overrides": {
+      "suitecommerce/ProductDetails@1.0.3/Templates/product_details_full.tpl": "Templates/product_details_full.tpl",
+      "suitecommerce/ProductDetails@1.0.3/Templates/product_details_quickview.tpl": "Templates/product_details_quickview.tpl",
+      "suitecommerce/ProductDetails@1.0.3/Templates/product_details_image_gallery.tpl": "Templates/product_details_image_gallery.tpl"
+    }
+}

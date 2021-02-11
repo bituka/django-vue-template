@@ -1,0 +1,47 @@
+// Right Content
+div.myaccount-layout-main {
+	div.ProfileInformationView,
+	div.ProfileEmailPreferencesView,
+	div.AddressListView,
+	div.CreditCardListView,
+	div.ProfileUpdateYourPasswordView {
+		// PROFILE INFORMATION & EMAIL PREFERENCES & ADDRESS BOOK & CREDIT CARDS & UPDATE YOUR PASSWORD
+		div.profile-information,
+		section.profile-emailpreferences,
+		section.address-list,
+		section.creditcard-list,
+		section.profile-update-password {
+			padding: 0;
+			background: transparent;
+			//h2 { font-weight: $theme-font-weight-light; }
+			a.address-list-button-info-cards-new, a.creditcard-list-button { @include btn($theme-primary-color);}
+			button { @include btn($theme-primary-color); }
+			button.profile-emailpreferences-submit, button.profile-update-password-form-actions-update { @include btn($theme-primary-color); }
+			button.profile-emailpreferences-reset, button.profile-update-password-form-actions-reset { @include lineal-btn($theme-secondary-color); }
+			div.address-details {
+				background: transparent;
+				padding: $theme-base-size * 5 0;
+				border: none;
+				p.address-details-actions {
+					a { @include btn($theme-primary-color); }
+					button { @include lineal-btn($theme-secondary-color); }
+				}
+			}
+			div.creditcard-content {
+				border: none;
+				background: transparent;
+				a { @include btn($theme-primary-color); }
+				button { @include lineal-btn($theme-secondary-color); }
+			}
+			@media (max-width: $screen-sm-min) { padding: 0 $theme-base-size * 3; }
+		}
+	}
+}
+.AddressListView .address-edit,
+.CreditCardDetailsView .creditcard-edit{
+		background-color: transparent;
+		padding-top: 0;
+}
+.profile-information{
+	border-top: none;
+}

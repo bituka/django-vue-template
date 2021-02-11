@@ -1,0 +1,53 @@
+div.footer-bottom-content-box {
+	background: $theme-footer-bck-color-bottom;
+	padding:0px;
+	div.footer-bottom-section {
+		@extend .container;
+		@extend .row;
+		margin: 0 auto;
+		padding: 6px 0;
+		>div {
+			@extend .col-md-6;
+			@extend .col-sm-6;
+		}
+	}
+}
+
+// Copyright
+div.footer-content-copyright {
+	text-align: left;
+	color: $theme-footer-ft-color-secondary;
+	font-family:$font-family-primary;
+	font-size: $theme-sm-font-size;
+	@media (min-width: $screen-md-min) {
+		padding-top: $theme-base-size * 2;
+		padding-bottom: $theme-base-size * 2;
+		line-height: 37px;
+	}
+  @media (max-width: $screen-md-min) { line-height: 60px; }
+  @media (max-width: $screen-sm-min) { text-align: center; }
+  @media (max-width: $screen-xs-min) { font-size: $theme-sm-font-size; }
+}
+
+// Creditcards
+div.footer-content-payment-img {
+	img {
+		float: right;
+		text-align: right;
+		max-width: 54px;
+		margin: 10px 7px 10px 0;
+		@media (max-width: $screen-sm-min) {
+			float: none;
+			text-align: center;
+		}
+		@media (max-width: $screen-xs-min) {
+			width: 35px;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+	}
+	@media (max-width: $screen-sm-min) {
+		text-align: center;
+	}
+}

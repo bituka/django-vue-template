@@ -1,0 +1,16 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*"
+        ],
+        "templates": [
+            "Templates/*"
+        ],
+        "sass": [
+            "Sass/**/*.scss"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/GlobalViews@1.4.1/Templates/global_views_breadcrumb.tpl": "Templates/global_views_breadcrumb.tpl"
+    }
+}

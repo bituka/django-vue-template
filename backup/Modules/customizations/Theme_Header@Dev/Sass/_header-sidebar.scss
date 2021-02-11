@@ -1,0 +1,49 @@
+// Menu links
+.header-sidebar-wrapper{
+	background-color: $theme-header-bck-color-mobile;
+	.header-profile-menu-login{
+		li{
+			color:$theme-header-ft-color-mobile;
+			a{color:$theme-header-ft-color-mobile;}
+		}
+	}
+	.global-views-currency-selector{
+		width: calc(100% - 30px);
+		.global-views-currency-selector-addon{
+			width: 100%;
+			background: none;
+			border: none;
+			color: white;
+			font-size: 15px;
+			line-height: 44px;
+		}
+		.global-views-currency-selector-select{
+			width: 100%;
+		}
+	}
+}
+div.header-sidebar-menu-wrapper {
+	li {
+		a {
+			background-color: $theme-header-bck-color-mobile;
+			color: $theme-header-ft-color-mobile;
+			line-height: 19px;
+			border-bottom: 1px solid $theme-header-bck-color-top-dark;
+			text-align: left;
+			i.header-sidebar-menu-push-icon {
+				color: $theme-header-ft-color-mobile;
+				line-height: 17px;
+			}
+			&:hover {
+				color: $theme-header-ft-color-mobile;
+				background: $theme-header-bck-color-mobile-active;
+			}
+			&.header-sidebar-menu-back {
+				color: $theme-header-ft-color-mobile;
+				background:$theme-header-bck-color-mobile-active;
+				i {  color: $theme-header-ft-color-mobile; }
+			}
+		}
+	}
+
+}

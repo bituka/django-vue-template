@@ -1,0 +1,18 @@
+// Right Content
+div.myaccount-layout-main {
+	div.caseManagement {
+		//h2 { font-weight: $theme-font-weight-light; }
+		a.case-list-header-button-new { @include btn($theme-primary-color); }
+	}
+	section.case-new {
+		padding: 0;
+		background: transparent;
+		textarea {
+			resize: none;
+			max-width: 300px;
+			@media (max-width: $screen-md-min) { max-width: 100%; }
+		}
+		button.case-new-button-submit { @include btn($theme-primary-color); }
+		@media (max-width: $screen-sm-min) { padding: 0 $theme-base-size * 3; }
+	}
+}

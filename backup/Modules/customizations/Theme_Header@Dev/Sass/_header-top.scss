@@ -1,0 +1,197 @@
+// Top header
+
+div.header-main-wrapper {
+	background-color: $theme-header-bck-color-top;
+	.header-cms-top-message{
+		background-color:#196ba5;
+		color:$theme-header-ft-color-promoline;
+		font-size:$theme-sm-font-size;
+		padding:15px 0;
+		text-align: center;
+		p{
+			color:$theme-header-ft-color-promoline;
+			font-size:$theme-sm-font-size;
+		}
+	}
+	div.header-main-nav {
+		background-color: $theme-header-bck-color-top;
+		color:$theme-header-ft-color-secondary;
+		min-height: 25px;
+		@media (min-width: $screen-md-min) {
+			background-color: transparent;
+			position: relative;
+		}
+		div.header-content {
+			position: relative;
+		}
+	}
+}
+
+// Left Info
+div.header-left-section {
+  float: left;
+  min-height: 24px;
+  min-width: 92px;
+  color:$theme-header-ft-color-secondary;
+  a {
+		@include header-top-links;
+		span {
+			color:$theme-header-ft-color-secondary;
+			@media (max-width: $screen-md-min) {display: none;}
+		}
+		&:first-of-type{ padding-left: 0; }
+	}
+	// Icons
+	@each $icon in phone, info {
+    i.header-menu-icon-#{$icon} {
+      @extend .fa;
+      @extend %fa-#{$icon};
+			display: none;
+			font-size: $theme-sm-font-size;
+			color: $theme-header-ft-color-secondary;
+			@media (max-width: $screen-md-min) {
+				display: inline-block;
+			}
+    }
+  }
+	@media (max-width: $screen-md-min) { min-width: auto; }
+}
+
+// Right Info
+div.header-right-menu {
+	float: right;
+	margin: 0;
+	li.separator{
+		line-height: 28px;
+	}
+	// Store Locator & Request A Quote
+	ul.header-menu-actions {
+		height: 28px;
+		li {
+			display:inline-block;
+			a {
+				@include header-top-links;
+				i {
+					color: $theme-header-ft-color-secondary;
+					font-size: $theme-sm-font-size;
+					line-height: normal;
+					padding-top:1px;
+					@media (max-width: $screen-sm-min) { top: 0px; }
+				}
+				span{color:$theme-header-ft-color-secondary;}
+			}
+			&.separator{padding:0px;}
+		}
+	}
+	// Profile Links
+	div.header-menu-profile {
+		// Welcome Link
+		a.header-profile-welcome-link {
+			@include header-top-links;
+			strong {}
+			i { font-size: $theme-sm-font-size; }
+			&:before { display: none; }
+		}
+		// MyAccount Dropdown
+		ul.header-profile-menu-myaccount-container {
+			top: 27px;
+			background: $theme-tertiary-color;
+			border: 1px solid $theme-header-bck-color-top;
+			padding: $theme-base-size * 5;
+			width: 100%;
+			> li {
+				width: 100%;
+				padding: 0;
+				ul.header-menu-myaccount {
+					font-family: $font-family-primary;
+					// Overview
+					li.header-menu-myaccount-overview {
+						border: none;
+						margin-bottom: $theme-base-size * 5;
+						a {
+							font-size: $theme-sm-font-size;
+							color: $theme-header-ft-color-tertiary;
+							text-transform: uppercase;
+							i { font-size: $theme-md-font-size; }
+							&:hover { text-decoration: underline; }
+						}
+					}
+					// MyAccount Options
+					li.header-menu-myaccount-item-level2 {
+						padding: 0 $theme-base-size * 4;
+						text-align: left;
+						> a {
+							font-size: $theme-md-font-size;
+							text-transform: uppercase;
+							color: $theme-header-ft-color-tertiary;
+							border: none;
+							padding: 0;
+							margin-bottom: $theme-base-size * 4;
+						}
+						ul {
+							li {
+								margin-bottom: $theme-base-size;
+								line-height: 18px;
+								a {
+									text-transform: capitalize;
+									font-size: $theme-sm-font-size;
+									border: none;
+									padding: 0;
+									margin: 0;
+									color: $theme-header-ft-color-tertiary;
+									&:hover, &:focus, &:active {
+										color: $theme-primary-color;
+										text-decoration: underline;
+										padding: 0;
+									}
+								}
+							}
+						}
+						&:last-of-type { padding-right: 0; }
+					}
+				}
+			}
+		}
+		// Login & Register
+		div.header-profile-menu-login-container {
+			margin-right: 0;
+			ul.header-profile-menu-login {
+				//line-height: 29px;
+				li {
+					float: left;
+					color: $theme-header-ft-color-secondary;
+					a { @include header-top-links; }
+				}
+			}
+		}
+	}
+	// Cart Links
+	div.header-menu-cart {
+		a.header-mini-cart-menu-cart-link {
+			@include header-top-links;
+			padding-right: 0;
+			vertical-align: middle;
+			i {
+				color: $theme-header-ft-color-secondary;
+				font-size: $theme-sm-font-size;
+				min-width: $theme-base-size * 5;
+				line-height: normal;
+			}
+			span { padding: 0; }
+		}
+	}
+
+	/*
+	@mixin header-top-links {
+	  font-size: 11px;
+	  font-weight: $theme-font-weight-normal !important;
+	  color: $theme-header-ft-color-secondary;
+	  line-height: 28px;
+	  height: 28px;
+	  text-transform: uppercase;
+	  padding: 0 10px;
+	  display: inline-block;
+	  font-family: $font-family-primary;
+	}
+	 */
+}

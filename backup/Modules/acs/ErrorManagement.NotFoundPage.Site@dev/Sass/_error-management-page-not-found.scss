@@ -1,0 +1,77 @@
+/*
+	© 2017 NetSuite Inc.
+	User may not copy, modify, distribute, or re-bundle or otherwise make available this code;
+	provided, however, if you are an authorized user with a NetSuite account or log-in, you
+	may use this code subject to the terms that govern your access and use.
+*/
+
+.error-management-page-not-found {
+	@extend .container;
+	text-align: center;
+	padding: $sc-padding-lv3 $sc-padding-lv5 $sc-padding-lv6;
+
+	@media (min-width: $screen-md-min) {
+		padding: $sc-padding-lv3 $sc-padding-lv3 $sc-padding-lv6;
+	}
+}
+
+.error-management-page-not-found-image {
+	margin: $sc-margin-lv3 auto;
+	max-height: $img-large;
+
+	@media (min-width: $screen-md-min) {
+		max-height: $img-large*2;
+	}
+}
+
+.page-not-found-content-title {
+	font-size: $sc-font-size-xxl;
+	margin: $sc-margin-lv3 0;
+	font-weight: $sc-font-weight-semibold;
+	font-family: 'Cooper';
+	color: black;
+	text-transform: none;
+
+	@media (min-width: $screen-sm-min) {
+		font-size: $sc-font-size-xxxl;
+	}
+
+	@media (min-width: $screen-md-min) {
+		font-size: $sc-font-size-xxxl*2;
+	}
+}
+
+.page-not-found-content-subtitle {
+	font-size: $sc-font-size-l;
+	margin: 15px 0 45px;
+	color: $theme-primary-ft-color;
+	font-weight: $sc-font-weight-normal;
+	color: black;
+
+	@media (min-width: $screen-sm-min) {
+		font-size: $sc-font-size-xl;
+	}
+
+	@media (min-width: $screen-md-min) {
+		font-size: $sc-font-size-xxl;
+	}
+}
+
+.page-not-found-content-link {
+	text-transform: uppercase;
+	padding: $sc-padding-lv3 $sc-padding-lv5;
+	margin: $sc-margin-lv3 0;
+	background: red;
+	color: $theme-header-bck-color-gral;
+	text-decoration: none;
+	font-size: $sc-font-size-m;
+	&:hover, &:focus {
+		@include opacity(0.9);
+		@include box-shadow(0 0 $sc-padding-lv3  ($sc-padding-lv1 * -1) $theme-primary-ft-color);
+		color: $theme-header-bck-color-gral;
+	}
+
+	@media (min-width: $screen-md-min) {
+		font-size: $sc-font-size-l;
+	}
+}

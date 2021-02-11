@@ -1,0 +1,10 @@
+{
+	"gulp": {
+		"ssp-libraries": [
+            "SuiteScript/*.ssp"
+        ]
+	},
+	"overrides": {
+		"suitecommerce/ShoppingApplication@4.1.0/SuiteScript/shopping.ssp" : "SuiteScript/shopping.ssp"
+	}
+}

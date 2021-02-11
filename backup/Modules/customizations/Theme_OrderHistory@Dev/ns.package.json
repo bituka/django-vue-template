@@ -1,0 +1,14 @@
+{
+    "gulp": {
+        "javascript": [
+            "JavaScript/*.js"
+        ],
+        "templates": [
+            "Templates/*"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/OrderHistory@5.0.1/JavaScript/OrderHistory.Details.View.js": "JavaScript/OrderHistory.Details.View.js",
+        "suitecommerce/OrderHistory@5.0.1/Templates/order_history_details.tpl": "Templates/order_history_details.tpl"
+    }
+}

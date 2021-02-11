@@ -1,0 +1,27 @@
+header.checkout-layout-header {
+	nav.header-simplified-header {
+		background: $theme-header-bck-color-gral;
+		height: auto;
+		div.header-simplified-header-logo {
+			max-width: 1170px;
+			margin: 0 auto;
+			padding: 0 $theme-base-size * 3;
+			a.header-logo {
+				line-height: 100px;
+				height: 100px;
+				img {
+					margin-right: 0;
+					padding: 10px 0;
+					max-height: 100px;
+					@media(max-width: 992px){
+						max-height: 100px;
+					}
+				}
+				@media(max-width: 992px){
+					max-height: 100px;
+				}
+			}
+			@media (max-width: $screen-lg-min) { max-width: 970px; }
+		}
+	}
+}

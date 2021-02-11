@@ -1,0 +1,14 @@
+{
+	"gulp": {
+		"javascript": [
+			"jquery.fancybox.js"
+		],
+		"images": [
+			"Images/*"
+		],
+		"sass":[
+			"scss/**/*.scss"
+		]
+	}
+,	"jshint": "false"
+}

@@ -1,0 +1,17 @@
+{
+    "gulp": {
+        "images": [
+            "Images/*"
+        ],
+        "sass": [
+            "Sass/*.scss"
+        ],
+        "templates": [
+            "Templates/*"
+        ]
+    },
+    "overrides": {
+        "suitecommerce/ErrorManagement@2.4.2/Sass/_error-management-page-not-found.scss": "Sass/_error-management-page-not-found.scss",
+        "suitecommerce/ErrorManagement@2.4.2/Templates/error_management_page_not_found.tpl": "Templates/error_management_page_not_found.tpl"
+    }
+}

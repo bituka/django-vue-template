@@ -1,0 +1,292 @@
+header#site-header {
+	background-color: $theme-header-bck-color-gral;
+	color:$theme-header-ft-color-secondary;
+	@include box-shadow(1px -3px 12px $theme-header-bck-color-top);
+	&.shopping-layout-header {
+		margin-bottom: 0;
+	}
+}
+
+// Sidebar - Toggle Button
+div.header-sidebar-toggle-wrapper {
+	margin: 4px $theme-base-size * 3 4px 0;
+	float: left;
+	@media (max-width: $screen-xs-min) {
+		margin: $theme-base-size $theme-base-size * 4 0 0;
+	}
+	button.header-sidebar-toggle {
+		width: 44px;
+		height: 44px;
+		background: transparent;
+		padding-left: $theme-base-size * 2;
+		i.header-sidebar-toggle-icon {
+			font-size: 29px;
+			margin: 0;
+			color: $theme-header-ft-color-primary;
+		}
+		&:hover {
+			background-color: transparent;
+			display: block !important;
+		}
+	}
+}
+
+// Bottom Header
+div.header-secondary-section {
+	@extend .container;
+	min-height: 25px;
+	background-color: $theme-header-bck-color-gral;
+	color: $theme-header-ft-color-primary;
+	@media (min-width: $screen-md-min) {
+		padding-left: $grid-gutter-width/2;
+		padding-right: $grid-gutter-width/2;
+		position: relative;
+	}
+}
+
+.header-menu-level1 {
+	>li {
+		@include transition-duration(.2s);
+		@include transition-timing-function(ease);
+		&.open {
+			background-color: $sc-color-tertiary;
+			a.header-menu-level1-anchor {
+				color: $theme-header-ft-color-primary;
+			}
+		}
+	}
+}
+
+// Home link
+a.header-menu-home-anchor:hover {
+	color: $theme-header-ft-color-tertiary;
+}
+
+// New Products dropdown
+ul.header-menu-level-container.header-three-images {
+	a.header-menu-level2-anchor-1 {
+		background: $sc-color-tertiary;
+		text-align: center;
+		color: $theme-header-ft-color-tertiary;
+		border-bottom: none;
+		padding: 7px 9px;
+		display: block;
+		margin-bottom: 7px;
+		text-transform: uppercase;
+	}
+}
+
+.nav-search-button-submit {
+	background: $theme-header-bck-button;
+	color: $theme-tertiary-color;
+	outline: none;
+	padding: 0px 19px;
+	text-transform: uppercase;
+	font-weight: $sc-font-weight-bold;
+	height:95px;
+	line-height:95px;
+	&:hover,
+	&:focus {
+		outline: none;
+		background: $theme-header-bck-button;
+		color: $theme-tertiary-color;
+	}
+}
+
+//Dropdown Images
+div.header-menu-images {
+	min-height: 30px;
+	display: inline-block;
+	>div {
+		min-height: 30px;
+	}
+	a {
+		position: relative;
+		float: left;
+		img {
+			width: 100%;
+			float: left;
+		} // Caption text
+		span {
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			min-height: 33px;
+			float: left;
+			text-align: center;
+			padding: $theme-base-size * 2 0; //background: rgba(0, 0, 0, .8);
+			color: $theme-header-ft-color-tertiary;
+		}
+	}
+}
+
+.header-menu-myaccount-overview-anchor {
+	text-transform: uppercase
+}
+
+.header-menu-profile.open .header-profile-welcome-link:before {
+	top: 20px;
+}
+
+.header-menu-profile.open .header-profile-welcome-link {
+	color: $theme-tertiary-color;
+}
+
+.open .header-menu-level1-anchor:before,
+.open .header-menu-home-anchor:before,
+.open .header-menu-shop-anchor:before {
+	display: none;
+	content: ""
+}
+
+.nav-search,
+.site-search {
+	border: none;
+}
+
+.site-search-content-input .itemssearcher-input {
+	background: $theme-header-bck-color-gral;
+	color: $theme-header-ft-color-primary;
+	@media (max-width: $screen-md-min) {
+		background: $theme-header-bck-color-gral;
+	}
+}
+
+.header-menu-searchmobile {
+	float: right
+}
+
+.header-sidebar-menu-wrapper .header-sidebar-menu-back,
+.header-sidebar-menu-wrapper .header-menu-myaccount-back {
+	background-color: $theme-header-bck-color-top-dark;
+}
+
+.icon-button-secondary:hover,
+.header-sidebar-toggle:hover,
+.header-menu-searchmobile-link:hover,
+.nav-search-content:before,
+.site-search-content:before {
+	display: none;
+}
+
+.site-search-input-icon:before {
+	display: none;
+}
+
+.icon-button-secondary {
+	background: transparent;
+}
+
+//Profile Sidebar
+.header-sidebar-user-logout,
+.header-sidebar-wrapper .header-profile-welcome-link {
+	color: $theme-tertiary-color;
+}
+
+.header-sidebar-wrapper .header-sidebar-menu-separator {
+	background-color: $theme-header-bck-color-gral;
+	height: 7px;
+	border-top: 1px solid $theme-header-bck-color-top-dark;
+	border-bottom: 1px solid $theme-header-bck-color-top-dark;
+}
+
+///Search
+.nav-search-input-reset {
+	background-color: transparent;
+}
+
+.nav-search-input-reset-icon {
+	color:$theme-header-ft-color-primary;
+}
+
+.nav-search-content:after,
+.site-search-content:after {
+	display: none;
+}
+.links-no-mobile{
+	display: inline-block;
+	@media(max-width:$screen-md-min){
+		display: none;
+	}
+}
+.header-main-nav{
+	.blog-link{
+		a{
+			color: $theme-color-links;
+			line-height: 28px;
+			font-size: 11px;
+	    font-weight: 400 !important;
+			display: inline-block;
+			padding: 0 10px;
+		}
+	}
+	.global-views-currency-selector{
+		@media(max-width: 992px){
+			display: none;
+		}
+		position: relative;
+		@extend .fa;
+		@extend %fa-angle-down;
+		&:before{
+			position: absolute;
+			right: 10px;
+			line-height: 28px;
+			z-index: 9;
+		}
+		.global-views-currency-selector-addon{
+			display: none;
+		}
+		select.global-views-currency-selector-select{
+			margin: 0;
+	    height: 28px;
+	    padding: 0 10px;
+	    line-height: 28px;
+	    background-color: transparent;
+			width: 70px;
+			font-size: 11px;
+	    font-weight: 400 !important;
+			text-transform: uppercase;
+			color: black;
+			background:none;
+			font-family: helvetica , arial , sans-serif;
+			border: none;
+			cursor: pointer;
+			position: relative;
+			z-index: 99;
+			&:focus{
+				outline: none;
+			}
+		}
+	}
+}
+
+.header-subheader-options{
+	padding: 0;
+	line-height: 28px;
+	margin-right: 15px;
+	@media(max-width: 992px){
+		display: none;
+	}
+	a.header-subheader-settings-link{
+		color: black;
+	}
+	.header-menu-settings-dropdown{
+    border: 1px solid #cccccc;
+		.global-views-currency-selector{
+			width: 100%;
+			span.global-views-currency-selector-addon{
+				border: none;
+				background: none;
+				font-size: 15px;
+				float: none;
+				display: inline-block;
+				width: 100%;
+			}
+			.global-views-currency-selector-select{
+				width: 100%;
+		    border: 1px solid #cccccc !important;
+			}
+		}
+	}
+}

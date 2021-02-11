@@ -1,0 +1,99 @@
+.item-relations-related, aside.recently-viewed-items , aside.item-relations-correlated{
+	text-align: center;
+	// Title
+	h3{
+		font-size: $theme-lg-font-size;
+		//color: $theme-secondary-color;
+		margin-top: 0;
+		margin-bottom: 15px;
+ 		//font-weight: normal;
+		border-bottom: 1px solid $theme-neutral-color;
+		padding-bottom: 10px;
+		text-transform: uppercase;
+		text-align:left;
+	}
+	.item-relations-related-item-title {
+		text-align: center;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-size:$theme-sm-font-size;
+		color:$theme-primary-ft-color;
+	}
+	//.item-relations-related-item-price, .item-relations-related-item-rate{text-align:left;}
+}
+
+.cart-detailed-related { margin-bottom: 40px; }
+
+// Item
+.item-relations-related-item-price .product-views-price .product-views-price-lead{
+	font-size:$theme-md-font-size!important;
+	span{
+		color:$theme-primary-color;
+	}
+}
+
+li.item-relations-cell, li.recently-viewed-cell-item {
+	> div{
+		width:95%; margin:0 auto;
+	}
+	// Item Name
+	a.item-views-related-item-title {
+		color: $theme-primary-color;
+		text-transform: uppercase;
+	}
+	// Item Price
+	span.item-views-price-lead {
+		color: $theme-primary-color;
+		span{color:$theme-primary-color;}
+	}
+	// Item Rating
+	div.global-views-star-rating {
+		width: auto;
+		i {
+			color: $theme-rating-stars-color;
+			&.global-views-star-rating-empty { opacity: 0.25; }
+		}
+	}
+}
+
+// Carousel Controls
+aside.item-relations-related ,
+aside.item-relations-correlated{
+	.bx-viewport{
+    height: auto !important;
+	}
+	div.bx-controls-direction {
+		a{
+			background: transparent;
+			border: none;
+			padding: 0;
+			color: $theme-secondary-color;
+			i { font-size: 50px; }
+			&:hover, &:focus { i { color: $theme-primary-color; } }
+			// Prev
+			&[class$="prev"] {
+				left: -$theme-base-size * 4;
+				@media (max-width: $screen-md-min) { left: 0; }
+			}
+			// Next
+			&[class$="next"] {
+				right: -$theme-base-size * 4;
+				@media (max-width: $screen-md-min) { right: 0; }
+			}
+		}
+	}
+}
+
+.item-details-carousel-next, .item-details-carousel-prev{
+	background: #FFF;
+	&:hover, &:focus {
+		i{ color: #FFF; }
+	}
+}
+
+.item-relations-related-row, .recently-viewed-items {
+	.item-views-related-item-title > span {
+    max-width: 90%;
+    display: inline-block;
+	}
+}

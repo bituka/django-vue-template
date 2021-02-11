@@ -1,0 +1,39 @@
+// Right Content
+div.myaccount-layout-main {
+	// BILLING
+	div.AccountBalance {
+		div.balance-content {
+			padding: 0;
+			background: transparent;
+			//h2 { font-weight: $theme-font-weight-light; }
+			span.balance-indicator-details-outstanding-reference { margin-top: 0; }
+			@media (max-width: $screen-sm-min) { padding: 0 $theme-base-size * 3; }
+		}
+		// Buttons
+		div.balance-actions {
+			button { @include btn($theme-primary-color); }
+			a { @include lineal-btn($theme-secondary-color); }
+			@media (max-width: $screen-sm-min) { padding-bottom: $theme-base-size * 3; }
+		}
+	}
+	// INVOICES & TRANSACTION HISTORY
+	div.Invoices,
+	div.TransactionHistory {
+		//h2 { font-weight: $theme-font-weight-light; }
+	}
+	// PRINT A STATEMENT
+	div.PrintStatement {
+		> section {
+			background: transparent;
+			padding: 0;
+			//h2 { font-weight: $theme-font-weight-light; }
+			div.print-statement-form-controls {
+				i { margin-top: -36px; left: 290px; }
+			}
+			// Buttons
+			button.print-statement-form-actions-print { @include btn($theme-primary-color); }
+			button.print-statement-form-actions-email { @include lineal-btn($theme-secondary-color); }
+			@media (max-width: $screen-sm-min) { padding: $theme-base-size * 3; }
+		}
+	}
+}

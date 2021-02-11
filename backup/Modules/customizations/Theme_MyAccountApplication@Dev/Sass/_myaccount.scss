@@ -1,0 +1,43 @@
+div.myaccount-layout-container {
+	font-family:$font-family-primary;
+	// Title
+	h2.myaccount-layout-title {
+		font-size: $theme-xl-font-size;
+		//font-weight: $theme-font-weight-light;
+		//color: $theme-primary-color;
+	}
+}
+
+// Left Navigation
+nav.myaccount-layout-side-nav {
+	div.menu-tree {
+		border: 1px solid $theme-neutral-color;
+		div.menu-tree-node {
+			// Expander Links
+			a.menu-tree-node-item-anchor {
+				background: transparent;
+				//font-weight: $theme-font-weight-light;
+				color: $theme-primary-ft-color;
+				border-color: $theme-neutral-color;
+				i { color: $theme-primary-ft-color; }
+				&:hover{ color:$theme-primary-color;}
+				&.active { background: $theme-neutral-color; }
+			}
+			&.open {
+				> a { background: $theme-neutral-color; }
+			}
+			// Submenu
+			div.menu-tree-node-submenu-wrapper {
+				border-color: $theme-neutral-color;
+				// Links
+				a.menu-tree-node-item-anchor {
+					color: $theme-primary-ft-color;
+					&:hover { text-decoration: underline;  color:$theme-primary-color;}
+					&.active { background: transparent; text-decoration: underline; color:$theme-primary-color; }
+				}
+			}
+		}
+	}
+}
+
+.creditcard-header-icon{max-width:39px;height:auto!important;}
