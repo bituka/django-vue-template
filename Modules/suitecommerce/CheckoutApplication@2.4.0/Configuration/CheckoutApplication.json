@@ -79,7 +79,7 @@
             "type": "boolean",
             "title": "Login as guest, show name",
             "description": "Check this box to show first and last name input fields when a user registers as a guest. If Auto Populate Name and Email is enabled, these names will be required and automatically populate throughout the checkout process where applicable. If unchecked, no fields populate automatically.",
-            "default": false
+            "default": true
         },
         "forms.loginAsGuest.showEmail": {
             "group": "checkoutApp",
