@@ -78,6 +78,8 @@ define(
                         dataToSend: dataToSend
                     };
 
+                    nlapiLogExecution('DEBUG', 'URL before response', url);
+
                     var response = nlapiRequestURL(url, postdata, null, "POST");
                     nlapiLogExecution('DEBUG', 'URL', url);
 

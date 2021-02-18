@@ -105,7 +105,7 @@ define(
             },
 
             createLead: function (e) {
-                //console.log("CREATE LEAD");
+                var self = this;
                 e && e.preventDefault();
                 var self = this,
                     data = {
@@ -116,21 +116,26 @@ define(
                         custevent_tt_ordernumber: this.$('input[name="ordernumber"]').val(),
                         incomingmessage: this.$('textarea[name="message"]').val(),
                         phone: this.$('input[name="phone"]').val(),
-                        url: "app/site/crm/externalcasepage.nl",
+                        url: "https://www.thetubestore.com/app/site/crm/externalcasepage.nl",
                         type: "Customer", // do not change
                         h: "AACffht_iM_Up0zUTaY-5-tjdKtCyIiwrw8", // do not change
                         compid: "3538477", // do not change
                         formid: "5" // do not change
                     };
+
                 this.$('#alert-container').text('').removeClass();
                 if (this.isValidData(data)) {
                     buttonSubmitProgress(this.$('.contact-us-form-box'));
+
                     jQuery.post(data.url, data).done(function () {
+
                         self.$('#alert-container').text('Thank you for contacting us! You will receive an email shortly!').addClass('message-success');
                         $('input, textarea').val('');
+
                     }).always(function () {
                         buttonSubmitDone(self.$('.contact-us-form-box'));
                     });
+
                 } else {
                     this.$('#alert-container').text('Please verify that the required fields are filled in correctly').addClass('message-error');
                 }
@@ -143,7 +148,7 @@ define(
                 }
                 // _.each(data, function (value, key) {
                 //     if (!value) {
-                        
+
                 //     }
                 // });
                 return valid;
